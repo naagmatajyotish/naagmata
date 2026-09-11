@@ -9,6 +9,7 @@ import {
   Users,
   Flame,
   Star,
+  Baby,
   ArrowRight,
   X,
   MessageCircle,
@@ -44,6 +45,8 @@ export const ServicesSection: React.FC = () => {
         return <Users className="w-5 h-5 text-white" />;
       case 'Flame':
         return <Flame className="w-5 h-5 text-white" />;
+      case 'Baby':
+        return <Baby className="w-5 h-5 text-white" />;
       case 'Star':
       default:
         return <Star className="w-5 h-5 text-white" />;

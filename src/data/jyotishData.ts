@@ -7,6 +7,7 @@ import serviceBusinessGrowth from '../assets/images/service_business_growth.jpg'
 import serviceMaritalHarmony from '../assets/images/service_marital_harmony.jpg';
 import serviceDivorceRemedy from '../assets/images/service_divorce_remedy.jpg';
 import serviceKundaliDosha from '../assets/images/service_kundali_dosha.jpg';
+import serviceSantanPrapti from '../assets/images/service_santan_prapti.jpg';
 
 export const CONTACT_INFO = {
   phone: '+91-9714127309',
@@ -165,6 +166,24 @@ export const SACRED_SERVICES: ServiceItem[] = [
     mantraPreview: 'Om Navagraha Devaya Namah | Om Aadityaya Somaya Mangalaya...',
     iconName: 'Star',
     imageUrl: serviceKundaliDosha
+  },
+  {
+    id: 'santan-prapti-solution',
+    title: 'Santan Prapti & Child Problem Solution',
+    category: 'kundali',
+    badge: 'Santan Gopal Siddhi',
+    shortDesc: 'Overcome unexplained delays in childbirth, Putra & Santan Dosha, and recurring miscarriages with sacred Vedic rituals.',
+    fullDesc: 'Childbirth delays and recurrent miscarriages often originate from severe 5th house planetary afflictions (Putra Bhava), ancestral Pitra Rin, or negative evil eye curses on the family lineage. Baba Ji conducts ancient Putrakameshti and Santan Gopal Anushthan along with Maa Naagdevi Garbha Raksha blessings to bestow the divine joy of healthy parenthood.',
+    benefits: [
+      'Comprehensive horoscope analysis of 5th house (Putra Bhava) & Jupiter (Guru)',
+      'Sacred Santan Gopal & Maa Naagdevi Garbha Raksha Anushthan',
+      'Neutralization of past-life karmic Putra Dosha and ancestral Pitra Rin',
+      'Energized protective silver amulet (Kavach) and Siddha Yantra for couples'
+    ],
+    timeframe: 'Sacred Sankalp Rituals in 3 to 7 Days',
+    mantraPreview: 'Om Devaki Suta Govinda Vasudeva Jagatpate | Dehi Me Tanayam Krishna Tvaamaham Sharanam Gatah...',
+    iconName: 'Baby',
+    imageUrl: serviceSantanPrapti
   }
 ];
 

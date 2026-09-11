@@ -19,25 +19,28 @@ export const UrgentBanner: React.FC = () => {
       id="sacred-marquee-banner"
       className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-stone-950 py-1.5 sm:py-2 border-b border-amber-400 shadow-sm relative overflow-hidden select-none font-sans z-50"
     >
-      <div className="flex items-center">
-        {/* Static Left Badge (Pill) linking directly to Services */}
-        <div className="shrink-0 z-20 pl-2 pr-1.5 sm:px-4 flex items-center gap-1.5 bg-gradient-to-r from-amber-600 via-amber-600 to-transparent">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-700"></span>
+      <div className="flex items-center relative">
+        {/* Static Left Badge (Pill) linking directly to Services - Solid Background to prevent text bleed-through */}
+        <div className="shrink-0 z-20 pl-2.5 pr-3 sm:px-4 py-1 flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-amber-600 via-amber-600 to-amber-500 shadow-md border-r border-amber-400/60">
+          <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-80"></span>
+            <span className="relative inline-flex rounded-full h-full w-full bg-red-700"></span>
           </span>
           <a
             href="#services"
-            className="inline-flex items-center gap-1 bg-stone-950 hover:bg-stone-900 text-yellow-300 hover:text-yellow-200 text-[10px] sm:text-xs font-black uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full shadow-xs transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 bg-stone-950 hover:bg-stone-900 text-yellow-300 hover:text-yellow-200 text-[10px] sm:text-xs font-black uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full shadow-xs transition-transform active:scale-95 cursor-pointer whitespace-nowrap"
             title="Explore Astrological Services"
           >
-            <Sparkles className="w-3 h-3 text-yellow-400 animate-pulse" />
+            <Sparkles className="w-3 h-3 text-yellow-400 animate-pulse shrink-0" />
             <span>SERVICES</span>
           </a>
         </div>
 
+        {/* Smooth Fade Transition Edge behind badge */}
+        <div className="pointer-events-none absolute left-[96px] sm:left-[118px] top-0 bottom-0 w-6 sm:w-8 bg-gradient-to-r from-amber-500 to-transparent z-10" />
+
         {/* Right-to-Left Continuous Scrolling Track */}
-        <div className="overflow-hidden flex-1 relative mask-gradient-edge">
+        <div className="overflow-hidden flex-1 relative">
           <div className="animate-marquee-left flex items-center space-x-6 sm:space-x-8 text-xs sm:text-sm font-bold tracking-wide">
             {/* Set 1 */}
             {tickerItems.map((item, index) => (
@@ -71,16 +74,8 @@ export const UrgentBanner: React.FC = () => {
           </div>
         </div>
 
-        {/* Quick Direct Call Button on Desktop & Mobile */}
-        <div className="shrink-0 z-20 px-2 sm:px-3 hidden sm:flex items-center gap-2 bg-gradient-to-l from-amber-600 via-amber-600 to-transparent">
-          <a
-            href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-950 text-yellow-300 text-xs font-extrabold px-3 py-1 rounded-full shadow-sm transition-all hover:scale-105"
-          >
-            <Phone className="w-3 h-3 text-yellow-400 animate-bounce" />
-            <span>{CONTACT_INFO.phoneDisplay}</span>
-          </a>
-        </div>
+        {/* Smooth Fade Transition on Right */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-amber-600 to-transparent z-10 hidden sm:block" />
       </div>
     </div>
   );
