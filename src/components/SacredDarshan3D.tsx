@@ -3,6 +3,8 @@ import { Sparkles, Heart, Phone, MessageCircle, ShieldCheck, Flame, Sun } from '
 import { CONTACT_INFO } from '../data/jyotishData';
 import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
 
+const INITIAL_BLESSING_COUNT = 14801;
+
 export const SacredDarshan3D: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
@@ -10,7 +12,22 @@ export const SacredDarshan3D: React.FC = () => {
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
   const [blessed, setBlessed] = useState(false);
-  const [sparkleCount, setSparkleCount] = useState(0);
+  
+  // Persistent blessing count starting from 14801 and incrementing continuously across visits
+  const [blessingNumber, setBlessingNumber] = useState<number>(() => {
+    try {
+      const saved = localStorage.getItem('naagmata_blessing_count');
+      if (saved) {
+        const parsed = parseInt(saved, 10);
+        if (!isNaN(parsed) && parsed >= INITIAL_BLESSING_COUNT) {
+          return parsed;
+        }
+      }
+    } catch {
+      // Fallback if localStorage is inaccessible
+    }
+    return INITIAL_BLESSING_COUNT;
+  });
 
   // Handle interactive 3D perspective tilt on mouse movement
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -44,7 +61,15 @@ export const SacredDarshan3D: React.FC = () => {
 
   const handleAshirwadClick = () => {
     setBlessed(true);
-    setSparkleCount(prev => prev + 1);
+    setBlessingNumber((prev) => {
+      const nextCount = prev + 1;
+      try {
+        localStorage.setItem('naagmata_blessing_count', nextCount.toString());
+      } catch {
+        // Fallback
+      }
+      return nextCount;
+    });
   };
 
   return (
@@ -215,7 +240,7 @@ export const SacredDarshan3D: React.FC = () => {
                     "माँ नागदेवी की असीम अनुकंपा से आपके दांपत्य, प्रेम और जीवन के सभी विघ्न, ग्रह दोष व शत्रु बाधा शीघ्र शांत हों।"
                   </p>
                   <span className="text-[11px] text-amber-300 font-bold block mt-1">
-                    आशीर्वाद क्रमांक: #{14800 + sparkleCount} • कल्याणमस्तु!
+                    आशीर्वाद क्रमांक: #{blessingNumber.toLocaleString('en-IN')} • कल्याणमस्तु!
                   </span>
                 </div>
               )}
