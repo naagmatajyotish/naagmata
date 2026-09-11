@@ -28,13 +28,18 @@
     <meta name="twitter:description" content="Authentic & Trusted 24-48 hr Vedic solutions for Ex-Love Back, Intercaste Marriage, Divorce & Black Magic Removal in USA, UK, Canada, Australia & UAE." />
     <meta name="twitter:image" content="/images/naagdevi_sacred_avatar_1788843890487.jpg" />
 
-    <!-- Performance preconnects & preloads -->
+    <!-- Performance preconnects, dns-prefetch & preloads -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="/images/naagdevi_maa_transparent.png" type="image/png">
+    <link rel="preload" as="image" href="./images/naagdevi_maa_transparent.png" type="image/png">
 
-    <!-- Google Fonts: Cinzel, Poppins, Noto Sans Devanagari & Gujarati -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&family=Noto+Sans+Gujarati:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Cinzel, Poppins, Noto Sans Devanagari & Gujarati (Non-blocking async load) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&family=Noto+Sans+Gujarati:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&family=Noto+Sans+Gujarati:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
 
     <!-- Structured Data: LocalBusiness & ProfessionalService for Global Search Engines -->
     <script type="application/ld+json">

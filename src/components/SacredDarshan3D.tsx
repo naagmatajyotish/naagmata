@@ -153,15 +153,35 @@ export const SacredDarshan3D: React.FC = () => {
                 className="w-48 sm:w-64 h-4 bg-gradient-to-r from-amber-700 via-yellow-500 to-amber-700 rounded-full border border-yellow-300 shadow-lg shadow-amber-900/60 -mt-2 mb-3"
               />
 
-              {/* Sacred Beej Verse Display */}
+              {/* Sacred Beej Verse Display - Perfectly Contained in ONE SINGLE LINE via Responsive SVG */}
               <div 
                 style={{ transform: 'translateZ(60px)' }}
-                className="text-center px-4 py-2 bg-stone-900/90 border border-amber-500/60 rounded-2xl max-w-lg mt-2 shadow-xl"
+                className="text-center px-3 sm:px-6 py-2.5 sm:py-3 bg-stone-900/95 border border-amber-500/60 rounded-2xl w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto mt-2 shadow-xl backdrop-blur-xs flex flex-col items-center justify-center"
               >
-                <p className="heading-mystic text-xs sm:text-sm md:text-base font-extrabold text-yellow-300 tracking-wide">
-                  ॥ ॐ नवकुल नागदेव्यै च विद्महे विषदन्तायै धीमहि तन्नो सर्पः प्रचोदयात् ॥
-                </p>
-                <span className="text-[10px] text-amber-200 block mt-0.5 uppercase tracking-wider font-semibold">
+                <div className="w-full flex items-center justify-center px-1">
+                  <svg 
+                    viewBox="0 0 530 26" 
+                    className="w-full h-auto max-w-[500px] select-all block"
+                    role="img"
+                    aria-label="॥ ॐ नवकुल नागदेव्यै च विद्महे विषदन्तायै धीमहि तन्नो सर्पः प्रचोदयात् ॥"
+                  >
+                    <text
+                      x="50%"
+                      y="50%"
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fill="#fde047"
+                      style={{
+                        fontFamily: "'Noto Sans Devanagari', 'Poppins', sans-serif",
+                        fontSize: '18px',
+                        fontWeight: 800,
+                      }}
+                    >
+                      ॥ ॐ नवकुल नागदेव्यै च विद्महे विषदन्तायै धीमहि तन्नो सर्पः प्रचोदयात् ॥
+                    </text>
+                  </svg>
+                </div>
+                <span className="text-[10px] sm:text-xs text-amber-200 block mt-1 uppercase tracking-widest font-bold whitespace-nowrap">
                   Maa Naagdevi Maha Siddha Beej Mantra
                 </span>
               </div>
@@ -175,10 +195,12 @@ export const SacredDarshan3D: React.FC = () => {
               <button
                 type="button"
                 onClick={handleAshirwadClick}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black px-6 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-amber-500/40 border-2 border-white cursor-pointer active:scale-95 transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 hover:from-amber-300 hover:to-yellow-300 text-stone-950 font-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-xl shadow-amber-500/30 border-2 border-white cursor-pointer active:scale-95 hover:scale-105 transition-all whitespace-nowrap select-none mx-auto"
               >
-                <Sparkles className="w-4 h-4 text-stone-950 animate-spin-slow" />
-                <span>🌺 Touch for Divine Ashirwad (माँ का आशीर्वाद लें)</span>
+                <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0 animate-spin-slow" />
+                <span className="font-black tracking-normal">
+                  🌺 Touch for Divine Ashirwad <span className="hidden xs:inline font-bold opacity-90 text-[11px] sm:text-xs">(माँ का आशीर्वाद लें)</span>
+                </span>
               </button>
 
               {/* Blessed Message Alert when touched */}
