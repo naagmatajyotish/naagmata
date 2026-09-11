@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+:root, [data-theme="light-royal"] {
+  --bg-sanctum: #fdfcf7;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fefce8;
+  --text-primary: #2a2203;
+  --text-secondary: #544607;
+  --text-muted: #713f12;
+  --border-glow: rgba(202, 138, 4, 0.22);
+  --border-card: rgba(234, 179, 8, 0.25);
+  --accent-primary: #ca8a04;
+  --accent-secondary: #a16207;
+  --hero-grad-from: #fef08a;
+  --hero-grad-via: #fef9c3;
+  --hero-grad-to: #fdfcf7;
+  --scrollbar-track: #fdfcf7;
+  --scrollbar-thumb: #ca8a04;
+}
+
+@layer base {
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-sanctum, #fdfcf7);
+    color: var(--text-primary, #2a2203);
+    overflow-x: hidden;
+  }
+}
+
+.heading-mystic {
+  font-family: 'Cinzel', serif;
+}
+
+/* Modern clean card shadow */
+.card-modern-shadow {
+  box-shadow: 0 4px 20px -2px rgba(202, 138, 4, 0.09), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.card-modern-shadow-hover:hover {
+  box-shadow: 0 12px 30px -4px rgba(202, 138, 4, 0.16), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px var(--border-glow, rgba(202, 138, 4, 0.25)), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.glow-effect-strong {
+  box-shadow: 0 0 35px var(--border-glow, rgba(202, 138, 4, 0.4)), 0 8px 25px rgba(202, 138, 4, 0.18);
+}
+
+.glow-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 12px rgba(202, 138, 4, 0.35);
+}
+
+/* Sacred Photo Logo Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 35s linear infinite;
+}
+
+@keyframes divine-pulse {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale3d(1.06, 1.06, 1);
+    opacity: 0.98;
+  }
+}
+
+.animate-divine-pulse {
+  animation: divine-pulse 3.5s ease-in-out infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+@keyframes divine-float {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.animate-divine-float {
+  animation: divine-float 4s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@keyframes naag-mani-glow {
+  0%, 100% {
+    box-shadow: 0 0 6px #10b981, 0 0 12px #ca8a04;
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    box-shadow: 0 0 10px #34d399, 0 0 18px #facc15;
+    transform: scale3d(1.15, 1.15, 1);
+  }
+}
+
+.animate-naag-mani {
+  animation: naag-mani-glow 2.2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+}
+
+/* Right-to-Left Infinite Marquee Ticker */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Animated Serpents Behind Photo (Up-Down & Left-Right Undulating Motion) */
+@keyframes snake-drift-1 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(-8px, -14px, 0) rotate(-4deg);
+  }
+  50% {
+    transform: translate3d(6px, 10px, 0) rotate(3deg);
+  }
+  75% {
+    transform: translate3d(-6px, 8px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes snake-drift-2 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(9px, 14px, 0) rotate(4deg);
+  }
+  50% {
+    transform: translate3d(-7px, -12px, 0) rotate(-3deg);
+  }
+  75% {
+    transform: translate3d(7px, -6px, 0) rotate(2deg);
+  }
+}
+
+@keyframes snake-drift-3 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg) scale(0.95);
+  }
+  30% {
+    transform: translate3d(-10px, 12px, 0) rotate(-5deg) scale(1.02);
+  }
+  60% {
+    transform: translate3d(8px, -15px, 0) rotate(4deg) scale(0.97);
+  }
+  85% {
+    transform: translate3d(5px, 6px, 0) rotate(-2deg) scale(1);
+  }
+}
+
+@keyframes snake-drift-4 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg) scale(0.95);
+  }
+  30% {
+    transform: translate3d(10px, -12px, 0) rotate(5deg) scale(1.02);
+  }
+  60% {
+    transform: translate3d(-8px, 14px, 0) rotate(-4deg) scale(0.97);
+  }
+  85% {
+    transform: translate3d(-5px, -6px, 0) rotate(2deg) scale(1);
+  }
+}
+
+@keyframes snake-crown-float {
+  0%, 100% {
+    transform: translate3d(0, -6px, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 8px, 0) scale(1.05);
+  }
+}
+
+@keyframes tongue-flicker {
+  0%, 100% {
+    transform: scaleY(0) translateY(4px);
+    opacity: 0;
+  }
+  15%, 45% {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: scaleY(1.3) translateY(-2px);
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(0) translateY(2px);
+    opacity: 0;
+  }
+}
+
+.animate-snake-1 {
+  animation: snake-drift-1 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-snake-2 {
+  animation: snake-drift-2 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-snake-3 {
+  animation: snake-drift-3 4.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-snake-4 {
+  animation: snake-drift-4 6.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-snake-crown {
+  animation: snake-crown-float 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-tongue {
+  animation: tongue-flicker 2.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, #fdfcf7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #ca8a04);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary, #a16207);
+}
