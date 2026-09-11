@@ -215,7 +215,7 @@ export const GlobalPresence: React.FC = () => {
   return (
     <section
       id="international-seo"
-      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto border-t border-amber-200/80"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto border-t border-amber-200/80 w-full overflow-hidden"
     >
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-12">
@@ -233,7 +233,7 @@ export const GlobalPresence: React.FC = () => {
       </div>
 
       {/* Country Selector Tabs */}
-      <div className="flex items-center justify-start sm:justify-center overflow-x-auto gap-2 pb-3 mb-8 no-scrollbar">
+      <div className="flex items-center justify-start sm:justify-center overflow-x-auto gap-2 pb-3 mb-8 no-scrollbar w-full max-w-full">
         {COUNTRIES_DATA.map((country) => {
           const isActive = country.id === activeTab;
           return (

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
-import { UrgentBanner } from './components/UrgentBanner';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
@@ -19,15 +18,12 @@ import { FloatingActions } from './components/FloatingActions';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400">
-        {/* Top Urgent Alert Banner */}
-        <UrgentBanner />
-
-        {/* Main Header / Navigation */}
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400">
+        {/* Main Sticky Header with Top Scrolling Marquee & 24/7 Helpline */}
         <Header />
 
         {/* Main Page Sections */}
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden">
           {/* Hero Section with Grand Animated Maa Naagdevi Centerpiece */}
           <Hero />
 

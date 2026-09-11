@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
+import { UrgentBanner } from './UrgentBanner';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState<number>(114);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (!headerRef.current) return;
+      // Calculate height of non-drawer portion
+      if (!mobileMenuOpen) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'Services', href: '#services' },
@@ -19,29 +36,37 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#fdfcf7]/95 backdrop-blur-md border-b border-amber-200/80 transition-colors duration-300 shadow-xs">
-      {/* Mobile Dedicated Direct Helpline Bar - 24/7 Helpline with Instant Call */}
-      <div className="sm:hidden bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white px-3 py-1.5 flex items-center justify-between border-b border-amber-500/50 shadow-md">
-        <div className="flex items-center gap-1.5">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-          </span>
-          <span className="text-[11px] font-black uppercase tracking-wider text-amber-300">
-            24/7 HELPLINE:
-          </span>
-        </div>
-        <a
-          href={`tel:${CONTACT_INFO.phoneRaw}`}
-          title="Direct Call Baba Ji"
-          className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 px-3 py-0.5 rounded-full font-black text-xs tracking-wide shadow-md border border-white active:scale-95 transition-all shrink-0"
-        >
-          <Phone className="w-3 h-3 text-stone-950 fill-stone-950 shrink-0 animate-bounce" />
-          <span className="font-sans font-black">{CONTACT_INFO.phoneDisplay}</span>
-        </a>
-      </div>
+    <>
+      <header
+        ref={headerRef}
+        className="fixed top-0 left-0 right-0 z-50 bg-[#fdfcf7]/98 backdrop-blur-md border-b border-amber-200/80 transition-colors duration-300 shadow-sm w-full max-w-full overflow-x-clip"
+      >
+        {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
+        <UrgentBanner />
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5">
+        {/* 2. Mobile Dedicated Direct Helpline Bar - 24/7 Helpline Always Fixed */}
+        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white px-3 py-1.5 flex items-center justify-between border-b border-amber-500/50 shadow-md w-full max-w-full">
+          <div className="flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            </span>
+            <span className="text-[11px] font-black uppercase tracking-wider text-amber-300">
+              24/7 HELPLINE:
+            </span>
+          </div>
+          <a
+            href={`tel:${CONTACT_INFO.phoneRaw}`}
+            title="Direct Call Baba Ji"
+            className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 px-3 py-0.5 rounded-full font-black text-xs tracking-wide shadow-md border border-white active:scale-95 transition-all shrink-0"
+          >
+            <Phone className="w-3 h-3 text-stone-950 fill-stone-950 shrink-0 animate-bounce" />
+            <span className="font-sans font-black">{CONTACT_INFO.phoneDisplay}</span>
+          </a>
+        </div>
+
+        {/* 3. Main Brand Navigation Bar - Always Fixed */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5">
         {/* Brand Logo - Animated Maa Naagdevi Photo Medallion with guaranteed spacing */}
         <a href="#" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0 mr-3 lg:mr-6 xl:mr-8">
           <div className="relative flex items-center justify-center shrink-0">
@@ -181,5 +206,13 @@ export const Header: React.FC = () => {
         </div>
       )}
     </header>
+
+    {/* Fixed Header Spacer: Reserves exact vertical space so page content is never hidden */}
+    <div
+      style={{ height: `${headerHeight}px` }}
+      className="w-full shrink-0 pointer-events-none select-none"
+      aria-hidden="true"
+    />
+  </>
   );
 };

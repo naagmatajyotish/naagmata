@@ -6,7 +6,7 @@ export const FloatingActions: React.FC = () => {
   return (
     <div
       id="floating-actions-container"
-      className="fixed bottom-5 right-3.5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 select-none"
+      className="fixed bottom-5 right-3.5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 select-none max-w-[calc(100vw-1rem)]"
     >
       {/* 24/7 Live Availability Floating Pill */}
       <div className="bg-stone-950/90 text-yellow-300 border border-amber-400/80 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3.5 py-1 rounded-full shadow-xl flex items-center gap-1.5 backdrop-blur-md">

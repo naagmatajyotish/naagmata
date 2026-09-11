@@ -59,7 +59,7 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto relative">
+    <section id="services" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden">
       {/* Subtle warm background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-amber-200/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
 

@@ -68,6 +68,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     localStorage.setItem('naagmata_light_theme', 'light-royal');
     const root = document.documentElement;
     root.setAttribute('data-theme', 'light-royal');
+    root.style.colorScheme = 'light';
+    if (document.body) {
+      document.body.style.colorScheme = 'light';
+    }
 
     const config = SWARNA_MANDIR_THEME;
     root.style.setProperty('--bg-sanctum', config.bgSanctum);

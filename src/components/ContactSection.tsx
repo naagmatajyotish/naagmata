@@ -4,7 +4,7 @@ import { CONTACT_INFO } from '../data/jyotishData';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />

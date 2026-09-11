@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Sparkles, Heart, Phone, MessageCircle, ShieldCheck, Flame, Sun } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Sparkles, Phone, MessageCircle, Sun, HandMetal } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
 
@@ -10,8 +10,44 @@ export const SacredDarshan3D: React.FC = () => {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
-  const [isHovered, setIsHovered] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
   const [blessed, setBlessed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Gyroscope tilt support on mobile if permitted
+  useEffect(() => {
+    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
+      if (e.gamma !== null && e.beta !== null) {
+        // Clamp angles between -14 and 14 deg
+        const tiltY = Math.max(-14, Math.min(14, e.gamma * 0.7));
+        // beta typically ~45 deg when holding phone upright
+        const tiltX = Math.max(-14, Math.min(14, (e.beta - 45) * 0.5));
+        setRotateY(tiltY);
+        setRotateX(-tiltX);
+        setGlarePos({
+          x: 50 + (tiltY / 14) * 40,
+          y: 50 + (tiltX / 14) * 40,
+        });
+      }
+    };
+
+    if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
+      window.addEventListener('deviceorientation', handleDeviceOrientation, true);
+    }
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation, true);
+    };
+  }, []);
   
   // Persistent blessing count starting from 14801 and incrementing continuously across visits
   const [blessingNumber, setBlessingNumber] = useState<number>(() => {
@@ -29,34 +65,66 @@ export const SacredDarshan3D: React.FC = () => {
     return INITIAL_BLESSING_COUNT;
   });
 
-  // Handle interactive 3D perspective tilt on mouse movement
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  // Calculate 3D rotation from coordinates
+  const updateRotationFromCoords = (clientX: number, clientY: number) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
     
     // Normalized between -1 and 1
-    const normX = (x / rect.width) * 2 - 1;
-    const normY = (y / rect.height) * 2 - 1;
+    const normX = Math.max(-1, Math.min(1, (x / rect.width) * 2 - 1));
+    const normY = Math.max(-1, Math.min(1, (y / rect.height) * 2 - 1));
 
     // Max tilt angles: 12 degrees
     setRotateY(normX * 12);
     setRotateX(-normY * 12);
     setGlarePos({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
+      x: Math.max(0, Math.min(100, (x / rect.width) * 100)),
+      y: Math.max(0, Math.min(100, (y / rect.height) * 100)),
     });
   };
 
+  // Handle interactive 3D perspective tilt on desktop mouse movement
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsInteracting(true);
+    updateRotationFromCoords(e.clientX, e.clientY);
+  };
+
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsInteracting(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsInteracting(false);
     setRotateX(0);
     setRotateY(0);
+  };
+
+  // Touch handlers for mobile dragging / swiping across Maa's photo
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (e.touches.length > 0) {
+      setIsInteracting(true);
+      const touch = e.touches[0];
+      updateRotationFromCoords(touch.clientX, touch.clientY);
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsInteracting(true);
+    if (e.touches.length > 0) {
+      const touch = e.touches[0];
+      updateRotationFromCoords(touch.clientX, touch.clientY);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    // Graceful spring back to center
+    setIsInteracting(false);
+    setTimeout(() => {
+      setRotateX(0);
+      setRotateY(0);
+    }, 400);
   };
 
   const handleAshirwadClick = () => {
@@ -73,7 +141,7 @@ export const SacredDarshan3D: React.FC = () => {
   };
 
   return (
-    <section id="sacred-darshan" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto overflow-hidden">
+    <section id="sacred-darshan" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       {/* Section Title */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-300 px-4 py-1.5 rounded-full text-xs font-black text-amber-900 uppercase tracking-widest mb-3 shadow-xs">
@@ -90,25 +158,37 @@ export const SacredDarshan3D: React.FC = () => {
       </div>
 
       {/* 3D Interactive Stage Container */}
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="max-w-4xl w-full mx-auto flex flex-col items-center overflow-hidden sm:overflow-visible">
+        {/* Mobile Interactive Swipe / Gyro Guide Badge */}
+        <div className="flex sm:hidden items-center gap-1.5 text-xs text-amber-800 bg-amber-100/90 border border-amber-300/80 px-3 py-1 rounded-full mb-3 shadow-xs">
+          <HandMetal className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
+          <span>फ़ोटो पर उंगली फिराएं या फोन हिलाएं (Touch & Rotate 3D)</span>
+        </div>
+
         <div
           ref={cardRef}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
           style={{
             perspective: '1200px',
           }}
-          className="w-full max-w-2xl select-none"
+          className="w-full max-w-2xl select-none overflow-hidden sm:overflow-visible touch-pan-y cursor-grab active:cursor-grabbing"
         >
           {/* 3D Rotating Card Altar */}
           <div
             style={{
-              transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) ${isHovered ? 'scale3d(1.02, 1.02, 1.02)' : 'scale3d(1, 1, 1)'}`,
+              transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) ${isInteracting ? 'scale3d(1.02, 1.02, 1.02)' : 'scale3d(1, 1, 1)'}`,
               transformStyle: 'preserve-3d',
-              transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
+              transition: isInteracting ? 'transform 0.08s ease-out' : 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)',
             }}
-            className="relative w-full rounded-3xl p-6 sm:p-10 border-2 border-amber-400/80 shadow-2xl bg-gradient-to-b from-[#1c1917] via-[#292524] to-[#0c0a09] text-white overflow-hidden"
+            className={`relative w-full rounded-3xl p-5 sm:p-10 border-2 border-amber-400/80 shadow-2xl bg-gradient-to-b from-[#1c1917] via-[#292524] to-[#0c0a09] text-white overflow-hidden ${
+              !isInteracting && isMobile ? 'animate-ambient-3d' : ''
+            }`}
           >
             {/* Dynamic Glare Reflection Overlay */}
             <div
@@ -120,35 +200,35 @@ export const SacredDarshan3D: React.FC = () => {
 
             {/* Sacred Golden Ray Background Glow (Layer 0) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-              <div className="w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-gradient-to-tr from-amber-600/40 via-yellow-500/40 to-orange-500/30 blur-3xl animate-pulse" />
+              <div className="w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] rounded-full bg-gradient-to-tr from-amber-600/40 via-yellow-500/40 to-orange-500/30 blur-3xl animate-pulse" />
               {/* Star rays */}
-              <div className="absolute w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full border border-amber-400/30 animate-spin-slow opacity-40" />
+              <div className="absolute w-[240px] sm:w-[380px] h-[240px] sm:h-[380px] rounded-full border border-amber-400/30 animate-spin-slow opacity-40" />
             </div>
 
             {/* Top Sacred Header Badge (Layer 3D: translateZ 30px) */}
             <div 
-              style={{ transform: 'translateZ(35px)' }}
-              className="flex items-center justify-between gap-2 mb-4 relative z-20"
+              style={{ transform: 'translateZ(30px)' }}
+              className="flex items-center justify-between gap-2 mb-3 sm:mb-4 relative z-20"
             >
-              <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-400/60 px-3 py-1 rounded-full text-xs text-yellow-300 font-bold shadow-md">
+              <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-400/60 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs text-yellow-300 font-bold shadow-md">
                 <Sparkles className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
                 <span>Maa Naagdevi Siddha Peeth Darshan</span>
               </div>
-              <div className="text-[11px] font-black text-amber-200 bg-amber-950/70 border border-amber-400/50 px-2.5 py-0.5 rounded-full">
+              <div className="text-[10px] sm:text-[11px] font-black text-amber-200 bg-amber-950/70 border border-amber-400/50 px-2 sm:px-2.5 py-0.5 rounded-full">
                 ३D INTERACTIVE
               </div>
             </div>
 
             {/* Main Centerpiece: Maa Naagdevi Transparent PNG in 3D Depth */}
             <div 
-              style={{ transform: 'translateZ(75px)' }}
-              className="relative flex flex-col items-center justify-center py-4 z-20"
+              style={{ transform: 'translateZ(65px)' }}
+              className="relative flex flex-col items-center justify-center py-2 sm:py-4 z-20"
             >
               {/* Consecrated 3D Radiant Aura Behind Cutout */}
-              <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-radial from-yellow-300/30 via-amber-500/20 to-transparent blur-xl pointer-events-none -z-10 animate-divine-pulse" />
+              <div className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-radial from-yellow-300/30 via-amber-500/20 to-transparent blur-xl pointer-events-none -z-10 animate-divine-pulse" />
 
               {/* 3D PNG Cutout Image of Maa Naagdevi */}
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 transition-transform duration-300">
+              <div className="relative w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 transition-transform duration-300">
                 <img
                   src={maaNaagdeviImage}
                   alt="Maa Naagdevi 3D Transparent Divine Cutout"
@@ -164,23 +244,23 @@ export const SacredDarshan3D: React.FC = () => {
                 />
 
                 {/* Left & Right Consecrated Golden Serpents */}
-                <div className="absolute -bottom-2 -left-4 sm:-left-6 w-14 h-14 sm:w-18 sm:h-18 opacity-90 pointer-events-none">
-                  <span className="text-3xl sm:text-4xl animate-bounce-slow">🐍</span>
+                <div className="absolute -bottom-2 -left-3 sm:-left-6 w-12 h-12 sm:w-18 sm:h-18 opacity-90 pointer-events-none">
+                  <span className="text-2xl sm:text-4xl animate-bounce-slow">🐍</span>
                 </div>
-                <div className="absolute -bottom-2 -right-4 sm:-right-6 w-14 h-14 sm:w-18 sm:h-18 opacity-90 pointer-events-none">
-                  <span className="text-3xl sm:text-4xl animate-bounce-slow" style={{ animationDelay: '0.8s' }}>🐍</span>
+                <div className="absolute -bottom-2 -right-3 sm:-right-6 w-12 h-12 sm:w-18 sm:h-18 opacity-90 pointer-events-none">
+                  <span className="text-2xl sm:text-4xl animate-bounce-slow" style={{ animationDelay: '0.8s' }}>🐍</span>
                 </div>
               </div>
 
-              {/* Consecrated Ashtadhatu Altar Platform (Layer 3D: translateZ 45px) */}
+              {/* Consecrated Ashtadhatu Altar Platform (Layer 3D: translateZ 40px) */}
               <div 
-                style={{ transform: 'translateZ(45px)' }}
-                className="w-48 sm:w-64 h-4 bg-gradient-to-r from-amber-700 via-yellow-500 to-amber-700 rounded-full border border-yellow-300 shadow-lg shadow-amber-900/60 -mt-2 mb-3"
+                style={{ transform: 'translateZ(40px)' }}
+                className="w-44 sm:w-64 h-3.5 sm:h-4 bg-gradient-to-r from-amber-700 via-yellow-500 to-amber-700 rounded-full border border-yellow-300 shadow-lg shadow-amber-900/60 -mt-1 sm:-mt-2 mb-2 sm:mb-3"
               />
 
               {/* Sacred Beej Verse Display - Perfectly Contained in ONE SINGLE LINE via Responsive SVG */}
               <div 
-                style={{ transform: 'translateZ(60px)' }}
+                style={{ transform: 'translateZ(50px)' }}
                 className="text-center px-3 sm:px-6 py-2.5 sm:py-3 bg-stone-900/95 border border-amber-500/60 rounded-2xl w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto mt-2 shadow-xl backdrop-blur-xs flex flex-col items-center justify-center"
               >
                 <div className="w-full flex items-center justify-center px-1">

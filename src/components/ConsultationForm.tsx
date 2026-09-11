@@ -40,8 +40,8 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
   };
 
   return (
-    <section id="consultation" className="py-16 px-4 sm:px-6 max-w-4xl mx-auto">
-      <div className="bg-white rounded-3xl border border-amber-200/90 p-6 sm:p-10 relative overflow-hidden shadow-xl shadow-amber-500/5 transition-colors duration-400">
+    <section id="consultation" className="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden">
+      <div className="bg-white rounded-3xl border border-amber-200/90 p-6 sm:p-10 relative overflow-hidden shadow-xl shadow-amber-500/5 transition-colors duration-400 w-full">
         <div 
           className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 rounded-full blur-2xl pointer-events-none opacity-20"
           style={{ backgroundColor: 'var(--accent-primary, #d97706)' }}
@@ -69,10 +69,10 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             </div>
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-amber-100 block">
-                ⭐ HIGHEST PRIORITY: DIRECT PHONE CALL PREFERRED
+                ⭐ DIRECT ASTROLOGICAL COUNSELING WITH BABA JI
               </span>
               <h4 className="font-extrabold text-base sm:text-lg text-white">
-                Speak Directly with Baba Ji for Instant Relief — Solutions within 24 Hours
+                Speak Directly with Baba Ji for Personalized Vedic Astrological Guidance
               </h4>
             </div>
           </div>
@@ -92,7 +92,7 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             </div>
             <h4 className="heading-mystic text-xl font-bold text-stone-900">Your Request Has Been Dispatched</h4>
             <p className="text-stone-600 text-sm max-w-md mx-auto">
-              Your details have been sent directly to Baba Ji’s private desk. You will receive an immediate response on WhatsApp or Phone shortly.
+              Your details have been received in strict confidence. Baba Ji will review your planetary configurations and guide you on WhatsApp or Phone shortly.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -144,20 +144,20 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Nature of Problem <span className="text-amber-600">*</span>
+                  Nature of Consultation <span className="text-amber-600">*</span>
                 </label>
                 <select
                   value={formData.problemType}
                   onChange={(e) => setFormData({ ...formData, problemType: e.target.value })}
                   className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
                 >
-                  <option value="Lost Love Back & Vashikaran">Lost Love Back & Vashikaran</option>
-                  <option value="Intercaste Marriage & Parents Convincing">Intercaste Marriage & Parents Convincing</option>
-                  <option value="Husband-Wife Dispute & Third Person Affair">Husband-Wife Dispute & Affair</option>
-                  <option value="Divorce / Separation Stoppage">Divorce / Separation Stoppage</option>
-                  <option value="Black Magic & Evil Eye Removal">Black Magic & Evil Eye Removal</option>
-                  <option value="Business Loss, Job & Financial Distress">Business Loss, Job & Financial Distress</option>
-                  <option value="Kundali Dosha (Manglik, Kaal Sarp)">Kundali Dosha (Manglik, Kaal Sarp)</option>
+                  <option value="Lost Love Problem & Vashikaran">Lost Love Problem & Vashikaran</option>
+                  <option value="Intercaste Love Marriage & Vashikaran">Intercaste Love Marriage & Vashikaran</option>
+                  <option value="Husband-Wife Dispute & Marital Vashikaran">Husband-Wife Dispute & Marital Vashikaran</option>
+                  <option value="Relationship Harmony & Astrological Remedies">Relationship Harmony & Astrological Remedies</option>
+                  <option value="Negative Energy Cleansing & Protection Puja">Negative Energy Cleansing & Protection Puja</option>
+                  <option value="Career, Business & Financial Astrology">Career, Business & Financial Astrology</option>
+                  <option value="Planetary Dosha Shanti (Manglik, Kaal Sarp)">Planetary Dosha Shanti (Manglik, Kaal Sarp)</option>
                 </select>
               </div>
 

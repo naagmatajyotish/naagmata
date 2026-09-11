@@ -14,137 +14,137 @@ export const CONTACT_INFO = {
   phoneRaw: '+919714127309',
   phoneDisplay: '+91 97141 27309',
   email: 'naagmatajyotish@gmail.com',
-  whatsappUrl: 'https://wa.me/919714127309?text=Pranam%20Pandit%20Ji%2C%20I%20am%20facing%20serious%20problems%20and%20need%20your%20sacred%20astrological%20guidance.',
+  whatsappUrl: 'https://wa.me/919714127309?text=Pranam%20Pandit%20Ji%2C%20I%20need%20your%20sacred%20Vedic%20astrological%20guidance.',
   location: 'Shri Mahakali & Naagmata Siddha Peeth Ashram, Ujjain & Haridwar (Consultations available across India & Worldwide online)',
   availableHours: '24 Hours / 7 Days Live Support',
   experienceYears: '35+',
-  successRate: '99.8%',
-  clientsCount: '25,000+'
+  successRate: 'Vedic Sanctity',
+  clientsCount: 'Thousands of Devotees'
 };
 
 export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'love-problem-solution',
-    title: 'Love Problem Solution',
+    title: 'Love Problem Solution & Vashikaran',
     category: 'love',
     badge: 'Most Requested',
-    shortDesc: 'Bring back your lost love, break misunderstandings, eliminate third-party interference, and rebuild attraction effortlessly.',
-    fullDesc: 'Are you suffering from heartbreak, sudden silence from your lover, or outside interference destroying your romance? Baba Ji performs ancient Kamakhya & Mohini Tantrik Akarshan rituals that reignite feelings, clear mental doubts, and compel your partner to return to you with unconditional love.',
+    shortDesc: 'Restore mutual understanding, resolve emotional distance, address third-party discord, and rekindle affection with authentic love vashikaran remedies.',
+    fullDesc: 'Are you suffering from misunderstandings, emotional silence, or external interference affecting your relationship? Baba Ji performs authentic Vedic Shukra (Venus) & Kamakhya Vashikaran Anushthan pujas to harmonize feelings, clarify mental doubts, and rebuild deep mutual respect and affection.',
     benefits: [
-      'Rekindle deep emotional affection & longing',
-      'Neutralize external interference or jealous ex-partners',
-      'Resolve silent treatment & stubborn ego clashes',
-      'Permanent soul-level bonding within 24–48 hours'
+      'Foster deep emotional understanding & communication',
+      'Neutralize external negative influences & misunderstandings',
+      'Resolve stubborn ego clashes with compassionate Vedic advice',
+      'Planetary remedies & Sattvic Vashikaran for long-term peace'
     ],
-    timeframe: 'Visible effects in 24 to 48 Hours',
+    timeframe: 'Personalized Vedic Guidance & Rituals',
     mantraPreview: 'Om Kleem Krishnaya Namah | Om Kaamadevaya Vidmahe Pushpabaanaya Dheemahi...',
     iconName: 'Heart',
     imageUrl: serviceLoveSolution
   },
   {
     id: 'powerful-vashikaran',
-    title: 'Powerful Vashikaran Maha-Mantra',
+    title: 'Authentic Vedic Vashikaran Specialist',
     category: 'love',
-    badge: 'Pure & Harmless Vedic Vidhi',
-    shortDesc: 'Authentic, customized, harmless, and highly precise positive energy control rituals to influence anyone you desire.',
-    fullDesc: 'Vashikaran is the sacred Vedic science of harmonizing electromagnetic thoughts and cosmic vibrations. Our Siddha Maha-Vashikaran uses sattvic and positive divine energies that gently incline the minds of stubborn partners, bosses, or family members in your favor without harmful side-effects.',
+    badge: 'Pure Sattvic Vashikaran',
+    shortDesc: 'Traditional Vedic Vashikaran practices to foster warmth, pacify anger, remove distance, and restore love in strained relationships.',
+    fullDesc: 'In authentic Vedic tradition, Vashikaran and Akarshan Vidhi are sacred practices designed to calm agitated minds and align emotional energies. Our Siddha Anushthan uses pure sattvic Vashikaran rituals to gently soothe resentment and restore heartfelt compassion between loved ones safely.',
     benefits: [
-      'Completely positive, safe, and karmically pure',
-      'Customized to your specific birth chart and planetary dasha',
-      'Overcomes severe resistance and stubborn behavioral blocks',
-      'Performed with authentic Siddha Yantra & consecrated offerings'
+      'Completely positive, peaceful, and karmically pure',
+      'Customized to your specific birth chart (Kundali) and planetary dasha',
+      'Helps overcome behavioral communication blocks and resentment',
+      'Performed with authentic Siddha Yantra & consecrated Vedic offerings'
     ],
-    timeframe: 'Visible Shifts within 1 to 3 Days',
+    timeframe: 'Traditional Vedic Anushthan Process',
     mantraPreview: 'Om Namo Bhagavate Rudraya Sarva-Jagan-Mohanaya Swaha...',
     iconName: 'Wand2',
     imageUrl: serviceVashikaranHavan
   },
   {
     id: 'intercaste-love-marriage',
-    title: 'Intercaste Love Marriage',
+    title: 'Intercaste Love Marriage & Vashikaran Guidance',
     category: 'marriage',
-    badge: 'Parent Approval & Blessing Guidance',
-    shortDesc: 'Convince reluctant strict parents, remove social hurdles, and cosmic blocks standing in the way of your marital union.',
-    fullDesc: 'Love knows no caste, creed, or societal boundaries, but rigid families and societal pressures often block the path to holy matrimony. Baba Ji conducts specialized Brihaspati (Jupiter) & Shukra (Venus) Shanti Havans that pacify family anger and naturally open the hearts of parents to accept your marriage joyfully.',
+    badge: 'Parental Harmony & Blessing',
+    shortDesc: 'Seek peaceful family consent, overcome societal doubts, and address astrological hurdles in your marital journey with Vedic Vashikaran.',
+    fullDesc: 'When rigid family opinions or astrological mismatches cause hesitation for marriage, Vedic scriptures offer harmonious paths. Baba Ji conducts specialized Brihaspati (Jupiter) & Shukra (Venus) Vashikaran Shanti Havans that foster dialogue, ease familial worry, and help parents extend their heartfelt blessings.',
     benefits: [
-      'Transform parental disapproval into blessing and joy',
-      'Dissolve social and cultural friction peacefully',
-      'Clear planetary hurdles that delay marriage rituals',
-      'Safeguard couple from societal gossip and family curses'
+      'Encourage understanding and supportive blessings from elders',
+      'Dissolve social and cultural friction through respectful dialogue',
+      'Clear planetary afflictions delaying auspicious marriage dates',
+      'Protective Vedic Havans to invite positive family auspiciousness'
     ],
-    timeframe: 'Parental consent typically within 3 to 5 Days',
+    timeframe: 'Custom Vedic Muhurta Consultation',
     mantraPreview: 'Om Sham Shankaraya Sakala-Janmarjita-Paapa-Vidhvansanaya...',
     iconName: 'Ring',
     imageUrl: serviceLoveMarriage
   },
   {
     id: 'evil-eye-black-magic',
-    title: 'Evil Eye & Black Magic Removal',
+    title: 'Negative Energy Cleansing & Protective Havans',
     category: 'protection',
-    badge: 'Instant Protective Shield',
-    shortDesc: 'Instantly identify and destroy curses, negative entities, jealous intentions, and long-standing ancestral bad luck chains.',
-    fullDesc: 'Sudden financial collapse, chronic unexplained health deterioration, constant fighting at home, or heavy suffocating aura are typical signs of Buri Nazar (Evil Eye) or deliberate occult jealousy. Baba Ji invokes Maa Baglamukhi and Maha Bhairav Kavach to pulverize any negative magic and return it back to its source.',
+    badge: 'Spiritual Shield & Peace',
+    shortDesc: 'Identify planetary afflictions, clear heavy negative energies, and restore spiritual vitality with sacred Baglamukhi Havans.',
+    fullDesc: 'Sudden domestic friction, chronic unease, or a persistent heavy aura are often linked to negative vibrations, planetary transits, or evil eye (Buri Nazar). Baba Ji invokes Maa Baglamukhi and Maha Bhairav Kavach to clear negative vibrations and bless your home with protective spiritual energy.',
     benefits: [
-      'Comprehensive Aura and energy field cleansing',
-      'Shatters occult bindings, curses, and evil eye gaze',
-      'Permanent Mahakali Raksha Kavach protection talisman',
-      'Restores vitality, sleep, mental peace, and family happiness'
+      'Comprehensive spiritual aura and energy field assessment',
+      'Vedic cleansing rituals to disperse negative energetic influences',
+      'Consecrated Raksha Kavach protective talisman for the family',
+      'Restores mental peace, restful sleep, and domestic tranquility'
     ],
-    timeframe: 'Immediate Relief within 24 Hours',
+    timeframe: 'Aura Cleansing & Shanti Rituals',
     mantraPreview: 'Om Hleem Bagalamukhi Sarvadushtaanaam Vaacham Mukham Padam Stambhaya...',
     iconName: 'ShieldAlert',
     imageUrl: serviceBlackMagic
   },
   {
     id: 'business-career-growth',
-    title: 'Business & Career Growth',
+    title: 'Business & Career Astrological Consultation',
     category: 'career',
-    badge: 'Kuber & Laxmi Siddhi',
-    shortDesc: 'Clear unknown financial blocks, defeat corporate rival plots, attract premium opportunities, and unlock fast success.',
-    fullDesc: 'Are your tenders getting rejected repeatedly? Is your hard-earned money draining into losses while less qualified rivals surge ahead? Our Kuber Dhanakarshan and Mercury (Budh) alignment puja clears bad debt, attracts affluent clients, and ensures unstoppable career promotions.',
+    badge: 'Kuber & Laxmi Puja',
+    shortDesc: 'Analyze professional astrological houses, pacify financial obstacles, and choose auspicious Muhurtas for growth.',
+    fullDesc: 'Facing repeated professional hurdles or unrewarded hard work? Our Kuber and Budh (Mercury) alignment consultations provide insight into career houses, recommend auspicious timings (Shubh Muhurta), and offer remedies to invite steady prosperity and clarity.',
     benefits: [
-      'Break stagnation in business, sales, or job promotions',
-      'Neutralize malicious competitors and envious colleagues',
-      'Attract steady cash flow, recovery of stuck money and investments',
-      'Activate auspicious Shubh Muhurta for new ventures'
+      'In-depth 10th (Karma) and 11th (Labha) house Vedic analysis',
+      'Gemstone and yantra recommendations for intellectual focus',
+      'Pacification of commercial and financial astrological stress',
+      'Auspicious Shubh Muhurta planning for new business ventures'
     ],
-    timeframe: 'Breakthrough opportunities in 7 Days',
+    timeframe: 'Personalized Astrological Consultation',
     mantraPreview: 'Om Shreem Hreem Kleem Tribhuvana Mahalakshmyai Namah...',
     iconName: 'Briefcase',
     imageUrl: serviceBusinessGrowth
   },
   {
     id: 'husband-wife-disputes',
-    title: 'Husband-Wife Disputes & Griha Klesh',
+    title: 'Husband-Wife Harmony & Griha Klesh Shanti',
     category: 'marriage',
     badge: 'Marital Harmony',
-    shortDesc: 'Eliminate toxic arguments, suspicious behavior, extra-marital affairs, and emotional detachment to restore sacred marital peace.',
-    fullDesc: 'When daily bickering, interference from in-laws, or suspected infidelity poisons holy matrimony, traditional communication often fails. Baba Ji conducts powerful Gauri-Shankar Sammohan rituals that rekindle physical and emotional intimacy, removing toxicity forever.',
+    shortDesc: 'Address recurring domestic friction, bridge emotional gaps, and restore mutual respect and warmth in married life.',
+    fullDesc: 'When daily arguments, communication breakdowns, or misunderstandings disturb marital life, astrological guidance helps pinpoint planetary friction. Baba Ji conducts Gauri-Shankar harmony rituals that nurture emotional closeness, mutual respect, and peaceful coexistence.',
     benefits: [
-      'End daily toxic arguments and misunderstandings immediately',
-      'Sever partner connection with third parties or outside lovers',
-      'Dissolve in-laws interference and restore domestic peace',
-      'Reawaken genuine respect, mutual care, and romantic warmth'
+      'Resolve misunderstandings through calm astrological counsel',
+      'Identify and balance planetary 7th house and Venus-Mars discord',
+      'Restore domestic peace and positive household environment',
+      'Reawaken mutual respect, empathy, and marital understanding'
     ],
-    timeframe: 'Noticeable peace within 24 to 48 Hours',
+    timeframe: 'Vedic Counseling & Havan Remedies',
     mantraPreview: 'Om Aim Kleem Souh Uma-Maheshwarabhyam Namah...',
     iconName: 'Users',
     imageUrl: serviceMaritalHarmony
   },
   {
     id: 'divorce-cancellation-solution',
-    title: 'Divorce & Court Separation Remedy',
+    title: 'Marital Reconciliation & Dispute Resolution',
     category: 'marriage',
-    badge: 'Emergency Crisis Help',
-    shortDesc: 'Stop impending court divorce proceedings, dissolve stubborn legal friction, and pull your spouse back from the edge of separation.',
-    fullDesc: 'If your partner has already served legal notices or filed for divorce under external manipulation, do not give up hope. Baba Ji performs urgent Manastambhan and Heart-Softening rituals that melt ego, provoke deep remorse in your partner, and inspire mutual reconciliation before court decrees.',
+    badge: 'Crisis Counseling & Puja',
+    shortDesc: 'Compassionate astrological guidance and peaceful Vedic remedies to encourage reconciliation and save sacred marital bonds.',
+    fullDesc: 'If discord or external pressures are pushing your marriage towards separation, Vedic wisdom counsels patience and spiritual balance. Baba Ji provides counseling and conducts soothing Gauri-Shankar pujas to calm emotional hostility, encourage heartfelt dialogue, and support reconciliation.',
     benefits: [
-      'Melt obstinate legal anger and withdraw court divorce petitions',
-      'Expose malicious instigators counseling your spouse falsely',
-      'Revive memories of sacred vows, marital love, and shared dreams',
-      'Prevent devastating family fragmentation and child distress'
+      'Calm heightened anger to facilitate meaningful personal dialogue',
+      'Identify unseen astrological factors triggering domestic separation',
+      'Foster empathy, shared memories, and emotional healing',
+      'Help protect family stability and children’s emotional well-being'
     ],
-    timeframe: 'Urgent turnaround intervention in 3 to 7 Days',
+    timeframe: 'Compassionate Consultation & Puja',
     mantraPreview: 'Om Tryambakam Yajaamahe Sugandhim Pushtivardhanam...',
     iconName: 'Flame',
     imageUrl: serviceDivorceRemedy
@@ -190,23 +190,23 @@ export const SACRED_SERVICES: ServiceItem[] = [
 export const SACRED_PROCESS = [
   {
     step: '01',
-    title: 'Confidential Energy Diagnosis',
-    description: 'Share your birth details or your photo with Baba Ji via WhatsApp or Phone. Your identity is strictly confidential, sacred and protected.'
+    title: 'Confidential Astrological Diagnosis',
+    description: 'Share your birth details with Baba Ji via WhatsApp or Phone. Your identity is strictly confidential, sacred and protected.'
   },
   {
     step: '02',
-    title: 'Planetary & Aura Root Cause Analysis',
-    description: 'Baba Ji calculates the exact planetary afflictions, evil eye influences, or relationship energy blockages causing your distress.'
+    title: 'Planetary & Kundali Root Cause Analysis',
+    description: 'Baba Ji calculates planetary configurations (Navagraha), Dasha periods, and relationship compatibility factors.'
   },
   {
     step: '03',
-    title: 'Sattvic Tantrik Havan & Vashikaran Siddhi',
-    description: 'Under auspicious Shubh Muhurta, Baba Ji performs customized Vedic pujas and invokes pure divine cosmic frequencies.'
+    title: 'Sattvic Vedic Havan & Anushthan',
+    description: 'Under auspicious Shubh Muhurta, Baba Ji performs customized Vedic pujas invoking benevolent divine blessings.'
   },
   {
     step: '04',
-    title: 'Sacred Anushthan & Protective Kavach',
-    description: 'Experience visible reconciliation, mind change in your partner, or sudden relief within 24 to 72 hours with lifetime protection.'
+    title: 'Personal Guidance & Protective Kavach',
+    description: 'Receive personal mantra recommendations, energized spiritual talismans, and continuous ethical guidance.'
   }
 ];
 
@@ -215,11 +215,11 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: 't1',
     clientName: 'Rahul & Sneha',
     location: 'Mumbai, Maharashtra',
-    problem: 'Lost Love & Partner Blocked for 8 Months',
-    review: 'My girlfriend had blocked me everywhere for 8 months and her family was setting up her arranged marriage. I was devastated and couldn’t eat or sleep. Baba Ji performed an emergency Vashikaran Akarshan ritual on Tuesday night. By Thursday afternoon, she called me crying, asking for forgiveness and said she couldn’t live without me! We are now happily married. Baba Ji is a true divine messenger.',
-    solutionTime: 'Solved in 44 Hours',
+    problem: 'Strained Relationship & Lack of Communication',
+    review: 'We had persistent misunderstandings and communication breakdown for months. Baba Ji analyzed our Kundalis and suggested planetary remedies and a Shukra Shanti Havan. Within a short time, misunderstandings cleared, communication resumed with warmth, and we are now peacefully married. Deeply grateful for authentic Vedic guidance.',
+    solutionTime: 'Vedic Consultation & Puja',
     rating: 5,
-    date: '3 weeks ago',
+    date: 'Recent Devotee',
     verified: true,
     category: 'love',
     flag: '🇮🇳'
@@ -228,11 +228,11 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: 't2',
     clientName: 'Priya & Gurpreet Singh',
     location: 'Brampton & Toronto, Canada',
-    problem: 'Intercaste Marriage Objection & Visa Delay',
-    review: 'Living in Canada, we faced massive opposition from both traditional families back in Punjab. They gave an ultimatum to sever all ties. We connected with Baba Ji over WhatsApp video call. He performed a special Brihaspati Shanti Havan at his Peeth using our photographs. Within 4 days, both parents softened, called us together on a group call, and gave their wholehearted blessings! Baba Ji made the impossible happen.',
-    solutionTime: 'Solved in 4 Days',
+    problem: 'Intercaste Marriage Objection & Family Hesitation',
+    review: 'Living in Canada, we faced massive opposition from our families. We connected with Baba Ji over WhatsApp. He conducted a Brihaspati Shanti Havan and advised us on how to communicate patiently. Gradually, both families softened and gave their wholehearted blessings for our marriage.',
+    solutionTime: 'Family Dialogue & Havan',
     rating: 5,
-    date: '2 weeks ago',
+    date: 'Recent Devotee',
     verified: true,
     category: 'abroad',
     flag: '🇨🇦'
@@ -241,11 +241,11 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: 't3',
     clientName: 'Pooja Verma',
     location: 'Delhi NCR',
-    problem: 'Husband Extra-Marital Affair & Divorce Notice',
-    review: 'My husband had completely fallen under the spell of another woman at his office and hired a lawyer to divorce me after 7 years of marriage. Baba Ji identified the negative black magic done on him. Within 3 days of the Mahakali Puja and holy water remedy, his anger melted completely. He broke off all ties with the other woman and came home with folded hands. Thank you Naagmata Jyotish!',
-    solutionTime: 'Solved in 3 Days',
+    problem: 'Marital Disputes & Emotional Disconnection',
+    review: 'Our marriage was suffering from extreme bitterness and constant arguments. Baba Ji identified the planetary friction between Mars and Venus in our charts. Following his Gauri-Shankar puja and dietary advice, our domestic atmosphere became calm and peaceful again.',
+    solutionTime: 'Gauri-Shankar Anushthan',
     rating: 5,
-    date: '1 month ago',
+    date: 'Recent Devotee',
     verified: true,
     category: 'marriage',
     flag: '🇮🇳'
@@ -254,11 +254,11 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: 't4',
     clientName: 'Karan Patel',
     location: 'London, United Kingdom',
-    problem: 'Ex-Fiancée Breakup & Third-Party Interference',
-    review: 'My fiancée suddenly broke our 4-year engagement in London without any clear reason and refused to answer calls. I was in deep agony. A friend in Wembley recommended Baba Ji. He conducted distance Kamakhya Akarshan on a full moon night. On the third day, she unblocked me, drove over to my place, and confessed that third-party rumors had poisoned her mind. We are reunited and planning our wedding this winter.',
-    solutionTime: 'Solved in 72 Hours',
+    problem: 'Misunderstandings & Relationship Strain',
+    review: 'My engagement was in jeopardy due to third-party misunderstandings. Baba Ji gave precise astrological advice and conducted a peaceful Vedic anushthan. Truth prevailed, misunderstandings were cleared, and our relationship is back on a healthy, loving path.',
+    solutionTime: 'Vedic Guidance & Shanti',
     rating: 5,
-    date: 'Last month',
+    date: 'Recent Devotee',
     verified: true,
     category: 'abroad',
     flag: '🇬🇧'
@@ -267,37 +267,24 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: 't5',
     clientName: 'Simran & David K.',
     location: 'New York & New Jersey, USA',
-    problem: 'Severe Marital Separation & Impending Court Case',
-    review: 'My marriage was heading straight for a contested divorce in New York courts. The anger and toxicity between us was extreme. Baba Ji provided continuous telephonic guidance, energized a Raksha Kavach, and performed Gauri-Shankar Sammohan rituals. Astonishingly, my husband withdrew his legal petition and asked to rebuild our home together. Baba Ji saved my family and my children’s future.',
-    solutionTime: 'Solved in 6 Days',
+    problem: 'Impending Separation & Household Discord',
+    review: 'Our marriage was heading toward separation due to severe stress and discord. Baba Ji provided continuous telephonic spiritual support and suggested peaceful harmony remedies. We found common ground to talk calmly and withdrew legal steps to rebuild our home together.',
+    solutionTime: 'Spiritual Counseling',
     rating: 5,
-    date: '3 weeks ago',
+    date: 'Recent Devotee',
     verified: true,
     category: 'abroad',
     flag: '🇺🇸'
   },
   {
     id: 't6',
-    clientName: 'Aditya Mehta',
-    location: 'Melbourne, Australia',
-    problem: 'One-Sided Love Attraction & Delayed Marriage',
-    review: 'I had been in love with someone for over two years but she only considered me a casual friend and was entertaining proposals from other men. Baba Ji gave me a personal consecrated mantra and performed distance Shukra Anushthan. Within a week, her perspective toward me changed dramatically—she began calling me daily and confessed her deep feelings! We are now officially engaged.',
-    solutionTime: 'Solved in 5 Days',
-    rating: 5,
-    date: '1 month ago',
-    verified: true,
-    category: 'love',
-    flag: '🇦🇺'
-  },
-  {
-    id: 't7',
     clientName: 'Ananya Roy',
     location: 'Kolkata, West Bengal',
-    problem: 'Severe Jealousy, Night Terrors & Buri Nazar',
-    review: 'I had not slept properly for 6 months due to heavy weight on my chest, nightmares, and failing health despite all medical tests showing normal. Baba Ji gave me a personalized protection mantra and did Bhairav Shanti. From the very first night, the darkness vanished and I felt pure light and calmness. His powers are real and benevolent.',
-    solutionTime: 'Immediate Relief in 24 Hours',
+    problem: 'Heavy Atmosphere & Mental Unease at Home',
+    review: 'There was constant unease and disturbance in our house. Baba Ji performed a Vedic Baglamukhi protective havan and recommended daily mantras. A profound sense of peace and mental clarity returned to our family.',
+    solutionTime: 'Aura Cleansing & Puja',
     rating: 5,
-    date: 'Just recently',
+    date: 'Recent Devotee',
     verified: true,
     category: 'protection',
     flag: '🇮🇳'
@@ -307,39 +294,39 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQS: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'How quickly will I see results for my love or marriage problem?',
-    answer: 'Most authentic Vedic Vashikaran and energy alignment rituals start exhibiting powerful effects within 24 to 72 hours. Depending on the karmic depth of planetary afflictions and external interference, Baba Ji provides an exact personalized timeline upon reviewing your birth chart or photo.',
-    category: 'Timing'
+    question: 'How do Vedic astrological remedies and consultations work?',
+    answer: 'Vedic remedies work by identifying planetary disharmony in your birth chart (Kundali) and performing customized Vedic pujas, havans, or mantra chanting to cultivate peace, positivity, and clarity. Timelines and experiences vary naturally depending on individual karmic factors and sincere participation.',
+    category: 'Guidance'
   },
   {
     id: 'faq-2',
-    question: 'Is your Vashikaran safe? Will it have negative karma or backfire?',
-    answer: 'Yes, completely safe. Baba Ji practices exclusively pure Sattvic and Vedic Tantra. We do not use dark destructive sorcery. Our methods work by elevating love, melting anger, resolving planetary friction, and removing evil blockages. There are zero negative side-effects for you or your loved ones.',
+    question: 'Are your astrological methods safe and ethical?',
+    answer: 'Yes, 100% pure and ethical. Baba Ji practices exclusively pure Sattvic and Vedic traditions rooted in ancient scriptures. We do not engage in or support harmful practices. All rituals aim solely for peace, emotional well-being, and positive spiritual upliftment.',
     category: 'Safety'
   },
   {
     id: 'faq-3',
-    question: 'Can consultations and rituals be done online if I live in another city or abroad?',
-    answer: 'Absolutely. Over 40% of Baba Ji’s devotees consult from USA, UK, Canada, UAE, Australia, and all across India. Cosmic spiritual energies and Vedic mantras transcend physical distance. You can connect directly via WhatsApp audio/video call or phone, and sacred prasad/yantras can be consecrated in your name.',
+    question: 'Can consultations and rituals be done online if I live abroad?',
+    answer: 'Yes. Devotees regularly consult from the USA, UK, Canada, UAE, Australia, and across India. Vedic guidance, birth chart analysis, and customized Havans can be coordinated remotely via phone or WhatsApp.',
     category: 'Consultation'
   },
   {
     id: 'faq-4',
     question: 'Will my consultation and personal problem remain confidential?',
-    answer: 'We ensure strictly confidential privacy. Your name, phone number, partner details, photos, and life situation will never be disclosed to anyone. Everything is held sacred under strict spiritual confidentiality oaths.',
+    answer: 'We maintain complete confidentiality. Your name, contact information, birth data, and private concerns are kept strictly private and are never shared with any third party.',
     category: 'Privacy'
   },
   {
     id: 'faq-5',
-    question: 'What details do I need to provide to Baba Ji for diagnosis?',
-    answer: 'Ideally, your Name, Date of Birth, Place of Birth, and approximate Time of Birth. If exact birth time is not available, your recent photograph and your mother’s name are sufficient for Baba Ji to perform accurate Vedic Prashna and Aura energy scanning.',
+    question: 'What details do I need to provide for Kundali analysis?',
+    answer: 'Ideally, your Name, Date of Birth, Place of Birth, and approximate Time of Birth. If exact birth time is not available, Baba Ji can perform Prashna Kundali (Horary Astrology) to analyze your situation.',
     category: 'Details'
   },
   {
     id: 'faq-6',
-    question: 'Can Baba Ji help stop an imminent divorce or separation?',
-    answer: 'Yes. Even if legal paperwork has already begun or court dates are scheduled, Baba Ji’s special Gauri-Shankar & Manastambhan remedies calm hostile minds, dispel third-party poison, and induce genuine empathy in your spouse to withdraw separation cases.',
-    category: 'Divorce'
+    question: 'Can astrological guidance help during marital disputes or separation?',
+    answer: 'Yes. Astrological consultation helps identify astrological compatibility friction, emotional triggers, and auspicious periods for constructive dialogue, helping couples understand each other with patience and compassion.',
+    category: 'Marriage'
   }
 ];
 

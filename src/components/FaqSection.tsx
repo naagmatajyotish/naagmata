@@ -10,7 +10,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <section id="faq" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden">
       <div className="text-center mb-14">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
           <HelpCircle className="w-3.5 h-3.5 text-amber-600" />

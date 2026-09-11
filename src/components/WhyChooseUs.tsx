@@ -6,38 +6,38 @@ export const WhyChooseUs: React.FC = () => {
   const points = [
     {
       icon: Award,
-      title: '35+ Years Sacred Lineage',
-      description: 'Learned under Himalayan masters and Siddha Peeth Gurus with deep mastery over Vedic astrology and Vashikaran sciences.'
+      title: '35+ Years Sacred Vedic Lineage',
+      description: 'Learned under traditional masters and Siddha Peeth Gurus with deep knowledge in Vedic astrology and planetary remedies.'
     },
     {
       icon: Lock,
       title: 'Sacred Confidentiality Oath',
-      description: 'Your identity, photos, personal secrets, and communications are protected under sacred spiritual oath and never shared.'
+      description: 'Your identity, birth details, personal concerns, and communications are held with complete confidentiality and privacy.'
     },
     {
       icon: Shield,
-      title: 'Harmless Sattvic Methods',
-      description: 'We strictly reject dark destructive witchcraft. All rituals use benevolent, positive vibrations that bring peace without backlash.'
+      title: 'Ethical & Sattvic Methods',
+      description: 'We strictly practice peaceful, benevolent Vedic rituals that promote emotional harmony, clarity, and domestic tranquility.'
     },
     {
       icon: Users,
-      title: '25,000+ Solved Cases',
-      description: 'Devotees across India, USA, UK, Canada, Australia, and UAE have experienced miraculous reunions and family happiness.'
+      title: 'Worldwide Devotee Community',
+      description: 'Devotees across India, USA, UK, Canada, Australia, and UAE consult Baba Ji for spiritual peace and family harmony.'
     },
     {
       icon: HeartHandshake,
-      title: 'Compassionate Guidance',
-      description: 'Baba Ji listens with deep patience and empathy, diagnosing the unseen spiritual and energetic roots of your suffering.'
+      title: 'Compassionate Astrological Counseling',
+      description: 'Baba Ji listens with deep patience and empathy, analyzing the underlying planetary influences affecting your situation.'
     },
     {
       icon: PhoneCall,
       title: '24/7 Direct Accessibility',
-      description: 'No middle agents or confusing delays. Speak or message Baba Ji directly on Phone and WhatsApp anytime in emergencies.'
+      description: 'Connect directly with Baba Ji on Phone or WhatsApp for personal guidance and respectful astrological counsel.'
     }
   ];
 
   return (
-    <section id="why-us" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto bg-stone-50/70 border-y border-stone-200/80 transition-colors duration-400">
+    <section id="why-us" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto bg-stone-50/70 border-y border-stone-200/80 transition-colors duration-400 w-full overflow-hidden">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />

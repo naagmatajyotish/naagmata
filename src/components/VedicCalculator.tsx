@@ -18,63 +18,63 @@ interface LoveCrisis {
 const LOVE_CRISES: LoveCrisis[] = [
   {
     id: 'ex-love-back',
-    title: 'Ex-Partner Reconciliation (Get Love Back)',
-    hindiTitle: 'खोया प्यार वापस पाएं / पार्टनर का दिल जीतें',
-    description: 'Partner abruptly broke up, blocked your phone/social media, or got influenced by others.',
-    diagnosis: 'Severe Shukra (Venus) and Chandra (Moon) affliction causing emotional numbness and stubborn disconnection in your partner.',
-    planetaryCause: 'Afflicted 5th & 7th House, Rahu shadow over emotional mind (Manas).',
-    recommendedRemedy: 'Kamakhya Mohini Akarshan Havan with Sacred Photo Vashikaran Vidya.',
-    timeframe: 'Noticeable emotional softening within 24 to 48 Hours',
+    title: 'Ex-Partner Reconciliation & Love Vashikaran',
+    hindiTitle: 'खोया प्यार वापस पाएं (सत्त्विक वशीकरण)',
+    description: 'Sudden distance, emotional silence, or communication breakdown affecting mutual affection.',
+    diagnosis: 'Venus (Shukra) and Moon (Chandra) afflictions causing emotional misunderstanding and distance.',
+    planetaryCause: 'Afflicted 5th & 7th House, planetary transit affecting emotional state.',
+    recommendedRemedy: 'Kamakhya Mohini & Vedic Vashikaran Havan with personalized mantra chanting.',
+    timeframe: 'Customized Vedic Consultation & Puja',
     mantra: '॥ ॐ कामदेवाय विद्महे पुष्पबाणाय धीमहि तन्नोऽनंगः प्रचोदयात् ॥',
-    icon: '💔'
+    icon: '❤️'
   },
   {
     id: 'intercaste-marriage',
-    title: 'Intercaste Love Marriage & Family Approval',
-    hindiTitle: 'मनपसंद प्रेम विवाह / माता-पिता की सहमति',
-    description: 'Strict parents opposing marital union due to caste, status, or horoscope mismatches.',
-    diagnosis: 'Brihaspati (Jupiter) and Mangal (Mars) planetary discord between family heads and children.',
-    planetaryCause: 'Strong 4th & 9th house resistance, ancestral Pitra dosha blockage.',
-    recommendedRemedy: 'Brihaspati-Shukra Samvaad Shanti & Manastambhan Havan to open parents\' hearts.',
-    timeframe: 'Peaceful change in family attitude within 3 to 5 Days',
+    title: 'Love Marriage & Parental Vashikaran Guidance',
+    hindiTitle: 'प्रेम विवाह / माता-पिता की सहमति वशीकरण',
+    description: 'Family reservations or astrological mismatches creating obstacles for marriage.',
+    diagnosis: 'Brihaspati (Jupiter) and Mangal (Mars) planetary discord between family charts.',
+    planetaryCause: '4th & 9th house astrological friction, generational planetary alignments.',
+    recommendedRemedy: 'Brihaspati-Shukra Samvaad Shanti & Vashikaran Harmony Havan.',
+    timeframe: 'Vedic Consultation & Muhurta Analysis',
     mantra: '॥ ॐ क्लीं कृष्णाय गोविंदाय गोपीजनवल्लभाय स्वाहा ॥',
     icon: '💍'
   },
   {
     id: 'sautan-third-person',
-    title: 'Third Person / Sautan Elimination',
-    hindiTitle: 'सौतन / तीसरे व्यक्ति से तुरंत छुटकारा',
-    description: 'Husband, wife, or lover has fallen into outside influence, office colleague, or illicit affair.',
-    diagnosis: 'Occult energy or magnetic illusion (Mohini Bandhan) cast by third person stealing your partner.',
-    planetaryCause: 'Rahu-Ketu axis cutting through 7th marital house.',
-    recommendedRemedy: 'Uchchatan & Bedan Tantrik Rituals to permanently break external attachment.',
-    timeframe: 'Complete detachment from third person in 2 to 4 Days',
-    mantra: '॥ ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे • सर्व शत्रु उच्चाटय उच्चाटय स्वाहा ॥',
+    title: 'Resolving External Influences in Relationships',
+    hindiTitle: 'रिश्ते में बाहरी हस्तक्षेप शांति',
+    description: 'Third-party interference or outside influences creating suspicion and domestic friction.',
+    diagnosis: 'Rahu-Ketu shadow affecting the 7th house of partnership, breeding mistrust.',
+    planetaryCause: 'Afflicted transit through marital partnership houses.',
+    recommendedRemedy: 'Vedic Shanti Rituals & Protective Raksha Kavach to clear negative vibrations.',
+    timeframe: 'Personalized Spiritual Remedial Process',
+    mantra: '॥ ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे • सर्व विघ्न नाशाय नमः ॥',
     icon: '🛡️'
   },
   {
     id: 'husband-wife-dispute',
-    title: 'Husband-Wife Conflict & Divorce Prevention',
-    hindiTitle: 'पति-पत्नी क्लेश निवारण / तलाक रुकवाएं',
-    description: 'Constant bickering, lack of intimacy, court divorce papers served, or living separately.',
-    diagnosis: 'Severe Kaal Sarp or Manglik tension eroding marital warmth, amplified by domestic negative energy.',
-    planetaryCause: 'Ketu in 7th house generating mutual hatred and baseless suspicion.',
-    recommendedRemedy: 'Gauri-Shankar Prema Bandhan Anushthan & Sacred Sindoor Consecration.',
-    timeframe: 'Immediate pacification of anger within 24 to 72 Hours',
-    mantra: '॥ ॐ उमामहेश्वराभ्यां नमः • सर्व क्लेश शमनाय स्वाहा ॥',
-    icon: '⚖️'
+    title: 'Husband-Wife Harmony & Marital Vashikaran',
+    hindiTitle: 'पति-पत्नी क्लेश निवारण व वशीकरण',
+    description: 'Frequent disagreements, lack of understanding, or marital tension disturbing home peace.',
+    diagnosis: 'Planetary tension affecting marital warmth, often compounded by household stress.',
+    planetaryCause: 'Manglik or Shani-Surya transit affecting the 7th house.',
+    recommendedRemedy: 'Gauri-Shankar Vedic Vashikaran Havan & domestic energy cleansing.',
+    timeframe: 'Peaceful Astrological Counseling & Puja',
+    mantra: '॥ ॐ उमामहेश्वराभ्यां नमः ॥',
+    icon: '🕊️'
   },
   {
     id: 'one-sided-love',
-    title: 'One-Sided Love Attraction & Delayed Marriage',
-    hindiTitle: 'एकतरफा प्यार आकर्षण / शादी में आ रही रुकावट',
-    description: 'Loving someone deeply who does not reciprocate, or marriage getting repeatedly delayed.',
-    diagnosis: 'Blocked Akarshan energy and weak planetary attraction aura (Kundalini blockage).',
+    title: 'Emotional Receptivity & Marriage Delays',
+    hindiTitle: 'विवाह में देरी व अनुकूल जीवनसाथी मार्गदर्शन',
+    description: 'Repeated delays in finding a suitable partner or facing unreciprocated affection.',
+    diagnosis: 'Afflictions in 7th or 5th house influencing emotional connections.',
     planetaryCause: 'Combust Venus or debilitated Jupiter in birth chart.',
-    recommendedRemedy: 'Siddha Rati-Kamadev Akarshan Kavach & Shukra Beej Samputit Japa.',
-    timeframe: 'Magnetic attraction and interest sparked in 3 to 7 Days',
-    mantra: '॥ ॐ नमो भगवते कामदेवाय सर्वजन प्रियाय सर्वजन सम्मोहनाय नमः ॥',
-    icon: '💘'
+    recommendedRemedy: 'Siddha Shukra Beej Anushthan & planetary pacification puja.',
+    timeframe: 'Vedic Consultation & Remedial Guidance',
+    mantra: '॥ ॐ नमो भगवते कामदेवाय सर्वजन प्रियाय नमः ॥',
+    icon: '🌸'
   }
 ];
 
@@ -98,7 +98,7 @@ Please check our planetary situation and perform urgent Vedic Vashikaran remedy.
   };
 
   return (
-    <section id="calculator" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <section id="calculator" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       {/* Section Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-1.5 bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full text-xs font-bold text-rose-800 uppercase tracking-widest mb-3">

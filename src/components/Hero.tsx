@@ -6,7 +6,7 @@ import { NaagdeviLogo } from './NaagdeviLogo';
 export const Hero: React.FC = () => {
   return (
     <section 
-      className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 text-center py-14 md:py-24 overflow-hidden transition-colors duration-400"
+      className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 text-center py-14 md:py-24 overflow-hidden transition-colors duration-400 w-full max-w-full"
       style={{
         background: 'radial-gradient(ellipse at top, var(--hero-grad-from, #fef3c7) 0%, var(--hero-grad-via, #fffbeb) 50%, var(--hero-grad-to, #fbf8f3) 100%)'
       }}
@@ -16,12 +16,12 @@ export const Hero: React.FC = () => {
       
       {/* Ambient warm glow bubbles */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full blur-3xl pointer-events-none opacity-30"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] max-w-[100vw] rounded-full blur-3xl pointer-events-none opacity-30"
         style={{ backgroundColor: 'var(--accent-primary, #d97706)' }}
       ></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-300/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-64 sm:w-96 h-64 sm:h-96 max-w-[100vw] bg-amber-300/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-4xl mx-auto space-y-6 relative z-10">
+      <div className="max-w-4xl mx-auto space-y-6 relative z-10 w-full">
         {/* Divine Maa Naagdevi Animated Sacred Medallion / Centerpiece */}
         <div className="flex flex-col items-center justify-center pt-2 pb-2">
           <div className="relative group flex flex-col items-center">
@@ -48,15 +48,15 @@ export const Hero: React.FC = () => {
         <div className="inline-flex items-center gap-2 bg-white/90 border border-amber-300/80 px-4 py-1.5 rounded-full backdrop-blur-sm shadow-xs">
           <Sparkles className="w-4 h-4 text-amber-600 animate-pulse" />
           <p className="text-amber-800 font-bold uppercase tracking-widest text-xs md:text-sm">
-            World Renowned Tantrik Work & Vashikaran Specialist
+            World Renowned Astrologer & Vedic Vashikaran Specialist
           </p>
         </div>
 
         {/* Main Headline */}
         <h1 className="heading-mystic text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-stone-900 leading-tight">
-          Solve All Your Love & Life Problems <br />
+          Solve All Love & Life Problems <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700">
-            With Powerful Vashikaran
+            With Powerful Vedic Vashikaran
           </span>
         </h1>
 
@@ -69,26 +69,26 @@ export const Hero: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-stone-700 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-          Are you facing separation, family disputes, or one-sided love? With the divine blessings of Maa Naagdevi and ancient Vedic tantrik astrology, Baba Ji provides immediate, permanent, and completely safe relief.
+          Facing relationship separation, family hesitation, or lost love? With the divine blessings of Maa Naagdevi and ancient Vedic Vashikaran astrology, Baba Ji provides authentic, confidential, and safe spiritual guidance.
         </p>
 
         {/* Key Trust Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto pt-2 text-xs">
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Clock className="w-4 h-4 text-amber-600 shrink-0" />
-            <span className="font-semibold">24-Hour Fast Relief</span>
+            <span className="font-semibold">Vedic Guidance</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span className="font-semibold">Strict Privacy Kept</span>
+            <span className="font-semibold">100% Confidential</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Flame className="w-4 h-4 text-orange-600 shrink-0" />
-            <span className="font-semibold">Pure Sattvic Tantra</span>
+            <span className="font-semibold">Sattvic Vashikaran</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0" />
-            <span className="font-semibold">25,000+ Reunited</span>
+            <span className="font-semibold">35+ Yrs Experience</span>
           </div>
         </div>
 
