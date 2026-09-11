@@ -1,4 +1,12 @@
 import { ServiceItem, TestimonialItem, FaqItem } from '../types';
+import serviceLoveSolution from '../assets/images/service_love_solution.jpg';
+import serviceVashikaranHavan from '../assets/images/service_vashikaran_havan.jpg';
+import serviceLoveMarriage from '../assets/images/service_love_marriage.jpg';
+import serviceBlackMagic from '../assets/images/service_black_magic.jpg';
+import serviceBusinessGrowth from '../assets/images/service_business_growth.jpg';
+import serviceMaritalHarmony from '../assets/images/service_marital_harmony.jpg';
+import serviceDivorceRemedy from '../assets/images/service_divorce_remedy.jpg';
+import serviceKundaliDosha from '../assets/images/service_kundali_dosha.jpg';
 
 export const CONTACT_INFO = {
   phone: '+91-9714127309',
@@ -30,7 +38,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Visible effects in 24 to 48 Hours',
     mantraPreview: 'Om Kleem Krishnaya Namah | Om Kaamadevaya Vidmahe Pushpabaanaya Dheemahi...',
     iconName: 'Heart',
-    imageUrl: '/images/service_love_solution.jpg'
+    imageUrl: serviceLoveSolution
   },
   {
     id: 'powerful-vashikaran',
@@ -48,7 +56,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Visible Shifts within 1 to 3 Days',
     mantraPreview: 'Om Namo Bhagavate Rudraya Sarva-Jagan-Mohanaya Swaha...',
     iconName: 'Wand2',
-    imageUrl: '/images/service_vashikaran_havan.jpg'
+    imageUrl: serviceVashikaranHavan
   },
   {
     id: 'intercaste-love-marriage',
@@ -66,7 +74,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Parental consent typically within 3 to 5 Days',
     mantraPreview: 'Om Sham Shankaraya Sakala-Janmarjita-Paapa-Vidhvansanaya...',
     iconName: 'Ring',
-    imageUrl: '/images/service_love_marriage.jpg'
+    imageUrl: serviceLoveMarriage
   },
   {
     id: 'evil-eye-black-magic',
@@ -84,7 +92,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Immediate Relief within 24 Hours',
     mantraPreview: 'Om Hleem Bagalamukhi Sarvadushtaanaam Vaacham Mukham Padam Stambhaya...',
     iconName: 'ShieldAlert',
-    imageUrl: '/images/service_black_magic.jpg'
+    imageUrl: serviceBlackMagic
   },
   {
     id: 'business-career-growth',
@@ -102,7 +110,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Breakthrough opportunities in 7 Days',
     mantraPreview: 'Om Shreem Hreem Kleem Tribhuvana Mahalakshmyai Namah...',
     iconName: 'Briefcase',
-    imageUrl: '/images/service_business_growth.jpg'
+    imageUrl: serviceBusinessGrowth
   },
   {
     id: 'husband-wife-disputes',
@@ -120,7 +128,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Noticeable peace within 24 to 48 Hours',
     mantraPreview: 'Om Aim Kleem Souh Uma-Maheshwarabhyam Namah...',
     iconName: 'Users',
-    imageUrl: '/images/service_marital_harmony.jpg'
+    imageUrl: serviceMaritalHarmony
   },
   {
     id: 'divorce-cancellation-solution',
@@ -138,7 +146,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Urgent turnaround intervention in 3 to 7 Days',
     mantraPreview: 'Om Tryambakam Yajaamahe Sugandhim Pushtivardhanam...',
     iconName: 'Flame',
-    imageUrl: '/images/service_divorce_remedy.jpg'
+    imageUrl: serviceDivorceRemedy
   },
   {
     id: 'kundali-graha-dosha',
@@ -156,7 +164,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Permanent dosha pacification',
     mantraPreview: 'Om Navagraha Devaya Namah | Om Aadityaya Somaya Mangalaya...',
     iconName: 'Star',
-    imageUrl: '/images/service_kundali_dosha.jpg'
+    imageUrl: serviceKundaliDosha
   }
 ];
 

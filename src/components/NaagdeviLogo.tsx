@@ -1,4 +1,5 @@
 import React from 'react';
+import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
 
 interface NaagdeviLogoProps {
   className?: string;
@@ -242,8 +243,8 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
       {/* 3. Forefront: Pure PNG Deity Cutout (Maa Naagdevi - Supreme Deity) */}
       <div className={`relative ${config.container} animate-divine-float z-10 flex items-center justify-center`}>
         <img
-          src="/images/naagdevi_maa_transparent.png"
-          alt="Maa Naagdevi - Supreme Serpent Goddess PNG Cutout"
+          src={maaNaagdeviImage}
+          alt="Maa Naagdevi - Supreme Serpent Goddess"
           referrerPolicy="no-referrer"
           loading="eager"
           decoding="async"

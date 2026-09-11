@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Sparkles, Heart, Phone, MessageCircle, ShieldCheck, Flame, Sun } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
+import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
 
 export const SacredDarshan3D: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -124,7 +125,7 @@ export const SacredDarshan3D: React.FC = () => {
               {/* 3D PNG Cutout Image of Maa Naagdevi */}
               <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 transition-transform duration-300">
                 <img
-                  src="/images/naagdevi_maa_transparent.png"
+                  src={maaNaagdeviImage}
                   alt="Maa Naagdevi 3D Transparent Divine Cutout"
                   referrerPolicy="no-referrer"
                   loading="eager"
