@@ -39,13 +39,13 @@ export const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#fdfcf7]/98 backdrop-blur-md border-b border-amber-200/80 transition-colors duration-300 shadow-sm w-full max-w-full overflow-x-clip"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#fdfcf7] border-b border-amber-200/80 transition-colors duration-300 shadow-sm w-full max-w-full overflow-x-clip"
       >
         {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
         <UrgentBanner />
 
         {/* 2. Mobile Dedicated Direct Helpline Bar - 24/7 Helpline Always Fixed */}
-        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white px-3 py-1.5 flex items-center justify-between border-b border-amber-500/50 shadow-md w-full max-w-full">
+        <div className="sm:hidden bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 text-white px-3 py-1.5 flex items-center justify-between border-b border-amber-500/50 shadow-sm w-full max-w-full">
           <div className="flex items-center gap-1.5">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>

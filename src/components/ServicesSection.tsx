@@ -120,7 +120,7 @@ export const ServicesSection: React.FC = () => {
             <div>
               {/* Service Related Photo */}
               {service.imageUrl && (
-                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-stone-900 shadow-inner group-hover:shadow-md transition-all">
+                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-amber-100 shadow-inner group-hover:shadow-md transition-all">
                   <img
                     src={service.imageUrl}
                     alt={service.title}
@@ -131,8 +131,8 @@ export const ServicesSection: React.FC = () => {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out brightness-[0.93] group-hover:brightness-100"
                   />
-                  {/* Mystic dark gradient over bottom of image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent"></div>
+                  {/* Mystic warm gradient over bottom of image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent"></div>
 
                   {/* Top Badge */}
                   {service.badge && (

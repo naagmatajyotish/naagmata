@@ -68,10 +68,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     localStorage.setItem('naagmata_light_theme', 'light-royal');
     const root = document.documentElement;
     root.setAttribute('data-theme', 'light-royal');
-    root.style.colorScheme = 'light only';
+    root.style.colorScheme = 'only light';
     (root.style as any).forcedColorAdjust = 'none';
     if (document.body) {
-      document.body.style.colorScheme = 'light only';
+      document.body.style.colorScheme = 'only light';
       (document.body.style as any).forcedColorAdjust = 'none';
       document.body.style.backgroundColor = '#fdfcf7';
       document.body.style.color = '#2a2203';

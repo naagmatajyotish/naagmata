@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root, [data-theme="light-royal"], html, body {
-  color-scheme: light only !important;
+  color-scheme: only light !important;
+  color-scheme: light !important;
   --bg-sanctum: #fdfcf7;
   --bg-card: #ffffff;
   --bg-card-subtle: #fefce8;
@@ -27,7 +28,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root, html, body, #root {
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
     background-color: #fdfcf7 !important;
     color: #2a2203 !important;
     forced-color-adjust: none !important;
@@ -43,7 +45,8 @@
 
   /* Keep input fields and buttons clean light-styled */
   input, select, textarea, button, option {
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }
@@ -56,7 +59,8 @@
     overflow-x: hidden;
     position: relative;
     -webkit-text-size-adjust: 100%;
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
     forced-color-adjust: none !important;
   }
 
@@ -70,7 +74,8 @@
     position: relative;
     margin: 0;
     padding: 0;
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
     forced-color-adjust: none !important;
   }
 
@@ -81,12 +86,14 @@
     position: relative;
     background-color: #fdfcf7 !important;
     color: #2a2203 !important;
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
   }
 
   /* Ensure form controls do not auto-invert in dark mode */
   input, select, textarea, button, option {
-    color-scheme: light only !important;
+    color-scheme: only light !important;
+    color-scheme: light !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }
@@ -212,6 +219,8 @@
   width: max-content;
   animation: marquee-scroll 38s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .animate-marquee-left:hover {
@@ -342,24 +351,9 @@
   transform-origin: bottom center;
 }
 
-/* Dynamic ambient 3D card float for mobile when not touched */
-@keyframes ambient-card-tilt {
-  0%, 100% {
-    transform: rotateX(1deg) rotateY(-2deg) scale3d(1, 1, 1);
-  }
-  25% {
-    transform: rotateX(-2deg) rotateY(2.5deg) scale3d(1.01, 1.01, 1.01);
-  }
-  50% {
-    transform: rotateX(2.5deg) rotateY(1.5deg) scale3d(1, 1, 1);
-  }
-  75% {
-    transform: rotateX(-1.5deg) rotateY(-2.5deg) scale3d(1.01, 1.01, 1.01);
-  }
-}
-
-.animate-ambient-3d {
-  animation: ambient-card-tilt 7s ease-in-out infinite;
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 ::-webkit-scrollbar-track {

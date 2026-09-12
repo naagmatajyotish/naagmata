@@ -14,12 +14,11 @@ export const Hero: React.FC = () => {
       {/* Background starlight & sacred geometry pattern */}
       <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(var(--accent-primary,#d97706)_1px,transparent_1px)] [background-size:24px_24px]"></div>
       
-      {/* Ambient warm glow bubbles */}
+      {/* Ambient warm glow bubbles (Hardware-accelerated radial gradients without heavy CSS blurs) */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] max-w-[100vw] rounded-full blur-3xl pointer-events-none opacity-30"
-        style={{ backgroundColor: 'var(--accent-primary, #d97706)' }}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] max-w-[100vw] rounded-full pointer-events-none opacity-40 bg-[radial-gradient(circle,rgba(217,119,6,0.35)_0%,transparent_70%)]"
       ></div>
-      <div className="absolute bottom-10 right-10 w-64 sm:w-96 h-64 sm:h-96 max-w-[100vw] bg-amber-300/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-64 sm:w-96 h-64 sm:h-96 max-w-[100vw] rounded-full pointer-events-none opacity-30 bg-[radial-gradient(circle,rgba(252,211,77,0.4)_0%,transparent_70%)]"></div>
 
       <div className="max-w-4xl mx-auto space-y-6 relative z-10 w-full">
         {/* Divine Maa Naagdevi Animated Sacred Medallion / Centerpiece */}

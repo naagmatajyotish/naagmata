@@ -20,7 +20,7 @@ const BlackSerpentSVG: React.FC<{
     viewBox="0 0 140 260"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={`w-full h-full drop-shadow-[0_4px_8px_rgba(0,0,0,0.65)] ${flip ? '-scale-x-100' : ''} ${className}`}
+    className={`w-full h-full ${flip ? '-scale-x-100' : ''} ${className}`}
   >
     <defs>
       {/* Sleek Obsidian Black Cobra Body Gradient */}
@@ -220,7 +220,7 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
 
           {/* Golden Kundalini Mystical Aura Waves connecting the serpents */}
           <div className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 w-48 sm:w-64 md:w-80 h-20 sm:h-28 opacity-60 animate-snake-crown pointer-events-none -z-20">
-            <svg viewBox="0 0 200 70" fill="none" className="w-full h-full filter drop-shadow-[0_0_12px_rgba(245,158,11,0.6)]">
+            <svg viewBox="0 0 200 70" fill="none" className="w-full h-full">
               <path
                 d="M15 55 Q55 10 100 8 Q145 10 185 55"
                 stroke="#d97706"

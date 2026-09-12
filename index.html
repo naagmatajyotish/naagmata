@@ -15,12 +15,36 @@
     </script>
     
     <!-- Force Light Color Scheme (Guarantees identical appearance on PC & Mobile even when Dark Mode is active) -->
-    <meta name="color-scheme" content="light only" />
+    <meta name="color-scheme" content="only light" />
+    <meta name="color-scheme" content="light" />
     <meta name="supported-color-schemes" content="light" />
+    <meta name="darkreader-lock" />
     <meta name="theme-color" content="#fdfcf7" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdfcf7" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#fdfcf7" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <style>
+      /* Immediate browser-level lock: prevents forced dark mode inversion before JS loads */
+      :root, html, body, #root {
+        color-scheme: only light !important;
+        color-scheme: light !important;
+        background-color: #fdfcf7 !important;
+        color: #2a2203 !important;
+        forced-color-adjust: none !important;
+        -webkit-forced-color-adjust: none !important;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root, html, body, #root {
+          color-scheme: only light !important;
+          color-scheme: light !important;
+          background-color: #fdfcf7 !important;
+          color: #2a2203 !important;
+          forced-color-adjust: none !important;
+          -webkit-forced-color-adjust: none !important;
+        }
+      }
+    </style>
     
     <!-- Primary SEO Meta Tags -->
     <title>Naagmata Jyotish | 24/7 Vedic Astrologer & Vashikaran Specialist Worldwide</title>

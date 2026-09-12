@@ -12,43 +12,9 @@ export const SacredDarshan3D: React.FC = () => {
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
   const [isInteracting, setIsInteracting] = useState(false);
   const [blessed, setBlessed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const rafId = useRef<number | null>(null);
+  const rectRef = useRef<DOMRect | null>(null);
 
-  // Detect mobile device
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Gyroscope tilt support on mobile if permitted
-  useEffect(() => {
-    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
-      if (e.gamma !== null && e.beta !== null) {
-        // Clamp angles between -14 and 14 deg
-        const tiltY = Math.max(-14, Math.min(14, e.gamma * 0.7));
-        // beta typically ~45 deg when holding phone upright
-        const tiltX = Math.max(-14, Math.min(14, (e.beta - 45) * 0.5));
-        setRotateY(tiltY);
-        setRotateX(-tiltX);
-        setGlarePos({
-          x: 50 + (tiltY / 14) * 40,
-          y: 50 + (tiltX / 14) * 40,
-        });
-      }
-    };
-
-    if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
-      window.addEventListener('deviceorientation', handleDeviceOrientation, true);
-    }
-    return () => {
-      window.removeEventListener('deviceorientation', handleDeviceOrientation, true);
-    };
-  }, []);
-  
   // Persistent blessing count starting from 14801 and incrementing continuously across visits
   const [blessingNumber, setBlessingNumber] = useState<number>(() => {
     try {
@@ -65,66 +31,48 @@ export const SacredDarshan3D: React.FC = () => {
     return INITIAL_BLESSING_COUNT;
   });
 
-  // Calculate 3D rotation from coordinates
-  const updateRotationFromCoords = (clientX: number, clientY: number) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-    
-    // Normalized between -1 and 1
-    const normX = Math.max(-1, Math.min(1, (x / rect.width) * 2 - 1));
-    const normY = Math.max(-1, Math.min(1, (y / rect.height) * 2 - 1));
-
-    // Max tilt angles: 12 degrees
-    setRotateY(normX * 12);
-    setRotateX(-normY * 12);
-    setGlarePos({
-      x: Math.max(0, Math.min(100, (x / rect.width) * 100)),
-      y: Math.max(0, Math.min(100, (y / rect.height) * 100)),
-    });
-  };
-
-  // Handle interactive 3D perspective tilt on desktop mouse movement
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsInteracting(true);
-    updateRotationFromCoords(e.clientX, e.clientY);
-  };
-
+  // Handle smooth 3D perspective tilt on desktop mouse movement with requestAnimationFrame
   const handleMouseEnter = () => {
     setIsInteracting(true);
+    if (cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!rectRef.current && cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+    const rect = rectRef.current;
+    if (!rect) return;
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+    }
+
+    rafId.current = requestAnimationFrame(() => {
+      const normX = Math.max(-1, Math.min(1, (x / rect.width) * 2 - 1));
+      const normY = Math.max(-1, Math.min(1, (y / rect.height) * 2 - 1));
+      setRotateY(normX * 10);
+      setRotateX(-normY * 10);
+      setGlarePos({
+        x: Math.max(0, Math.min(100, (x / rect.width) * 100)),
+        y: Math.max(0, Math.min(100, (y / rect.height) * 100)),
+      });
+    });
   };
 
   const handleMouseLeave = () => {
     setIsInteracting(false);
+    rectRef.current = null;
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+    }
     setRotateX(0);
     setRotateY(0);
-  };
-
-  // Touch handlers for mobile dragging / swiping across Maa's photo
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (e.touches.length > 0) {
-      setIsInteracting(true);
-      const touch = e.touches[0];
-      updateRotationFromCoords(touch.clientX, touch.clientY);
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setIsInteracting(true);
-    if (e.touches.length > 0) {
-      const touch = e.touches[0];
-      updateRotationFromCoords(touch.clientX, touch.clientY);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    // Graceful spring back to center
-    setIsInteracting(false);
-    setTimeout(() => {
-      setRotateX(0);
-      setRotateY(0);
-    }, 400);
   };
 
   const handleAshirwadClick = () => {
@@ -170,37 +118,31 @@ export const SacredDarshan3D: React.FC = () => {
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onTouchCancel={handleTouchEnd}
           style={{
             perspective: '1200px',
           }}
-          className="w-full max-w-2xl select-none overflow-hidden sm:overflow-visible touch-pan-y cursor-grab active:cursor-grabbing"
+          className="w-full max-w-2xl select-none overflow-hidden sm:overflow-visible"
         >
           {/* 3D Rotating Card Altar */}
           <div
             style={{
-              transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) ${isInteracting ? 'scale3d(1.02, 1.02, 1.02)' : 'scale3d(1, 1, 1)'}`,
+              transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) ${isInteracting ? 'scale3d(1.01, 1.01, 1.01)' : 'scale3d(1, 1, 1)'}`,
               transformStyle: 'preserve-3d',
               transition: isInteracting ? 'transform 0.08s ease-out' : 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)',
             }}
-            className={`relative w-full rounded-3xl p-5 sm:p-10 border-2 border-amber-400/80 shadow-2xl bg-gradient-to-b from-[#1c1917] via-[#292524] to-[#0c0a09] text-white overflow-hidden ${
-              !isInteracting && isMobile ? 'animate-ambient-3d' : ''
-            }`}
+            className="relative w-full rounded-3xl p-5 sm:p-10 border-2 border-amber-300 shadow-2xl bg-gradient-to-b from-[#fffef5] via-[#fef9c3] to-[#fef08a] text-[#2a2203] overflow-hidden will-change-transform"
           >
             {/* Dynamic Glare Reflection Overlay */}
             <div
               style={{
-                background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, rgba(254, 240, 138, 0.25) 0%, transparent 60%)`,
+                background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, rgba(254, 240, 138, 0.4) 0%, transparent 60%)`,
               }}
               className="absolute inset-0 pointer-events-none z-30 transition-opacity duration-200"
             />
 
             {/* Sacred Golden Ray Background Glow (Layer 0) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-              <div className="w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] rounded-full bg-gradient-to-tr from-amber-600/40 via-yellow-500/40 to-orange-500/30 blur-3xl animate-pulse" />
+              <div className="w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] rounded-full bg-gradient-to-tr from-amber-400/40 via-yellow-400/40 to-orange-400/30 blur-3xl animate-pulse" />
               {/* Star rays */}
               <div className="absolute w-[240px] sm:w-[380px] h-[240px] sm:h-[380px] rounded-full border border-amber-400/30 animate-spin-slow opacity-40" />
             </div>
@@ -210,11 +152,11 @@ export const SacredDarshan3D: React.FC = () => {
               style={{ transform: 'translateZ(30px)' }}
               className="flex items-center justify-between gap-2 mb-3 sm:mb-4 relative z-20"
             >
-              <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-400/60 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs text-yellow-300 font-bold shadow-md">
-                <Sparkles className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
+              <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-600 to-amber-700 border border-amber-300 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs text-white font-bold shadow-md">
+                <Sparkles className="w-3.5 h-3.5 text-yellow-200 animate-pulse" />
                 <span>Maa Naagdevi Siddha Peeth Darshan</span>
               </div>
-              <div className="text-[10px] sm:text-[11px] font-black text-amber-200 bg-amber-950/70 border border-amber-400/50 px-2 sm:px-2.5 py-0.5 rounded-full">
+              <div className="text-[10px] sm:text-[11px] font-black text-amber-900 bg-amber-100/90 border border-amber-300 px-2 sm:px-2.5 py-0.5 rounded-full">
                 ३D INTERACTIVE
               </div>
             </div>
@@ -261,7 +203,7 @@ export const SacredDarshan3D: React.FC = () => {
               {/* Sacred Beej Verse Display - Perfectly Contained in ONE SINGLE LINE via Responsive SVG */}
               <div 
                 style={{ transform: 'translateZ(50px)' }}
-                className="text-center px-3 sm:px-6 py-2.5 sm:py-3 bg-stone-900/95 border border-amber-500/60 rounded-2xl w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto mt-2 shadow-xl backdrop-blur-xs flex flex-col items-center justify-center"
+                className="text-center px-3 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 border-2 border-yellow-300 rounded-2xl w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto mt-2 shadow-xl backdrop-blur-xs flex flex-col items-center justify-center text-white"
               >
                 <div className="w-full flex items-center justify-center px-1">
                   <svg 
@@ -275,7 +217,7 @@ export const SacredDarshan3D: React.FC = () => {
                       y="50%"
                       textAnchor="middle"
                       dominantBaseline="central"
-                      fill="#fde047"
+                      fill="#ffffff"
                       style={{
                         fontFamily: "'Noto Sans Devanagari', 'Poppins', sans-serif",
                         fontSize: '18px',
@@ -286,7 +228,7 @@ export const SacredDarshan3D: React.FC = () => {
                     </text>
                   </svg>
                 </div>
-                <span className="text-[10px] sm:text-xs text-amber-200 block mt-1 uppercase tracking-widest font-bold whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-yellow-100 block mt-1 uppercase tracking-widest font-bold whitespace-nowrap">
                   Maa Naagdevi Maha Siddha Beej Mantra
                 </span>
               </div>
@@ -300,7 +242,7 @@ export const SacredDarshan3D: React.FC = () => {
               <button
                 type="button"
                 onClick={handleAshirwadClick}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 hover:from-amber-300 hover:to-yellow-300 text-stone-950 font-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-xl shadow-amber-500/30 border-2 border-white cursor-pointer active:scale-95 hover:scale-105 transition-all whitespace-nowrap select-none mx-auto"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-xl shadow-amber-500/30 border-2 border-white cursor-pointer active:scale-95 hover:scale-105 transition-all whitespace-nowrap select-none mx-auto"
               >
                 <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0 animate-spin-slow" />
                 <span className="font-black tracking-normal">
@@ -310,16 +252,16 @@ export const SacredDarshan3D: React.FC = () => {
 
               {/* Blessed Message Alert when touched */}
               {blessed && (
-                <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-amber-950/95 via-stone-900 to-amber-950/95 border-2 border-yellow-400/80 text-yellow-200 text-xs sm:text-sm font-bold shadow-2xl animate-fade-in">
-                  <p className="flex items-center justify-center gap-2 text-yellow-300 font-extrabold text-sm mb-1">
+                <div className="mt-4 p-4 rounded-2xl bg-white/95 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-bold shadow-2xl animate-fade-in">
+                  <p className="flex items-center justify-center gap-2 text-amber-700 font-extrabold text-sm mb-1">
                     <span>✨</span>
                     <span>माँ नागदेवी का पावन आशीर्वाद आपको प्राप्त हुआ</span>
                     <span>✨</span>
                   </p>
-                  <p className="text-stone-200 font-normal leading-relaxed text-xs">
+                  <p className="text-stone-700 font-normal leading-relaxed text-xs">
                     "माँ नागदेवी की असीम अनुकंपा से आपके दांपत्य, प्रेम और जीवन के सभी विघ्न, ग्रह दोष व शत्रु बाधा शीघ्र शांत हों।"
                   </p>
-                  <span className="text-[11px] text-amber-300 font-bold block mt-1">
+                  <span className="text-[11px] text-amber-800 font-bold block mt-1">
                     आशीर्वाद क्रमांक: #{blessingNumber.toLocaleString('en-IN')} • कल्याणमस्तु!
                   </span>
                 </div>
