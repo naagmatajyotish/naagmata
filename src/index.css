@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root, [data-theme="light-royal"], html, body {
-  color-scheme: light !important;
+  color-scheme: light only !important;
   --bg-sanctum: #fdfcf7;
   --bg-card: #ffffff;
   --bg-card-subtle: #fefce8;
@@ -19,12 +19,33 @@
   --scrollbar-thumb: #ca8a04;
 }
 
-/* Guard against PC/Mobile OS Dark Mode & Chrome auto-inversion */
+/* Guard against PC/Mobile OS Dark Mode, Chrome auto-inversion, and High-Contrast forced inversion */
+*, *::before, *::after {
+  forced-color-adjust: none !important;
+  -webkit-forced-color-adjust: none !important;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root, html, body {
-    color-scheme: light !important;
+  :root, html, body, #root {
+    color-scheme: light only !important;
     background-color: #fdfcf7 !important;
     color: #2a2203 !important;
+    forced-color-adjust: none !important;
+    -webkit-forced-color-adjust: none !important;
+  }
+
+  /* Prevent browser from inverting images, badges, logos, and graphics */
+  img, svg, picture, video, canvas {
+    forced-color-adjust: none !important;
+    -webkit-forced-color-adjust: none !important;
+    filter: none !important;
+  }
+
+  /* Keep input fields and buttons clean light-styled */
+  input, select, textarea, button, option {
+    color-scheme: light only !important;
+    forced-color-adjust: none !important;
+    -webkit-forced-color-adjust: none !important;
   }
 }
 
@@ -35,20 +56,22 @@
     overflow-x: hidden;
     position: relative;
     -webkit-text-size-adjust: 100%;
-    color-scheme: light !important;
+    color-scheme: light only !important;
+    forced-color-adjust: none !important;
   }
 
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-sanctum, #fdfcf7);
-    color: var(--text-primary, #2a2203);
+    background-color: var(--bg-sanctum, #fdfcf7) !important;
+    color: var(--text-primary, #2a2203) !important;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
     margin: 0;
     padding: 0;
-    color-scheme: light !important;
+    color-scheme: light only !important;
+    forced-color-adjust: none !important;
   }
 
   #root {
@@ -56,11 +79,16 @@
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
+    background-color: #fdfcf7 !important;
+    color: #2a2203 !important;
+    color-scheme: light only !important;
   }
 
   /* Ensure form controls do not auto-invert in dark mode */
-  input, select, textarea, button {
-    color-scheme: light !important;
+  input, select, textarea, button, option {
+    color-scheme: light only !important;
+    forced-color-adjust: none !important;
+    -webkit-forced-color-adjust: none !important;
   }
 }
 
