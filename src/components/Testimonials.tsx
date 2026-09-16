@@ -49,35 +49,35 @@ export const Testimonials: React.FC = () => {
         lang === 'hi'
           ? '🌟 सभी अनुभव'
           : lang === 'gu-en'
-          ? '🌟 બધા અનુભવો (All Stories)'
+          ? '🌟 બધા અનુભવો'
           : '🌟 All Stories'
     },
     {
       id: 'love',
       label:
         lang === 'hi'
-          ? '💔 प्रेम व संबंध समाधान'
+          ? '💔 प्रेम समस्या समाधान'
           : lang === 'gu-en'
-          ? '💔 પ્રેમ સંબંધ સમાધાન (Love Back)'
-          : '💔 Ex-Love Back'
+          ? '💔 પ્રેમ સંબંધ સમાધાન'
+          : '💔 Love Solutions'
     },
     {
       id: 'marriage',
       label:
         lang === 'hi'
-          ? '💍 प्रेम विवाह व गृह क्लेश'
+          ? '💍 प्रेम विवाह व परिवार'
           : lang === 'gu-en'
-          ? '💍 પ્રેમ લગ્ન અને પરિવાર (Marriage)'
-          : '💍 Love Marriage & Family'
+          ? '💍 પ્રેમ લગ્ન અને પરિવાર'
+          : '💍 Marriage & Family'
     },
     {
       id: 'abroad',
       label:
         lang === 'hi'
-          ? '🌍 एनआरआई क्लाइंट्स (USA, UK, Canada)'
+          ? '🌍 एनआरआई क्लाइंट्स'
           : lang === 'gu-en'
-          ? '🌍 એનઆરઆઈ ભક્તો (NRI Devotees)'
-          : '🌍 Abroad / NRI Clients'
+          ? '🌍 એનઆરઆઈ ભક્તો'
+          : '🌍 NRI Devotees'
     },
     {
       id: 'protection',
@@ -85,7 +85,7 @@ export const Testimonials: React.FC = () => {
         lang === 'hi'
           ? '🛡️ रक्षा व शांति अनुष्ठान'
           : lang === 'gu-en'
-          ? '🛡️ રક્ષા કવચ અને શાંતિ (Protection)'
+          ? '🛡️ રક્ષા કવચ અને શાંતિ'
           : '🛡️ Protection & Peace'
     }
   ];
@@ -120,25 +120,27 @@ export const Testimonials: React.FC = () => {
             : "Over 14,800+ international and Indian clients have found spiritual peace, emotional clarity, and reconciliation in their relationships through Baba Ji's authentic Vedic astrology guidance."}
         </p>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-6">
-          {categoryOptions.map((cat) => {
-            const isSelected = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => handleCategoryChange(cat.id as CategoryFilter)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  isSelected
-                    ? 'bg-amber-600 text-white shadow-md shadow-amber-600/25 scale-105'
-                    : 'bg-stone-100 hover:bg-amber-100/70 text-stone-700 border border-stone-200'
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
+        {/* Category Filters - Structured Responsive Alignment */}
+        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-100/90 rounded-2xl sm:rounded-full border border-stone-200/90 shadow-inner">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {categoryOptions.map((cat) => {
+              const isSelected = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => handleCategoryChange(cat.id as CategoryFilter)}
+                  className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer text-center inline-flex items-center justify-center select-none shrink-0 ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-black shadow-md shadow-amber-500/30 border border-amber-300 ring-2 ring-amber-400/20'
+                      : 'bg-white text-stone-700 hover:text-amber-950 hover:bg-amber-50/70 border border-stone-200 shadow-2xs hover:border-amber-300'
+                  }`}
+                >
+                  <span className="whitespace-nowrap">{cat.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 

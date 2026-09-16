@@ -256,29 +256,30 @@ export const SacredDarshan3D: React.FC = () => {
               </div>
             </div>
 
-            {/* Interactive Ashirwad Action / Blessing Trigger (Layer 3D: translateZ 85px) */}
+            {/* Interactive Ashirwad Action / Blessing Trigger (Layer 3D: translateZ 45px) */}
             <div 
-              style={{ transform: 'translateZ(85px)' }}
-              className="relative z-20 pt-4 text-center"
+              style={{ transform: 'translateZ(45px)' }}
+              className="relative z-20 pt-4 w-full flex flex-col items-center justify-center px-1"
             >
               <button
                 type="button"
                 onClick={handleAshirwadClick}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black px-4 sm:px-7 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-xl shadow-amber-500/30 border-2 border-white cursor-pointer active:scale-95 hover:scale-105 transition-all whitespace-nowrap select-none mx-auto"
+                className="w-full max-w-sm sm:max-w-md inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm shadow-xl shadow-amber-900/30 border-2 border-yellow-300 cursor-pointer active:scale-95 transition-all select-none mx-auto leading-normal"
               >
-                <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0 animate-spin-slow" />
-                <span className="font-black tracking-normal">
+                <span className="text-base sm:text-lg shrink-0">🌺</span>
+                <span className="font-extrabold tracking-wide text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                   {lang === 'hi'
-                    ? '🌺 माँ का दिव्य आशीर्वाद लें (Touch for Ashirwad)'
+                    ? 'माँ का दिव्य आशीर्वाद लें (स्पर्श करें)'
                     : lang === 'en'
-                    ? '🌺 Touch for Divine Ashirwad & Blessings'
-                    : '🌺 માં નો દિવ્ય આશીર્વાદ લો (Touch for Ashirwad)'}
+                    ? 'Touch for Divine Ashirwad & Blessings'
+                    : 'માં નો દિવ્ય આશીર્વાદ લો (સ્પર્શ કરો)'}
                 </span>
+                <Sparkles className="w-4 h-4 text-yellow-200 fill-yellow-200 shrink-0 animate-pulse" />
               </button>
 
               {/* Blessed Message Alert when touched */}
               {blessed && (
-                <div className="mt-4 p-4 rounded-2xl bg-white/95 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-bold shadow-2xl animate-fade-in">
+                <div className="mt-4 p-4 rounded-2xl bg-white/95 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-bold shadow-2xl animate-fade-in w-full max-w-md">
                   <p className="flex items-center justify-center gap-2 text-amber-700 font-extrabold text-sm mb-1">
                     <span>✨</span>
                     <span>

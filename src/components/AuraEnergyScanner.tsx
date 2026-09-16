@@ -235,18 +235,21 @@ export const AuraEnergyScanner: React.FC = () => {
               })}
             </div>
 
-            <div className="text-center">
+            <div className="flex justify-center px-2">
               <button
                 onClick={startScan}
-                className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all active:scale-95 cursor-pointer border-2 border-amber-300"
+                className="group relative w-full sm:w-auto max-w-md inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-extrabold text-xs sm:text-base shadow-xl hover:shadow-2xl transition-all active:scale-95 cursor-pointer border-2 border-amber-300 select-none text-center"
               >
-                <Zap className="w-5 h-5 fill-stone-950 text-stone-950 group-hover:animate-bounce" />
-                <span>
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-stone-950 text-stone-950 group-hover:animate-bounce shrink-0 self-center" />
+                <span className="leading-normal font-extrabold whitespace-nowrap">
                   {lang === 'hi'
-                    ? 'वैदिक ऑरा स्कैन शुरू करें (Scan Now)'
+                    ? 'वैदिक ऑरा स्कैन शुरू करें'
                     : lang === 'en'
-                    ? 'Begin Vedic Aura Diagnostic Scan'
+                    ? 'Begin Vedic Aura Scan'
                     : 'ઓરા સ્કેન શરૂ કરો'}
+                </span>
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-stone-950/15 px-2 py-0.5 rounded-full shrink-0">
+                  {lang === 'hi' ? 'स्कैन करें' : lang === 'en' ? 'Scan Now' : 'હમણાં'}
                 </span>
               </button>
             </div>

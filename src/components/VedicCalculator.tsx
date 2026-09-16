@@ -129,16 +129,16 @@ Please check our planetary situation and perform Vedic relationship harmony reme
   return (
     <section id="calculator" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       {/* Section Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10 sm:mb-12 px-3">
         <div className="inline-flex items-center gap-1.5 bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full text-xs font-bold text-rose-800 uppercase tracking-widest mb-3">
           <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-500" />
           <span>{t.badge}</span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-snug">
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
           {t.title}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-rose-500 via-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p className="text-stone-600 mt-4 max-w-lg mx-auto text-sm sm:text-base leading-relaxed text-center [text-wrap:balance] px-2 font-medium">
           {t.subtitle}
         </p>
       </div>

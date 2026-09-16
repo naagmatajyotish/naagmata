@@ -100,34 +100,36 @@ export const ServicesSection: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-amber-200/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       {/* Section Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10 sm:mb-12 px-3">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold text-amber-800 uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
           <span>{t.badge}</span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
           {t.title}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 max-w-xl mx-auto text-sm sm:text-base">
+        <p className="text-stone-600 mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2">
           {t.subtitle}
         </p>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-8 bg-stone-100/80 p-1.5 rounded-2xl sm:rounded-full max-w-3xl mx-auto border border-stone-200">
-          {categoryTabs.map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeTab === tab.id
-                  ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-bold shadow-md shadow-amber-500/25'
-                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/80'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Category Filters - Structured Responsive Alignment */}
+        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-100/90 rounded-2xl sm:rounded-full border border-stone-200/90 shadow-inner">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {categoryTabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as typeof activeTab)}
+                className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer text-center inline-flex items-center justify-center select-none shrink-0 ${
+                  activeTab === tab.id
+                    ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-black shadow-md shadow-amber-500/30 border border-amber-300 ring-2 ring-amber-400/20'
+                    : 'bg-white text-stone-700 hover:text-amber-950 hover:bg-amber-50/70 border border-stone-200 shadow-2xs hover:border-amber-300'
+                }`}
+              >
+                <span className="whitespace-nowrap">{tab.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

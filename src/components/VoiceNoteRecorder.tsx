@@ -195,16 +195,16 @@ export const VoiceNoteRecorder: React.FC = () => {
             : 'મનનો ભાર કે પારિવારિક સમસ્યા લખવી મુશ્કેલ હોય છે. નીચે માઇક દબાવી તમારી વાત શાંતિથી બોલો. તમારો સંદેશ ૧૦૦% ગુપ્ત રહેશે.'}
         </p>
 
-        {/* Confidential Security Guarantee */}
-        <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-800 bg-emerald-50 border border-emerald-300/80 rounded-full px-3.5 py-1 mb-6">
-          <Lock className="w-3.5 h-3.5 text-emerald-600" />
-          <span>
-            {lang === 'hi'
-              ? '१००% निजी एवं गोपनीय • केवल पूज्य बाबा जी द्वारा सुना जाएगा'
-              : lang === 'en'
-              ? '100% Private & Confidential • Heard Solely by Baba Ji'
-              : '૧૦૦% ગુપ્ત અને સુરક્ષિત • માત્ર બાબા જી સાંભળશે'}
-          </span>
+        {/* Confidential Security Guarantee - Properly Aligned & Centered */}
+        <div className="flex items-center justify-center px-3 mb-6">
+          <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-emerald-900 bg-emerald-50 border border-emerald-300/80 rounded-2xl sm:rounded-full px-4 py-2 sm:py-1.5 shadow-2xs text-center max-w-xl">
+            <Lock className="w-4 h-4 text-emerald-700 shrink-0 self-center" />
+            <span className="leading-snug text-center">
+              <span>{lang === 'hi' ? '१००% निजी एवं गोपनीय' : lang === 'en' ? '100% Private & Confidential' : '૧૦૦% ગુપ્ત અને સુરક્ષિત'}</span>
+              <span className="mx-1.5 text-emerald-600 font-normal">•</span>
+              <span className="text-emerald-950 font-bold">{lang === 'hi' ? 'केवल पूज्य बाबा जी द्वारा सुना जाएगा' : lang === 'en' ? 'Heard Solely by Baba Ji' : 'માત્ર બાબા જી સાંભળશે'}</span>
+            </span>
+          </div>
         </div>
 
         {/* Main Voice Recording Console */}
