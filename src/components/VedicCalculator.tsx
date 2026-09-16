@@ -447,38 +447,43 @@ Please check our planetary situation and perform Vedic relationship harmony reme
           </div>
 
           {/* Action CTAs: Direct Call & WhatsApp */}
-          <div className="mt-6 pt-4 border-t border-stone-100 space-y-2.5">
+          <div className="mt-6 pt-4 border-t border-stone-100 space-y-3">
             <a
               id="calculator-whatsapp-btn"
               href={getWhatsAppLoveLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md shadow-emerald-600/20 transition-all cursor-pointer active:scale-95"
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md shadow-emerald-600/20 transition-all cursor-pointer active:scale-95 border border-emerald-500/80"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>
-                {lang === 'hi'
-                  ? 'बाबा जी से WhatsApp पर समाधान जानें'
-                  : lang === 'gu-en'
-                  ? 'બાબાજી સાથે WhatsApp પર વાત કરો'
-                  : 'Discuss Solution With Baba Ji on WhatsApp'}
-              </span>
-              <ArrowRight className="w-4 h-4" />
+              <div className="flex items-center gap-2.5 min-w-0">
+                <MessageCircle className="w-5 h-5 shrink-0 text-emerald-100" />
+                <span className="font-extrabold text-xs xs:text-sm truncate">
+                  {lang === 'hi'
+                    ? 'बाबा जी से WhatsApp पर समाधान जानें'
+                    : lang === 'gu-en'
+                    ? 'બાબાજી સાથે WhatsApp પર વાત કરો'
+                    : 'Chat With Baba Ji on WhatsApp'}
+                </span>
+              </div>
+              <ArrowRight className="w-4 h-4 shrink-0 text-emerald-200" />
             </a>
 
             <a
               id="calculator-call-btn"
               href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all cursor-pointer active:scale-95 border border-amber-300"
+              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-4 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md transition-all cursor-pointer active:scale-95 border border-amber-300"
             >
-              <Phone className="w-4 h-4 animate-bounce" />
-              <span>
-                {lang === 'hi'
-                  ? `सीधा फोन कॉल करें: ${CONTACT_INFO.phoneDisplay}`
-                  : lang === 'gu-en'
-                  ? `સીધો ફોન કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                  : `Direct Phone Call: ${CONTACT_INFO.phoneDisplay}`}
-              </span>
+              <div className="flex items-center gap-2.5 min-w-0">
+                <Phone className="w-5 h-5 shrink-0 animate-bounce text-amber-100" />
+                <span className="font-extrabold text-xs xs:text-sm whitespace-nowrap">
+                  {lang === 'hi'
+                    ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
+                    : lang === 'gu-en'
+                    ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                    : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+                </span>
+              </div>
+              <ArrowRight className="w-4 h-4 shrink-0 text-amber-200" />
             </a>
           </div>
         </div>

@@ -312,19 +312,19 @@ export const SacredDarshan3D: React.FC = () => {
         </div>
 
         {/* Action Buttons: Direct Call & WhatsApp to Connect with Baba Ji */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl">
+        <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl mx-auto">
           <a
             id="darshan-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full sm:w-auto flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 text-sm shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer"
+            className="w-full sm:flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[50px]"
           >
-            <Phone className="w-4 h-4 animate-bounce" />
-            <span>
+            <Phone className="w-4 h-4 shrink-0 animate-bounce" />
+            <span className="whitespace-nowrap">
               {lang === 'hi'
-                ? `सीधा कॉल करें बाबा जी: ${CONTACT_INFO.phoneDisplay}`
+                ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
                 : lang === 'gu-en'
-                ? `સીધો કૉલ બાબાજી: ${CONTACT_INFO.phoneDisplay}`
-                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
             </span>
           </a>
 
@@ -333,15 +333,15 @@ export const SacredDarshan3D: React.FC = () => {
             href={CONTACT_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 text-sm shadow-lg border border-emerald-400 active:scale-95 transition-all cursor-pointer"
+            className="w-full sm:flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base shadow-lg border border-emerald-400 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[50px]"
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>
+            <MessageCircle className="w-4 h-4 shrink-0" />
+            <span className="whitespace-nowrap">
               {lang === 'hi'
-                ? 'सिद्ध नाग-मणि रक्षा कवच का संकल्प'
+                ? 'सिद्ध नाग-मणि रक्षा कवच'
                 : lang === 'gu-en'
-                ? 'સિદ્ધ નાગ-મણિ રક્ષા કવચ વિધાન'
-                : 'Request Consecrated Naag-Mani Kavach'}
+                ? 'સિદ્ધ નાગ-મણિ રક્ષા કવચ'
+                : 'Naag-Mani Raksha Kavach'}
             </span>
           </a>
         </div>

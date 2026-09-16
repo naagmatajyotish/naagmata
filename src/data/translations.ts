@@ -133,7 +133,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
     },
     ticker: {
       verse: '॥ ૐ નવકુલ નાગદેવ્યૈ નમઃ ॥',
-      gujaratPromo: '🕉️ સમસ્ત ગુજરાત (અમદાવાદ, સુરત, વડોદરા, રાજકોટ) તથા NRI ગુજરાતીઓ માટે 24/7 પરામર્શ',
+      gujaratPromo: '🕉️ સમસ્ત ગુજરાત (અમદાવાદ, સુરત, વડોદરા, રાજકોટ), સમગ્ર ભારત તથા વિદેશ (Abroad: USA, UK, Canada, Australia, UAE) માટે 24/7 પરામર્શ',
       brandTag: '🐍 શ્રી માં નાગદેવી સિદ્ધ પીઠ • World Renowned Vedic Astrologer & Love Problem Specialist',
       servicesTag: '✨ Explore Authentic Vedic Love Problem & Relationship Shanti Havans',
       disputesTag: '🔱 લવ પ્રોબ્લેમ સોલ્યુશન • પ્રેમ લગ્ન વિલંબ • પતિ-પત્ની કંકાસ નિવારણ',
@@ -247,7 +247,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
     },
     ticker: {
       verse: '॥ ॐ नवकुल नागदेव्यै नमः ॥',
-      gujaratPromo: '🕉️ उत्तर भारत (दिल्ली, यूपी, बिहार, राजस्थान, एमपी, हरियाणा) एवं समस्त भारत हेतु 24/7 ज्योतिष परामर्श',
+      gujaratPromo: '🕉️ उत्तर भारत (दिल्ली, यूपी, बिहार, राजस्थान, एमपी, हरियाणा), समस्त भारत एवं विदेश (Abroad: USA, UK, Canada, Australia, UAE) हेतु 24/7 ज्योतिष परामर्श',
       brandTag: '🐍 श्री माँ नागदेवी सिद्ध पीठ • विश्व प्रसिद्ध वैदिक ज्योतिषी एवं प्रेम समस्या समाधान विशेषज्ञ',
       servicesTag: '✨ प्रामाणिक वैदिक प्रेम समाधान एवं पारिवारिक शांति अनुष्ठान',
       disputesTag: '🔱 लव प्रॉब्लम सॉल्यूशन • प्रेम विवाह बाधा निवारण • पति-पत्नी कलह शांति',
@@ -361,7 +361,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
     },
     ticker: {
       verse: '॥ Om Navakula Naagdevyai Namah ॥',
-      gujaratPromo: '🕉️ 24/7 Sacred Vedic Consultations for Clients Worldwide (USA, UK, Canada, Australia, UAE & Europe)',
+      gujaratPromo: '🕉️ 24/7 Sacred Vedic Consultations across India & Abroad (USA, UK, Canada, Australia, UAE & Europe)',
       brandTag: '🐍 Shri Maa Naagdevi Siddha Peeth • World Renowned Vedic Astrologer & Relationship Specialist',
       servicesTag: '✨ Explore Authentic Vedic Love Problem & Relationship Harmony Havans',
       disputesTag: '🔱 Relationship Reconciliation • Marriage Harmony • Dispute Resolution',

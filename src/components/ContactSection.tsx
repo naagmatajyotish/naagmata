@@ -114,7 +114,7 @@ export const ContactSection: React.FC = () => {
         {/* Official Email Card */}
         <a
           href={`mailto:${CONTACT_INFO.email}`}
-          className="bg-white border border-amber-200/80 hover:border-amber-400 p-8 rounded-3xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] group shadow-xs hover:shadow-lg hover:shadow-amber-500/5"
+          className="bg-white border border-amber-200/80 hover:border-amber-400 p-6 sm:p-8 rounded-3xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] group shadow-xs hover:shadow-lg hover:shadow-amber-500/5 w-full overflow-hidden"
         >
           <div className="w-16 h-16 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-600 group-hover:text-white transition-all shadow-inner">
             <Mail className="w-7 h-7 text-orange-700 group-hover:text-white transition-colors" />
@@ -126,7 +126,10 @@ export const ContactSection: React.FC = () => {
               ? 'ઈમેલ સંપર્ક (Email Inquiries)'
               : 'Email Correspondence'}
           </span>
-          <h3 className="text-base sm:text-lg font-bold text-stone-900 mb-2 break-all group-hover:text-amber-800">
+          <h3 
+            className="text-xs xs:text-sm sm:text-base font-bold text-stone-900 mb-2 group-hover:text-amber-800 whitespace-nowrap tracking-tight max-w-full px-1"
+            title={CONTACT_INFO.email}
+          >
             {CONTACT_INFO.email}
           </h3>
           <p className="text-stone-600 text-xs">

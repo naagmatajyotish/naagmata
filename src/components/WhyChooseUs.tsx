@@ -112,12 +112,20 @@ export const WhyChooseUs: React.FC = () => {
               : 'Divine Sanctity & Trust Under Maa Naagdevi'}
           </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
-          {lang === 'hi'
-            ? 'नागमाता ज्योतिष पर क्यों भरोसा करते हैं भक्त?'
-            : lang === 'gu-en'
-            ? 'નાગમાતા જ્યોતિષ પર કેમ વિશ્વાસ કરે છે હજારો ભક્તો?'
-            : 'Why Worldwide Devotees Trust Naagmata Jyotish'}
+        <h2 className="heading-mystic text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-stone-900 max-w-4xl mx-auto leading-snug sm:leading-tight text-balance">
+          {lang === 'hi' ? (
+            <>
+              नागमाता ज्योतिष पर <span className="whitespace-nowrap">क्यों भरोसा करते हैं भक्त?</span>
+            </>
+          ) : lang === 'gu-en' ? (
+            <>
+              નાગમાતા જ્યોતિષ પર <span className="whitespace-nowrap">કેમ વિશ્વાસ કરે છે હજારો ભક્તો?</span>
+            </>
+          ) : (
+            <>
+              Why Worldwide Devotees Trust <span className="whitespace-nowrap">Naagmata Jyotish</span>
+            </>
+          )}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
@@ -153,54 +161,54 @@ export const WhyChooseUs: React.FC = () => {
         })}
       </div>
 
-      {/* Numerical Stats Counters */}
+      {/* Numerical Stats Counters - Balanced & Aligned */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-        <div className="bg-white border border-amber-200/80 p-6 rounded-3xl shadow-xs">
-          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1">
+        <div className="bg-white border border-amber-200/80 p-5 sm:p-6 rounded-3xl shadow-xs flex flex-col items-center justify-center min-h-[130px]">
+          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.experienceYears}
           </span>
-          <span className="text-xs text-stone-600 uppercase tracking-wider font-bold">
+          <span className="text-xs text-stone-700 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[32px]">
             {lang === 'hi'
               ? 'वर्षों की अखंड साधना'
               : lang === 'gu-en'
-              ? 'વર્ષોનો અનુભવ (Years Tapasya)'
+              ? 'વર્ષોની અખંડ સાધના'
               : 'Years Sacred Tapasya'}
           </span>
         </div>
-        <div className="bg-white border border-amber-200/80 p-6 rounded-3xl shadow-xs">
-          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1">
+        <div className="bg-white border border-amber-200/80 p-5 sm:p-6 rounded-3xl shadow-xs flex flex-col items-center justify-center min-h-[130px]">
+          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.clientsCount}
           </span>
-          <span className="text-xs text-stone-600 uppercase tracking-wider font-bold">
+          <span className="text-xs text-stone-700 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[32px]">
             {lang === 'hi'
               ? 'सफल वैदिक समाधान'
               : lang === 'gu-en'
-              ? 'સફળ કેસ (Cases Solved)'
+              ? 'સફળ વૈદિક સમાધાન'
               : 'Cases Solved Successfully'}
           </span>
         </div>
-        <div className="bg-white border border-amber-200/80 p-6 rounded-3xl shadow-xs">
-          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1">
+        <div className="bg-white border border-amber-200/80 p-5 sm:p-6 rounded-3xl shadow-xs flex flex-col items-center justify-center min-h-[130px]">
+          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1 whitespace-nowrap">
             18+
           </span>
-          <span className="text-xs text-stone-600 uppercase tracking-wider font-bold">
+          <span className="text-xs text-stone-700 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[32px]">
             {lang === 'hi'
               ? 'वैश्विक देश'
               : lang === 'gu-en'
-              ? 'દેશોમાં ભક્તો (Countries)'
-              : 'Countries Served Worldwide'}
+              ? 'વૈશ્વિક દેશો (Global)'
+              : 'Countries Served'}
           </span>
         </div>
-        <div className="bg-white border border-amber-200/80 p-6 rounded-3xl shadow-xs">
-          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1">
+        <div className="bg-white border border-amber-200/80 p-5 sm:p-6 rounded-3xl shadow-xs flex flex-col items-center justify-center min-h-[130px]">
+          <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.successRate}
           </span>
-          <span className="text-xs text-stone-600 uppercase tracking-wider font-bold">
+          <span className="text-xs text-stone-700 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[32px]">
             {lang === 'hi'
-              ? 'संतुष्टि दर'
+              ? 'वैदिक शुद्धि व संतुष्टि'
               : lang === 'gu-en'
-              ? 'સંતોષ દર (Satisfaction)'
-              : 'Satisfaction Rate'}
+              ? 'વૈદિક પવિત્રતા અને સંતોષ'
+              : 'Vedic Sanctity & Trust'}
           </span>
         </div>
       </div>

@@ -407,36 +407,62 @@ export const SeoKeywordsDirectory: React.FC = () => {
       </div>
 
       {/* Global Call to Action Bar */}
-      <div className="mt-10 bg-gradient-to-r from-amber-600 via-amber-700 to-orange-600 text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-        <div className="space-y-1 text-center md:text-left">
-          <span className="text-xs font-black uppercase tracking-widest text-amber-200">
-            24/7 Global & Local Astrological Helpline
+      <div className="mt-10 bg-gradient-to-r from-amber-600 via-amber-700 to-orange-600 text-white rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl border border-amber-500/50">
+        <div className="space-y-2 flex-1 min-w-0 text-left">
+          <span className="inline-block text-xs font-black uppercase tracking-widest text-amber-200">
+            {lang === 'hi'
+              ? '24/7 वैश्विक व स्थानीय ज्योतिषीय मार्गदर्शन'
+              : lang === 'gu-en'
+              ? '24/7 વૈશ્વિક અને સ્થાનિક જ્યોતિષ હેલ્પલાઇન'
+              : '24/7 Global & Local Astrological Helpline'}
           </span>
-          <h3 className="heading-mystic text-xl sm:text-2xl font-bold">
-            Looking for Astrological Guidance in Your City or Country?
+          <h3 className="heading-mystic text-xl sm:text-2xl lg:text-3xl font-bold leading-snug text-balance">
+            {lang === 'hi'
+              ? 'क्या आप अपने शहर या देश में ज्योतिषीय समाधान खोज रहे हैं?'
+              : lang === 'gu-en'
+              ? 'શું તમે તમારા શહેર કે દેશમાં જ્યોતિષીય માર્ગદર્શન શોધી રહ્યા છો?'
+              : 'Looking for Astrological Guidance in Your City or Country?'}
           </h3>
-          <p className="text-xs sm:text-sm text-amber-100 max-w-2xl">
-            Whether you are in Ahmedabad, Surat, Rajkot, London, New York, Toronto, Sydney, or Dubai, Baba Ji is available for direct, confidential consultations.
+          <p className="text-xs sm:text-sm text-amber-100/95 max-w-2xl leading-relaxed">
+            {lang === 'hi'
+              ? 'चाहे आप अहमदाबाद, सूरत, राजकोट, लंदन, न्यूयॉर्क, टोरंटो, सिडनी या दुबई में हों — पूज्य बाबा जी व्यक्तिगत, गोपनीय व सटीक मार्गदर्शन हेतु उपलब्ध हैं।'
+              : lang === 'gu-en'
+              ? 'તમે અમદાવાદ, સુરત, રાજકોટ, લંડન, ન્યુયોર્ક, ટોરોન્ટો, સિડની કે દુબઈમાં હોવ — બાબાજી સીધા અને ગુપ્ત માર્ગદર્શન માટે 24 કલાક ઉપલબ્ધ છે.'
+              : 'Whether you are in Ahmedabad, Surat, Rajkot, London, New York, Toronto, Sydney, or Dubai, Baba Ji is available for direct, confidential consultations.'}
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto self-stretch lg:self-center">
           <a
+            id="global-cta-call"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full sm:w-auto bg-white text-stone-950 hover:bg-amber-50 font-black px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all text-sm cursor-pointer"
+            className="h-12 sm:h-[50px] bg-white text-stone-950 hover:bg-amber-50 font-extrabold px-5 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm whitespace-nowrap border border-white cursor-pointer"
           >
-            <Phone className="w-4 h-4 text-amber-600 animate-bounce" />
-            <span>Direct Call: {CONTACT_INFO.phoneDisplay}</span>
+            <Phone className="w-4 h-4 text-amber-600 shrink-0 animate-bounce" />
+            <span className="whitespace-nowrap font-extrabold">
+              {lang === 'hi'
+                ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
+                : lang === 'gu-en'
+                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+            </span>
           </a>
 
           <a
+            id="global-cta-whatsapp"
             href={CONTACT_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all text-sm border border-emerald-400 cursor-pointer"
+            className="h-12 sm:h-[50px] bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm border border-emerald-400 cursor-pointer whitespace-nowrap"
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>WhatsApp Connect</span>
+            <MessageCircle className="w-4 h-4 shrink-0" />
+            <span className="whitespace-nowrap font-extrabold">
+              {lang === 'hi'
+                ? 'व्हाट्सएप पर जुड़ें'
+                : lang === 'gu-en'
+                ? 'વોટ્સએપ સંપર્ક'
+                : 'WhatsApp Connect'}
+            </span>
           </a>
         </div>
       </div>

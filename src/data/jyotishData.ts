@@ -19,8 +19,8 @@ export const CONTACT_INFO = {
   address: 'Shri Maa Naagdevi Siddha Peeth Ashram, Mahakal Marg, Ujjain, Madhya Pradesh 456006, India',
   availableHours: '24 Hours / 7 Days Live Support',
   experienceYears: '35+',
-  successRate: 'Vedic Sanctity',
-  clientsCount: 'Thousands of Devotees'
+  successRate: '100%',
+  clientsCount: '51,000+'
 };
 
 export const SACRED_SERVICES: ServiceItem[] = [

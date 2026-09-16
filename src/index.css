@@ -27,13 +27,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root, html, body, #root {
+  :root, html, body, #root, * {
     color-scheme: only light !important;
-    color-scheme: light !important;
-    background-color: #fdfcf7 !important;
-    color: #2a2203 !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
+  }
+
+  :root, html, body, #root {
+    background-color: #fdfcf7 !important;
+    color: #2a2203 !important;
   }
 
   /* Prevent browser from inverting images, badges, logos, and graphics */
@@ -46,7 +48,6 @@
   /* Keep input fields and buttons clean light-styled */
   input, select, textarea, button, option {
     color-scheme: only light !important;
-    color-scheme: light !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }

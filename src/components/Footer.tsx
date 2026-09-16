@@ -225,8 +225,8 @@ export const Footer: React.FC = () => {
                 </a>
               </p>
               <p className="flex items-center gap-2 text-stone-700 font-medium">
-                <Mail className="w-3.5 h-3.5 text-amber-600" />
-                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-amber-700 break-all">
+                <Mail className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-amber-700 font-medium break-all xs:break-normal text-xs sm:text-sm">
                   {CONTACT_INFO.email}
                 </a>
               </p>
