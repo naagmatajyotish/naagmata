@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Star, CheckCircle, Quote, Sparkles, ChevronLeft, ChevronRight, Calendar, MapPin, HeartHandshake, MessageCircle } from 'lucide-react';
 import { TESTIMONIALS, CONTACT_INFO } from '../data/jyotishData';
+import { useLanguage } from '../context/LanguageContext';
 
 type CategoryFilter = 'all' | 'love' | 'marriage' | 'abroad' | 'protection';
 
 export const Testimonials: React.FC = () => {
+  const { lang } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -40,31 +42,87 @@ export const Testimonials: React.FC = () => {
     setCurrentIndex((prev) => (prev + 1) % filteredTestimonials.length);
   };
 
+  const categoryOptions = [
+    {
+      id: 'all',
+      label:
+        lang === 'hi'
+          ? '🌟 सभी अनुभव'
+          : lang === 'gu-en'
+          ? '🌟 બધા અનુભવો (All Stories)'
+          : '🌟 All Stories'
+    },
+    {
+      id: 'love',
+      label:
+        lang === 'hi'
+          ? '💔 प्रेम व संबंध समाधान'
+          : lang === 'gu-en'
+          ? '💔 પ્રેમ સંબંધ સમાધાન (Love Back)'
+          : '💔 Ex-Love Back'
+    },
+    {
+      id: 'marriage',
+      label:
+        lang === 'hi'
+          ? '💍 प्रेम विवाह व गृह क्लेश'
+          : lang === 'gu-en'
+          ? '💍 પ્રેમ લગ્ન અને પરિવાર (Marriage)'
+          : '💍 Love Marriage & Family'
+    },
+    {
+      id: 'abroad',
+      label:
+        lang === 'hi'
+          ? '🌍 एनआरआई क्लाइंट्स (USA, UK, Canada)'
+          : lang === 'gu-en'
+          ? '🌍 એનઆરઆઈ ભક્તો (NRI Devotees)'
+          : '🌍 Abroad / NRI Clients'
+    },
+    {
+      id: 'protection',
+      label:
+        lang === 'hi'
+          ? '🛡️ रक्षा व शांति अनुष्ठान'
+          : lang === 'gu-en'
+          ? '🛡️ રક્ષા કવચ અને શાંતિ (Protection)'
+          : '🛡️ Protection & Peace'
+    }
+  ];
+
   return (
     <section id="testimonials" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-          <span>Real Devotee Experiences & Miracles</span>
+          <span>
+            {lang === 'hi'
+              ? 'सच्चे भक्तों के अनुभव व माँ का आशीर्वाद'
+              : lang === 'gu-en'
+              ? 'સાચા ભક્તોના દિવ્ય અનુભવો (Devotee Blessings)'
+              : 'Real Devotee Experiences & Blessings'}
+          </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
-          True Stories of Reunited Lovers & Restored Families
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-snug">
+          {lang === 'hi'
+            ? 'बिछड़े प्रेमियों व परिवारों के पुनर्मिलन की सत्य गाथाएं'
+            : lang === 'gu-en'
+            ? 'પ્રેમ અને પારિવારિક સમાધાનની સાચી કથાઓ (True Stories)'
+            : 'True Stories of Reunited Lovers & Restored Families'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-          Over 14,800+ international and Indian clients have found permanent peace, broken free from heartbreak, and reunited with their soulmates through Baba Ji's sacred Vedic blessings.
+          {lang === 'hi'
+            ? '१४,८००+ भारतीय एवं वैश्विक एनआरआई परिवारों ने पूज्य बाबा जी के वैदिक मार्गदर्शन से दांपत्य सुख व मानसिक शांति प्राप्त की है।'
+            : lang === 'gu-en'
+            ? '૧૪,૮૦૦+ થી વધુ એનઆરઆઈ અને ભારતીય ભક્તોએ બાબાજીના સચોટ વૈદિક માર્ગદર્શનથી પોતાના પ્રેમ અને પરિવારમાં ખુશીઓ મેળવી છે.'
+            : "Over 14,800+ international and Indian clients have found spiritual peace, emotional clarity, and reconciliation in their relationships through Baba Ji's authentic Vedic astrology guidance."}
         </p>
 
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 pt-6">
-          {[
-            { id: 'all', label: '🌟 All Stories (सभी अनुभव)' },
-            { id: 'love', label: '💔 Ex-Love Back (खोया प्यार)' },
-            { id: 'marriage', label: '💍 Love Marriage & Family (प्रेम विवाह)' },
-            { id: 'abroad', label: '🌍 Abroad / NRI Clients (USA, UK, Canada)' },
-            { id: 'protection', label: '🛡️ Protection & Buri Nazar (सुरक्षा)' },
-          ].map((cat) => {
+          {categoryOptions.map((cat) => {
             const isSelected = activeCategory === cat.id;
             return (
               <button
@@ -101,7 +159,11 @@ export const Testimonials: React.FC = () => {
               ))}
             </div>
             <span className="text-xs font-black text-stone-900 bg-amber-100/80 px-2 py-0.5 rounded-full border border-amber-300">
-              5.0 Verified Vedic Review
+              {lang === 'hi'
+                ? '५.० प्रमाणित वैदिक समीक्षा'
+                : lang === 'gu-en'
+                ? '૫.૦ પ્રમાણિત સમીક્ષા (5.0 Verified)'
+                : '5.0 Verified Vedic Review'}
             </span>
           </div>
 
@@ -120,7 +182,13 @@ export const Testimonials: React.FC = () => {
         {/* Problem Title Badge */}
         <div className="mb-4 inline-flex items-center gap-1.5 bg-rose-50 border border-rose-200 px-3 py-1 rounded-xl text-xs font-bold text-rose-900">
           <HeartHandshake className="w-3.5 h-3.5 text-rose-600" />
-          <span>Case: {activeItem.problem}</span>
+          <span>
+            {lang === 'hi'
+              ? `विषय: ${activeItem.problem}`
+              : lang === 'gu-en'
+              ? `સમસ્યા: ${activeItem.problem}`
+              : `Case: ${activeItem.problem}`}
+          </span>
         </div>
 
         {/* Testimonial Quote Text with Fade Transition */}

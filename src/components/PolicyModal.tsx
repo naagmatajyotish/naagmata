@@ -225,13 +225,15 @@ export const PolicyModal: React.FC<PolicyModalProps> = ({ activeModal, onClose }
 
         {/* Modal Footer */}
         <div className="bg-stone-100 px-5 sm:px-8 py-3.5 border-t border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <span className="text-stone-500 text-center sm:text-left">
-            Questions? Contact Ashram: <strong>{CONTACT_INFO.phoneDisplay}</strong>
-          </span>
+          <div className="text-stone-500 text-center sm:text-left leading-relaxed">
+            <span>Questions? Helpline: <strong>{CONTACT_INFO.phoneDisplay}</strong></span>
+            <span className="hidden sm:inline"> • </span>
+            <span className="block sm:inline">{CONTACT_INFO.address}</span>
+          </div>
           <button
             type="button"
             onClick={onClose}
-            className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-full cursor-pointer transition-colors shadow-xs"
+            className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-full cursor-pointer transition-colors shadow-xs shrink-0"
           >
             I Understand & Accept (स्वीकार है)
           </button>

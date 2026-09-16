@@ -1,21 +1,38 @@
 import React from 'react';
 import { Phone, MessageCircle, Mail, MapPin, Clock, Sparkles } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const ContactSection: React.FC = () => {
+  const { lang } = useLanguage();
+
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-          <span>Sacred Guidance Anytime</span>
+          <span>
+            {lang === 'hi'
+              ? 'दैवीय कृपा व २४/७ सीधा संपर्क'
+              : lang === 'gu-en'
+              ? 'દિવ્ય માર્ગદર્શન અને ૨૪/૭ સંપર્ક (Direct Contact)'
+              : 'Sacred Guidance Anytime'}
+          </span>
         </div>
         <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
-          Direct Connect with Baba Ji
+          {lang === 'hi'
+            ? 'पूज्य बाबा जी से सीधा संपर्क करें'
+            : lang === 'gu-en'
+            ? 'બાબાજી સાથે સીધો સંપર્ક કરો'
+            : 'Direct Connect with Baba Ji'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-stone-600 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-          Do not suffer in silence. Whether your issue is love, marriage, divorce, evil eye, or financial debt, one call can change your destiny under Maa Naagdevi kripa.
+          {lang === 'hi'
+            ? 'अपनी समस्या में अकेले परेशान न हों। प्रेम, विवाह, तलाक या पारिवारिक क्लेश में एक कॉल आपके जीवन में सकारात्मक मोड़ ला सकती है।'
+            : lang === 'gu-en'
+            ? 'ચિંતા કે વિષાદમાં એકલા ન રહો. પ્રેમ, લગ્ન, છૂટાછેડા કે કૌટુંબિક પ્રશ્નોમાં માં નાગદેવીની કૃપાથી એક કૉલ જીવન બદલી શકે છે.'
+            : 'Do not suffer in silence. Whether your issue is love, marriage, divorce, or family anxiety, ethical Vedic guidance can restore harmony under divine grace.'}
         </p>
       </div>
 
@@ -29,16 +46,28 @@ export const ContactSection: React.FC = () => {
             <Phone className="w-7 h-7 text-amber-700 group-hover:text-white transition-colors" />
           </div>
           <span className="text-xs text-amber-800 uppercase tracking-widest font-bold mb-1">
-            24/7 Phone Helpline
+            {lang === 'hi'
+              ? '२४/७ फोन हेल्पलाइन'
+              : lang === 'gu-en'
+              ? '૨૪/૭ ફોન હેલ્પલાઇન (Helpline)'
+              : '24/7 Phone Helpline'}
           </span>
           <h3 className="heading-mystic text-xl font-bold text-stone-900 mb-2 group-hover:text-amber-800">
             {CONTACT_INFO.phoneDisplay}
           </h3>
           <p className="text-stone-600 text-xs">
-            Direct audio call with Baba Ji. Instant consultation for urgent crises.
+            {lang === 'hi'
+              ? 'पूज्य बाबा जी से सीधा फोन परामर्श। तत्काल मार्गदर्शन हेतु कॉल करें।'
+              : lang === 'gu-en'
+              ? 'બાબાજી સાથે સીધો કૉલ. તાત્કાલિક માર્ગદર્શન માટે અત્યારે જ સંપર્ક કરો.'
+              : 'Direct audio consultation with Baba Ji for urgent crises and relationship clarity.'}
           </p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 group-hover:underline">
-            Tap to Call Now →
+            {lang === 'hi'
+              ? 'अभी कॉल करें →'
+              : lang === 'gu-en'
+              ? 'કૉલ કરવા ટેપ કરો →'
+              : 'Tap to Call Now →'}
           </span>
         </a>
 
@@ -53,16 +82,32 @@ export const ContactSection: React.FC = () => {
             <MessageCircle className="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors" />
           </div>
           <span className="text-xs text-emerald-800 uppercase tracking-widest font-bold mb-1">
-            Instant WhatsApp Chat
+            {lang === 'hi'
+              ? 'तत्काल WhatsApp चैट'
+              : lang === 'gu-en'
+              ? 'ઝડપી WhatsApp ચેટ (Instant Chat)'
+              : 'Instant WhatsApp Chat'}
           </span>
           <h3 className="heading-mystic text-xl font-bold text-stone-900 mb-2 group-hover:text-emerald-700">
-            Chat on WhatsApp
+            {lang === 'hi'
+              ? 'WhatsApp पर बात करें'
+              : lang === 'gu-en'
+              ? 'WhatsApp પર ચેટ કરો'
+              : 'Chat on WhatsApp'}
           </h3>
           <p className="text-stone-600 text-xs">
-            Share birth chart, partner photo, or questions securely and privately.
+            {lang === 'hi'
+              ? 'जन्म पत्रिका, साथी का फोटो या प्रश्न पूर्ण गोपनीयता से भेजें।'
+              : lang === 'gu-en'
+              ? 'કુંડળી વિગત, ફોટો કે સમસ્યા પૂર્ણ ગુપ્તતા સાથે મોકલો.'
+              : 'Share birth chart, partner photo, or questions securely and privately.'}
           </p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 group-hover:underline">
-            Open WhatsApp Chat →
+            {lang === 'hi'
+              ? 'WhatsApp चैट खोलें →'
+              : lang === 'gu-en'
+              ? 'WhatsApp શરૂ કરો →'
+              : 'Open WhatsApp Chat →'}
           </span>
         </a>
 
@@ -75,16 +120,28 @@ export const ContactSection: React.FC = () => {
             <Mail className="w-7 h-7 text-orange-700 group-hover:text-white transition-colors" />
           </div>
           <span className="text-xs text-amber-800 uppercase tracking-widest font-bold mb-1">
-            Email Correspondence
+            {lang === 'hi'
+              ? 'ईमेल पत्राचार'
+              : lang === 'gu-en'
+              ? 'ઈમેલ સંપર્ક (Email Inquiries)'
+              : 'Email Correspondence'}
           </span>
           <h3 className="text-base sm:text-lg font-bold text-stone-900 mb-2 break-all group-hover:text-amber-800">
             {CONTACT_INFO.email}
           </h3>
           <p className="text-stone-600 text-xs">
-            Send comprehensive case histories, horoscopes, or long-distance puja inquiries.
+            {lang === 'hi'
+              ? 'विस्तृत कुंडली, पारिवारिक विवरण व दूरस्थ पूजा हेतु ईमेल भेजें।'
+              : lang === 'gu-en'
+              ? 'વિગતવાર કુંડળી અને વિદેશથી પૂજા વિધિ માટે ઈમેલ મોકલો.'
+              : 'Send comprehensive case histories, horoscopes, or long-distance puja inquiries.'}
           </p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 group-hover:underline">
-            Send Email Inquiry →
+            {lang === 'hi'
+              ? 'ईमेल संदेश भेजें →'
+              : lang === 'gu-en'
+              ? 'ઈમેલ મોકલો →'
+              : 'Send Email Inquiry →'}
           </span>
         </a>
       </div>
@@ -96,7 +153,13 @@ export const ContactSection: React.FC = () => {
             <MapPin className="w-6 h-6" />
           </div>
           <div>
-            <span className="font-bold text-stone-900 block">Main Siddha Peeth Sansthan:</span>
+            <span className="font-bold text-stone-900 block">
+              {lang === 'hi'
+                ? 'मुख्य सिद्ध पीठ संस्थान:'
+                : lang === 'gu-en'
+                ? 'મુખ્ય સિદ્ધ પીઠ સંસ્થાન:'
+                : 'Main Siddha Peeth Sansthan:'}
+            </span>
             <span className="text-stone-600">{CONTACT_INFO.location}</span>
           </div>
         </div>
@@ -106,10 +169,20 @@ export const ContactSection: React.FC = () => {
             <Clock className="w-6 h-6" />
           </div>
           <div>
-            <span className="font-bold text-stone-900 block">Consultation Availability:</span>
+            <span className="font-bold text-stone-900 block">
+              {lang === 'hi'
+                ? 'परामर्श सेवा समय:'
+                : lang === 'gu-en'
+                ? 'પરામર્શ ઉપલબ્ધતા સમય:'
+                : 'Consultation Availability:'}
+            </span>
             <span className="text-emerald-700 flex items-center gap-1.5 font-bold">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-ping"></span>
-              {CONTACT_INFO.availableHours}
+              {lang === 'hi'
+                ? '२४/७ अखंड उपलब्ध (ऑनलाइन व फोन)'
+                : lang === 'gu-en'
+                ? '૨૪/૭ સતત ઉપલબ્ધ (Online & Phone)'
+                : CONTACT_INFO.availableHours}
             </span>
           </div>
         </div>

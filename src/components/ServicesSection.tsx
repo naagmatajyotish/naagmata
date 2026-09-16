@@ -20,8 +20,12 @@ import {
 } from 'lucide-react';
 import { SACRED_SERVICES, CONTACT_INFO } from '../data/jyotishData';
 import { ServiceItem } from '../types';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const ServicesSection: React.FC = () => {
+  const { lang } = useLanguage();
+  const t = TRANSLATIONS[lang].services;
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [activeTab, setActiveTab] = useState<'all' | 'love' | 'marriage' | 'protection' | 'career' | 'kundali'>('all');
 
@@ -54,9 +58,41 @@ export const ServicesSection: React.FC = () => {
   };
 
   const createWhatsAppServiceLink = (serviceTitle: string) => {
-    const text = `Pranam Baba Ji, I need urgent astrological help regarding: *${serviceTitle}*. Please guide me on how to proceed.`;
+    const text =
+      lang === 'hi'
+        ? `प्रणाम बाबा जी, मुझे "${serviceTitle}" से संबंधित तत्काल ज्योतिषीय मार्गदर्शन चाहिए। कृपया उपाय बताएं।`
+        : lang === 'gu-en'
+        ? `પ્રણામ બાબાજી, મને "${serviceTitle}" વિષય પર તાત્કાલિક જ્યોતિષિય માર્ગદર્શન જોઈએ છે. કૃપા કરી સહાય કરો.`
+        : `Pranam Baba Ji, I need urgent astrological guidance regarding: *${serviceTitle}*. Please guide me on how to proceed.`;
     return `https://wa.me/919714127309?text=${encodeURIComponent(text)}`;
   };
+
+  const categoryTabs = [
+    {
+      id: 'all',
+      label: lang === 'hi' ? 'सभी सेवाएं' : lang === 'gu-en' ? 'બધી સેવાઓ / All Services' : 'All Services'
+    },
+    {
+      id: 'love',
+      label: lang === 'hi' ? 'प्रेम समस्या समाधान' : lang === 'gu-en' ? 'લવ પ્રોબ્લેમ સોલ્યુશન' : 'Love Solutions'
+    },
+    {
+      id: 'marriage',
+      label: lang === 'hi' ? 'विवाह एवं परिवार कलह' : lang === 'gu-en' ? 'પ્રેમ લગ્ન અને પરિવાર' : 'Marriage & Family'
+    },
+    {
+      id: 'protection',
+      label: lang === 'hi' ? 'नकारात्मक ऊर्जा शांति' : lang === 'gu-en' ? 'નકારાત્મક ઊર્જા નિવારણ' : 'Energy Cleansing'
+    },
+    {
+      id: 'career',
+      label: lang === 'hi' ? 'व्यापार एवं करियर' : lang === 'gu-en' ? 'વેપાર અને કારકિર્દી' : 'Business & Career'
+    },
+    {
+      id: 'kundali',
+      label: lang === 'hi' ? 'कुंडली दोष निवारण' : lang === 'gu-en' ? 'કુંડળી દોષ શાંતિ' : 'Kundali Dosha'
+    }
+  ];
 
   return (
     <section id="services" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden">
@@ -67,26 +103,19 @@ export const ServicesSection: React.FC = () => {
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold text-amber-800 uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-          <span>Sacred Siddhi & Vedic Solutions</span>
+          <span>{t.badge}</span>
         </div>
         <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
-          Our Sacred Spiritual Expertises
+          {t.title}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-stone-600 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-          Powerful rituals and customized energetic alignments tailored perfectly to resolve your specific life crisis under Maa Naagdevi guidance.
+          {t.subtitle}
         </p>
 
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8 bg-stone-100/80 p-1.5 rounded-2xl sm:rounded-full max-w-3xl mx-auto border border-stone-200">
-          {[
-            { id: 'all', label: 'All Services' },
-            { id: 'love', label: 'Love & Attraction' },
-            { id: 'marriage', label: 'Marriage & Family' },
-            { id: 'protection', label: 'Black Magic Removal' },
-            { id: 'career', label: 'Business & Career' },
-            { id: 'kundali', label: 'Kundali Dosha' },
-          ].map(tab => (
+          {categoryTabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
@@ -179,7 +208,13 @@ export const ServicesSection: React.FC = () => {
                 className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md shadow-amber-500/20 hover:scale-[1.02] transition-all cursor-pointer border border-amber-300"
               >
                 <Phone className="w-3.5 h-3.5 text-white animate-bounce shrink-0" />
-                <span>Direct Call: {CONTACT_INFO.phoneDisplay}</span>
+                <span>
+                  {lang === 'hi'
+                    ? `सीधा कॉल करें: ${CONTACT_INFO.phoneDisplay}`
+                    : lang === 'gu-en'
+                    ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                    : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+                </span>
               </a>
 
               {/* Secondary Details & WhatsApp */}
@@ -188,7 +223,9 @@ export const ServicesSection: React.FC = () => {
                   onClick={() => setSelectedService(service)}
                   className="w-full text-xs font-semibold py-2 px-3 rounded-xl bg-stone-100 hover:bg-amber-50 text-stone-700 hover:text-stone-900 border border-stone-200 transition-colors flex items-center justify-center gap-1 cursor-pointer"
                 >
-                  <span>Details</span>
+                  <span>
+                    {lang === 'hi' ? 'विवरण' : lang === 'gu-en' ? 'વિગત / Info' : 'Details'}
+                  </span>
                   <ArrowRight className="w-3 h-3 text-amber-600" />
                 </button>
 
@@ -302,7 +339,13 @@ export const ServicesSection: React.FC = () => {
                 className="flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all border border-amber-300"
               >
                 <Phone className="w-4 h-4 text-white animate-bounce" />
-                <span>Direct Call Baba Ji: {CONTACT_INFO.phoneDisplay}</span>
+                <span>
+                  {lang === 'hi'
+                    ? `सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
+                    : lang === 'gu-en'
+                    ? `સીધો કૉલ બાબાજી: ${CONTACT_INFO.phoneDisplay}`
+                    : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+                </span>
               </a>
 
               <a
@@ -312,7 +355,13 @@ export const ServicesSection: React.FC = () => {
                 className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Start Ritual on WhatsApp</span>
+                <span>
+                  {lang === 'hi'
+                    ? 'WhatsApp पर विधि शुरू करें'
+                    : lang === 'gu-en'
+                    ? 'WhatsApp પર વિધિ શરૂ કરો'
+                    : 'Start Ritual on WhatsApp'}
+                </span>
               </a>
             </div>
           </div>

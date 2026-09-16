@@ -1,7 +1,7 @@
 {
   "name": "Naagmata Jyotish",
-  "description": "24/7 Authentic Vedic Astrological Consultations & Vashikaran Specialist by Maa Naagdevi Siddha Peeth. Trusted worldwide across USA, UK, Canada, Australia, UAE & India for love problem solutions, marriage harmony, and planetary dosha remedies. Call or WhatsApp anytime.",
-  "requestFramePermissions": [],
+  "description": "24/7 Authentic Vedic Astrological Consultations & Love Problem Specialist by Maa Naagdevi Siddha Peeth. Trusted across Gujarat (Ahmedabad, Surat, Vadodara, Rajkot) and Worldwide (USA, UK, Canada, Australia, UAE) for love problem solutions, marriage harmony, and planetary dosha remedies in Gujarati, Hindi & English.",
+  "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
 

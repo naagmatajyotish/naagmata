@@ -266,7 +266,7 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
             </span>
           </div>
           <span className="text-[10px] text-amber-800 uppercase tracking-widest font-sans font-medium">
-            Naagmata Tantrik Jyotish
+            Naagmata Vedic Jyotish
           </span>
         </div>
       )}

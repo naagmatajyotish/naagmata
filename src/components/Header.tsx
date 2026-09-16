@@ -3,16 +3,22 @@ import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { UrgentBanner } from './UrgentBanner';
+import { LanguageSelector } from './LanguageSelector';
+import { useLanguage } from '../context/LanguageContext';
+import { useDiscreet } from '../context/DiscreetContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const [headerHeight, setHeaderHeight] = useState<number>(114);
+  const { lang } = useLanguage();
+  const { enableDiscreetMode } = useDiscreet();
+  const t = TRANSLATIONS[lang].nav;
 
   useEffect(() => {
     const updateHeight = () => {
       if (!headerRef.current) return;
-      // Calculate height of non-drawer portion
       if (!mobileMenuOpen) {
         setHeaderHeight(headerRef.current.offsetHeight);
       }
@@ -24,15 +30,15 @@ export const Header: React.FC = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: '3D Darshan', href: '#sacred-darshan' },
-    { name: 'Love Solutions', href: '#calculator' },
-    { name: 'Global / NRI', href: '#international-seo' },
-    { name: 'Why Baba Ji', href: '#why-us' },
-    { name: 'Sacred Rituals', href: '#rituals' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: t.services, href: '#services' },
+    { name: t.darshan, href: '#sacred-darshan' },
+    { name: t.solutions, href: '#calculator' },
+    { name: t.global, href: '#international-seo' },
+    { name: t.whyUs, href: '#why-us' },
+    { name: t.rituals, href: '#rituals' },
+    { name: t.testimonials, href: '#testimonials' },
+    { name: t.faq, href: '#faq' },
+    { name: t.contact, href: '#contact' },
   ];
 
   return (
@@ -44,31 +50,35 @@ export const Header: React.FC = () => {
         {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
         <UrgentBanner />
 
-        {/* 2. Mobile Dedicated Direct Helpline Bar - 24/7 Helpline Always Fixed */}
-        <div className="sm:hidden bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 text-white px-3 py-1.5 flex items-center justify-between border-b border-amber-500/50 shadow-sm w-full max-w-full">
-          <div className="flex items-center gap-1.5">
+        {/* 2. Mobile Dedicated Direct Helpline & Language Bar - Sacred Deep Dark */}
+        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-zinc-900 to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/30 shadow-xs w-full max-w-full gap-1.5">
+          <div className="flex items-center gap-1 min-w-0">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            <span className="text-[11px] font-black uppercase tracking-wider text-amber-300">
-              24/7 HELPLINE:
+            <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 shrink-0">
+              {t.helpline}
             </span>
+            <a
+              href={`tel:${CONTACT_INFO.phoneRaw}`}
+              title="Direct Call Baba Ji"
+              className="inline-flex items-center gap-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 text-stone-950 px-2 py-0.5 rounded-full font-black text-[11px] shadow-xs active:scale-95 transition-all truncate"
+            >
+              <Phone className="w-2.5 h-2.5 text-stone-950 shrink-0" />
+              <span>{CONTACT_INFO.phoneDisplay}</span>
+            </a>
           </div>
-          <a
-            href={`tel:${CONTACT_INFO.phoneRaw}`}
-            title="Direct Call Baba Ji"
-            className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 px-3 py-0.5 rounded-full font-black text-xs tracking-wide shadow-md border border-white active:scale-95 transition-all shrink-0"
-          >
-            <Phone className="w-3 h-3 text-stone-950 fill-stone-950 shrink-0 animate-bounce" />
-            <span className="font-sans font-black">{CONTACT_INFO.phoneDisplay}</span>
-          </a>
+
+          <div className="shrink-0">
+            <LanguageSelector compact={true} />
+          </div>
         </div>
 
         {/* 3. Main Brand Navigation Bar - Always Fixed */}
         <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5">
         {/* Brand Logo - Animated Maa Naagdevi Photo Medallion with guaranteed spacing */}
-        <a href="#" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0 mr-3 lg:mr-6 xl:mr-8">
+        <a href="#" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0 mr-2 sm:mr-3 lg:mr-6">
           <div className="relative flex items-center justify-center shrink-0">
             <NaagdeviLogo size="sm" />
           </div>
@@ -76,17 +86,29 @@ export const Header: React.FC = () => {
             <span className="heading-mystic text-sm xs:text-base sm:text-xl md:text-2xl font-extrabold tracking-wide text-[#2a2203] group-hover:text-amber-800 transition-colors uppercase leading-tight whitespace-nowrap">
               Naagmata Jyotish
             </span>
-            {/* Hindi and Gujarati Subtitle requested by user */}
+            {/* Dynamic Localized Subtitle */}
             <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] xs:text-[10px] sm:text-xs font-bold text-amber-900 leading-tight mt-0.5 whitespace-nowrap">
-              <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">नागमाता ज्योतिष</span>
-              <span className="text-amber-400 font-normal select-none">•</span>
-              <span className="text-amber-800 font-bold font-['Noto_Sans_Gujarati',sans-serif]">નાગમાતા જ્યોતિષ</span>
+              {lang === 'hi' ? (
+                <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">
+                  नागमाता ज्योतिष • श्री माँ नागदेवी सिद्ध पीठ
+                </span>
+              ) : lang === 'en' ? (
+                <span className="text-amber-950 font-bold">
+                  Sacred Vedic Astrology • Maa Naagdevi Peeth
+                </span>
+              ) : (
+                <>
+                  <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">नागमाता ज्योतिष</span>
+                  <span className="text-amber-400 font-normal select-none">•</span>
+                  <span className="text-amber-800 font-bold font-['Noto_Sans_Gujarati',sans-serif]">નાગમાતા જ્યોતિષ</span>
+                </>
+              )}
             </div>
           </div>
         </a>
 
-        {/* Desktop Navigation - Active on screens >= 1280px (xl) where all links fit comfortably with generous gaps */}
-        <nav className="hidden xl:flex items-center justify-center gap-4 2xl:gap-6 text-xs 2xl:text-sm font-bold text-[#4a3b04] flex-1 px-2">
+        {/* Desktop Navigation */}
+        <nav className="hidden xl:flex items-center justify-center gap-3.5 2xl:gap-5 text-xs 2xl:text-sm font-bold text-[#4a3b04] flex-1 px-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -98,9 +120,25 @@ export const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Actions & Call Button */}
+        {/* Actions, Language Switcher & Call Button */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 ml-auto">
-          {/* Quick WhatsApp Chat on Desktop & Tablet */}
+          {/* Discreet Panic Mode Quick Hide Button */}
+          <button
+            onClick={enableDiscreetMode}
+            type="button"
+            title="100% Private Discreet Mode (Instant Disguise • Press Esc)"
+            className="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 h-8 sm:h-9 md:h-10 rounded-full bg-amber-50/80 hover:bg-amber-100 text-stone-800 border border-amber-300/80 text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 shadow-2xs"
+          >
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="hidden xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
+          </button>
+
+          {/* Desktop & Tablet Language Switcher */}
+          <div className="hidden sm:block">
+            <LanguageSelector />
+          </div>
+
+          {/* Quick WhatsApp Chat */}
           <a
             id="header-whatsapp-btn"
             href={CONTACT_INFO.whatsappUrl}
@@ -110,7 +148,7 @@ export const Header: React.FC = () => {
             className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 md:px-3.5 h-8 sm:h-9 md:h-10 rounded-full border border-emerald-500 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap shrink-0"
           >
             <MessageCircle className="w-4 h-4 text-white shrink-0" />
-            <span>WhatsApp</span>
+            <span>{t.whatsapp}</span>
           </a>
 
           {/* Call button - Vibrant Saffron Orange Pill with High Contrast */}
@@ -125,10 +163,10 @@ export const Header: React.FC = () => {
               {CONTACT_INFO.phoneDisplay}
             </span>
             <span className="xs:hidden font-sans font-black tracking-wide text-white">
-              Call Now
+              {t.callNow}
             </span>
             <span className="hidden 2xl:inline-flex text-[9px] uppercase font-black bg-black/20 text-yellow-100 px-1.5 py-0.5 rounded-full border border-amber-200/40 ml-0.5">
-              24/7 CALL
+              24/7
             </span>
           </a>
 
@@ -143,7 +181,7 @@ export const Header: React.FC = () => {
             <MessageCircle className="w-4 h-4" />
           </a>
 
-          {/* Mobile & Compact Desktop Hamburger */}
+          {/* Mobile Hamburger */}
           <button
             id="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -160,7 +198,7 @@ export const Header: React.FC = () => {
         <div className="xl:hidden px-4 pb-5 pt-2 border-t border-amber-200/80 bg-[#fdfcf7] space-y-3 shadow-xl border-b border-amber-200/60">
           <div className="flex justify-between items-center pb-2 border-b border-amber-100">
             <span className="text-xs text-amber-800 font-bold flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Strictly 100% Confidential & Private
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Strictly Confidential & Private
             </span>
             <span className="text-[11px] font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
               ● Baba Ji Online

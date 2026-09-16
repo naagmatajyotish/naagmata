@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { Send, ShieldCheck, CheckCircle2, Lock, Sparkles, Phone, Calendar } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
+import { useLanguage } from '../context/LanguageContext';
+import { TRANSLATIONS } from '../data/translations';
 
 export const ConsultationForm: React.FC = () => {
+  const { lang } = useLanguage();
+  const t = TRANSLATIONS[lang].form;
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    problemType: 'Lost Love Back & Vashikaran',
+    problemType: 'Lost Love Problem & Relationship Solutions',
     partnerName: '',
     dob: '',
     city: '',
@@ -50,18 +55,18 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-semibold mb-3">
             <Lock className="w-3.5 h-3.5 text-amber-600" />
-            <span>Strict Confidentiality Assured Under Maa Naagdevi Kripa</span>
+            <span>{t.badge}</span>
           </div>
 
           <h3 className="heading-mystic text-2xl sm:text-4xl font-extrabold text-stone-900 mb-2">
-            Direct Consultation With Baba Ji
+            {t.title}
           </h3>
           <p className="text-stone-600 text-sm max-w-lg mx-auto">
-            For fastest relief, calling directly is preferred. You can directly call Baba Ji on phone or submit your request below.
+            {t.subtitle}
           </p>
         </div>
 
-        {/* Prominent Direct Call Banner (Client Direct Call Preferred) */}
+        {/* Prominent Direct Call Banner */}
         <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white shadow-xl shadow-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left border border-amber-300/40">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0 border border-white/30">
@@ -69,10 +74,14 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             </div>
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-amber-100 block">
-                ⭐ DIRECT ASTROLOGICAL COUNSELING WITH BABA JI
+                ⭐ {lang === 'hi' ? 'सीधा संपर्क' : lang === 'gu-en' ? 'સીધો સંપર્ક' : 'Instant Direct Line'}
               </span>
               <h4 className="font-extrabold text-base sm:text-lg text-white">
-                Speak Directly with Baba Ji for Personalized Vedic Astrological Guidance
+                {lang === 'hi'
+                  ? 'तत्काल समाधान हेतु अभी फोन करें'
+                  : lang === 'gu-en'
+                  ? 'ત્વરિત માર્ગદર્શન માટે સીધો કૉલ કરો'
+                  : 'Call Directly for Immediate Astrological Consultation'}
               </h4>
             </div>
           </div>
@@ -81,7 +90,9 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-50 text-stone-950 font-black px-6 py-3 rounded-xl text-sm sm:text-base shadow-lg transition-all hover:scale-105 whitespace-nowrap cursor-pointer border border-amber-200"
           >
             <Phone className="w-4 h-4 text-orange-600 shrink-0" />
-            <span>Call: {CONTACT_INFO.phoneDisplay}</span>
+            <span>
+              {lang === 'hi' ? 'कॉल करें' : lang === 'gu-en' ? 'કૉલ કરો' : 'Call Now'}: {CONTACT_INFO.phoneDisplay}
+            </span>
           </a>
         </div>
 
@@ -114,7 +125,7 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Your Full Name <span className="text-amber-600">*</span>
+                  {t.nameLabel} <span className="text-amber-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -128,7 +139,7 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
 
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  WhatsApp / Phone Number <span className="text-amber-600">*</span>
+                  {t.phoneLabel} <span className="text-amber-600">*</span>
                 </label>
                 <input
                   type="tel"
@@ -144,26 +155,36 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Nature of Consultation <span className="text-amber-600">*</span>
+                  {t.problemTypeLabel} <span className="text-amber-600">*</span>
                 </label>
                 <select
                   value={formData.problemType}
                   onChange={(e) => setFormData({ ...formData, problemType: e.target.value })}
                   className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
                 >
-                  <option value="Lost Love Problem & Vashikaran">Lost Love Problem & Vashikaran</option>
-                  <option value="Intercaste Love Marriage & Vashikaran">Intercaste Love Marriage & Vashikaran</option>
-                  <option value="Husband-Wife Dispute & Marital Vashikaran">Husband-Wife Dispute & Marital Vashikaran</option>
-                  <option value="Relationship Harmony & Astrological Remedies">Relationship Harmony & Astrological Remedies</option>
-                  <option value="Negative Energy Cleansing & Protection Puja">Negative Energy Cleansing & Protection Puja</option>
-                  <option value="Career, Business & Financial Astrology">Career, Business & Financial Astrology</option>
-                  <option value="Planetary Dosha Shanti (Manglik, Kaal Sarp)">Planetary Dosha Shanti (Manglik, Kaal Sarp)</option>
+                  {t.problemOptions && t.problemOptions.length > 0 ? (
+                    t.problemOptions.map((opt, i) => (
+                      <option key={i} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))
+                  ) : (
+                    <>
+                      <option value="Lost Love Problem & Relationship Solutions">Lost Love Problem & Relationship Solutions</option>
+                      <option value="Intercaste Love Marriage & Family Consent">Intercaste Love Marriage & Family Consent</option>
+                      <option value="Husband-Wife Dispute & Marital Peace">Husband-Wife Dispute & Marital Peace</option>
+                      <option value="Relationship Compatibility & Kundali Matching">Relationship Compatibility & Kundali Matching</option>
+                      <option value="Negative Energy Cleansing & Protection Puja">Negative Energy Cleansing & Protection Puja</option>
+                      <option value="Career, Business & Financial Astrology">Career, Business & Financial Astrology</option>
+                      <option value="Planetary Dosha Shanti (Manglik, Kaal Sarp)">Planetary Dosha Shanti (Manglik, Kaal Sarp)</option>
+                    </>
+                  )}
                 </select>
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Partner / Spouse Name (Optional)
+                  {lang === 'hi' ? 'साथी / जीवनसाथी का नाम (वैकल्पिक)' : lang === 'gu-en' ? 'સાથીદાર / જીવનસાથીનું નામ (ઓપ્શનલ)' : 'Partner / Spouse Name (Optional)'}
                 </label>
                 <input
                   type="text"
@@ -178,7 +199,7 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Date of Birth (Optional)
+                  {lang === 'hi' ? 'जन्म तिथि' : lang === 'gu-en' ? 'જન્મ તારીખ' : 'Date of Birth'}
                 </label>
                 <div className="relative flex items-center">
                   <input
@@ -193,11 +214,11 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
 
               <div>
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Your City / Country
+                  {t.cityLabel}
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Mumbai, India / London, UK"
+                  placeholder={t.cityPlaceholder || "e.g. Ahmedabad, Delhi, London, New York"}
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                   className="w-full h-12 bg-stone-50 border border-stone-200 rounded-xl px-4 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
@@ -207,11 +228,11 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
 
             <div>
               <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                Briefly Describe Your Situation
+                {t.detailsLabel}
               </label>
               <textarea
                 rows={3}
-                placeholder="Explain what is happening (e.g. partner stopped calling, parents not agreeing, constant arguments at home...)"
+                placeholder={t.detailsPlaceholder || "Explain what is happening..."}
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                 className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none resize-none"
@@ -224,19 +245,23 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
                 className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-6 rounded-xl flex items-center justify-center space-x-2 text-base shadow-lg shadow-amber-500/25 transition-all cursor-pointer transform hover:-translate-y-0.5"
               >
                 <Send className="w-5 h-5 text-white" />
-                <span>Submit Details & Connect With Baba Ji</span>
+                <span>{t.submitWhatsApp}</span>
               </button>
             </div>
 
-            <div className="flex items-center justify-center gap-4 pt-2 text-xs text-stone-500 font-medium">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 pt-2 text-xs text-stone-500 font-medium text-center">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Strictly Confidential & Encrypted
               </span>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Initial Diagnosis Free
+                <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Initial Kundali Guidance
               </span>
             </div>
+
+            <p className="text-[11px] text-stone-400 text-center pt-1 leading-normal">
+              *Disclaimer: Astrology & Vedic rituals are spiritual, faith-based services. Individual results vary. No supernatural guarantees are made.
+            </p>
           </form>
         )}
       </div>

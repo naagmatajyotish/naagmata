@@ -1,11 +1,16 @@
 import React from 'react';
-import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { DiscreetProvider } from './context/DiscreetContext';
+import { DiscreetOverlay } from './components/DiscreetOverlay';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
 import { GlobalPresence } from './components/GlobalPresence';
+import { SeoKeywordsDirectory } from './components/SeoKeywordsDirectory';
 import { SacredDarshan3D } from './components/SacredDarshan3D';
 import { ConsultationForm } from './components/ConsultationForm';
+import { VoiceNoteRecorder } from './components/VoiceNoteRecorder';
+import { AuraEnergyScanner } from './components/AuraEnergyScanner';
 import { VedicCalculator } from './components/VedicCalculator';
 import { SacredProcess } from './components/SacredProcess';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -17,53 +22,68 @@ import { FloatingActions } from './components/FloatingActions';
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400">
-        {/* Main Sticky Header with Top Scrolling Marquee & 24/7 Helpline */}
-        <Header />
+    <LanguageProvider>
+      <DiscreetProvider>
+        {/* Discreet Panic Mode Overlay (Instant Devotional Disguise • Press Esc) */}
+        <DiscreetOverlay />
 
-        {/* Main Page Sections */}
-        <main className="flex-1 w-full max-w-full overflow-x-hidden">
-          {/* Hero Section with Grand Animated Maa Naagdevi Centerpiece */}
-          <Hero />
+        <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400">
+          {/* Main Sticky Header with Top Scrolling Marquee & 24/7 Helpline */}
+          <Header />
 
-          {/* Quick Crisis Consultation Booking Widget */}
-          <ConsultationForm />
+          {/* Main Page Sections */}
+          <main className="flex-1 w-full max-w-full overflow-x-hidden">
+            {/* Hero Section with Grand Animated Maa Naagdevi Centerpiece */}
+            <Hero />
 
-          {/* Sacred Services Section (Expanded and Interactive) */}
-          <ServicesSection />
+            {/* Quick Crisis Consultation Booking Widget */}
+            <ConsultationForm />
 
-          {/* International & Abroad Vedic Consultations (USA, UK, Canada, Australia, UAE) */}
-          <GlobalPresence />
+            {/* 1-Click Voice Note to Baba Ji (Audio Recording & Instant WhatsApp Delivery) */}
+            <VoiceNoteRecorder />
 
-          {/* 3D Divine Darshan & Ashirwad of Maa Naagdevi (Interactive 3D Cutout) */}
-          <SacredDarshan3D />
+            {/* Sacred Services Section (Expanded and Interactive) */}
+            <ServicesSection />
 
-          {/* Love Problem Diagnosis & Instant Vashikaran Remedy Finder */}
-          <VedicCalculator />
+            {/* International & Abroad Vedic Consultations (USA, UK, Canada, Australia, UAE) */}
+            <GlobalPresence />
 
-          {/* Ancient 4-Stage Remedy Process */}
-          <SacredProcess />
+            {/* Local & International Astrological SEO Keywords Directory */}
+            <SeoKeywordsDirectory />
 
-          {/* Trust Badges & Hallmarks */}
-          <WhyChooseUs />
+            {/* 3D Divine Darshan & Ashirwad of Maa Naagdevi (Interactive 3D Cutout) */}
+            <SacredDarshan3D />
 
-          {/* Verified Devotee Testimonials */}
-          <Testimonials />
+            {/* Vedic Aura & Negative Energy Diagnostic Scanner */}
+            <AuraEnergyScanner />
 
-          {/* Frequently Asked Questions */}
-          <FaqSection />
+            {/* Love Problem Diagnosis & Relationship Remedy Finder */}
+            <VedicCalculator />
 
-          {/* Direct Contact & Ashram Details */}
-          <ContactSection />
-        </main>
+            {/* Ancient 4-Stage Remedy Process */}
+            <SacredProcess />
 
-        {/* Footer */}
-        <Footer />
+            {/* Trust Badges & Hallmarks */}
+            <WhyChooseUs />
 
-        {/* Floating Action Buttons (Sticky Mobile Bar + Desktop Quick Dial) */}
-        <FloatingActions />
-      </div>
-    </ThemeProvider>
+            {/* Verified Devotee Testimonials */}
+            <Testimonials />
+
+            {/* Frequently Asked Questions */}
+            <FaqSection />
+
+            {/* Direct Contact & Ashram Details */}
+            <ContactSection />
+          </main>
+
+          {/* Footer */}
+          <Footer />
+
+          {/* Floating Action Buttons (Sticky Mobile Bar + Desktop Quick Dial + Panic Hide) */}
+          <FloatingActions />
+        </div>
+      </DiscreetProvider>
+    </LanguageProvider>
   );
 }
+

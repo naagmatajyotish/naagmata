@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Sparkles, Phone, MessageCircle, Sun, HandMetal } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
+import { useLanguage } from '../context/LanguageContext';
 
 const INITIAL_BLESSING_COUNT = 14801;
 
 export const SacredDarshan3D: React.FC = () => {
+  const { lang } = useLanguage();
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
@@ -94,14 +96,28 @@ export const SacredDarshan3D: React.FC = () => {
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-300 px-4 py-1.5 rounded-full text-xs font-black text-amber-900 uppercase tracking-widest mb-3 shadow-xs">
           <Sun className="w-3.5 h-3.5 text-amber-700 animate-spin-slow" />
-          <span>॥ श्री माँ नागदेवी दिव्य ३D प्रत्यक्ष दर्शन ॥</span>
+          <span>
+            {lang === 'hi'
+              ? '॥ श्री माँ नागदेवी दिव्य ३D प्रत्यक्ष दर्शन ॥'
+              : lang === 'en'
+              ? 'Sacred 3D Sanctum of Shri Maa Naagdevi'
+              : '॥ શ્રી માં નાગદેવી દિવ્ય ૩D પ્રત્યક્ષ દર્શન ॥'}
+          </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
-          Divine 3D Sanctum of Shri Maa Naagdevi
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-snug">
+          {lang === 'hi'
+            ? 'श्री माँ नागदेवी का पावन ३D प्रत्यक्ष दर्शन'
+            : lang === 'en'
+            ? 'Divine 3D Sanctum of Shri Maa Naagdevi'
+            : 'શ્રી માં નાગદેવી દિવ્ય ૩D દર્શન (3D Sacred Sanctum)'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-          Experience the sacred spiritual presence of Maa Naagdevi in high-definition 3D. Move your cursor or finger to witness the divine aura, holy serpent canopy, and consecrated protective grace.
+          {lang === 'hi'
+            ? 'माँ नागदेवी की दिव्य उपस्थिति का 3D में अनुभव करें। अपने कर्सर या उंगली से घुमाएं और दिव्य आभामंडल, छत्र व कृपा प्राप्त करें।'
+            : lang === 'en'
+            ? 'Experience the sacred spiritual presence of Maa Naagdevi in high-definition 3D. Move your cursor or finger to witness the divine aura, holy serpent canopy, and consecrated protective grace.'
+            : 'માં નાગદેવીની પવિત્ર હાજરી અને કવચનો 3D અનુભવ કરો. ફોટો ફેરવી દિવ્ય દર્શન અને આશીર્વાદ પ્રાપ્ત કરો.'}
         </p>
       </div>
 
@@ -110,7 +126,13 @@ export const SacredDarshan3D: React.FC = () => {
         {/* Mobile Interactive Swipe / Gyro Guide Badge */}
         <div className="flex sm:hidden items-center gap-1.5 text-xs text-amber-800 bg-amber-100/90 border border-amber-300/80 px-3 py-1 rounded-full mb-3 shadow-xs">
           <HandMetal className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
-          <span>फ़ोटो पर उंगली फिराएं या फोन हिलाएं (Touch & Rotate 3D)</span>
+          <span>
+            {lang === 'hi'
+              ? 'फ़ोटो पर उंगली फिराएं (Touch & Rotate 3D)'
+              : lang === 'en'
+              ? 'Touch & drag to rotate 3D view'
+              : 'ફોટો પર આંગળી ફેરવી ૩D ફેરવો (Touch & Rotate)'}
+          </span>
         </div>
 
         <div
@@ -246,7 +268,11 @@ export const SacredDarshan3D: React.FC = () => {
               >
                 <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0 animate-spin-slow" />
                 <span className="font-black tracking-normal">
-                  🌺 Touch for Divine Ashirwad <span className="hidden xs:inline font-bold opacity-90 text-[11px] sm:text-xs">(माँ का आशीर्वाद लें)</span>
+                  {lang === 'hi'
+                    ? '🌺 माँ का दिव्य आशीर्वाद लें (Touch for Ashirwad)'
+                    : lang === 'en'
+                    ? '🌺 Touch for Divine Ashirwad & Blessings'
+                    : '🌺 માં નો દિવ્ય આશીર્વાદ લો (Touch for Ashirwad)'}
                 </span>
               </button>
 
@@ -255,14 +281,28 @@ export const SacredDarshan3D: React.FC = () => {
                 <div className="mt-4 p-4 rounded-2xl bg-white/95 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-bold shadow-2xl animate-fade-in">
                   <p className="flex items-center justify-center gap-2 text-amber-700 font-extrabold text-sm mb-1">
                     <span>✨</span>
-                    <span>माँ नागदेवी का पावन आशीर्वाद आपको प्राप्त हुआ</span>
+                    <span>
+                      {lang === 'hi'
+                        ? 'माँ नागदेवी का पावन आशीर्वाद आपको प्राप्त हुआ'
+                        : lang === 'en'
+                        ? 'You have received the Divine Grace of Maa Naagdevi'
+                        : 'માં નાગદેવીનો પાવન આશીર્વાદ તમને પ્રાપ્ત થયો'}
+                    </span>
                     <span>✨</span>
                   </p>
                   <p className="text-stone-700 font-normal leading-relaxed text-xs">
-                    "माँ नागदेवी की असीम अनुकंपा से आपके दांपत्य, प्रेम और जीवन के सभी विघ्न, ग्रह दोष व शत्रु बाधा शीघ्र शांत हों।"
+                    {lang === 'hi'
+                      ? '"माँ नागदेवी की असीम अनुकंपा से आपके दांपत्य, प्रेम और जीवन के सभी विघ्न, ग्रह दोष व शत्रु बाधा शीघ्र शांत हों।"'
+                      : lang === 'en'
+                      ? '"May all relationship friction, delays, and planetary obstacles be purified through the divine grace of Shri Maa Naagdevi."'
+                      : '"માં નાગદેવીની અસીમ કૃપાથી તમારા પ્રેમ, લગ્ન, દાંપત્ય અને જીવનના તમામ કષ્ટો અને ગ્રહદોષ દૂર થાય."'}
                   </p>
                   <span className="text-[11px] text-amber-800 font-bold block mt-1">
-                    आशीर्वाद क्रमांक: #{blessingNumber.toLocaleString('en-IN')} • कल्याणमस्तु!
+                    {lang === 'hi'
+                      ? `आशीर्वाद क्रमांक: #${blessingNumber.toLocaleString('en-IN')} • कल्याणमस्तु!`
+                      : lang === 'en'
+                      ? `Blessing Token: #${blessingNumber.toLocaleString('en-US')} • May Peace Be With You!`
+                      : `આશીર્વાદ ક્રમાંક: #${blessingNumber.toLocaleString('en-IN')} • કલ્યાણમસ્તુ!`}
                   </span>
                 </div>
               )}
@@ -278,7 +318,13 @@ export const SacredDarshan3D: React.FC = () => {
             className="w-full sm:w-auto flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 text-sm shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer"
           >
             <Phone className="w-4 h-4 animate-bounce" />
-            <span>Direct Call Baba Ji: {CONTACT_INFO.phoneDisplay}</span>
+            <span>
+              {lang === 'hi'
+                ? `सीधा कॉल करें बाबा जी: ${CONTACT_INFO.phoneDisplay}`
+                : lang === 'gu-en'
+                ? `સીધો કૉલ બાબાજી: ${CONTACT_INFO.phoneDisplay}`
+                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+            </span>
           </a>
 
           <a
@@ -289,7 +335,13 @@ export const SacredDarshan3D: React.FC = () => {
             className="w-full sm:w-auto flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 text-sm shadow-lg border border-emerald-400 active:scale-95 transition-all cursor-pointer"
           >
             <MessageCircle className="w-4 h-4" />
-            <span>Request Consecrated Naag-Mani Kavach</span>
+            <span>
+              {lang === 'hi'
+                ? 'सिद्ध नाग-मणि रक्षा कवच का संकल्प'
+                : lang === 'gu-en'
+                ? 'સિદ્ધ નાગ-મણિ રક્ષા કવચ વિધાન'
+                : 'Request Consecrated Naag-Mani Kavach'}
+            </span>
           </a>
         </div>
       </div>

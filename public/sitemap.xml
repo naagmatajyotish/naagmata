@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.naagmata.com/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.naagmata.com/" />
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.naagmata.com/#gujarat" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.naagmata.com/#consultation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.naagmata.com/" />
+    <image:image>
+      <image:loc>https://www.naagmata.com/images/naagdevi_sacred_avatar_1788843890487.jpg</image:loc>
+      <image:title>Shri Maa Naagdevi Sacred Darshan - Naagmata Jyotish</image:title>
+      <image:caption>Maa Naagdevi Siddha Peeth Vedic Astrological Guidance</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#gujarat-seo</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#international-seo</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#services</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#vedic-calculator</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#consultation</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.naagmata.com/#faqs</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

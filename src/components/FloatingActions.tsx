@@ -1,17 +1,40 @@
 import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, ShieldCheck } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
+import { useLanguage } from '../context/LanguageContext';
+import { useDiscreet } from '../context/DiscreetContext';
 
 export const FloatingActions: React.FC = () => {
+  const { lang } = useLanguage();
+  const { enableDiscreetMode } = useDiscreet();
+
+  const statusText =
+    lang === 'hi'
+      ? '24/7 उपलब्ध • सीधे बात करें'
+      : lang === 'en'
+      ? '24/7 Available • Tap to Connect'
+      : '24/7 સેવા • અત્યારે જ કૉલ કરો';
+
   return (
     <div
       id="floating-actions-container"
-      className="fixed bottom-5 right-3.5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 select-none max-w-[calc(100vw-1rem)]"
+      className="fixed bottom-5 right-3.5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2 select-none max-w-[calc(100vw-1rem)]"
     >
+      {/* 100% Confidential Panic Hide Pill */}
+      <button
+        onClick={enableDiscreetMode}
+        type="button"
+        title="Quick Hide Screen (100% Private Discreet Mode • Press Esc)"
+        className="bg-stone-900/90 hover:bg-stone-950 text-amber-300 border border-amber-500/60 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5 backdrop-blur-md cursor-pointer transition-transform active:scale-95"
+      >
+        <ShieldCheck className="w-3 h-3 text-emerald-400" />
+        <span>{lang === 'hi' ? '🛡️ सीक्रेट मोड (Hide)' : lang === 'en' ? '🛡️ Quick Hide' : '🛡️ સિક્રેટ મોડ'}</span>
+      </button>
+
       {/* 24/7 Live Availability Floating Pill */}
       <div className="bg-stone-950/90 text-yellow-300 border border-amber-400/80 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3.5 py-1 rounded-full shadow-xl flex items-center gap-1.5 backdrop-blur-md">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span className="tracking-wide">Online 24/7 • Tap to Connect</span>
+        <span className="tracking-wide">{statusText}</span>
       </div>
 
       <div className="flex items-center space-x-2.5">
@@ -42,3 +65,4 @@ export const FloatingActions: React.FC = () => {
     </div>
   );
 };
+

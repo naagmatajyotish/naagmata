@@ -1,8 +1,8 @@
 import { ServiceItem, TestimonialItem, FaqItem } from '../types';
 import serviceLoveSolution from '../assets/images/service_love_solution.jpg';
-import serviceVashikaranHavan from '../assets/images/service_vashikaran_havan.jpg';
+import serviceRelationshipHavan from '../assets/images/service_relationship_havan.jpg';
 import serviceLoveMarriage from '../assets/images/service_love_marriage.jpg';
-import serviceBlackMagic from '../assets/images/service_black_magic.jpg';
+import serviceNegativeEnergyRemedy from '../assets/images/service_negative_energy.jpg';
 import serviceBusinessGrowth from '../assets/images/service_business_growth.jpg';
 import serviceMaritalHarmony from '../assets/images/service_marital_harmony.jpg';
 import serviceDivorceRemedy from '../assets/images/service_divorce_remedy.jpg';
@@ -16,6 +16,7 @@ export const CONTACT_INFO = {
   email: 'naagmatajyotish@gmail.com',
   whatsappUrl: 'https://wa.me/919714127309?text=Pranam%20Pandit%20Ji%2C%20I%20need%20your%20sacred%20Vedic%20astrological%20guidance.',
   location: 'Shri Mahakali & Naagmata Siddha Peeth Ashram, Ujjain & Haridwar (Consultations available across India & Worldwide online)',
+  address: 'Shri Maa Naagdevi Siddha Peeth Ashram, Mahakal Marg, Ujjain, Madhya Pradesh 456006, India',
   availableHours: '24 Hours / 7 Days Live Support',
   experienceYears: '35+',
   successRate: 'Vedic Sanctity',
@@ -25,16 +26,16 @@ export const CONTACT_INFO = {
 export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'love-problem-solution',
-    title: 'Love Problem Solution & Vashikaran',
+    title: 'Love Problem Solution & Relationship Harmony',
     category: 'love',
     badge: 'Most Requested',
-    shortDesc: 'Restore mutual understanding, resolve emotional distance, address third-party discord, and rekindle affection with authentic love vashikaran remedies.',
-    fullDesc: 'Are you suffering from misunderstandings, emotional silence, or external interference affecting your relationship? Baba Ji performs authentic Vedic Shukra (Venus) & Kamakhya Vashikaran Anushthan pujas to harmonize feelings, clarify mental doubts, and rebuild deep mutual respect and affection.',
+    shortDesc: 'Restore mutual understanding, resolve emotional distance, address third-party discord, and rekindle affection with authentic Vedic relationship astrology.',
+    fullDesc: 'Are you suffering from misunderstandings, emotional silence, or external interference affecting your relationship? Baba Ji performs authentic Vedic Shukra (Venus) & Kamakhya Anushthan pujas to harmonize feelings, clarify mental doubts, and rebuild deep mutual respect and affection.',
     benefits: [
       'Foster deep emotional understanding & communication',
       'Neutralize external negative influences & misunderstandings',
       'Resolve stubborn ego clashes with compassionate Vedic advice',
-      'Planetary remedies & Sattvic Vashikaran for long-term peace'
+      'Planetary remedies & Sattvic Havans for long-term peace'
     ],
     timeframe: 'Personalized Vedic Guidance & Rituals',
     mantraPreview: 'Om Kleem Krishnaya Namah | Om Kaamadevaya Vidmahe Pushpabaanaya Dheemahi...',
@@ -42,12 +43,12 @@ export const SACRED_SERVICES: ServiceItem[] = [
     imageUrl: serviceLoveSolution
   },
   {
-    id: 'powerful-vashikaran',
-    title: 'Authentic Vedic Vashikaran Specialist',
+    id: 'vedic-love-astrology',
+    title: 'Authentic Vedic Relationship Astrology Specialist',
     category: 'love',
-    badge: 'Pure Sattvic Vashikaran',
-    shortDesc: 'Traditional Vedic Vashikaran practices to foster warmth, pacify anger, remove distance, and restore love in strained relationships.',
-    fullDesc: 'In authentic Vedic tradition, Vashikaran and Akarshan Vidhi are sacred practices designed to calm agitated minds and align emotional energies. Our Siddha Anushthan uses pure sattvic Vashikaran rituals to gently soothe resentment and restore heartfelt compassion between loved ones safely.',
+    badge: 'Pure Sattvic Vedic Puja',
+    shortDesc: 'Traditional Vedic astrological practices to foster warmth, pacify anger, remove distance, and restore love in strained relationships.',
+    fullDesc: 'In authentic Vedic tradition, planetary alignment and Shukra-Brihaspati Anushthan are sacred practices designed to calm agitated minds and align emotional energies. Our Siddha Anushthan uses pure sattvic rituals to gently soothe resentment and restore heartfelt compassion between loved ones safely.',
     benefits: [
       'Completely positive, peaceful, and karmically pure',
       'Customized to your specific birth chart (Kundali) and planetary dasha',
@@ -57,15 +58,15 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Traditional Vedic Anushthan Process',
     mantraPreview: 'Om Namo Bhagavate Rudraya Sarva-Jagan-Mohanaya Swaha...',
     iconName: 'Wand2',
-    imageUrl: serviceVashikaranHavan
+    imageUrl: serviceRelationshipHavan
   },
   {
     id: 'intercaste-love-marriage',
-    title: 'Intercaste Love Marriage & Vashikaran Guidance',
+    title: 'Intercaste Love Marriage & Family Harmony Guidance',
     category: 'marriage',
     badge: 'Parental Harmony & Blessing',
-    shortDesc: 'Seek peaceful family consent, overcome societal doubts, and address astrological hurdles in your marital journey with Vedic Vashikaran.',
-    fullDesc: 'When rigid family opinions or astrological mismatches cause hesitation for marriage, Vedic scriptures offer harmonious paths. Baba Ji conducts specialized Brihaspati (Jupiter) & Shukra (Venus) Vashikaran Shanti Havans that foster dialogue, ease familial worry, and help parents extend their heartfelt blessings.',
+    shortDesc: 'Seek peaceful family consent, overcome societal doubts, and address astrological hurdles in your marital journey with Vedic astrology.',
+    fullDesc: 'When rigid family opinions or astrological mismatches cause hesitation for marriage, Vedic scriptures offer harmonious paths. Baba Ji conducts specialized Brihaspati (Jupiter) & Shukra (Venus) Shanti Havans that foster dialogue, ease familial worry, and help parents extend their heartfelt blessings.',
     benefits: [
       'Encourage understanding and supportive blessings from elders',
       'Dissolve social and cultural friction through respectful dialogue',
@@ -78,7 +79,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     imageUrl: serviceLoveMarriage
   },
   {
-    id: 'evil-eye-black-magic',
+    id: 'negative-energy-cleansing',
     title: 'Negative Energy Cleansing & Protective Havans',
     category: 'protection',
     badge: 'Spiritual Shield & Peace',
@@ -93,7 +94,7 @@ export const SACRED_SERVICES: ServiceItem[] = [
     timeframe: 'Aura Cleansing & Shanti Rituals',
     mantraPreview: 'Om Hleem Bagalamukhi Sarvadushtaanaam Vaacham Mukham Padam Stambhaya...',
     iconName: 'ShieldAlert',
-    imageUrl: serviceBlackMagic
+    imageUrl: serviceNegativeEnergyRemedy
   },
   {
     id: 'business-career-growth',
@@ -278,6 +279,19 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 't6',
+    clientName: 'Bhavesh & Ami Patel',
+    location: 'Ahmedabad (Satellite) & Edison NJ',
+    problem: 'Intercaste Love Marriage Family Acceptance & Visa Delay',
+    review: 'અમારા લગ્ન માટે પરિવારો સહમત નહોતા અને NRI વિઝામાં વારંવાર રુકાવટ આવતી હતી. બાબાજીએ કુંડળી દોષ નિવારણ અને માં નાગદેવી સિદ્ધ હવન કરાવ્યો. ચમત્કારિક રૂપે બંને પરિવારો હૃદયપૂર્વક રાજી થયા અને અમારા સુખી લગ્ન સંપન્ન થયા. બાબાજીનો ખૂબ ખૂબ આભાર!',
+    solutionTime: 'Vedic Shanti & Family Harmony',
+    rating: 5,
+    date: 'Recent Devotee',
+    verified: true,
+    category: 'love',
+    flag: '🇮🇳'
+  },
+  {
+    id: 't7',
     clientName: 'Ananya Roy',
     location: 'Kolkata, West Bengal',
     problem: 'Heavy Atmosphere & Mental Unease at Home',
@@ -293,6 +307,12 @@ export const TESTIMONIALS: TestimonialItem[] = [
 
 export const FAQS: FaqItem[] = [
   {
+    id: 'faq-0',
+    question: 'શું હું સંપૂર્ણ ગુજરાતીમાં વાતચીત અને પરામર્શ મેળવી શકું? (Can I consult in Gujarati?)',
+    answer: 'હા, ચોક્કસ (Yes, Absolutely). બાબાજી શુદ્ધ ગુજરાતી (Mother-tongue Gujarati), હિન્દી તથા અંગ્રેજીમાં સરળતાથી વાતચીત કરે છે. અમદાવાદ, સુરત, વડોદરા, રાજકોટ, ભાવનગર, આણંદ, નડિયાદ, કચ્છ તથા અમેરિકા, લંડન, કેનેડા વસતા હજારો ગુજરાતી પરિવારો નિયમિત માર્ગદર્શન મેળવે છે.',
+    category: 'Language'
+  },
+  {
     id: 'faq-1',
     question: 'How do Vedic astrological remedies and consultations work?',
     answer: 'Vedic remedies work by identifying planetary disharmony in your birth chart (Kundali) and performing customized Vedic pujas, havans, or mantra chanting to cultivate peace, positivity, and clarity. Timelines and experiences vary naturally depending on individual karmic factors and sincere participation.',
@@ -301,7 +321,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'faq-2',
     question: 'Are your astrological methods safe and ethical?',
-    answer: 'Yes, 100% pure and ethical. Baba Ji practices exclusively pure Sattvic and Vedic traditions rooted in ancient scriptures. We do not engage in or support harmful practices. All rituals aim solely for peace, emotional well-being, and positive spiritual upliftment.',
+    answer: 'Yes, completely pure and ethical. Baba Ji practices exclusively pure Sattvic and Vedic traditions rooted in ancient scriptures. We do not engage in or support harmful practices. All rituals aim solely for peace, emotional well-being, and positive spiritual upliftment.',
     category: 'Safety'
   },
   {
