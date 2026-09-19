@@ -20,6 +20,16 @@ export const FaqSection: React.FC = () => {
     if (lang === 'hi') {
       return [
         {
+          id: 'faq-hi-par-istri',
+          question: 'पति का पर-स्त्री मोह, सौतन बाधा या बाहरी आकर्षण दूर करने के लिए क्या वैदिक उपाय हैं?',
+          answer: 'जब जन्मकुंडली के सप्तम भाव (विवाह) अथवा द्वादश भाव पर राहु, केतु या दूषित शुक्र का प्रभाव होता है, तो पति का मन भटकने लगता है और वह पराई स्त्री के आकर्षण या चंगुल में आ जाता है। पूज्य बाबाजी कामाख्या-बगलामुखी संपुटित मंत्र साधना एवं शुक्र-राहु शांति अनुष्ठान द्वारा उस बाहरी सम्मोहन व आकर्षण को जड़ से समाप्त करते हैं, जिससे पति का मन अन्य स्त्री से विरक्त होकर अपनी पत्नी व बच्चों के प्रति पुनः समर्पित हो जाता है।'
+        },
+        {
+          id: 'faq-hi-santan',
+          question: 'यदि संतान माता-पिता की बात न माने, अत्यधिक जिद्दी हो या गलत संगति और मोबाइल की लत में पड़ जाए तो क्या उपाय हैं?',
+          answer: 'कुंडली का पंचम भाव संतान, बुद्धि और संस्कारों का भाव होता है। इस पर राहु या पाप ग्रहों की कुदृष्टि होने पर संतान हठी, आक्रामक और गलत संगति या स्क्रीन की लत में पड़ जाती है। पूज्य बाबाजी पंचम भाव राहु-बुध शांति, माँ सरस्वती-बृहस्पति महाजाप एवं सिद्ध वैदिक रक्षा कवच द्वारा संतान की बुद्धि को सकारात्मक दिशा में मोड़कर आज्ञाकारी, एकाग्र और संस्कारवान बनाते हैं।'
+        },
+        {
           id: 'faq-hi-1',
           question: 'क्या मैं अपनी प्रेम व वैवाहिक समस्या पर हिंदी में विस्तृत परामर्श ले सकता हूँ?',
           answer: 'हाँ, बिल्कुल। पूज्य बाबा जी पूर्णतः हिंदी एवं सरल भाषा में आपकी बात सुनते हैं। उत्तर भारत (दिल्ली, यूपी, बिहार, राजस्थान, हरियाणा, एमपी, पंजाब) के हजारों भक्त नियमित रूप से फोन और WhatsApp पर अपनी जन्मकुंडली व दांपत्य समस्याओं का सटीक समाधान प्राप्त कर रहे हैं।'
@@ -55,6 +65,16 @@ export const FaqSection: React.FC = () => {
     if (lang === 'gu-en') {
       return [
         {
+          id: 'faq-gu-par-istri',
+          question: 'પતિના પર-સ્ત્રી મોહ, સોતન બાધા કે આકર્ષણ મુક્તિ માટે વૈદિક ઉપાય શું છે? (Husband affair & third-party removal)',
+          answer: 'કુંડળીના ૭મા કે ૧૨મા ભાવ પર રાહુ કે દૂષિત શુક્રના દોષથી પતિ પર-સ્ત્રીના સંમોહન કે ખોટા સંપર્કમાં આવી જાય છે. પૂજ્ય બાબાજી કામાખ્યા-બગલામુખી વિધાન અને શુક્ર-રાહુ શાંતિ અનુષ્ઠાન દ્વારા પર-સ્ત્રીનો પ્રભાવ કાયમી દૂર કરી પતિ-પત્નીમાં અખંડ પ્રેમ, આદર અને સમર્પણ પુનઃ સ્થાપિત કરે છે.'
+        },
+        {
+          id: 'faq-gu-santan',
+          question: 'સંતાન વાત ન માને, જીદ્દી હોય કે ખોટી સંગત અને મોબાઈલની લતમાં હોય તો શું ઉપાય? (Child guidance & obedience)',
+          answer: 'કુંડળીનો ૫મો ભાવ બુદ્ધિ અને સંસ્કારનો છે. ૫મા ભાવ પર રાહુ કે પાપ ગ્રહોના પ્રભાવથી સંતાન હઠીલું અને ખોટી સંગતમાં જાય છે. બાબાજી સરસ્વતી-ગુરુ મહાજાપ અને રાહુ શાંતિ વિધાન દ્વારા સંતાનને સદ્બુદ્ધિ, અભ્યાસમાં એકાગ્રતા અને માતા-પિતા પ્રત્યે આદરભાવ પ્રદાન કરે છે.'
+        },
+        {
           id: 'faq-gu-1',
           question: 'શું હું સંપૂર્ણ ગુજરાતીમાં વાતચીત અને પરામર્શ મેળવી શકું? (Can I consult in Gujarati?)',
           answer: 'હા, ચોક્કસ (Yes, Absolutely). બાબાજી શુદ્ધ ગુજરાતી (Mother-tongue Gujarati), હિન્દી તથા અંગ્રેજીમાં સરળતાથી વાતચીત કરે છે. અમદાવાદ, સુરત, વડોદરા, રાજકોટ, ભાવનગર, આણંદ, નડિયાદ, કચ્છ તેમજ અમેરિકા, લંડન, કેનેડા વસતા હજારો ગુજરાતી પરિવારો નિયમિત માર્ગદર્શન મેળવે છે.'
@@ -84,6 +104,16 @@ export const FaqSection: React.FC = () => {
 
     // Default / Pure English
     return [
+      {
+        id: 'faq-en-par-istri',
+        question: 'What Vedic astrological remedies exist for husband extramarital affairs & third-party separation?',
+        answer: 'Afflictions to Venus (Shukra), Rahu, or the 7th and 12th houses often trigger marital infidelity, lack of commitment, and external attractions. Baba Ji conducts specialized Kamakhya & Shukra Shanti Vedic rituals to break toxic external attachments and permanently rekindle genuine spousal devotion, mutual respect, and family fidelity.'
+      },
+      {
+        id: 'faq-en-santan',
+        question: 'How can Vedic astrology help with a disobedient child, bad company, or mobile addiction?',
+        answer: 'The 5th house in Vedic astrology governs intellect (Buddhi), child upbringing (Santan), and ethical tendencies. When afflicted by Rahu or malefic planetary combinations, children become defiant, screen-addicted, or misled by bad company. Baba Ji performs Saraswati-Brihaspati Japam and 5th-house planetary peace havans to restore mental clarity, study concentration, obedience, and familial respect.'
+      },
       {
         id: 'faq-en-1',
         question: 'How does authentic Vedic astrology address relationship and marriage distress?',

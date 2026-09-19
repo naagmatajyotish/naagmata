@@ -12,6 +12,89 @@ interface KeywordGroup {
 
 const LOCAL_GUJARAT_KEYWORDS: KeywordGroup[] = [
   {
+    category: 'पति का पर-स्त्री मोह, सौतन बाधा एवं गुप्त आकर्षण निवारण (Husband Affair & Sautan Badha Relief)',
+    badge: 'High-Rank Vedic Remedy',
+    icon: '🔒',
+    keywords: [
+      'पति को पर स्त्री से दूर करने के अचूक उपाय',
+      'पति का पराई औरत से चक्कर छुड़ाने के टोटके',
+      'सौतन से छुटकारा पाने के ज्योतिष उपाय',
+      'पति को दूसरी औरत के चंगुल से कैसे छुड़ाएं',
+      'पति पराई स्त्री के वश में हो तो क्या करें',
+      'सौतन बाधा निवारण वैदिक अनुष्ठान उज्जैन',
+      'पति का पर-स्त्री मोह कैसे खत्म करें',
+      'Pati ko par stri se dur karne ke upay',
+      'Sautan se chutkara pane ke totke',
+      'Husband extramarital affair astrology remedy',
+      'Stop husband affair with another woman vedic remedy',
+      'Pati ka dusri aurat se chakkar chhudana',
+      'Kamakhya Shukra Shanti for husband fidelity',
+      'પતિને પર સ્ત્રીથી દૂર કરવાના ઉપાય',
+      'પતિનો બીજી સ્ત્રી સાથે સંબંધ તોડવાના ઉપાય',
+      'સોતનથી કાયમી છુટકારો મેળવવાના જ્યોતિષ ઉપાય'
+    ]
+  },
+  {
+    category: 'संतान सद्बुद्धि, आज्ञाकारिता एवं गलत संगति निवारण (Child Guidance & Mental Peace)',
+    badge: 'Santan Sanskar Anushthan',
+    icon: '✨',
+    keywords: [
+      'संतान की सद्बुद्धि के वैदिक ज्योतिष उपाय',
+      'बच्चा बात न माने तो क्या उपाय करें',
+      'जिद्दी और हठी बच्चे को आज्ञाकारी बनाने के उपाय',
+      'संतान की गलत संगति छुड़ाने के अचूक टोटके',
+      'बच्चों की मोबाइल व गेम की लत छुड़ाने के उपाय',
+      'संतान का मन पढ़ाई में एकाग्र करने के उपाय',
+      'पंचम भाव राहु शांति संतान दोष निवारण',
+      'Santan sadbuddhi vedic anushthan',
+      'Child obedience astrology remedies',
+      'Remedies for disobedient child vedic astrology',
+      'Child bad company and mobile addiction remedy',
+      '5th house Rahu Budh dosha shanti for children',
+      'સરસ્વતી સદ્બુદ્ધિ મંત્ર સંતાન માટે',
+      'સંતાનની ખોટી સંગત છોડાવવાના જ્યોતિષ ઉપાય',
+      'હઠીલા બાળકને શાંત અને આજ્ઞાકારી બનાવવાના ઉપાય'
+    ]
+  },
+  {
+    category: 'दांपत्य सुख, कामदेव-रति एवं आपसी आकर्षण (Marital Bliss & Spousal Attraction)',
+    badge: 'Specialized Vedic Anushthan',
+    icon: '💖',
+    keywords: [
+      'दांपत्य सुख एवं प्रेम वृद्धि अनुष्ठान',
+      'पति-पत्नी में आपसी प्रेम व आकर्षण के ज्योतिष उपाय',
+      'कामदेव-रति वैदिक मंत्र साधना ज्योतिषी',
+      'शुक्र ग्रह शांति दांपत्य कलह निवारण',
+      'Pati Patni Apsi Prem Akarshan Jyotish',
+      'Dampatya Sukh Vridhi Anushthan Ujjain',
+      'Kamadev Rati Vedic Mantra Sadhana Astrologer',
+      'Husband Wife Relationship Attraction Healing',
+      'Shukra Shanti for Marital Romance & Harmony',
+      'દાંપત્ય સુખ અને પ્રેમ વૃદ્ધિ કામદેવ રતિ સાધના',
+      'પતિ પત્ની આકર્ષણ અને પ્રેમ વધારવાના ઉપાય',
+      'Pati Patni Kankas Door Karne Ke Vedic Upay'
+    ]
+  },
+  {
+    category: 'पति की दारू/नशा मुक्ति एवं राहु शांति (Husband Addiction Relief)',
+    badge: 'Vyasan Mukti Anushthan',
+    icon: '🛡️',
+    keywords: [
+      'पति की दारू छुड़ाने के वैदिक ज्योतिष उपाय',
+      'पति का नशा छुड़ाने के सात्विक उपाय व टोटके',
+      'व्यसन मुक्ति एवं राहु ग्रह शांति अनुष्ठान',
+      'Pati ki daru chhudane ke upay jyotish',
+      'Husband alcohol addiction astrology remedies',
+      'Pati ka nasha chhudane ke tarike',
+      'Rahu Shanti for alcohol addiction & bad habits',
+      'પતિની દારૂ છોડાવવાના જ્યોતિષ ઉપાય',
+      'પતિની વ્યસન મુક્તિ માટે રાહુ શાંતિ હવન',
+      'Pati ki buri sangat aur nasha door karne ke upay',
+      'Daru nasha mukti anushthan Ujjain',
+      'Vedic remedies to stop husband drinking alcohol'
+    ]
+  },
+  {
     category: 'Ahmedabad (અમદાવાદ)',
     badge: 'Mega City Hub',
     icon: '📍',
@@ -123,6 +206,21 @@ const LOCAL_GUJARAT_KEYWORDS: KeywordGroup[] = [
 ];
 
 const INTERNATIONAL_NRI_KEYWORDS: KeywordGroup[] = [
+  {
+    category: 'Global Marital Bliss & Spousal Attraction (कामदेव-रति साधना)',
+    badge: 'Worldwide NRI Anushthan',
+    icon: '✨',
+    keywords: [
+      'Kamadev Rati Sadhana for Husband Wife in USA',
+      'Marital Bliss & Spousal Attraction Astrologer UK',
+      'Vedic Relationship Harmony Consultation Canada',
+      'Husband Wife Distance Removal Australia',
+      'Venus Shukra Shanti for Marital Romance Dubai UAE',
+      'Pati Patni Prem Vridhi Anushthan for NRIs Worldwide',
+      'Spousal Attraction Vedic Mantras Worldwide Remote',
+      'Overcome Marital Emotional Distance NRI Astrology'
+    ]
+  },
   {
     category: 'United States (USA)',
     badge: 'US Nationwide Coverage',

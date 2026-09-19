@@ -16,7 +16,8 @@ import {
   Phone,
   CheckCircle,
   Clock,
-  Sparkles
+  Sparkles,
+  Shield
 } from 'lucide-react';
 import { SACRED_SERVICES, CONTACT_INFO } from '../data/jyotishData';
 import { ServiceItem } from '../types';
@@ -55,6 +56,42 @@ export const ServicesSection: React.FC = () => {
       default:
         return <Star className="w-5 h-5 text-white" />;
     }
+  };
+
+  const getServiceTitle = (s: ServiceItem) => {
+    if (lang === 'hi' && s.titleHi) return s.titleHi;
+    if (lang === 'gu-en' && s.titleGu) return s.titleGu;
+    return s.title;
+  };
+
+  const getServiceBadge = (s: ServiceItem) => {
+    if (lang === 'hi' && s.badgeHi) return s.badgeHi;
+    if (lang === 'gu-en' && s.badgeGu) return s.badgeGu;
+    return s.badge;
+  };
+
+  const getServiceShortDesc = (s: ServiceItem) => {
+    if (lang === 'hi' && s.shortDescHi) return s.shortDescHi;
+    if (lang === 'gu-en' && s.shortDescGu) return s.shortDescGu;
+    return s.shortDesc;
+  };
+
+  const getServiceFullDesc = (s: ServiceItem) => {
+    if (lang === 'hi' && s.fullDescHi) return s.fullDescHi;
+    if (lang === 'gu-en' && s.fullDescGu) return s.fullDescGu;
+    return s.fullDesc;
+  };
+
+  const getServiceBenefits = (s: ServiceItem) => {
+    if (lang === 'hi' && s.benefitsHi) return s.benefitsHi;
+    if (lang === 'gu-en' && s.benefitsGu) return s.benefitsGu;
+    return s.benefits;
+  };
+
+  const getServiceTimeframe = (s: ServiceItem) => {
+    if (lang === 'hi' && s.timeframeHi) return s.timeframeHi;
+    if (lang === 'gu-en' && s.timeframeGu) return s.timeframeGu;
+    return s.timeframe;
   };
 
   const createWhatsAppServiceLink = (serviceTitle: string) => {
@@ -133,6 +170,190 @@ export const ServicesSection: React.FC = () => {
         </div>
       </div>
 
+      {/* Featured Spotlight: Highlighted Vedic Anushthans stacked one after the other */}
+      {(activeTab === 'all' || activeTab === 'marriage') && (() => {
+        const spotlightServices = SACRED_SERVICES.filter(
+          s => s.id === 'dampatya-sukh-rati-kamadev' || 
+               s.id === 'vyasan-mukti-rahu-shanti' ||
+               s.id === 'santan-sadbuddhi-obedient-remedy'
+        );
+
+        return (
+          <div className="space-y-8 mb-12">
+            {spotlightServices.map((featured, sIdx) => {
+              const isVyasan = featured.id === 'vyasan-mukti-rahu-shanti';
+              const isSantan = featured.id === 'santan-sadbuddhi-obedient-remedy';
+
+              return (
+                <motion.div
+                  key={featured.id}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: sIdx * 0.15 }}
+                  className={`relative rounded-3xl p-1 shadow-2xl ${
+                    isSantan
+                      ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-emerald-600 shadow-amber-500/25'
+                      : isVyasan
+                      ? 'bg-gradient-to-r from-orange-600 via-amber-500 to-red-600 shadow-orange-600/25'
+                      : 'bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 shadow-amber-500/25'
+                  }`}
+                >
+                  <div className="bg-gradient-to-br from-amber-950/95 via-stone-900 to-stone-950 text-white rounded-[22px] p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-yellow-300/30">
+                    {/* Background ambient light */}
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                    {/* Spotlight Header Tag */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-6 border-b border-white/10 relative z-10">
+                      <div className="inline-flex items-center gap-2 bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider">
+                        {isSantan ? (
+                          <Baby className="w-3.5 h-3.5 text-yellow-300 shrink-0" />
+                        ) : isVyasan ? (
+                          <Shield className="w-3.5 h-3.5 text-yellow-300 shrink-0" />
+                        ) : (
+                          <Sparkles className="w-3.5 h-3.5 text-yellow-300 shrink-0" />
+                        )}
+                        <span>
+                          {isSantan
+                            ? (lang === 'hi'
+                                ? 'विशेष मुख्य आकर्षण ३: संतान सद्बुद्धि, आज्ञाकारिता एवं संस्कार अनुष्ठान'
+                                : lang === 'gu-en'
+                                ? 'વિશેષ મુખ્ય આકર્ષણ ૩: સંતાન સદ્બુદ્ધિ અને સંસ્કાર અનુષ્ઠાન'
+                                : 'Featured Spotlight 3: Child Guidance, Obedience & Moral Harmony')
+                            : isVyasan
+                            ? (lang === 'hi'
+                                ? 'विशेष मुख्य आकर्षण २: मदिरा/व्यसन मुक्ति एवं राहु शांति'
+                                : lang === 'gu-en'
+                                ? 'વિશેષ મુખ્ય આકર્ષણ ૨: દારૂ/વ્યસન મુક્તિ અને રાહુ શાંતિ'
+                                : 'Featured Spotlight 2: Husband Addiction Relief & Rahu Shanti')
+                            : (lang === 'hi'
+                                ? 'विशेष मुख्य आकर्षण १: कामदेव-रति आकर्षण साधना'
+                                : lang === 'gu-en'
+                                ? 'વિશેષ મુખ્ય આકર્ષણ ૧: કામદેવ-રતિ આકર્ષણ સાધના'
+                                : 'Featured Spotlight 1: Kamadev-Rati Spousal Attraction')}
+                        </span>
+                      </div>
+
+                      <span className="text-xs font-semibold text-amber-200/90 bg-white/10 px-3 py-1 rounded-full border border-white/15">
+                        {isSantan
+                          ? (lang === 'hi' ? 'पंचम भाव व राहु-बुध शांति' : lang === 'gu-en' ? 'પંચમ ભાવ અને રાહુ-બુધ શાંતિ' : '5th House & Mercury-Rahu Shanti')
+                          : isVyasan
+                          ? (lang === 'hi' ? 'शास्त्रोक्त राहु-शनि निवारण' : lang === 'gu-en' ? 'શાસ્ત્રોક્ત રાહુ-શનિ નિવારણ' : 'Vedic Rahu-Shani Remedy')
+                          : (lang === 'hi' ? 'अखंड दांपत्य सुख विधान' : lang === 'gu-en' ? 'અખંડ દાંપત્ય સુખ વિધાન' : 'Marital Bliss Sadhana')}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                      {/* Left: Unique Photo with Golden Divine Border */}
+                      <div className="lg:col-span-5 relative">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-400/70 aspect-4/3 group">
+                          <img
+                            src={featured.imageUrl}
+                            alt={getServiceTitle(featured)}
+                            loading="lazy"
+                            width="600"
+                            height="450"
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95 group-hover:brightness-100"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                          
+                          {/* Floating top badge */}
+                          <div className="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-black px-3.5 py-1 rounded-full shadow-lg border border-yellow-300 flex items-center gap-1.5">
+                            {isSantan ? (
+                              <Baby className="w-3.5 h-3.5 text-yellow-200 shrink-0" />
+                            ) : isVyasan ? (
+                              <Shield className="w-3.5 h-3.5 text-yellow-200 shrink-0" />
+                            ) : (
+                              <Sparkles className="w-3.5 h-3.5 text-yellow-200 animate-spin" style={{ animationDuration: '4s' }} />
+                            )}
+                            <span>
+                              {isSantan
+                                ? (lang === 'hi' ? 'विशेष संतान सद्बुद्धि एवं संस्कार' : lang === 'gu-en' ? 'વિશેષ સંતાન સદ્બુદ્ધિ અને સંસ્કાર' : 'Vedic Child Guidance & Obedience')
+                                : isVyasan
+                                ? (lang === 'hi' ? 'विशेष राहु शांति व व्यसन मुक्ति' : lang === 'gu-en' ? 'વિશેષ રાહુ શાંતિ અને વ્યસન મુક્તિ' : 'Vedic Rahu Shanti Anushthan')
+                                : (lang === 'hi' ? 'विशेष कामदेव-रति साधना' : lang === 'gu-en' ? 'વિશેષ कामદેવ-રતિ સાધના' : 'Vedic Kamadev-Rati Sadhana')}
+                            </span>
+                          </div>
+
+                          {/* Bottom caption over image */}
+                          <div className="absolute bottom-3 left-3 right-3 text-center bg-black/60 backdrop-blur-xs rounded-xl py-1.5 px-2 border border-white/10">
+                            <p className="text-yellow-200 text-xs font-bold tracking-wide">
+                              {isSantan
+                                ? (lang === 'hi' ? 'जिद्दी स्वभाव व बुरी संगति निवारण • आज्ञाकारी संतान व उज्ज्वल भविष्य' : lang === 'gu-en' ? 'હઠીલો સ્વભાવ અને ખરાબ સંગત મુક્તિ • સંસ્કારી સંતાન' : 'Relief from Obstinacy & Bad Habits • Bright Future')
+                                : isVyasan
+                                ? (lang === 'hi' ? 'मदिरा व बुरी संगति निवारण • घर में सुख-शांति' : lang === 'gu-en' ? 'દારૂ તેમજ ખરાબ સંગત મુક્તિ • સુખ-શાંતિ' : 'Alcohol & Habit Relief • Household Peace')
+                                : (lang === 'hi' ? 'दांपत्य आकर्षण एवं शयन सुख शांति' : lang === 'gu-en' ? 'દાંપત્ય આકર્ષણ અને પ્રેમ વૃદ્ધિ' : 'Spousal Attraction & Marital Harmony')}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right: Detailed Highlights & Direct CTAs */}
+                      <div className="lg:col-span-7 space-y-4">
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight font-['Cinzel',serif]">
+                          {getServiceTitle(featured)}
+                        </h3>
+
+                        <p className="text-amber-100/90 text-sm sm:text-base leading-relaxed">
+                          {getServiceShortDesc(featured)}
+                        </p>
+
+                        {/* Bullet Benefits Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 pb-2">
+                          {getServiceBenefits(featured).map((b, idx) => (
+                            <div key={idx} className="flex items-start gap-2 bg-white/5 border border-white/10 rounded-xl p-2.5">
+                              <CheckCircle className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+                              <span className="text-xs sm:text-sm text-stone-200 font-medium leading-snug">{b}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Action Buttons: Direct Call & WhatsApp & Details */}
+                        <div className="pt-3 flex flex-wrap items-center gap-3">
+                          <a
+                            href={`tel:${CONTACT_INFO.phoneRaw}`}
+                            className="flex-1 min-w-[200px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl shadow-amber-500/30 hover:scale-[1.02] transition-all border border-yellow-300"
+                          >
+                            <Phone className="w-4 h-4 text-white animate-bounce shrink-0" />
+                            <span>
+                              {lang === 'hi'
+                                ? `सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
+                                : lang === 'gu-en'
+                                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+                            </span>
+                          </a>
+
+                          <a
+                            href={createWhatsAppServiceLink(getServiceTitle(featured))}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3 px-5 rounded-xl flex items-center justify-center gap-2 text-sm shadow-lg shadow-emerald-600/30 hover:scale-[1.02] transition-all border border-emerald-400 shrink-0"
+                          >
+                            <MessageCircle className="w-4 h-4 text-white shrink-0" />
+                            <span>{lang === 'hi' ? 'व्हाट्सएप पर बात करें' : lang === 'gu-en' ? 'વૉટ્સએપ કરો' : 'WhatsApp'}</span>
+                          </a>
+
+                          <button
+                            onClick={() => setSelectedService(featured)}
+                            className="bg-white/10 hover:bg-white/20 text-yellow-300 font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-1.5 text-xs sm:text-sm border border-yellow-400/30 transition-all hover:border-yellow-400 shrink-0 cursor-pointer"
+                          >
+                            <span>{lang === 'hi' ? 'पूर्ण विवरण' : lang === 'gu-en' ? 'વિગત જુઓ' : 'Details'}</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        );
+      })()}
+
       {/* Services Grid with Scroll-triggered Animation & Photos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {filteredServices.map((service, index) => (
@@ -146,8 +367,36 @@ export const ServicesSection: React.FC = () => {
               delay: (index % 3) * 0.12,
               ease: [0.25, 1, 0.5, 1]
             }}
-            className="bg-white p-5 sm:p-6 rounded-3xl border border-amber-200/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.01] group flex flex-col justify-between relative shadow-xs hover:shadow-2xl hover:shadow-amber-500/15"
+            className={`p-5 sm:p-6 rounded-3xl transition-all duration-300 hover:scale-[1.01] group flex flex-col justify-between relative ${
+              service.isHighlighted
+                ? 'bg-gradient-to-b from-amber-50/95 via-white to-orange-50/70 border-2 border-amber-500 shadow-xl shadow-amber-500/20 ring-4 ring-amber-400/25'
+                : 'bg-white border border-amber-200/80 hover:border-amber-400 shadow-xs hover:shadow-2xl hover:shadow-amber-500/15'
+            }`}
           >
+            {/* Special Highlighted Floating Ribbon */}
+            {service.isHighlighted && (
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-stone-950 font-black text-[11px] px-4 py-1 rounded-full shadow-lg border border-yellow-200 uppercase tracking-wider flex items-center gap-1.5 z-20 whitespace-nowrap">
+                {service.id === 'vyasan-mukti-rahu-shanti' ? (
+                  <Shield className="w-3.5 h-3.5 text-stone-950 shrink-0" />
+                ) : (
+                  <Sparkles className="w-3.5 h-3.5 text-stone-950 animate-pulse shrink-0" />
+                )}
+                <span>
+                  {service.id === 'vyasan-mukti-rahu-shanti'
+                    ? lang === 'hi'
+                      ? '🛡️ विशेष राहु शांति एवं व्यसन मुक्ति'
+                      : lang === 'gu-en'
+                      ? '🛡️ વિશેષ રાહુ શાંતિ અને વ્યસન મુક્તિ'
+                      : '🛡️ Special Rahu Shanti & Addiction Relief'
+                    : lang === 'hi'
+                    ? '⭐ विशेष सिद्ध आकर्षण अनुष्ठान'
+                    : lang === 'gu-en'
+                    ? '⭐ વિશેષ સિદ્ધ આકર્ષણ સાધના'
+                    : '⭐ Special Highlighted Anushthan'}
+                </span>
+              </div>
+            )}
+
             <div>
               {/* Service Related Photo */}
               {service.imageUrl && (
@@ -166,9 +415,9 @@ export const ServicesSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent"></div>
 
                   {/* Top Badge */}
-                  {service.badge && (
+                  {getServiceBadge(service) && (
                     <div className="absolute top-3 right-3 bg-amber-500/95 backdrop-blur-xs text-stone-950 text-[11px] font-black px-3 py-1 rounded-full shadow-md border border-yellow-200">
-                      {service.badge}
+                      {getServiceBadge(service)}
                     </div>
                   )}
 
@@ -185,11 +434,11 @@ export const ServicesSection: React.FC = () => {
               )}
 
               <h3 className="heading-mystic text-xl font-bold mb-2.5 text-stone-900 group-hover:text-amber-800 transition-colors">
-                {service.title}
+                {getServiceTitle(service)}
               </h3>
 
               <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                {service.shortDesc}
+                {getServiceShortDesc(service)}
               </p>
             </div>
 
@@ -197,7 +446,7 @@ export const ServicesSection: React.FC = () => {
               <div className="flex items-center justify-between text-xs text-stone-600 font-medium">
                 <div className="flex items-center">
                   <Clock className="w-3.5 h-3.5 mr-1.5 shrink-0 text-amber-600" />
-                  <span>{service.timeframe}</span>
+                  <span>{getServiceTimeframe(service)}</span>
                 </div>
                 <span className="text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   24/7 Live
@@ -232,7 +481,7 @@ export const ServicesSection: React.FC = () => {
                 </button>
 
                 <a
-                  href={createWhatsAppServiceLink(service.title)}
+                  href={createWhatsAppServiceLink(getServiceTitle(service))}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full text-xs font-bold py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white transition-colors flex items-center justify-center gap-1.5 shadow-xs"
@@ -263,7 +512,7 @@ export const ServicesSection: React.FC = () => {
               <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-5 -mt-2 shadow-md">
                 <img
                   src={selectedService.imageUrl}
-                  alt={selectedService.title}
+                  alt={getServiceTitle(selectedService)}
                   loading="lazy"
                   decoding="async"
                   width="600"
@@ -274,10 +523,10 @@ export const ServicesSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent"></div>
                 <div className="absolute bottom-3 left-4 right-4">
                   <span className="text-[11px] text-yellow-300 font-bold tracking-wider uppercase block drop-shadow-sm">
-                    {selectedService.badge || 'Divine Astrological Remedy'}
+                    {getServiceBadge(selectedService) || 'Divine Astrological Remedy'}
                   </span>
                   <h3 className="heading-mystic text-xl sm:text-2xl font-extrabold text-white drop-shadow-md">
-                    {selectedService.title}
+                    {getServiceTitle(selectedService)}
                   </h3>
                 </div>
               </div>
@@ -290,17 +539,17 @@ export const ServicesSection: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-amber-800 font-bold tracking-wider uppercase">
-                    {selectedService.badge || 'Divine Astrological Remedy'}
+                    {getServiceBadge(selectedService) || 'Divine Astrological Remedy'}
                   </span>
                   <h3 className="heading-mystic text-2xl font-extrabold text-stone-900">
-                    {selectedService.title}
+                    {getServiceTitle(selectedService)}
                   </h3>
                 </div>
               </div>
             )}
 
             <p className="text-stone-700 text-sm md:text-base leading-relaxed mb-6 font-normal">
-              {selectedService.fullDesc}
+              {getServiceFullDesc(selectedService)}
             </p>
 
             {/* Sacred Benefits */}
@@ -310,7 +559,7 @@ export const ServicesSection: React.FC = () => {
                 Key Vedic Spiritual Outcomes
               </h4>
               <ul className="space-y-2">
-                {selectedService.benefits.map((benefit, i) => (
+                {getServiceBenefits(selectedService).map((benefit, i) => (
                   <li key={i} className="flex items-start text-xs md:text-sm text-stone-700">
                     <span className="text-amber-600 mr-2 font-bold">•</span>
                     <span>{benefit}</span>
@@ -351,7 +600,7 @@ export const ServicesSection: React.FC = () => {
               </a>
 
               <a
-                href={createWhatsAppServiceLink(selectedService.title)}
+                href={createWhatsAppServiceLink(getServiceTitle(selectedService))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all"

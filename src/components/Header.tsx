@@ -33,10 +33,6 @@ export const Header: React.FC = () => {
     { name: t.services, href: '#services' },
     { name: t.darshan, href: '#sacred-darshan' },
     {
-      name: lang === 'gu-en' ? '🐍 નાગમણી ચક્ર' : lang === 'en' ? '🐍 Naag-Mani Oracle' : '🐍 नागमणि चक्र',
-      href: '#naag-mani-oracle'
-    },
-    {
       name: lang === 'gu-en' ? '📜 ભોજપત્ર કવચ' : lang === 'en' ? '📜 Bhojpatra Kavach' : '📜 भोजपत्र कवच',
       href: '#bhojpatra-kavach'
     },

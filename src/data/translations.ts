@@ -21,6 +21,8 @@ export interface SectionTranslations {
     brandTag: string;
     servicesTag: string;
     disputesTag: string;
+    parIstriTag: string;
+    santanTag: string;
     trustTag: string;
     helplineTag: string;
   };
@@ -137,6 +139,8 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       brandTag: '🐍 શ્રી માં નાગદેવી સિદ્ધ પીઠ • World Renowned Vedic Astrologer & Love Problem Specialist',
       servicesTag: '✨ Explore Authentic Vedic Love Problem & Relationship Shanti Havans',
       disputesTag: '🔱 લવ પ્રોબ્લેમ સોલ્યુશન • પ્રેમ લગ્ન વિલંબ • પતિ-પત્ની કંકાસ નિવારણ',
+      parIstriTag: '🔒 વિશેષ અનુષ્ઠાન: પતિનો પર-સ્ત્રી મોહ, સોતન બાધા અને ગુપ્ત આકર્ષણ મુક્તિ (સંપૂર્ણ ૧૦૦% ગોપનીય)',
+      santanTag: '✨ સંતાન સદ્બુદ્ધિ, આજ્ઞાકારિતા અને ખોટી સંગત/મોબાઇલ વ્યસન મુક્તિ વૈદિક અનુષ્ઠાન',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
       helplineTag: '📞 24/7 Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
     },
@@ -169,8 +173,12 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       selectPlaceholder: '-- સમસ્યા પસંદ કરો --',
       problemOptions: [
         { value: 'love-problem', label: 'પ્રેમ સંબંધમાં વિખવાદ / Love Problem & Misunderstandings' },
+        { value: 'par-istri-nivaran', label: 'પતિનો પર-સ્ત્રી મોહ, સોતન બાધા & આકર્ષણ મુક્તિ (૧૦૦% ગુપ્ત)' },
+        { value: 'santan-sadbuddhi', label: 'સંતાન સદ્બુદ્ધિ, આજ્ઞાકારિતા & ખોટી સંગત/મોબાઇલ મુક્તિ' },
+        { value: 'dampatya-sukh', label: 'દાંપત્ય સુખ અને પ્રેમ વૃદ્ધિ / પતિ-પત્ની પરસ્પર આકર્ષણ (કામદેવ-રતિ સાધના)' },
         { value: 'love-marriage', label: 'પ્રેમ લગ્ન અને પરિવાર સંમતિ / Love Marriage & Family Objections' },
         { value: 'husband-wife', label: 'પતિ-પત્ની વચ્ચે તણાવ કે કંકાસ / Husband-Wife Disputes & Distance' },
+        { value: 'vyasan-mukti', label: 'પતિની વ્યસન મુક્તિ અને દારૂ/નશાથી મુક્તિ (રાહુ શાંતિ અનુષ્ઠાન)' },
         { value: 'breakup', label: 'બ્રેકઅપ અને સંબંધ પુનઃસ્થાપન / Breakup & Lost Love Reunion' },
         { value: 'intercaste', label: 'આંતરજાતીય લગ્ન સમસ્યા / Intercaste Marriage Obstacles' },
         { value: 'kundali-dosha', label: 'માંગલિક અથવા કુંડળી દોષ / Manglik & Kundali Dosha' },
@@ -251,6 +259,8 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       brandTag: '🐍 श्री माँ नागदेवी सिद्ध पीठ • विश्व प्रसिद्ध वैदिक ज्योतिषी एवं प्रेम समस्या समाधान विशेषज्ञ',
       servicesTag: '✨ प्रामाणिक वैदिक प्रेम समाधान एवं पारिवारिक शांति अनुष्ठान',
       disputesTag: '🔱 लव प्रॉब्लम सॉल्यूशन • प्रेम विवाह बाधा निवारण • पति-पत्नी कलह शांति',
+      parIstriTag: '🔒 विशेष अनुष्ठान: पति का पर-स्त्री मोह, सौतन बाधा एवं गुप्त आकर्षण निवारण (100% गोपनीय समाधान)',
+      santanTag: '✨ संतान सद्बुद्धि, आज्ञाकारिता एवं गलत संगति/मोबाइल लत निवारण वैदिक अनुष्ठान',
       trustTag: '🔒 35+ वर्षों की प्रामाणिक परंपरा — 100% गोपनीय एवं शास्त्रसम्मत परामर्श',
       helplineTag: '📞 24/7 हेल्पलाइन: +91 97141 27309 (कॉल / व्हाट्सएप बाबाजी)'
     },
@@ -272,7 +282,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
     form: {
       badge: '24/7 आपातकालीन ज्योतिष परामर्श',
       title: 'तत्काल परामर्श हेतु फॉर्म भरें',
-      subtitle: 'आपकी समस्त जानकारी 100% गोपनीय रहेगी। नीचे विवरण भरें या सीधा कॉल करें:',
+      subtitle: 'आपकी समस्त जानकारी 100% गोपनीय रहेगी। परामर्श हेतु नीचे विवरण भरें:',
       nameLabel: 'आपका पूरा नाम',
       namePlaceholder: 'उदा. अमित शर्मा / पूजा वर्मा',
       phoneLabel: 'मोबाइल / व्हाट्सएप नंबर',
@@ -283,8 +293,12 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       selectPlaceholder: '-- समस्या का चयन करें --',
       problemOptions: [
         { value: 'love-problem', label: 'प्रेम संबंधों में मतभेद एवं दूरी (Love Problem)' },
+        { value: 'par-istri-nivaran', label: 'पति का पर-स्त्री मोह एवं सौतन बाधा निवारण (100% गोपनीय)' },
+        { value: 'santan-sadbuddhi', label: 'संतान सद्बुद्धि, आज्ञाकारिता एवं गलत संगति निवारण' },
+        { value: 'dampatya-sukh', label: 'दांपत्य सुख एवं प्रेम वृद्धि अनुष्ठान (पति-पत्नी आपसी आकर्षण • कामदेव-रति साधना)' },
         { value: 'love-marriage', label: 'प्रेम विवाह एवं परिजनों की असहमति (Love Marriage Delay)' },
         { value: 'husband-wife', label: 'पति-पत्नी के बीच कलह एवं तनाव (Husband-Wife Disputes)' },
+        { value: 'vyasan-mukti', label: 'पति की मदिरा/व्यसन मुक्ति एवं राहु शांति (नशा व बुरी संगति निवारण)' },
         { value: 'breakup', label: 'ब्रेकअप एवं खोया प्यार वापस पाना (Breakup Reconciliation)' },
         { value: 'intercaste', label: 'अंतरजातीय विवाह बाधा निवारण (Intercaste Marriage)' },
         { value: 'kundali-dosha', label: 'मांगलिक दोष अथवा कुंडली मिलान बाधा (Kundali Dosha)' },
@@ -365,6 +379,8 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       brandTag: '🐍 Shri Maa Naagdevi Siddha Peeth • World Renowned Vedic Astrologer & Relationship Specialist',
       servicesTag: '✨ Explore Authentic Vedic Love Problem & Relationship Harmony Havans',
       disputesTag: '🔱 Relationship Reconciliation • Marriage Harmony • Dispute Resolution',
+      parIstriTag: '🔒 Sacred Remedy: Husband Extramarital Affair & Third-Party Removal (100% Confidential)',
+      santanTag: '✨ Child Guidance, Obedience, Screen Addiction & Bad Company Relief Ritual',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
       helplineTag: '📞 24/7 Global Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
     },
@@ -397,8 +413,12 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       selectPlaceholder: '-- Select Concern --',
       problemOptions: [
         { value: 'love-problem', label: 'Relationship Misunderstandings & Emotional Distance' },
+        { value: 'par-istri-nivaran', label: 'Husband Extramarital Affair & Third-Party Separation (100% Confidential)' },
+        { value: 'santan-sadbuddhi', label: 'Child Guidance, Obedience, Screen Addiction & Bad Company Relief' },
+        { value: 'dampatya-sukh', label: 'Marital Bliss & Spousal Attraction (Kamadev-Rati Vedic Sadhana)' },
         { value: 'love-marriage', label: 'Marriage Approval & Family Objections' },
         { value: 'husband-wife', label: 'Marital Discord & Spousal Communication Blocks' },
+        { value: 'vyasan-mukti', label: 'Husband Alcohol Addiction & Bad Habits Relief (Vedic Rahu Shanti)' },
         { value: 'breakup', label: 'Breakup Healing & Lost Love Reconciliation' },
         { value: 'intercaste', label: 'Intercultural & Intercaste Marriage Harmony' },
         { value: 'kundali-dosha', label: 'Planetary & Astrological Dosha Rectification' },

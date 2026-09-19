@@ -542,10 +542,10 @@ export const GlobalPresence: React.FC = () => {
             </span>
           </div>
           <a
-            href="#consultation"
+            href="#contact"
             className="inline-flex items-center gap-1 font-bold text-amber-700 hover:text-amber-800 shrink-0 group"
           >
-            <span>Book Confidential Form</span>
+            <span>Contact Baba Ji</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>

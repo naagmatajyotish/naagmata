@@ -66,37 +66,6 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
           </p>
         </div>
 
-        {/* Prominent Direct Call Banner - Perfectly Aligned */}
-        <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white shadow-xl shadow-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 border border-amber-300/40">
-          <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-4 text-left w-full sm:w-auto">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0 border border-white/30 shadow-inner">
-              <Phone className="w-6 h-6 sm:w-7 sm:h-7 text-white animate-bounce" />
-            </div>
-            <div className="text-left">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-100 flex items-center gap-1">
-                <span>⭐</span>
-                <span>{lang === 'hi' ? 'सीधा संपर्क' : lang === 'gu-en' ? 'સીધો સંપર્ક' : 'Instant Direct Line'}</span>
-              </span>
-              <h4 className="font-black text-base sm:text-lg text-white leading-snug">
-                {lang === 'hi'
-                  ? 'तत्काल समाधान हेतु अभी फोन करें'
-                  : lang === 'gu-en'
-                  ? 'ત્વરિત માર્ગદર્શન માટે સીધો કૉલ કરો'
-                  : 'Call Directly for Immediate Astrological Consultation'}
-              </h4>
-            </div>
-          </div>
-          <a
-            href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-amber-50 text-stone-950 font-black px-6 sm:px-8 py-3.5 rounded-xl text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] whitespace-nowrap cursor-pointer border-2 border-yellow-300 active:scale-98"
-          >
-            <Phone className="w-5 h-5 text-orange-600 shrink-0" />
-            <span className="tracking-wide">
-              {lang === 'hi' ? 'कॉल करें' : lang === 'gu-en' ? 'કૉલ કરો' : 'Call Now'}: <span className="font-black text-amber-950">+91&nbsp;97141&nbsp;27309</span>
-            </span>
-          </a>
-        </div>
-
         {isSubmitted ? (
           <div className="text-center py-8 space-y-4 bg-amber-50/60 border border-amber-200 rounded-2xl p-6">
             <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">

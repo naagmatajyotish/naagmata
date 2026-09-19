@@ -1,15 +1,29 @@
 export interface ServiceItem {
   id: string;
   title: string;
+  titleHi?: string;
+  titleGu?: string;
   category: 'love' | 'marriage' | 'protection' | 'career' | 'kundali';
   shortDesc: string;
+  shortDescHi?: string;
+  shortDescGu?: string;
   fullDesc: string;
+  fullDescHi?: string;
+  fullDescGu?: string;
   benefits: string[];
+  benefitsHi?: string[];
+  benefitsGu?: string[];
   mantraPreview?: string;
   timeframe: string;
+  timeframeHi?: string;
+  timeframeGu?: string;
   iconName: string;
   badge?: string;
+  badgeHi?: string;
+  badgeGu?: string;
   imageUrl?: string;
+  isHighlighted?: boolean;
+  highlightBadge?: string;
 }
 
 export interface TestimonialItem {

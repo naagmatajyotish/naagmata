@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, ShieldCheck, Sparkles, Clock, Star, Flame } from 'lucide-react';
+import { Phone, MessageCircle, ShieldCheck, Sparkles, Clock, Star, Flame, Shield } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { useLanguage } from '../context/LanguageContext';
@@ -143,6 +143,54 @@ export const Hero: React.FC = () => {
               <span className="text-amber-950 font-black">{lang === 'hi' ? '24/7 निःशुल्क प्रारंभिक परामर्श' : lang === 'en' ? '24/7 Free Initial Consultation' : '24/7 મફત પ્રારંભિક પરામર્શ'}</span>
             </span>
           </div>
+        </div>
+
+        {/* Special Highlight Pills for Key Sacred Anushthans */}
+        <div className="pt-1 flex flex-col items-center justify-center gap-2 px-3">
+          <a
+            href="#services"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 hover:from-amber-500/25 hover:to-orange-500/30 border border-amber-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse shrink-0" />
+            <span>
+              {lang === 'hi'
+                ? 'विशेष अनुष्ठान: कामदेव-रति आकर्षण साधना एवं दांपत्य सुख'
+                : lang === 'gu-en'
+                ? 'વિશેષ વિધાન: કામદેવ-રતિ આકર્ષણ સાધના અને દાંપત્ય સુખ'
+                : 'Special Sadhana: Kamadev-Rati Spousal Attraction'}
+            </span>
+            <span className="text-amber-700 font-extrabold text-[11px]">→</span>
+          </a>
+
+          <a
+            href="#services"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-500/15 via-orange-500/20 to-amber-500/15 hover:from-red-500/25 hover:to-orange-500/30 border border-orange-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-orange-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
+          >
+            <Shield className="w-3.5 h-3.5 text-orange-700 shrink-0" />
+            <span>
+              {lang === 'hi'
+                ? 'विशेष अनुष्ठान: पति की मदिरा/व्यसन मुक्ति एवं राहु शांति'
+                : lang === 'gu-en'
+                ? 'વિશેષ વિધાન: પતિની દારૂ/વ્યસન મુક્તિ અને રાહુ શાંતિ'
+                : 'Special Sadhana: Husband Alcohol Addiction Relief'}
+            </span>
+            <span className="text-orange-700 font-extrabold text-[11px]">→</span>
+          </a>
+
+          <a
+            href="#par-istri-highlight"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-600/15 via-rose-500/20 to-amber-500/15 hover:from-red-600/25 hover:to-rose-500/30 border border-red-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-red-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
+          >
+            <Shield className="w-3.5 h-3.5 text-red-700 shrink-0" />
+            <span>
+              {lang === 'hi'
+                ? 'विशेष अनुष्ठान: पति का पर-स्त्री मोह, गुप्त आकर्षण एवं सौतन बाधा निवारण'
+                : lang === 'gu-en'
+                ? 'વિશેષ વિધાન: પતિનો પર-સ્ત્રી મોહ અને સોતન બાધા મુક્તિ'
+                : 'Special Remedy: Husband Extramarital Affair & Third-Party Removal'}
+            </span>
+            <span className="text-red-700 font-extrabold text-[11px]">→</span>
+          </a>
         </div>
 
         {/* Direct consultation hint & live activity badge - Centered Unit */}

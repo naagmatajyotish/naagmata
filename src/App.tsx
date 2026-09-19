@@ -4,7 +4,7 @@ import { DiscreetProvider } from './context/DiscreetContext';
 import { DiscreetOverlay } from './components/DiscreetOverlay';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ConsultationForm } from './components/ConsultationForm';
+import { ParIstriHighlightBanner } from './components/ParIstriHighlightBanner';
 import { ServicesSection } from './components/ServicesSection';
 import { FloatingActions } from './components/FloatingActions';
 
@@ -12,7 +12,6 @@ import { FloatingActions } from './components/FloatingActions';
 const GlobalPresence = lazy(() => import('./components/GlobalPresence').then(m => ({ default: m.GlobalPresence })));
 const SeoKeywordsDirectory = lazy(() => import('./components/SeoKeywordsDirectory').then(m => ({ default: m.SeoKeywordsDirectory })));
 const SacredDarshan3D = lazy(() => import('./components/SacredDarshan3D').then(m => ({ default: m.SacredDarshan3D })));
-const NaagManiOracle = lazy(() => import('./components/NaagManiOracle').then(m => ({ default: m.NaagManiOracle })));
 const AuraEnergyScanner = lazy(() => import('./components/AuraEnergyScanner').then(m => ({ default: m.AuraEnergyScanner })));
 const VedicCalculator = lazy(() => import('./components/VedicCalculator').then(m => ({ default: m.VedicCalculator })));
 const BhojpatraKavach = lazy(() => import('./components/BhojpatraKavach').then(m => ({ default: m.BhojpatraKavach })));
@@ -45,7 +44,8 @@ export default function App() {
           <main className="flex-1 w-full max-w-full overflow-x-hidden">
             {/* Above-the-fold Critical Sections (Instant Load without delay) */}
             <Hero />
-            <ConsultationForm />
+            {/* Special Highlight Banner: Par-Istri Moh & Sautan Badha Nivaran */}
+            <ParIstriHighlightBanner />
             <ServicesSection />
 
             {/* Below-the-fold Interactive Components (Deferred for ultra-fast First Contentful Paint) */}
@@ -58,9 +58,6 @@ export default function App() {
 
               {/* 3D Divine Darshan & Ashirwad of Maa Naagdevi (Interactive 3D Cutout) */}
               <SacredDarshan3D />
-
-              {/* Interactive Sacred Naag-Mani Oracle (12-Petal Vedic Chakra) */}
-              <NaagManiOracle />
 
               {/* Vedic Aura & Negative Energy Diagnostic Scanner */}
               <AuraEnergyScanner />
