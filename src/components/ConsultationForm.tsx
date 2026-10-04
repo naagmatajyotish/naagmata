@@ -39,6 +39,23 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
 
     const whatsappUrl = `https://wa.me/919714127309?text=${encodeURIComponent(message)}`;
     
+    // Trigger Google Tag conversion event
+    try {
+      if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'conversion', {
+          send_to: 'AW-18450282399',
+          event_category: 'Lead',
+          event_action: 'Form Submit',
+          event_label: formData.concern || 'Vedic Consultation'
+        });
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'generate_lead', {
+          service_category: formData.concern
+        });
+      }
+    } catch {
+      // Ignore if analytics blocked by adblock
+    }
+
     // Open WhatsApp in new window
     window.open(whatsappUrl, '_blank');
     setIsSubmitted(true);

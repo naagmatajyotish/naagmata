@@ -1,9 +1,52 @@
 <!doctype html>
-<html lang="en" class="light" data-theme="light-royal" style="color-scheme: only light !important; background-color: #fdfcf7 !important;">
+<html lang="hi" class="light" data-theme="light-royal" style="color-scheme: only light !important; background-color: #fdfcf7 !important;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
     
+    <!-- Google tag (gtag.js) - Google Ads: AW-18450282399 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18450282399"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18450282399');
+
+      // Global Conversion Tracking for Direct Phone Calls and WhatsApp Clicks
+      document.addEventListener('click', function(e) {
+        var target = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!target) return;
+        var href = target.getAttribute('href') || '';
+        
+        // Track Phone Calls
+        if (href.indexOf('tel:') === 0) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18450282399',
+            'event_category': 'Contact',
+            'event_action': 'Phone Call Click',
+            'event_label': href
+          });
+          gtag('event', 'phone_call_click', {
+            'phone_number': href.replace('tel:', '')
+          });
+        }
+        
+        // Track WhatsApp Clicks
+        if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18450282399',
+            'event_category': 'Contact',
+            'event_action': 'WhatsApp Click',
+            'event_label': 'WhatsApp Consultation'
+          });
+          gtag('event', 'whatsapp_click', {
+            'platform': 'WhatsApp'
+          });
+        }
+      }, true);
+    </script>
+
     <!-- Enforce HTTPS Security & Canonical Link -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="canonical" href="https://naagmata.com/" />

@@ -3,7 +3,6 @@ import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { UrgentBanner } from './UrgentBanner';
-import { LanguageSelector } from './LanguageSelector';
 import { useLanguage } from '../context/LanguageContext';
 import { useDiscreet } from '../context/DiscreetContext';
 import { TRANSLATIONS } from '../data/translations';
@@ -73,10 +72,6 @@ export const Header: React.FC = () => {
               <span>{CONTACT_INFO.phoneDisplay}</span>
             </a>
           </div>
-
-          <div className="shrink-0">
-            <LanguageSelector compact={true} />
-          </div>
         </div>
 
         {/* 3. Main Brand Navigation Bar - Always Fixed */}
@@ -136,11 +131,6 @@ export const Header: React.FC = () => {
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
             <span className="hidden xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
           </button>
-
-          {/* Desktop & Tablet Language Switcher */}
-          <div className="hidden sm:block">
-            <LanguageSelector />
-          </div>
 
           {/* Quick WhatsApp Chat */}
           <a
