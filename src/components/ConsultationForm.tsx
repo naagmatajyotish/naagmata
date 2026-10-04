@@ -43,7 +43,9 @@ Pranam Baba Ji, please review my details and guide me with your divine blessings
     try {
       if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'conversion', {
-          send_to: 'AW-18450282399',
+          send_to: 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
+          value: 1.0,
+          currency: 'INR',
           event_category: 'Lead',
           event_action: 'Form Submit',
           event_label: formData.concern || 'Vedic Consultation'

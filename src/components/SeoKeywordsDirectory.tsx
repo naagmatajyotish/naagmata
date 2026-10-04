@@ -325,6 +325,7 @@ export const SeoKeywordsDirectory: React.FC = () => {
   const { lang } = useLanguage();
   const [activeTab, setActiveTab] = useState<'local' | 'international'>('local');
   const [searchFilter, setSearchFilter] = useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const currentList = activeTab === 'local' ? LOCAL_GUJARAT_KEYWORDS : INTERNATIONAL_NRI_KEYWORDS;
 
@@ -344,13 +345,17 @@ export const SeoKeywordsDirectory: React.FC = () => {
         group.category.toLowerCase().includes(searchFilter.toLowerCase())
     );
 
+  const isFiltering = searchFilter.trim().length > 0;
+  // Keep website sleek and short: show 3 top categories by default, expandable to all on click
+  const visibleGroups = isExpanded || isFiltering ? filteredGroups : filteredGroups.slice(0, 3);
+
   return (
     <section
       id="seo-keywords-directory"
-      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto border-t border-amber-200/80 w-full overflow-hidden"
+      className="py-10 sm:py-12 px-4 sm:px-6 max-w-7xl mx-auto border-t border-amber-200/80 w-full overflow-hidden"
     >
-      <div className="text-center max-w-3xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
+      <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3 py-0.5 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-2">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
           <span>
             {lang === 'hi'
@@ -360,51 +365,45 @@ export const SeoKeywordsDirectory: React.FC = () => {
               : 'Complete Local & International Search Index'}
           </span>
         </div>
-        <h2 className="heading-mystic text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 leading-snug">
+        <h2 className="heading-mystic text-xl sm:text-2xl md:text-3xl font-extrabold text-stone-900 leading-snug">
           {lang === 'hi'
             ? 'शहर व देशानुसार वैदिक ज्योतिष खोज निर्देशिका'
             : lang === 'gu-en'
             ? 'શહેર અને દેશ અનુસાર જ્યોતિષ શોધ નિર્દેશિકા'
             : 'Vedic Astrological Search Directory by City & Country'}
         </h2>
-        <p className="text-amber-800 font-bold text-sm sm:text-base mt-2">
+        <p className="text-amber-800 font-semibold text-xs sm:text-sm mt-1">
           {lang === 'hi'
             ? 'उत्तर भारत, गुजरात व अंतरराष्ट्रीय देशों हेतु प्रमुख प्रामाणिक कीवर्ड्स'
             : lang === 'gu-en'
             ? 'સ્થાનિક ગુજરાત અને આંતરરાષ્ટ્રીય દેશો મુજબ મુખ્ય જ્યોતિષ શોધ કીવર્ડ્સ'
             : 'Verified Astrological Search Terms for Gujarat, North India & Worldwide Diaspora'}
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-3 text-xs sm:text-sm md:text-base leading-relaxed">
-          {lang === 'hi'
-            ? 'प्रामाणिक वैदिक ज्योतिष परामर्श, प्रेम समस्या समाधान, विवाह सामंजस्य व ग्रह शांति हेतु अपने शहर का चयन करें।'
-            : lang === 'gu-en'
-            ? 'પ્રેમ સમસ્યા નિવારણ, દાંપત્ય સુમેળ અને ગ્રહદોષ શાંતિ માટે તમારા શહેર અથવા દેશ મુજબ કન્સલ્ટેશન શોધો.'
-            : 'Search or browse our verified location index for authentic Vedic astrology consultations, relationship guidance, marriage harmony, and planetary dosha remedies.'}
-        </p>
+        <div className="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-2 rounded-full"></div>
       </div>
 
       {/* Tabs & Search Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white border border-amber-200/80 p-3.5 rounded-2xl shadow-xs">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6 bg-white border border-amber-200/80 p-2.5 sm:p-3 rounded-2xl shadow-xs">
         {/* Tab Toggle Buttons */}
         <div className="flex items-center gap-2 w-full sm:w-auto">
           <button
             onClick={() => {
               setActiveTab('local');
               setSearchFilter('');
+              setIsExpanded(false);
             }}
-            className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
               activeTab === 'local'
-                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-md shadow-amber-600/20'
+                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
                 : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
             }`}
           >
-            <MapPin className="w-4 h-4 shrink-0" />
+            <MapPin className="w-3.5 h-3.5 shrink-0" />
             <span>
               {lang === 'hi'
                 ? 'गुजरात व प्रांतीय केंद्र'
                 : lang === 'gu-en'
-                ? 'Gujarat Local SEO (ગુજરાત જિલ્લા & શહેર)'
+                ? 'Gujarat Local SEO'
                 : 'Gujarat & Domestic Centers'}
             </span>
           </button>
@@ -413,84 +412,93 @@ export const SeoKeywordsDirectory: React.FC = () => {
             onClick={() => {
               setActiveTab('international');
               setSearchFilter('');
+              setIsExpanded(false);
             }}
-            className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
               activeTab === 'international'
-                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-md shadow-amber-600/20'
+                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
                 : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
             }`}
           >
-            <Globe2 className="w-4 h-4 shrink-0" />
+            <Globe2 className="w-3.5 h-3.5 shrink-0" />
             <span>
               {lang === 'hi'
-                ? 'अंतरराष्ट्रीय (USA, UK, Canada, UAE, Aus)'
+                ? 'अंतरराष्ट्रीय (NRI Hubs)'
                 : lang === 'gu-en'
-                ? 'International SEO (USA, UK, Canada, UAE, Aus)'
-                : 'International Hubs (USA, UK, Canada, UAE, Aus)'}
+                ? 'International Hubs'
+                : 'International Hubs'}
             </span>
           </button>
         </div>
 
         {/* Live Filter Search Input */}
-        <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="relative w-full sm:w-64">
+          <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchFilter}
             onChange={(e) => setSearchFilter(e.target.value)}
             placeholder={
               lang === 'hi'
-                ? 'शहर, क्षेत्र या कीवर्ड खोजें...'
+                ? 'शहर या कीवर्ड खोजें...'
                 : lang === 'gu-en'
                 ? 'શહેર કે કીવર્ડ શોધો...'
-                : 'Search city, area, or keyword...'
+                : 'Search city or keyword...'
             }
-            className="w-full pl-9 pr-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:outline-hidden focus:border-amber-500 focus:bg-white text-stone-900 transition-colors"
+            className="w-full pl-8 pr-3 py-1.5 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:outline-hidden focus:border-amber-500 focus:bg-white text-stone-900 transition-colors"
           />
         </div>
       </div>
 
-      {/* Grid of Keywords */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredGroups.map((group, idx) => (
+      {/* Grid of Keywords (Compact, Sleek View) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {visibleGroups.map((group, idx) => (
           <div
             key={idx}
-            className="bg-white border border-amber-200/90 rounded-2xl p-5 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+            className="bg-white border border-amber-200/90 rounded-xl p-3.5 sm:p-4 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
           >
             <div>
               {/* Header */}
-              <div className="flex items-start justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">{group.icon}</span>
-                  <h3 className="heading-mystic text-base font-bold text-stone-900">
+              <div className="flex items-start justify-between gap-2 mb-2.5">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-base shrink-0">{group.icon}</span>
+                  <h3 className="heading-mystic text-xs sm:text-sm font-bold text-stone-900 line-clamp-1">
                     {group.category}
                   </h3>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded-full shrink-0">
+                <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200 px-1.5 py-0.5 rounded-full shrink-0">
                   {group.badge}
                 </span>
               </div>
 
-              {/* Keywords Tag Cloud */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {group.keywords.map((kw, kwIdx) => (
+              {/* Keywords Tag Cloud - Compact & Mini */}
+              <div className="flex flex-wrap gap-1 pt-0.5">
+                {group.keywords.slice(0, isExpanded || isFiltering ? 15 : 6).map((kw, kwIdx) => (
                   <a
                     key={kwIdx}
                     href={`tel:${CONTACT_INFO.phoneRaw}`}
                     title={`Consult Baba Ji for ${kw}`}
-                    className="text-[11px] font-medium text-stone-700 bg-stone-50 hover:bg-amber-100 hover:text-amber-950 border border-stone-200/80 hover:border-amber-300 px-2.5 py-1 rounded-lg transition-colors inline-block"
+                    className="text-[10px] font-medium text-stone-700 bg-stone-50 hover:bg-amber-100 hover:text-amber-950 border border-stone-200/70 hover:border-amber-300 px-2 py-0.5 rounded-md transition-colors inline-block leading-tight"
                   >
                     {kw}
                   </a>
                 ))}
+                {!isExpanded && !isFiltering && group.keywords.length > 6 && (
+                  <button
+                    onClick={() => setIsExpanded(true)}
+                    className="text-[9.5px] font-semibold text-amber-800 bg-amber-50/90 border border-amber-200 px-1.5 py-0.5 rounded-md hover:bg-amber-100 transition-colors inline-block cursor-pointer"
+                  >
+                    +{group.keywords.length - 6} और
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Quick Action Footer */}
-            <div className="mt-5 pt-3 border-t border-amber-100 flex items-center justify-between text-xs">
-              <span className="text-stone-500 text-[11px] flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>24/7 Helpline Available</span>
+            <div className="mt-3 pt-2.5 border-t border-amber-100 flex items-center justify-between text-[11px]">
+              <span className="text-stone-500 flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                <span>24/7 Helpline</span>
               </span>
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
@@ -503,6 +511,31 @@ export const SeoKeywordsDirectory: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Expand / Collapse Button to keep website compact & short */}
+      {filteredGroups.length > 3 && !isFiltering && (
+        <div className="mt-6 flex flex-col items-center justify-center gap-1.5 text-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-100/90 hover:bg-amber-200 text-amber-950 font-bold text-xs border border-amber-300 shadow-xs hover:shadow-md transition-all cursor-pointer active:scale-95"
+          >
+            {isExpanded ? (
+              <>
+                <span>▲ कम श्रेणियां दिखाएं (Show Less)</span>
+              </>
+            ) : (
+              <>
+                <span>▼ सभी शहर व कीवर्ड्स सूची देखें ({filteredGroups.length - 3} और श्रेणियां)</span>
+              </>
+            )}
+          </button>
+          {!isExpanded && (
+            <p className="text-[11px] text-stone-500">
+              पेज को कॉम्पैक्ट रखने के लिए चुनिंदा कीवर्ड्स दिखाए जा रहे हैं। पूरी सूची देखने हेतु ऊपर बटन दबाएं।
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Global Call to Action Bar */}
       <div className="mt-10 bg-gradient-to-r from-amber-600 via-amber-700 to-orange-600 text-white rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl border border-amber-500/50">

@@ -12,21 +12,26 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18450282399');
-gtag('event', 'conversion', {
+
+      // Event snippet for Outbound click conversion
+      gtag('event', 'conversion', {
         'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
         'value': 1.0,
         'currency': 'INR'
       });
+
       // Global Conversion Tracking for Direct Phone Calls and WhatsApp Clicks
       document.addEventListener('click', function(e) {
         var target = e.target && e.target.closest ? e.target.closest('a') : null;
         if (!target) return;
         var href = target.getAttribute('href') || '';
-       'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E', 
+        
         // Track Phone Calls
         if (href.indexOf('tel:') === 0) {
           gtag('event', 'conversion', {
-            'send_to': 'AW-18450282399',
+            'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
+            'value': 1.0,
+            'currency': 'INR',
             'event_category': 'Contact',
             'event_action': 'Phone Call Click',
             'event_label': href
@@ -39,9 +44,11 @@ gtag('event', 'conversion', {
         // Track WhatsApp Clicks
         if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
           gtag('event', 'conversion', {
-            'send_to': 'AW-18450282399',
+            'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
+            'value': 1.0,
+            'currency': 'INR',
             'event_category': 'Contact',
-            'event_action': 'WhatsApp Click',
+            'event_action': 'WhatsApp Outbound Click',
             'event_label': 'WhatsApp Consultation'
           });
           gtag('event', 'whatsapp_click', {
