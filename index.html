@@ -12,13 +12,17 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18450282399');
-
+gtag('event', 'conversion', {
+        'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
+        'value': 1.0,
+        'currency': 'INR'
+      });
       // Global Conversion Tracking for Direct Phone Calls and WhatsApp Clicks
       document.addEventListener('click', function(e) {
         var target = e.target && e.target.closest ? e.target.closest('a') : null;
         if (!target) return;
         var href = target.getAttribute('href') || '';
-        
+       'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E', 
         // Track Phone Calls
         if (href.indexOf('tel:') === 0) {
           gtag('event', 'conversion', {
