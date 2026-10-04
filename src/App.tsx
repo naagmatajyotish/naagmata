@@ -50,44 +50,68 @@ export default function App() {
 
             {/* Below-the-fold Interactive Components (Deferred for ultra-fast First Contentful Paint) */}
             <Suspense fallback={<SectionFallback />}>
-              {/* International & Abroad Vedic Consultations (USA, UK, Canada, Australia, UAE) */}
-              <GlobalPresence />
+              <div className="mobile-fast-render">
+                {/* International & Abroad Vedic Consultations (USA, UK, Canada, Australia, UAE) */}
+                <GlobalPresence />
+              </div>
 
-              {/* Local & International Astrological SEO Keywords Directory */}
-              <SeoKeywordsDirectory />
+              <div className="mobile-fast-render">
+                {/* Local & International Astrological SEO Keywords Directory */}
+                <SeoKeywordsDirectory />
+              </div>
 
-              {/* 3D Divine Darshan & Ashirwad of Maa Naagdevi (Interactive 3D Cutout) */}
-              <SacredDarshan3D />
+              <div className="mobile-fast-render">
+                {/* 3D Divine Darshan & Ashirwad of Maa Naagdevi (Interactive 3D Cutout) */}
+                <SacredDarshan3D />
+              </div>
 
-              {/* Vedic Aura & Negative Energy Diagnostic Scanner */}
-              <AuraEnergyScanner />
+              <div className="mobile-fast-render">
+                {/* Vedic Aura & Negative Energy Diagnostic Scanner */}
+                <AuraEnergyScanner />
+              </div>
 
-              {/* Love Problem Diagnosis & Relationship Remedy Finder */}
-              <VedicCalculator />
+              <div className="mobile-fast-render">
+                {/* Love Problem Diagnosis & Relationship Remedy Finder */}
+                <VedicCalculator />
+              </div>
 
-              {/* Personalized Sacred Vedic Bhojpatra Raksha Kavach */}
-              <BhojpatraKavach />
+              <div className="mobile-fast-render">
+                {/* Personalized Sacred Vedic Bhojpatra Raksha Kavach */}
+                <BhojpatraKavach />
+              </div>
 
-              {/* Ancient 4-Stage Remedy Process */}
-              <SacredProcess />
+              <div className="mobile-fast-render">
+                {/* Ancient 4-Stage Remedy Process */}
+                <SacredProcess />
+              </div>
 
-              {/* Trust Badges & Hallmarks */}
-              <WhyChooseUs />
+              <div className="mobile-fast-render">
+                {/* Trust Badges & Hallmarks */}
+                <WhyChooseUs />
+              </div>
 
-              {/* Verified Devotee Testimonials */}
-              <Testimonials />
+              <div className="mobile-fast-render">
+                {/* Verified Devotee Testimonials */}
+                <Testimonials />
+              </div>
 
-              {/* Frequently Asked Questions */}
-              <FaqSection />
+              <div className="mobile-fast-render">
+                {/* Frequently Asked Questions */}
+                <FaqSection />
+              </div>
 
-              {/* Direct Contact & Ashram Details */}
-              <ContactSection />
+              <div className="mobile-fast-render">
+                {/* Direct Contact & Ashram Details */}
+                <ContactSection />
+              </div>
             </Suspense>
           </main>
 
           {/* Footer */}
           <Suspense fallback={null}>
-            <Footer />
+            <div className="mobile-fast-render">
+              <Footer />
+            </div>
           </Suspense>
 
           {/* Floating Action Buttons (Sticky Mobile Bar + Desktop Quick Dial + Panic Hide) - Instantly ready */}

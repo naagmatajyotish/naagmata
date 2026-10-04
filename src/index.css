@@ -358,6 +358,18 @@
   transform: translateZ(0);
 }
 
+/* Mobile Ultra-Fast Performance: skips offscreen layout calculation until scrolled near */
+.mobile-fast-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 450px;
+}
+
+@media (max-width: 640px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track, #fdfcf7);
 }
