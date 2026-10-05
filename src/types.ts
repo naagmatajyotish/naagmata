@@ -3,7 +3,18 @@ export interface ServiceItem {
   title: string;
   titleHi?: string;
   titleGu?: string;
-  category: 'love' | 'marriage' | 'protection' | 'career' | 'kundali';
+  category:
+    | 'love'
+    | 'marriage'
+    | 'protection'
+    | 'career'
+    | 'kundali'
+    | 'par-istri'
+    | 'family'
+    | 'santan'
+    | 'wealth'
+    | 'court'
+    | 'foreign';
   shortDesc: string;
   shortDescHi?: string;
   shortDescGu?: string;

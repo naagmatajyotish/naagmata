@@ -252,6 +252,18 @@ export const Footer: React.FC = () => {
 
         {/* Local SEO & International Astrological Consultation Hubs */}
         <div className="max-w-7xl mx-auto pt-8 pb-6 border-t border-amber-200/60 text-xs text-stone-600 space-y-4">
+          <div className="flex items-center justify-between flex-wrap gap-2 pb-2">
+            <span className="font-bold text-amber-950 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+              <span>🌐</span>
+              <span>अखिल भारतीय एवं अंतर्राष्ट्रीय शहर डायरेक्टरी (SEO Search Index):</span>
+            </span>
+            <a
+              href="#seo-directory"
+              className="px-3 py-1 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-950 font-bold text-[11px] border border-amber-400/60 transition-colors"
+            >
+              पूर्ण शहर डायरेक्टरी व कीवर्ड्स पृष्ठ देखें →
+            </a>
+          </div>
           {/* Regional Hubs Section based on Language */}
           {lang === 'hi' ? (
             <div className="p-3.5 bg-amber-50/70 border border-amber-200/70 rounded-xl">

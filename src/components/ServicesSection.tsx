@@ -17,22 +17,69 @@ import {
   CheckCircle,
   Clock,
   Sparkles,
-  Shield
+  Shield,
+  Coins,
+  Scale,
+  Plane
 } from 'lucide-react';
 import { SACRED_SERVICES, CONTACT_INFO } from '../data/jyotishData';
 import { ServiceItem } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
+export type ServiceCategory =
+  | 'all'
+  | 'love'
+  | 'marriage'
+  | 'par-istri'
+  | 'family'
+  | 'santan'
+  | 'wealth'
+  | 'court'
+  | 'protection'
+  | 'kundali'
+  | 'foreign';
+
 export const ServicesSection: React.FC = () => {
   const { lang } = useLanguage();
   const t = TRANSLATIONS[lang].services;
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
-  const [activeTab, setActiveTab] = useState<'all' | 'love' | 'marriage' | 'protection' | 'career' | 'kundali'>('all');
+  const [activeTab, setActiveTab] = useState<ServiceCategory>('all');
 
   const filteredServices = activeTab === 'all'
     ? SACRED_SERVICES
     : SACRED_SERVICES.filter(s => s.category === activeTab);
+
+  const getCategoryLabel = (cat: string) => {
+    if (lang === 'gu-en') {
+      switch (cat) {
+        case 'love': return 'લવ સોલ્યુશન';
+        case 'marriage': return 'લગ્ન & દાંપત્ય';
+        case 'par-istri': return 'પર-સ્ત્રી / સોતન';
+        case 'family': return 'ઘર કંકાસ & વ્યસન';
+        case 'santan': return 'સંતાન સુખ';
+        case 'wealth': return 'ધન & વેપાર';
+        case 'court': return 'કોર્ટ & શત્રુ';
+        case 'protection': return 'મેલી વિદ્યા & રક્ષા';
+        case 'kundali': return 'કુંડળી દોષ';
+        case 'foreign': return 'વિદેશ યોગ';
+        default: return 'વૈદિક સેવા';
+      }
+    }
+    switch (cat) {
+      case 'love': return 'प्रेम समाधान';
+      case 'marriage': return 'विवाह समाधान';
+      case 'par-istri': return 'पर-स्त्री निवारण';
+      case 'family': return 'पारिवारिक शांति';
+      case 'santan': return 'संतान सुख';
+      case 'wealth': return 'धन व व्यापार';
+      case 'court': return 'कोर्ट केस विजय';
+      case 'protection': return 'तंत्र व नजर रक्षा';
+      case 'kundali': return 'कुंडली दोष';
+      case 'foreign': return 'विदेश योग';
+      default: return 'वैदिक अनुष्ठान';
+    }
+  };
 
   const getServiceIcon = (name: string) => {
     switch (name) {
@@ -52,6 +99,14 @@ export const ServicesSection: React.FC = () => {
         return <Flame className="w-5 h-5 text-white" />;
       case 'Baby':
         return <Baby className="w-5 h-5 text-white" />;
+      case 'Coins':
+        return <Coins className="w-5 h-5 text-white" />;
+      case 'Scale':
+        return <Scale className="w-5 h-5 text-white" />;
+      case 'Plane':
+        return <Plane className="w-5 h-5 text-white" />;
+      case 'Shield':
+        return <Shield className="w-5 h-5 text-white" />;
       case 'Star':
       default:
         return <Star className="w-5 h-5 text-white" />;
@@ -111,23 +166,43 @@ export const ServicesSection: React.FC = () => {
     },
     {
       id: 'love',
-      label: lang === 'hi' ? 'प्रेम समस्या समाधान' : lang === 'gu-en' ? 'લવ પ્રોબ્લેમ સોલ્યુશન' : 'Love Solutions'
+      label: lang === 'hi' ? 'प्रेम व खोया प्यार' : lang === 'gu-en' ? 'લવ સોલ્યુશન' : 'Love & Reunion'
     },
     {
       id: 'marriage',
-      label: lang === 'hi' ? 'विवाह एवं परिवार कलह' : lang === 'gu-en' ? 'પ્રેમ લગ્ન અને પરિવાર' : 'Marriage & Family'
+      label: lang === 'hi' ? 'विवाह व दांपत्य सुख' : lang === 'gu-en' ? 'લગ્ન અને દાંપત્ય' : 'Marriage & Harmony'
+    },
+    {
+      id: 'par-istri',
+      label: lang === 'hi' ? 'पर-स्त्री व सौतन निवारण' : lang === 'gu-en' ? 'પર-સ્ત્રી / સોતન મુક્તિ' : 'Par-Istri & Sautan'
+    },
+    {
+      id: 'family',
+      label: lang === 'hi' ? 'पारिवारिक कलह व नशा' : lang === 'gu-en' ? 'ઘર કંકાસ અને વ્યસન' : 'Family & Habit'
+    },
+    {
+      id: 'santan',
+      label: lang === 'hi' ? 'संतान प्राप्ति व सद्बुद्धि' : lang === 'gu-en' ? 'સંતાન પ્રાપ્તિ & સદ્બુદ્ધિ' : 'Child Guidance'
+    },
+    {
+      id: 'wealth',
+      label: lang === 'hi' ? 'कर्ज मुक्ति व व्यापार' : lang === 'gu-en' ? 'દેવા મુક્તિ & વેપાર' : 'Debt & Business'
+    },
+    {
+      id: 'court',
+      label: lang === 'hi' ? 'कोर्ट केस व शत्रु विजय' : lang === 'gu-en' ? 'કોર્ટ કેસ & શત્રુ વિજય' : 'Court & Protection'
     },
     {
       id: 'protection',
-      label: lang === 'hi' ? 'नकारात्मक ऊर्जा शांति' : lang === 'gu-en' ? 'નકારાત્મક ઊર્જા નિવારણ' : 'Energy Cleansing'
-    },
-    {
-      id: 'career',
-      label: lang === 'hi' ? 'व्यापार एवं करियर' : lang === 'gu-en' ? 'વેપાર અને કારકિર્દી' : 'Business & Career'
+      label: lang === 'hi' ? 'काला जादू व नजर दोष' : lang === 'gu-en' ? 'મેલી વિદ્યા & નજર દોષ' : 'Black Magic Cleansing'
     },
     {
       id: 'kundali',
-      label: lang === 'hi' ? 'कुंडली दोष निवारण' : lang === 'gu-en' ? 'કુંડળી દોષ શાંતિ' : 'Kundali Dosha'
+      label: lang === 'hi' ? 'कुंडली दोष व कालसर्प' : lang === 'gu-en' ? 'કુંડળી દોષ & કાલસર્પ' : 'Kundali Dosha'
+    },
+    {
+      id: 'foreign',
+      label: lang === 'hi' ? 'विदेश यात्रा व वीज़ा' : lang === 'gu-en' ? 'વિદેશ વિઝા & PR' : 'Foreign Visa'
     }
   ];
 
@@ -171,12 +246,14 @@ export const ServicesSection: React.FC = () => {
       </div>
 
       {/* Featured Spotlight: Highlighted Vedic Anushthans stacked one after the other */}
-      {(activeTab === 'all' || activeTab === 'marriage') && (() => {
+      {(activeTab === 'all' || activeTab === 'marriage' || activeTab === 'family' || activeTab === 'santan') && (() => {
         const spotlightServices = SACRED_SERVICES.filter(
           s => s.id === 'dampatya-sukh-rati-kamadev' || 
                s.id === 'vyasan-mukti-rahu-shanti' ||
                s.id === 'santan-sadbuddhi-obedient-remedy'
-        );
+        ).filter(s => activeTab === 'all' || s.category === activeTab);
+
+        if (spotlightServices.length === 0) return null;
 
         return (
           <div className="space-y-8 mb-12">
@@ -384,15 +461,15 @@ export const ServicesSection: React.FC = () => {
                 <span>
                   {service.id === 'vyasan-mukti-rahu-shanti'
                     ? lang === 'hi'
-                      ? '🛡️ विशेष राहु शांति एवं व्यसन मुक्ति'
+                      ? '🛡️ गृह-क्लेश व नशा मुक्ति वैदिक संकल्प'
                       : lang === 'gu-en'
-                      ? '🛡️ વિશેષ રાહુ શાંતિ અને વ્યસન મુક્તિ'
-                      : '🛡️ Special Rahu Shanti & Addiction Relief'
+                      ? '🛡️ ઘર-કંકાસ અને વ્યસન મુક્તિ સંકલ્પ'
+                      : '🛡️ Family Harmony & Addiction Freedom'
                     : lang === 'hi'
-                    ? '⭐ विशेष सिद्ध आकर्षण अनुष्ठान'
+                    ? '✨ अखंड दांपत्य प्रेम व आकर्षण सिद्धि'
                     : lang === 'gu-en'
-                    ? '⭐ વિશેષ સિદ્ધ આકર્ષણ સાધના'
-                    : '⭐ Special Highlighted Anushthan'}
+                    ? '✨ અખંડ દાંપત્ય પ્રેમ અને આકર્ષણ સિદ્ધિ'
+                    : '✨ Marital Bliss & Eternal Bond'}
                 </span>
               </div>
             )}
@@ -427,7 +504,7 @@ export const ServicesSection: React.FC = () => {
                       {getServiceIcon(service.iconName)}
                     </div>
                     <span className="text-white text-xs font-extrabold uppercase tracking-wider drop-shadow-md">
-                      {service.category}
+                      {getCategoryLabel(service.category)}
                     </span>
                   </div>
                 </div>

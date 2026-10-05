@@ -35,6 +35,13 @@ export const UrgentBanner: React.FC = () => {
       badgeClass: 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 border border-emerald-400/60 font-extrabold px-3 py-0.5 rounded-full shadow-xs',
       icon: 'sparkles'
     },
+    {
+      text: t.guptDhanTag,
+      highlight: true,
+      href: '#services',
+      badgeClass: 'bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-200 border border-yellow-400/60 font-extrabold px-3 py-0.5 rounded-full shadow-xs',
+      icon: 'sparkles'
+    },
     { text: t.disputesTag },
     { text: t.trustTag },
     { text: t.helplineTag, highlight: true, href: `tel:${CONTACT_INFO.phoneRaw}`, icon: 'phone' },

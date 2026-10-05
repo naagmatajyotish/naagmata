@@ -30,18 +30,15 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { name: t.services, href: '#services' },
-    { name: t.darshan, href: '#sacred-darshan' },
-    {
-      name: lang === 'gu-en' ? '📜 ભોજપત્ર કવચ' : lang === 'en' ? '📜 Bhojpatra Kavach' : '📜 भोजपत्र कवच',
-      href: '#bhojpatra-kavach'
-    },
-    { name: t.solutions, href: '#calculator' },
-    { name: t.global, href: '#international-seo' },
-    { name: t.whyUs, href: '#why-us' },
     { name: t.rituals, href: '#rituals' },
+    { name: t.whyUs, href: '#why-us' },
     { name: t.testimonials, href: '#testimonials' },
     { name: t.faq, href: '#faq' },
     { name: t.contact, href: '#contact' },
+    {
+      name: lang === 'hi' ? '🌐 शहर व SEO डायरेक्टरी' : lang === 'gu-en' ? '🌐 શહેર ડિરેક્ટરી' : '🌐 City & SEO Directory',
+      href: '#seo-directory'
+    },
   ];
 
   return (
@@ -53,40 +50,50 @@ export const Header: React.FC = () => {
         {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
         <UrgentBanner />
 
-        {/* 2. Mobile Dedicated Direct Helpline & Language Bar - Sacred Deep Dark */}
-        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-zinc-900 to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/30 shadow-xs w-full max-w-full gap-1.5">
-          <div className="flex items-center gap-1 min-w-0">
-            <span className="relative flex h-2 w-2 shrink-0">
+        {/* 2. Mobile Dedicated Direct Helpline Bar - Phone number fills the full width with larger font */}
+        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-zinc-900 to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/30 shadow-xs w-full max-w-full gap-2">
+          <div className="flex items-center gap-1.5 shrink-0">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 shrink-0">
+            <span className="text-xs font-black uppercase tracking-wider text-amber-300 whitespace-nowrap">
               {t.helpline}
             </span>
-            <a
-              href={`tel:${CONTACT_INFO.phoneRaw}`}
-              title="Direct Call Baba Ji"
-              className="inline-flex items-center gap-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 text-stone-950 px-2 py-0.5 rounded-full font-black text-[11px] shadow-xs active:scale-95 transition-all truncate"
-            >
-              <Phone className="w-2.5 h-2.5 text-stone-950 shrink-0" />
-              <span>{CONTACT_INFO.phoneDisplay}</span>
-            </a>
           </div>
+
+          {/* Full-width expanding Call Baba Ji button with ANIMATIONS (pulsing, ringing phone & light sweep) */}
+          <a
+            href={`tel:${CONTACT_INFO.phoneRaw}`}
+            title="Direct Call Baba Ji"
+            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 py-1.5 px-3 rounded-full font-black shadow-md active:scale-95 transition-all whitespace-nowrap animate-call-button-pulse relative overflow-hidden ring-1 ring-amber-300/80"
+          >
+            {/* Shimmering Light Sweep Animation */}
+            <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/45 to-transparent animate-sweep-light pointer-events-none" />
+
+            {/* Ringing / Shaking Phone Icon */}
+            <Phone className="w-4 h-4 xs:w-5 xs:h-5 text-stone-950 shrink-0 fill-stone-950 animate-phone-ring relative z-10" />
+
+            {/* Bold Mobile Number */}
+            <span className="tracking-wider font-black text-sm xs:text-base sm:text-lg text-stone-950 relative z-10">
+              {CONTACT_INFO.phoneDisplay}
+            </span>
+          </a>
         </div>
 
         {/* 3. Main Brand Navigation Bar - Always Fixed */}
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5">
-        {/* Brand Logo - Animated Maa Naagdevi Photo Medallion with guaranteed spacing */}
-        <a href="#" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0 mr-2 sm:mr-3 lg:mr-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 gap-2 w-full">
+        {/* Brand Logo - Animated Maa Naagdevi Photo Medallion (Single Large Icon) */}
+        <a href="#" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 min-w-0">
           <div className="relative flex items-center justify-center shrink-0">
-            <NaagdeviLogo size="sm" />
+            <NaagdeviLogo size="md" />
           </div>
-          <div className="flex flex-col min-w-0 justify-center">
-            <span className="heading-mystic text-sm xs:text-base sm:text-xl md:text-2xl font-extrabold tracking-wide text-[#2a2203] group-hover:text-amber-800 transition-colors uppercase leading-tight whitespace-nowrap">
+          <div className="flex flex-col justify-center">
+            <span className="heading-mystic text-lg xs:text-xl sm:text-2xl md:text-3xl font-black tracking-wide text-[#2a2203] group-hover:text-amber-800 transition-colors uppercase leading-tight whitespace-nowrap">
               Naagmata Jyotish
             </span>
             {/* Dynamic Localized Subtitle */}
-            <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] xs:text-[10px] sm:text-xs font-bold text-amber-900 leading-tight mt-0.5 whitespace-nowrap">
+            <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] xs:text-xs sm:text-sm font-bold text-amber-900 leading-tight mt-0.5 whitespace-nowrap">
               {lang === 'hi' ? (
                 <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">
                   नागमाता ज्योतिष • श्री माँ नागदेवी सिद्ध पीठ
@@ -97,9 +104,9 @@ export const Header: React.FC = () => {
                 </span>
               ) : (
                 <>
-                  <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">नागमाता ज्योतिष</span>
+                  <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">નાગમાતા જ્યોતિષ</span>
                   <span className="text-amber-400 font-normal select-none">•</span>
-                  <span className="text-amber-800 font-bold font-['Noto_Sans_Gujarati',sans-serif]">નાગમાતા જ્યોતિષ</span>
+                  <span className="text-amber-800 font-bold font-['Noto_Sans_Gujarati',sans-serif]">સિદ્ધ પીઠ</span>
                 </>
               )}
             </div>
@@ -120,7 +127,7 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Actions, Language Switcher & Call Button */}
-        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 ml-auto">
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-auto">
           {/* Discreet Panic Mode Quick Hide Button */}
           <button
             onClick={enableDiscreetMode}
@@ -132,7 +139,7 @@ export const Header: React.FC = () => {
             <span className="hidden xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
           </button>
 
-          {/* Quick WhatsApp Chat */}
+          {/* Quick WhatsApp Chat on Desktop/Tablet */}
           <a
             id="header-whatsapp-btn"
             href={CONTACT_INFO.whatsappUrl}
@@ -145,34 +152,20 @@ export const Header: React.FC = () => {
             <span>{t.whatsapp}</span>
           </a>
 
-          {/* Call button - Vibrant Saffron Orange Pill with High Contrast */}
+          {/* Call button - Desktop/Tablet Only (Hidden on Mobile per user request) */}
           <a
             id="header-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
             title="Direct Call Baba Ji - 24/7 Available Worldwide (+91 97141 27309)"
-            className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-3 sm:px-4 md:px-5 h-8 sm:h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-4 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30"
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0 animate-bounce" />
-            <span className="hidden xs:inline font-sans font-black tracking-wide text-white">
+            <span className="font-sans font-black tracking-wide text-white">
               {CONTACT_INFO.phoneDisplay}
-            </span>
-            <span className="xs:hidden font-sans font-black tracking-wide text-white">
-              {t.callNow}
             </span>
             <span className="hidden 2xl:inline-flex text-[9px] uppercase font-black bg-black/20 text-yellow-100 px-1.5 py-0.5 rounded-full border border-amber-200/40 ml-0.5">
               24/7
             </span>
-          </a>
-
-          {/* Quick Mobile WhatsApp Icon Button */}
-          <a
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="WhatsApp Chat"
-            className="sm:hidden w-8 h-8 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center shadow-sm border border-emerald-500 shrink-0 active:scale-95 transition-transform"
-          >
-            <MessageCircle className="w-4 h-4" />
           </a>
 
           {/* Mobile Hamburger */}

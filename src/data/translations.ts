@@ -23,6 +23,7 @@ export interface SectionTranslations {
     disputesTag: string;
     parIstriTag: string;
     santanTag: string;
+    guptDhanTag: string;
     trustTag: string;
     helplineTag: string;
   };
@@ -141,6 +142,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       disputesTag: '🔱 લવ પ્રોબ્લેમ સોલ્યુશન • પ્રેમ લગ્ન વિલંબ • પતિ-પત્ની કંકાસ નિવારણ',
       parIstriTag: '🔒 વિશેષ અનુષ્ઠાન: પતિનો પર-સ્ત્રી મોહ, સોતન બાધા અને ગુપ્ત આકર્ષણ મુક્તિ (સંપૂર્ણ ૧૦૦% ગોપનીય)',
       santanTag: '✨ સંતાન સદ્બુદ્ધિ, આજ્ઞાકારિતા અને ખોટી સંગત/મોબાઇલ વ્યસન મુક્તિ વૈદિક અનુષ્ઠાન',
+      guptDhanTag: '💰 વિશેષ સાધના: ગુપ્ત ધન અને ગડેલું ધન પ્રાપ્તિ સિદ્ધિ • નાગ રક્ષક દોષ નિવારણ અને અકસ્માત ધનલાભ',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
       helplineTag: '📞 24/7 Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
     },
@@ -182,6 +184,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
         { value: 'breakup', label: 'બ્રેકઅપ અને સંબંધ પુનઃસ્થાપન / Breakup & Lost Love Reunion' },
         { value: 'intercaste', label: 'આંતરજાતીય લગ્ન સમસ્યા / Intercaste Marriage Obstacles' },
         { value: 'kundali-dosha', label: 'માંગલિક અથવા કુંડળી દોષ / Manglik & Kundali Dosha' },
+        { value: 'gupt-dhan', label: 'ગુપ્ત ધન, ગડેલું ધન અને અકસ્માત ધન સિદ્ધિ (માં નાગદેવી-કુબેર અનુષ્ઠાન)' },
         { value: 'negative-energy', label: 'નકારાત્મક ઊર્જા અને નજર દોષ / Negative Energy Cleansing' }
       ],
       detailsLabel: 'સમસ્યાની ટૂંકી વિગત (Brief Issue Details)',
@@ -261,6 +264,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       disputesTag: '🔱 लव प्रॉब्लम सॉल्यूशन • प्रेम विवाह बाधा निवारण • पति-पत्नी कलह शांति',
       parIstriTag: '🔒 विशेष अनुष्ठान: पति का पर-स्त्री मोह, सौतन बाधा एवं गुप्त आकर्षण निवारण (100% गोपनीय समाधान)',
       santanTag: '✨ संतान सद्बुद्धि, आज्ञाकारिता एवं गलत संगति/मोबाइल लत निवारण वैदिक अनुष्ठान',
+      guptDhanTag: '💰 विशेष साधना: गुप्त धन व गड़ा धन सिद्धि • नाग रक्षक दोष निवारण एवं अकस्मात धन वर्षा अनुष्ठान',
       trustTag: '🔒 35+ वर्षों की प्रामाणिक परंपरा — 100% गोपनीय एवं शास्त्रसम्मत परामर्श',
       helplineTag: '📞 24/7 हेल्पलाइन: +91 97141 27309 (कॉल / व्हाट्सएप बाबाजी)'
     },
@@ -302,6 +306,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
         { value: 'breakup', label: 'ब्रेकअप एवं खोया प्यार वापस पाना (Breakup Reconciliation)' },
         { value: 'intercaste', label: 'अंतरजातीय विवाह बाधा निवारण (Intercaste Marriage)' },
         { value: 'kundali-dosha', label: 'मांगलिक दोष अथवा कुंडली मिलान बाधा (Kundali Dosha)' },
+        { value: 'gupt-dhan', label: 'गुप्त धन, गड़ा धन व अकस्मात धन सिद्धि (Gupt Dhan & Hidden Wealth)' },
         { value: 'negative-energy', label: 'नकारात्मक ऊर्जा एवं नजर दोष शांति (Negative Energy Cleansing)' }
       ],
       detailsLabel: 'अपनी समस्या का संक्षिप्त विवरण',
@@ -381,6 +386,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       disputesTag: '🔱 Relationship Reconciliation • Marriage Harmony • Dispute Resolution',
       parIstriTag: '🔒 Sacred Remedy: Husband Extramarital Affair & Third-Party Removal (100% Confidential)',
       santanTag: '✨ Child Guidance, Obedience, Screen Addiction & Bad Company Relief Ritual',
+      guptDhanTag: '💰 Sacred Sadhana: Gupt Dhan & Hidden Wealth Siddhi • Naag Rakshak Dosha Shanti & Kuber Blessing',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
       helplineTag: '📞 24/7 Global Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
     },
@@ -422,6 +428,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
         { value: 'breakup', label: 'Breakup Healing & Lost Love Reconciliation' },
         { value: 'intercaste', label: 'Intercultural & Intercaste Marriage Harmony' },
         { value: 'kundali-dosha', label: 'Planetary & Astrological Dosha Rectification' },
+        { value: 'gupt-dhan', label: 'Gupt Dhan & Hidden Wealth Siddhi (Maa Naagdevi & Kuber Anushthan)' },
         { value: 'negative-energy', label: 'Negative Energy Cleansing & Aura Protection' }
       ],
       detailsLabel: 'Brief Details of Your Situation',
