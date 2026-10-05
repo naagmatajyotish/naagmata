@@ -12,6 +12,38 @@ interface KeywordGroup {
 
 const LOCAL_GUJARAT_KEYWORDS: KeywordGroup[] = [
   {
+    category: 'गुप्त धन, गड़ा धन व अकस्मात धन प्राप्ति सिद्धि (Gupt Dhan, Gada Dhan & Hidden Wealth Sadhana)',
+    badge: '💰 High-Rank Naagmata Sadhana',
+    icon: '🪙',
+    keywords: [
+      'गुप्त धन पाने के अचूक ज्योतिष उपाय',
+      'जमीन में गड़ा धन निकालने के टोटके और मंत्र',
+      'गड़ा धन का पता कैसे लगाएं ज्योतिषीय विधि',
+      'सपने में गड़ा धन दिखने का क्या मतलब होता है',
+      'गड़े धन पर नाग का पहरा हटाने के उपाय',
+      'नाग रक्षक दोष निवारण वैदिक मंत्र साधना',
+      'पाताल लोक गुप्त धन साधना उज्जैन',
+      'जमीन के नीचे दबा खजाना कैसे निकालें',
+      'पूर्वजों का गड़ा धन प्राप्त करने के उपाय',
+      'अकस्मात धन वर्षा व कुबेर सिद्धि अनुष्ठान',
+      'गड़े धन के संकेत और लक्षण परीक्षण',
+      'पैतृक गुप्त धन व खजाना सिद्धि विधान',
+      'Gupt dhan pane ke achuk upay',
+      'Zameen me gada dhan kaise nikale mantra',
+      'Gada dhan nikalne ka totka aur shanti vidhi',
+      'Gade dhan par naag ka pehra hatane ke upay',
+      'Naag rakshak dosha nivaran anushthan',
+      'Buried treasure vedic astrology remedy india',
+      'Ancestral hidden wealth recovery astrology',
+      'Patal dhan rakshak siddhi naagmata peeth',
+      'ગુપ્ત ધન મેળવવાના શાસ્ત્રોક્ત ઉપાય',
+      'જમીનમાં ગડેલું ધન શોધવાની જ્યોતિષ રીત',
+      'ગડેલા ધન પર સાપનો પહેરો હટાવવાના ઉપાય',
+      'સપનામાં ગડેલું ધન કે નાગ દેખાવાના સંકેત',
+      'નાગદેવી ગુપ્ત ધન અને કુબેર સિદ્ધિ અનુષ્ઠાન'
+    ]
+  },
+  {
     category: 'पति का पर-स्त्री मोह, सौतन बाधा एवं गुप्त आकर्षण निवारण (Husband Affair & Sautan Badha Relief)',
     badge: 'High-Rank Vedic Remedy',
     icon: '🔒',
