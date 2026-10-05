@@ -37,17 +37,7 @@ export const Hero: React.FC = () => {
                 <span>✨</span>
               </div>
               <div className="flex items-center gap-2 text-[11px] sm:text-xs text-yellow-200 font-bold">
-                {lang === 'hi' ? (
-                  <span className="font-['Noto_Sans_Devanagari',sans-serif]">श्री माँ नागदेवी सिद्ध पीठ • उज्जैन एवं हरिद्वार</span>
-                ) : lang === 'en' ? (
-                  <span>Authentic Vedic Lineage • Over 35+ Years of Trust</span>
-                ) : (
-                  <>
-                    <span className="font-['Noto_Sans_Devanagari',sans-serif]">नागमाता ज्योतिष</span>
-                    <span className="text-yellow-400">•</span>
-                    <span className="font-['Noto_Sans_Gujarati',sans-serif]">નાગમાતા જ્યોતિષ</span>
-                  </>
-                )}
+                <span className="font-['Noto_Sans_Devanagari',sans-serif]">श्री माँ नागदेवी सिद्ध पीठ • उज्जैन एवं हरिद्वार</span>
               </div>
             </div>
           </div>
@@ -57,49 +47,49 @@ export const Hero: React.FC = () => {
         <div className="inline-flex items-center justify-center gap-2 bg-white/95 border border-amber-300 px-3.5 sm:px-5 py-1.5 rounded-full backdrop-blur-sm shadow-xs max-w-[95vw]">
           <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 animate-pulse shrink-0" />
           <p className="text-amber-900 font-bold uppercase tracking-normal sm:tracking-wide text-[11px] xs:text-xs sm:text-sm whitespace-nowrap truncate">
-            {t.badge}
+            विश्व प्रसिद्ध वैदिक ज्योतिषी एवं समस्त समस्या समाधान विशेषज्ञ
           </p>
         </div>
 
         {/* Main Headline */}
         <h1 className="heading-mystic text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#2a2203]">
           <span className="block mb-2 sm:mb-3 leading-[1.35] sm:leading-[1.3] pt-1">
-            {t.titleMain}
+            प्रेम संबंध, विवाह बाधा, गुप्त धन एवं पारिवारिक कलह का समाधान
           </span>
           <span className="inline-block py-1 px-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 leading-[1.35] sm:leading-[1.3]">
-            {t.titleHighlight}
+            प्रामाणिक वैदिक ज्योतिष एवं माँ नागदेवी सिद्ध अनुष्ठान द्वारा
           </span>
         </h1>
 
         {/* Sacred Chanting Verse */}
         <div className="bg-amber-100/60 border border-amber-200/80 py-1.5 px-4 rounded-full max-w-xl mx-auto">
           <p className="text-amber-900 text-xs sm:text-sm font-serif tracking-wider font-semibold">
-            ॥ Om Navakula Naagdevyai Cha Vidmahe Vishadantayai Dheemahi Tanno Sarpah Prachodayat ॥
+            ॥ ॐ नवकुल नागदेव्यै च विद्महे विषदन्तायै धीमहि तन्नो सर्पः प्रचोदयात् ॥
           </p>
         </div>
 
         {/* Subtitle - Bold and Properly Aligned */}
         <p className="text-[#2a2203] text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-bold text-center px-2">
-          {t.subtitle}
+          क्या आप प्रेम में बढ़ती दूरी, माता-पिता की असहमति, विवाह में रुकावट, ब्रेकअप, गुप्त धन बाधा या पति-पत्नी के तनाव से व्यथित हैं? पूज्य बाबाजी माँ नागदेवी की दिव्य कृपा और वैदिक ज्योतिष द्वारा देते हैं 100% गोपनीय और सात्विक समाधान।
         </p>
 
         {/* Key Trust Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto pt-2 text-xs">
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Clock className="w-4 h-4 text-amber-600 shrink-0" />
-            <span className="font-semibold">{t.badge1}</span>
+            <span className="font-semibold">वैदिक मार्गदर्शन</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span className="font-semibold">{t.badge2}</span>
+            <span className="font-semibold">100% पूर्णतः गोपनीय</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Flame className="w-4 h-4 text-orange-600 shrink-0" />
-            <span className="font-semibold">{t.badge3}</span>
+            <span className="font-semibold">सात्विक हवन अनुष्ठान</span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-white/90 border border-amber-200 py-3 px-3 rounded-2xl text-stone-800 shadow-xs hover:border-amber-400 transition-colors">
             <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0" />
-            <span className="font-semibold">{t.badge4}</span>
+            <span className="font-semibold">35+ वर्षों का अनुभव</span>
           </div>
         </div>
 
@@ -113,7 +103,7 @@ export const Hero: React.FC = () => {
             <Phone className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 animate-bounce text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" />
             <span className="flex flex-col items-center justify-center text-center leading-tight">
               <span className="text-lg xs:text-xl sm:text-2xl font-black text-white whitespace-nowrap drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] tracking-wide">
-                {lang === 'hi' ? 'सीधा फोन करें बाबाजी को:' : lang === 'en' ? 'Direct Call Baba Ji:' : 'બાબાજીને સીધો ફોન કરો:'}
+                सीधा फोन करें बाबाजी को:
               </span>
               <span className="text-2xl xs:text-3xl sm:text-4xl font-black tracking-wider whitespace-nowrap text-yellow-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] pt-0.5">
                 +91&nbsp;97141&nbsp;27309
@@ -129,7 +119,7 @@ export const Hero: React.FC = () => {
             className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-black px-7 sm:px-9 py-4 sm:py-5 rounded-2xl flex items-center justify-center gap-3.5 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-emerald-600/30 cursor-pointer border-2 border-emerald-400 whitespace-nowrap active:scale-98"
           >
             <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white shrink-0 drop-shadow-md" />
-            <span className="text-base sm:text-lg md:text-xl font-black tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">{t.whatsappCta}</span>
+            <span className="text-base sm:text-lg md:text-xl font-black tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">व्हाट्सएप पर बात करें</span>
           </a>
         </div>
 
@@ -138,9 +128,9 @@ export const Hero: React.FC = () => {
           <div className="inline-flex items-center justify-center gap-2 bg-amber-100/90 border border-amber-300/80 px-4 py-2 rounded-2xl sm:rounded-full text-xs font-bold text-amber-900 shadow-2xs text-center max-w-xl">
             <Phone className="w-3.5 h-3.5 text-amber-700 animate-pulse shrink-0 self-center" />
             <span className="leading-snug text-center">
-              <span>{lang === 'hi' ? 'तत्काल एवं सटीक समाधान हेतु सीधा फोन कॉल करें' : lang === 'en' ? 'Direct phone call recommended for immediate remedy' : 'ત્વરિત અને ચોક્કસ ઉકેલ માટે સીધો ફોન કૉલ કરો'}</span>
+              <span>तत्काल एवं सटीक समाधान हेतु सीधा फोन कॉल करें</span>
               <span className="mx-1.5 text-amber-600 font-semibold">•</span>
-              <span className="text-amber-950 font-black">{lang === 'hi' ? '24/7 निःशुल्क प्रारंभिक परामर्श' : lang === 'en' ? '24/7 Free Initial Consultation' : '24/7 મફત પ્રારંભિક પરામર્શ'}</span>
+              <span className="text-amber-950 font-black">24/7 निःशुल्क प्रारंभिक परामर्श</span>
             </span>
           </div>
         </div>
@@ -149,16 +139,19 @@ export const Hero: React.FC = () => {
         <div className="pt-1 flex flex-col items-center justify-center gap-2 px-3">
           <a
             href="#services"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-500/15 via-amber-500/20 to-yellow-500/15 hover:from-yellow-500/25 hover:to-amber-500/30 border border-yellow-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse shrink-0" />
+            <span>विशेष साधना: गुप्त धन व गड़ा धन सिद्धि (माँ नागदेवी व कुबेर महायज्ञ)</span>
+            <span className="text-amber-700 font-extrabold text-[11px]">→</span>
+          </a>
+
+          <a
+            href="#services"
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500/15 via-orange-500/20 to-amber-500/15 hover:from-amber-500/25 hover:to-orange-500/30 border border-amber-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'विशेष अनुष्ठान: कामदेव-रति आकर्षण साधना एवं दांपत्य सुख'
-                : lang === 'gu-en'
-                ? 'વિશેષ વિધાન: કામદેવ-રતિ આકર્ષણ સાધના અને દાંપત્ય સુખ'
-                : 'Special Sadhana: Kamadev-Rati Spousal Attraction'}
-            </span>
+            <span>विशेष अनुष्ठान: कामदेव-रति आकर्षण साधना एवं दांपत्य सुख</span>
             <span className="text-amber-700 font-extrabold text-[11px]">→</span>
           </a>
 
@@ -167,13 +160,7 @@ export const Hero: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-500/15 via-orange-500/20 to-amber-500/15 hover:from-red-500/25 hover:to-orange-500/30 border border-orange-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-orange-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
           >
             <Shield className="w-3.5 h-3.5 text-orange-700 shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'विशेष अनुष्ठान: पति की मदिरा/व्यसन मुक्ति एवं राहु शांति'
-                : lang === 'gu-en'
-                ? 'વિશેષ વિધાન: પતિની દારૂ/વ્યસન મુક્તિ અને રાહુ શાંતિ'
-                : 'Special Sadhana: Husband Alcohol Addiction Relief'}
-            </span>
+            <span>विशेष अनुष्ठान: पति की मदिरा/व्यसन मुक्ति एवं राहु शांति</span>
             <span className="text-orange-700 font-extrabold text-[11px]">→</span>
           </a>
 
@@ -182,13 +169,7 @@ export const Hero: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-600/15 via-rose-500/20 to-amber-500/15 hover:from-red-600/25 hover:to-rose-500/30 border border-red-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-red-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
           >
             <Shield className="w-3.5 h-3.5 text-red-700 shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'विशेष अनुष्ठान: पति का पर-स्त्री मोह, गुप्त आकर्षण एवं सौतन बाधा निवारण'
-                : lang === 'gu-en'
-                ? 'વિશેષ વિધાન: પતિનો પર-સ્ત્રી મોહ અને સોતન બાધા મુક્તિ'
-                : 'Special Remedy: Husband Extramarital Affair & Third-Party Removal'}
-            </span>
+            <span>विशेष अनुष्ठान: पति का पर-स्त्री मोह, गुप्त आकर्षण एवं सौतन बाधा निवारण</span>
             <span className="text-red-700 font-extrabold text-[11px]">→</span>
           </a>
         </div>

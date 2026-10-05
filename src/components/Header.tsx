@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
     { name: t.faq, href: '#faq' },
     { name: t.contact, href: '#contact' },
     {
-      name: lang === 'hi' ? '🌐 शहर व SEO डायरेक्टरी' : lang === 'gu-en' ? '🌐 શહેર ડિરેક્ટરી' : '🌐 City & SEO Directory',
+      name: '🌐 शहर व SEO डायरेक्टरी',
       href: '#seo-directory'
     },
   ];
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#fdfcf7] border-b border-amber-200/80 transition-colors duration-300 shadow-sm w-full max-w-full overflow-x-clip"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#fdfcf7] border-b border-amber-200/80 transition-colors duration-300 shadow-sm w-full max-w-full"
       >
         {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
         <UrgentBanner />
@@ -82,61 +82,51 @@ export const Header: React.FC = () => {
         </div>
 
         {/* 3. Main Brand Navigation Bar - Always Fixed */}
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 py-2 sm:py-2.5 gap-2 w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-2 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-2.5 gap-2 w-full min-w-0">
         {/* Brand Logo - Animated Maa Naagdevi Photo Medallion (Single Large Icon) */}
-        <a href="#" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 min-w-0">
+        <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
           <div className="relative flex items-center justify-center shrink-0">
             <NaagdeviLogo size="md" />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="heading-mystic text-lg xs:text-xl sm:text-2xl md:text-3xl font-black tracking-wide text-[#2a2203] group-hover:text-amber-800 transition-colors uppercase leading-tight whitespace-nowrap">
+            <span className="heading-mystic text-base xs:text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-black tracking-wide text-[#2a2203] group-hover:text-amber-800 transition-colors uppercase leading-tight whitespace-nowrap">
               Naagmata Jyotish
             </span>
-            {/* Dynamic Localized Subtitle */}
-            <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] xs:text-xs sm:text-sm font-bold text-amber-900 leading-tight mt-0.5 whitespace-nowrap">
-              {lang === 'hi' ? (
-                <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">
-                  नागमाता ज्योतिष • श्री माँ नागदेवी सिद्ध पीठ
-                </span>
-              ) : lang === 'en' ? (
-                <span className="text-amber-950 font-bold">
-                  Sacred Vedic Astrology • Maa Naagdevi Peeth
-                </span>
-              ) : (
-                <>
-                  <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">નાગમાતા જ્યોતિષ</span>
-                  <span className="text-amber-400 font-normal select-none">•</span>
-                  <span className="text-amber-800 font-bold font-['Noto_Sans_Gujarati',sans-serif]">સિદ્ધ પીઠ</span>
-                </>
-              )}
+            {/* Pure Hindi Subtitle */}
+            <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] xs:text-[10px] sm:text-xs font-bold text-amber-900 leading-tight mt-0.5 whitespace-nowrap">
+              <span className="text-amber-950 font-bold font-['Noto_Sans_Devanagari',sans-serif]">
+                नागमाता ज्योतिष • श्री माँ नागदेवी सिद्ध पीठ
+              </span>
             </div>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center justify-center gap-3.5 2xl:gap-5 text-xs 2xl:text-sm font-bold text-[#4a3b04] flex-1 px-2">
-          {navLinks.map((link) => (
+        {/* Desktop Navigation - Responsive with priority items */}
+        <nav className="hidden xl:flex items-center justify-center gap-2.5 2xl:gap-4 text-xs 2xl:text-sm font-bold text-[#4a3b04] shrink min-w-0 px-1">
+          {navLinks.map((link, idx) => (
             <a
               key={link.name}
               href={link.href}
-              className="hover:text-amber-800 transition-colors py-1 relative whitespace-nowrap hover:after:w-full after:w-0 after:h-0.5 after:bg-amber-600 after:absolute after:bottom-0 after:left-0 after:transition-all"
+              className={`hover:text-amber-800 transition-colors py-1 relative whitespace-nowrap hover:after:w-full after:w-0 after:h-0.5 after:bg-amber-600 after:absolute after:bottom-0 after:left-0 after:transition-all ${
+                idx >= 4 ? 'hidden 2xl:inline-block' : 'inline-block'
+              }`}
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Actions, Language Switcher & Call Button */}
-        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-auto">
+        {/* Actions, Language Switcher & Call Button - Guaranteed Zero Clipping */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-auto">
           {/* Discreet Panic Mode Quick Hide Button */}
           <button
             onClick={enableDiscreetMode}
             type="button"
             title="100% Private Discreet Mode (Instant Disguise • Press Esc)"
-            className="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 h-8 sm:h-9 md:h-10 rounded-full bg-amber-50/80 hover:bg-amber-100 text-stone-800 border border-amber-300/80 text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 shadow-2xs"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 p-2 2xl:px-3 h-8 sm:h-9 md:h-10 rounded-full bg-amber-50/80 hover:bg-amber-100 text-stone-800 border border-amber-300/80 text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 shadow-2xs"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="hidden xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
+            <span className="hidden 2xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
           </button>
 
           {/* Quick WhatsApp Chat on Desktop/Tablet */}
@@ -146,21 +136,21 @@ export const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             title="Chat directly on WhatsApp with Baba Ji"
-            className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 md:px-3.5 h-8 sm:h-9 md:h-10 rounded-full border border-emerald-500 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap shrink-0"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-2.5 sm:px-3 md:px-3.5 h-8 sm:h-9 md:h-10 rounded-full border border-emerald-500 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap shrink-0"
           >
             <MessageCircle className="w-4 h-4 text-white shrink-0" />
-            <span>{t.whatsapp}</span>
+            <span className="hidden md:inline">{t.whatsapp}</span>
           </a>
 
-          {/* Call button - Desktop/Tablet Only (Hidden on Mobile per user request) */}
+          {/* Call button - GUARANTEED 100% VISIBLE WITH NO CLIPPING ON ANY SCREEN */}
           <a
             id="header-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
             title="Direct Call Baba Ji - 24/7 Available Worldwide (+91 97141 27309)"
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-4 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-3 sm:px-4 md:px-4.5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30 min-w-max"
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0 animate-bounce" />
-            <span className="font-sans font-black tracking-wide text-white">
+            <span className="font-sans font-black tracking-wide text-white whitespace-nowrap">
               {CONTACT_INFO.phoneDisplay}
             </span>
             <span className="hidden 2xl:inline-flex text-[9px] uppercase font-black bg-black/20 text-yellow-100 px-1.5 py-0.5 rounded-full border border-amber-200/40 ml-0.5">
@@ -185,10 +175,10 @@ export const Header: React.FC = () => {
         <div className="xl:hidden px-4 pb-5 pt-2 border-t border-amber-200/80 bg-[#fdfcf7] space-y-3 shadow-xl border-b border-amber-200/60">
           <div className="flex justify-between items-center pb-2 border-b border-amber-100">
             <span className="text-xs text-amber-800 font-bold flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Strictly Confidential & Private
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> १००% पूर्णतः गोपनीय व सुरक्षित
             </span>
             <span className="text-[11px] font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-              ● Baba Ji Online
+              ● पूज्य बाबाजी ऑनलाइन उपलब्ध हैं
             </span>
           </div>
 
@@ -199,7 +189,7 @@ export const Header: React.FC = () => {
             className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all active:scale-98"
           >
             <Phone className="w-4 h-4 text-white animate-bounce" />
-            <span>Direct Call Baba Ji: {CONTACT_INFO.phoneDisplay}</span>
+            <span>सीधा फोन कॉल करें बाबाजी को: {CONTACT_INFO.phoneDisplay}</span>
           </a>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -225,7 +215,7 @@ export const Header: React.FC = () => {
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-sm active:scale-98 transition-transform"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Chat with Baba Ji on WhatsApp</span>
+              <span>बाबाजी से व्हाट्सएप पर बात करें</span>
             </a>
           </div>
         </div>

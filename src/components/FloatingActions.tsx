@@ -5,15 +5,9 @@ import { useLanguage } from '../context/LanguageContext';
 import { useDiscreet } from '../context/DiscreetContext';
 
 export const FloatingActions: React.FC = () => {
-  const { lang } = useLanguage();
   const { enableDiscreetMode } = useDiscreet();
 
-  const statusText =
-    lang === 'hi'
-      ? '24/7 उपलब्ध • सीधे बात करें'
-      : lang === 'en'
-      ? '24/7 Available • Tap to Connect'
-      : '24/7 સેવા • અત્યારે જ કૉલ કરો';
+  const statusText = '24/7 उपलब्ध • सीधे बात करें';
 
   return (
     <div
@@ -24,11 +18,11 @@ export const FloatingActions: React.FC = () => {
       <button
         onClick={enableDiscreetMode}
         type="button"
-        title="Quick Hide Screen (100% Private Discreet Mode • Press Esc)"
+        title="तुरंत स्क्रीन छुपाएं (100% गोपनीय सीक्रेट मोड • Esc दबाएं)"
         className="bg-stone-900/90 hover:bg-stone-950 text-amber-300 border border-amber-500/60 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5 backdrop-blur-md cursor-pointer transition-transform active:scale-95"
       >
         <ShieldCheck className="w-3 h-3 text-emerald-400" />
-        <span>{lang === 'hi' ? '🛡️ सीक्रेट मोड (Hide)' : lang === 'en' ? '🛡️ Quick Hide' : '🛡️ સિક્રેટ મોડ'}</span>
+        <span>🛡️ सीक्रेट मोड (Hide)</span>
       </button>
 
       {/* 24/7 Live Availability Floating Pill */}

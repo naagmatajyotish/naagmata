@@ -40,17 +40,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'love-problem-solution',
     title: 'Love Problem Solution & Relationship Harmony',
+    titleHi: 'प्रेम समस्या समाधान एवं परस्पर संबंध मधुरता अनुष्ठान',
     category: 'love',
     badge: 'Most Requested',
+    badgeHi: '💖 सर्वाधिक अनुशंसित',
     shortDesc: 'Restore mutual understanding, resolve emotional distance, address third-party discord, and rekindle affection with authentic Vedic relationship astrology.',
+    shortDescHi: 'पारस्परिक मतभेद, बातचीत बंद होना, तीसरे व्यक्ति का हस्तक्षेप व प्रेम में आई कड़वाहट दूर कर संबंध में पुनः अटूट स्नेह व विश्वास स्थापित करने हेतु वैदिक अनुष्ठान।',
     fullDesc: 'Are you suffering from misunderstandings, emotional silence, or external interference affecting your relationship? Baba Ji performs authentic Vedic Shukra (Venus) & Kamakhya Anushthan pujas to harmonize feelings, clarify mental doubts, and rebuild deep mutual respect and affection.',
+    fullDescHi: 'यदि आपके प्रेम संबंध में अचानक गलतफहमियां, फोन ब्लॉक होना या तीसरे व्यक्ति के कारण दरार आ गई है, तो यह शुक्र व गुरु के पीड़ित होने से होता है। पूज्य बाबाजी कामाख्या एवं सात्विक वैदिक हवन द्वारा साथी के मन की कड़वाहट मिटाकर प्रेम में मधुरता स्थापित करते हैं।',
     benefits: [
       'Foster deep emotional understanding & communication',
       'Neutralize external negative influences & misunderstandings',
       'Resolve stubborn ego clashes with compassionate Vedic advice',
       'Planetary remedies & Sattvic Havans for long-term peace'
     ],
+    benefitsHi: [
+      'भावनात्मक संवाद और परस्पर प्रेम में वृद्धि',
+      'बाहरी नकारात्मक प्रभाव व गलतफहमी का शमन',
+      'अहंकार व मतभेद का शास्त्रसम्मत समाधान',
+      'दीर्घकालिक दांपत्य शांति हेतु सात्विक हवन'
+    ],
     timeframe: 'Personalized Vedic Guidance & Rituals',
+    timeframeHi: 'व्यक्तिगत वैदिक मार्गदर्शन एवं 3 से 5 दिवसीय अनुष्ठान',
     mantraPreview: 'Om Kleem Krishnaya Namah | Om Kaamadevaya Vidmahe Pushpabaanaya Dheemahi...',
     iconName: 'Heart',
     imageUrl: serviceLoveSolution
@@ -182,17 +193,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'vedic-love-astrology',
     title: 'Authentic Vedic Relationship Astrology Specialist',
+    titleHi: 'प्रामाणिक वैदिक ज्योतिष एवं संबंध शांति विशेषज्ञ',
     category: 'love',
     badge: 'Pure Sattvic Vedic Puja',
+    badgeHi: '🌿 शुद्ध सात्विक वैदिक पूजा',
     shortDesc: 'Traditional Vedic astrological practices to foster warmth, pacify anger, remove distance, and restore love in strained relationships.',
+    shortDescHi: 'रिश्तों में बढ़ती दूरी, क्रोध और तनाव को शांत कर परस्पर प्रेम और समर्पण की पुनर्स्थापना हेतु शास्त्रोक्त वैदिक विधान।',
     fullDesc: 'In authentic Vedic tradition, planetary alignment and Shukra-Brihaspati Anushthan are sacred practices designed to calm agitated minds and align emotional energies. Our Siddha Anushthan uses pure sattvic rituals to gently soothe resentment and restore heartfelt compassion between loved ones safely.',
+    fullDescHi: 'वैदिक परंपरा के अनुसार शुक्र-बृहस्पति अनुष्ठान व्यथित मन को शांत करने और परस्पर सकारात्मक ऊर्जा को संरेखित करने के लिए किया जाता है। बाबाजी सात्विक अनुष्ठानों द्वारा कड़वाहट दूर कर आत्मिक प्रेम जाग्रत करते हैं।',
     benefits: [
       'Completely positive, peaceful, and karmically pure',
       'Customized to your specific birth chart (Kundali) and planetary dasha',
       'Helps overcome behavioral communication blocks and resentment',
       'Performed with authentic Siddha Yantra & consecrated Vedic offerings'
     ],
+    benefitsHi: [
+      'पूर्णतः सकारात्मक, शांतिपूर्ण और कर्मिक रूप से शुद्ध विधान',
+      'आपकी जन्मकुंडली और ग्रह दशा के अनुसार विशेष उपाय',
+      'संवादहीनता और गलतफहमियों का स्थायी निवारण',
+      'सिद्ध यंत्र एवं वैदिक आहुतियों द्वारा संपन्न'
+    ],
     timeframe: 'Traditional Vedic Anushthan Process',
+    timeframeHi: 'पारंपरिक वैदिक अनुष्ठान प्रक्रिया',
     mantraPreview: 'Om Namo Bhagavate Rudraya Sarva-Jagan-Mohanaya Swaha...',
     iconName: 'Wand2',
     imageUrl: serviceRelationshipHavan
@@ -200,17 +222,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'intercaste-love-marriage',
     title: 'Intercaste Love Marriage & Family Harmony Guidance',
+    titleHi: 'अंतरजातीय प्रेम विवाह एवं परिवार सहमति मार्गदर्शन',
     category: 'marriage',
     badge: 'Parental Harmony & Blessing',
+    badgeHi: '🕊️ माता-पिता की सहमति व आशीर्वाद',
     shortDesc: 'Seek peaceful family consent, overcome societal doubts, and address astrological hurdles in your marital journey with Vedic astrology.',
+    shortDescHi: 'परिजनों की असहमति, सामाजिक संकोच और विवाह में आ रही अप्रत्याशित बाधाओं को दूर करने हेतु शास्त्रसम्मत वैदिक अनुष्ठान।',
     fullDesc: 'When rigid family opinions or astrological mismatches cause hesitation for marriage, Vedic scriptures offer harmonious paths. Baba Ji conducts specialized Brihaspati (Jupiter) & Shukra (Venus) Shanti Havans that foster dialogue, ease familial worry, and help parents extend their heartfelt blessings.',
+    fullDescHi: 'जब माता-पिता विवाह के लिए सहमत न हों या कुंडली में ग्रह दोष के कारण विवाह में अड़चन आ रही हो, तो पूज्य बाबाजी विशेष बृहस्पति एवं शुक्र शांति हवन द्वारा परिवार के मन से संशय दूर कर उनका सहर्ष आशीर्वाद दिलवाते हैं।',
     benefits: [
       'Encourage understanding and supportive blessings from elders',
       'Dissolve social and cultural friction through respectful dialogue',
       'Clear planetary afflictions delaying auspicious marriage dates',
       'Protective Vedic Havans to invite positive family auspiciousness'
     ],
+    benefitsHi: [
+      'माता-पिता और परिजनों की आदरपूर्वक सहमति',
+      'सामाजिक व सांस्कृतिक संकोच का सौहार्दपूर्ण समाधान',
+      'विवाह में देरी कराने वाले ग्रह दोषों का शमन',
+      'पारिवारिक सुख व मंगलमय जीवन हेतु रक्षा अनुष्ठान'
+    ],
     timeframe: 'Custom Vedic Muhurta Consultation',
+    timeframeHi: 'शुभ मुहूर्त एवं 5 दिवसीय विशेष अनुष्ठान',
     mantraPreview: 'Om Sham Shankaraya Sakala-Janmarjita-Paapa-Vidhvansanaya...',
     iconName: 'Ring',
     imageUrl: serviceLoveMarriage
@@ -218,17 +251,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'negative-energy-cleansing',
     title: 'Negative Energy Cleansing & Protective Havans',
+    titleHi: 'नकारात्मक ऊर्जा, नजर दोष एवं गृह शांति रक्षा कवच',
     category: 'protection',
     badge: 'Spiritual Shield & Peace',
+    badgeHi: '🛡️ आध्यात्मिक रक्षा कवच व शांति',
     shortDesc: 'Identify planetary afflictions, clear heavy negative energies, and restore spiritual vitality with sacred Baglamukhi Havans.',
+    shortDescHi: 'घर में भारीपन, अकारण तनाव, नजर दोष व ग्रह पीड़ा को दूर कर सुख-शांति हेतु माँ बगलामुखी एवं महाभैरव शांति हवन।',
     fullDesc: 'Sudden domestic friction, chronic unease, or a persistent heavy aura are often linked to negative vibrations, planetary transits, or evil eye (Buri Nazar). Baba Ji invokes Maa Baglamukhi and Maha Bhairav Kavach to clear negative vibrations and bless your home with protective spiritual energy.',
+    fullDescHi: 'घर में अचानक क्लेश, निरंतर अस्वस्थता या भारीपन महसूस होना नकारात्मक ऊर्जा या नजर दोष के कारण होता है। बाबाजी सिद्ध तांत्रिक आहुतियों द्वारा समस्त नकारात्मक ऊर्जा का शमन कर अभिमंत्रित रक्षा कवच प्रदान करते हैं।',
     benefits: [
       'Comprehensive spiritual aura and energy field assessment',
       'Vedic cleansing rituals to disperse negative energetic influences',
       'Consecrated Raksha Kavach protective talisman for the family',
       'Restores mental peace, restful sleep, and domestic tranquility'
     ],
+    benefitsHi: [
+      'आभामंडल (Aura) व ऊर्जा क्षेत्र का आध्यात्मिक परीक्षण',
+      'समस्त नकारात्मक स्पंदनों का समूल निवारण',
+      'परिवार की सुरक्षा हेतु अभिमंत्रित सिद्ध रक्षा कवच',
+      'मानसिक शांति, भयमुक्ति व पारिवारिक सुख'
+    ],
     timeframe: 'Aura Cleansing & Shanti Rituals',
+    timeframeHi: 'ऊर्जा शुद्धि एवं 3 दिवसीय शांति विधान',
     mantraPreview: 'Om Hleem Bagalamukhi Sarvadushtaanaam Vaacham Mukham Padam Stambhaya...',
     iconName: 'ShieldAlert',
     imageUrl: serviceNegativeEnergyRemedy
