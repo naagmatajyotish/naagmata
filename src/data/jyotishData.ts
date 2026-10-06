@@ -320,17 +320,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'business-career-growth',
     title: 'Business & Career Astrological Consultation',
+    titleHi: 'व्यापार वृद्धि, करियर रुकावट एवं लक्ष्मी-कुबेर महायज्ञ',
     category: 'wealth',
     badge: 'Kuber & Laxmi Puja',
+    badgeHi: '💰 कुबेर एवं लक्ष्मी महायज्ञ',
     shortDesc: 'Analyze professional astrological houses, pacify financial obstacles, and choose auspicious Muhurtas for growth.',
+    shortDescHi: 'कारोबार में लगातार घाटा, नौकरी में तरक्की न मिलना, धन की बरकत न होना व वित्तीय बाधाओं के निवारण हेतु वैदिक विधान।',
     fullDesc: 'Facing repeated professional hurdles or unrewarded hard work? Our Kuber and Budh (Mercury) alignment consultations provide insight into career houses, recommend auspicious timings (Shubh Muhurta), and offer remedies to invite steady prosperity and clarity.',
+    fullDescHi: 'कड़ी मेहनत के बाद भी यदि व्यापार में लाभ न हो या करियर में बार-बार बाधाएं आ रही हों, तो यह दशम (कर्म) व एकादश (लाभ) भाव के पीड़ित होने से होता है। बाबाजी कुबेर-लक्ष्मी संपुटित हवन द्वारा धन आगमन के नए मार्ग प्रशस्त करते हैं।',
     benefits: [
       'In-depth 10th (Karma) and 11th (Labha) house Vedic analysis',
       'Gemstone and yantra recommendations for intellectual focus',
       'Pacification of commercial and financial astrological stress',
       'Auspicious Shubh Muhurta planning for new business ventures'
     ],
+    benefitsHi: [
+      'दशम एवं एकादश भाव का सूक्ष्म कुंडली विश्लेषण',
+      'व्यापारिक बाधाओं व नजर दोष का तुरंत शमन',
+      'धन के नए स्रोतों का निर्माण व व्यापार में बरकत',
+      'नए उपक्रम हेतु अत्यंत शुभ मुहूर्त विधान'
+    ],
     timeframe: 'Personalized Astrological Consultation',
+    timeframeHi: '5 से 7 दिवसीय व्यापार लक्ष्मी अनुष्ठान',
     mantraPreview: 'Om Shreem Hreem Kleem Tribhuvana Mahalakshmyai Namah...',
     iconName: 'Briefcase',
     imageUrl: serviceBusinessGrowth
@@ -338,17 +349,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'husband-wife-disputes',
     title: 'Husband-Wife Harmony & Griha Klesh Shanti',
+    titleHi: 'पति-पत्नी कलह शांति एवं गृह क्लेश निवारण अनुष्ठान',
     category: 'marriage',
     badge: 'Marital Harmony',
+    badgeHi: '🕊️ अखंड दांपत्य सुख',
     shortDesc: 'Address recurring domestic friction, bridge emotional gaps, and restore mutual respect and warmth in married life.',
+    shortDescHi: 'रोजाना के झगड़े, तनाव, विचारों का न मिलना व दांपत्य जीवन में बढ़ती कड़वाहट को दूर कर पुनः अटूट प्रेम व विश्वास की स्थापना।',
     fullDesc: 'When daily arguments, communication breakdowns, or misunderstandings disturb marital life, astrological guidance helps pinpoint planetary friction. Baba Ji conducts Gauri-Shankar harmony rituals that nurture emotional closeness, mutual respect, and peaceful coexistence.',
+    fullDescHi: 'सप्तम भाव व मंगल-शुक्र के दूषित होने पर पति-पत्नी के बीच छोटी-छोटी बातों पर भारी विवाद और अलगाव की स्थिति बनने लगती है। बाबाजी गौरी-शंकर शांति अनुष्ठान कराकर दोनों के बीच भावनात्मक सामंजस्य और प्रेम स्थापित करते हैं।',
     benefits: [
       'Resolve misunderstandings through calm astrological counsel',
       'Identify and balance planetary 7th house and Venus-Mars discord',
       'Restore domestic peace and positive household environment',
       'Reawaken mutual respect, empathy, and marital understanding'
     ],
+    benefitsHi: [
+      'शांत ज्योतिषीय परामर्श द्वारा मतभेदों का समाधान',
+      'सप्तम भाव व दांपत्य ग्रह दोषों का संतुलन',
+      'घर में सुख-शांति व सकारात्मक वातावरण का निर्माण',
+      'परस्पर आदर, सहानुभूति और प्रेम की पुनर्स्थापना'
+    ],
     timeframe: 'Vedic Counseling & Havan Remedies',
+    timeframeHi: '3 से 5 दिवसीय गौरी-शंकर अनुष्ठान',
     mantraPreview: 'Om Aim Kleem Souh Uma-Maheshwarabhyam Namah...',
     iconName: 'Users',
     imageUrl: serviceMaritalHarmony
@@ -356,17 +378,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'divorce-cancellation-solution',
     title: 'Marital Reconciliation & Dispute Resolution',
+    titleHi: 'तलाक रुकावट एवं दांपत्य पुनर्मिलन वैदिक अनुष्ठान',
     category: 'marriage',
     badge: 'Crisis Counseling & Puja',
+    badgeHi: '❤️ दांपत्य रक्षा व सुलह',
     shortDesc: 'Compassionate astrological guidance and peaceful Vedic remedies to encourage reconciliation and save sacred marital bonds.',
+    shortDescHi: 'अदालती तलाक का खतरा, पारिवारिक अलगाव या गलतफहमी से टूटने की कगार पर पहुंचे पवित्र वैवाहिक संबंध को बचाने हेतु विशेष वैदिक उपाय।',
     fullDesc: 'If discord or external pressures are pushing your marriage towards separation, Vedic wisdom counsels patience and spiritual balance. Baba Ji provides counseling and conducts soothing Gauri-Shankar pujas to calm emotional hostility, encourage heartfelt dialogue, and support reconciliation.',
+    fullDescHi: 'जब अहंकार, बाहरी लोगों के बहकावे या कोर्ट-कचहरी के कारण बात तलाक तक पहुँच जाए, तब शास्त्रों में महामृत्युंजय एवं गौरी-शंकर अनुष्ठान को संबंध बचाने का सर्वोत्तम उपाय माना गया है। बाबाजी दोनों पक्षों के क्रोध को शांत कर पुनः प्रेम की भावना जगाते हैं।',
     benefits: [
       'Calm heightened anger to facilitate meaningful personal dialogue',
       'Identify unseen astrological factors triggering domestic separation',
       'Foster empathy, shared memories, and emotional healing',
       'Help protect family stability and children’s emotional well-being'
     ],
+    benefitsHi: [
+      'तलाक की स्थिति को टालकर सुलह के मार्ग प्रशस्त करना',
+      'विवाह विच्छेद कराने वाले क्रूर ग्रहों का शांति विधान',
+      'अहंकार व कड़वाहट मिटाकर पुराने प्रेम की याद दिलाना',
+      'परिवार और बच्चों के भविष्य की सुरक्षित रक्षा'
+    ],
     timeframe: 'Compassionate Consultation & Puja',
+    timeframeHi: 'विशेष संकट निवारक अनुष्ठान',
     mantraPreview: 'Om Tryambakam Yajaamahe Sugandhim Pushtivardhanam...',
     iconName: 'Flame',
     imageUrl: serviceDivorceRemedy
@@ -374,17 +407,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'kundali-graha-dosha',
     title: 'Kundali Dosha (Manglik, Kaal Sarp, Pitra)',
+    titleHi: 'कुंडली ग्रह दोष निवारण (मांगलिक, कालसर्प, पितृ व शनि साढ़ेसाती)',
     category: 'kundali',
     badge: 'Authentic Vedic Shanti',
+    badgeHi: '⭐ शास्त्रोक्त वैदिक शांति',
     shortDesc: 'Neutralize severe Kaal Sarp Yoga, Mangal Dosha, Pitra Rin, and Shani Sade Sati creating lifetime obstacles.',
+    shortDescHi: 'जीवन के हर क्षेत्र में रुकावट डालने वाले कालसर्प दोष, मांगलिक दोष, पितृ ऋण, ग्रहण दोष एवं शनि की साढ़ेसाती का समूल शमन।',
     fullDesc: 'Deep Vedic planetary afflictions can stunt every aspect of your life—delaying marriage till late ages, causing sudden chronic illness, or blocking progeny. Baba Ji analyzes birth charts using ancient Parashari & Jaimini principles, prescribing exact gemstone and Trimbakeshwar ritual remedies.',
+    fullDescHi: 'कुंडली के गंभीर ग्रह दोष विवाह में 30-35 वर्ष तक की देरी, स्वास्थ्य हानि या निरंतर असफलता का कारण बनते हैं। बाबाजी प्राचीन पाराशरी एवं जैमिनी सिद्धांतों से जन्मपत्रिका का परीक्षण कर सटीक महामृत्युंजय व नवग्रह शांति हवन संपन्न करते हैं।',
     benefits: [
       'Accurate birth chart (Janampatri) & Navamsha analysis',
       'Kaal Sarp & Mangal Dosha Nivaran through certified Vedic rituals',
       'Pitra Dosha peace to grant ancestral blessings and progeny',
       'Shani Sade Sati & Rahu-Ketu transit pacification'
     ],
+    benefitsHi: [
+      'जन्मकुंडली व नवमांश का प्रामाणिक वैदिक परीक्षण',
+      'कालसर्प व मांगलिक दोष का विधिवत निवारण',
+      'पितृ दोष शांति द्वारा पूर्वजों का आशीर्वाद प्राप्ति',
+      'शनि साढ़ेसाती व राहु-केतु के दुष्प्रभावों से मुक्ति'
+    ],
     timeframe: 'Permanent dosha pacification',
+    timeframeHi: 'स्थायी ग्रह दोष शांति विधान',
     mantraPreview: 'Om Navagraha Devaya Namah | Om Aadityaya Somaya Mangalaya...',
     iconName: 'Star',
     imageUrl: serviceKundaliDosha
@@ -392,17 +436,28 @@ export const SACRED_SERVICES: ServiceItem[] = [
   {
     id: 'santan-prapti-solution',
     title: 'Santan Prapti & Child Problem Solution',
+    titleHi: 'संतान प्राप्ति बाधा निवारण एवं संतान गोपाल अनुष्ठान',
     category: 'santan',
     badge: 'Santan Gopal Siddhi',
+    badgeHi: '👶 संतान गोपाल सिद्धि',
     shortDesc: 'Overcome unexplained delays in childbirth, Putra & Santan Dosha, and recurring miscarriages with sacred Vedic rituals.',
+    shortDescHi: 'शादी के सालों बाद भी संतान सुख न मिलना, गर्भपात, पुत्र/संतान दोष व पितृ ऋण बाधा दूर करने हेतु सिद्ध वैदिक अनुष्ठान।',
     fullDesc: 'Childbirth delays and recurrent miscarriages often originate from severe 5th house planetary afflictions (Putra Bhava), ancestral Pitra Rin, or negative evil eye curses on the family lineage. Baba Ji conducts ancient Putrakameshti and Santan Gopal Anushthan along with Maa Naagdevi Garbha Raksha blessings to bestow the divine joy of healthy parenthood.',
+    fullDescHi: 'पंचम भाव (पुत्र भाव), गुरु ग्रह के पीड़ित होने या पितृ दोष के कारण संतान उत्पत्ति में अप्रत्याशित विलंब होता है। बाबाजी प्राचीन संतान गोपाल महायज्ञ एवं माँ नागदेवी गर्भ रक्षा विधान द्वारा सूनी गोद भरने का मंगलमय आशीर्वाद प्रदान करते हैं।',
     benefits: [
       'Comprehensive horoscope analysis of 5th house (Putra Bhava) & Jupiter (Guru)',
       'Sacred Santan Gopal & Maa Naagdevi Garbha Raksha Anushthan',
       'Neutralization of past-life karmic Putra Dosha and ancestral Pitra Rin',
       'Energized protective silver amulet (Kavach) and Siddha Yantra for couples'
     ],
+    benefitsHi: [
+      'पंचम भाव व बृहस्पति ग्रह का गहन कुंडली विश्लेषण',
+      'संतान गोपाल व माँ नागदेवी गर्भ रक्षा अनुष्ठान',
+      'पूर्व जन्म के कर्मिक संतान दोष व पितृ ऋण का शमन',
+      'दंपति हेतु अभिमंत्रित सिद्ध चांदी का रक्षा ताबीज'
+    ],
     timeframe: 'Sacred Sankalp Rituals in 3 to 7 Days',
+    timeframeHi: '3 से 7 दिवसीय संतान गोपाल संकल्प',
     mantraPreview: 'Om Devaki Suta Govinda Vasudeva Jagatpate | Dehi Me Tanayam Krishna Tvaamaham Sharanam Gatah...',
     iconName: 'Baby',
     imageUrl: serviceSantanPrapti

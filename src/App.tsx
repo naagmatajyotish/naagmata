@@ -4,6 +4,7 @@ import { DiscreetProvider } from './context/DiscreetContext';
 import { DiscreetOverlay } from './components/DiscreetOverlay';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { GuptDhanHighlightBanner } from './components/GuptDhanHighlightBanner';
 import { ParIstriHighlightBanner } from './components/ParIstriHighlightBanner';
 import { ServicesSection } from './components/ServicesSection';
 import { FloatingActions } from './components/FloatingActions';
@@ -75,10 +76,13 @@ export default function App() {
                 {/* 1. Hero Banner */}
                 <Hero />
 
-                {/* 2. Special Highlight Banner: Par-Istri Moh & Sautan Badha */}
+                {/* 2. Special Highlight Banner: Gupt Dhan & Gada Dhan Siddhi */}
+                <GuptDhanHighlightBanner />
+
+                {/* 3. Special Highlight Banner: Par-Istri Moh & Sautan Badha */}
                 <ParIstriHighlightBanner />
 
-                {/* 3. Core Services Section - Prominent, clean & distraction-free */}
+                {/* 4. Core Services Section - Prominent, clean & distraction-free */}
                 <ServicesSection />
 
                 {/* 4. Trust, Process, Reviews & Contact */}

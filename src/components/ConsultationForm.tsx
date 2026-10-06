@@ -23,19 +23,19 @@ export const ConsultationForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construct WhatsApp prefilled message
-    const message = `*Divine Consultation Request - Naagmata Jyotish*
+    // Construct WhatsApp prefilled message in pure Hindi
+    const message = `*पवित्र ज्योतिष परामर्श अनुरोध - श्री नागमाता ज्योतिष संस्थान*
 ---------------------------------------
-*Devotee Name:* ${formData.name}
-*Phone / WhatsApp:* ${formData.phone}
-*Problem Category:* ${formData.problemType}
-*Partner/Spouse Name:* ${formData.partnerName || 'N/A'}
-*Date of Birth:* ${formData.dob || 'Not provided'}
-*Location:* ${formData.city || 'Not provided'}
-*Situation Details:*
-${formData.details || 'Urgent guidance required.'}
+*भक्त का नाम:* ${formData.name}
+*मोबाइल / व्हाट्सएप:* ${formData.phone}
+*समस्या का प्रकार:* ${formData.problemType}
+*जीवनसाथी / साथी का नाम:* ${formData.partnerName || 'लागू नहीं'}
+*जन्म तिथि:* ${formData.dob || 'उपलब्ध नहीं'}
+*स्थान / शहर:* ${formData.city || 'उपलब्ध नहीं'}
+*समस्या का संक्षिप्त विवरण:*
+${formData.details || 'तत्काल वैदिक समाधान एवं मार्गदर्शन चाहिए।'}
 ---------------------------------------
-Pranam Baba Ji, please review my details and guide me with your divine blessings.`;
+प्रणाम पूज्य बाबाजी, कृपया मेरी कुंडली का परीक्षण कर मुझे दिव्य मार्गदर्शन व शास्त्रोक्त उपाय प्रदान करें।`;
 
     const whatsappUrl = `https://wa.me/919714127309?text=${encodeURIComponent(message)}`;
     

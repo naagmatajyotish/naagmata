@@ -138,7 +138,7 @@ export const Hero: React.FC = () => {
         {/* Special Highlight Pills for Key Sacred Anushthans */}
         <div className="pt-1 flex flex-col items-center justify-center gap-2 px-3">
           <a
-            href="#services"
+            href="#gupt-dhan-highlight"
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-500/15 via-amber-500/20 to-yellow-500/15 hover:from-yellow-500/25 hover:to-amber-500/30 border border-yellow-400/80 px-4 py-1.5 rounded-full text-xs font-bold text-amber-950 shadow-xs text-center transition-all hover:scale-[1.02] max-w-xl"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse shrink-0" />

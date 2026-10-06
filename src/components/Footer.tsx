@@ -3,11 +3,13 @@ import { Phone, MessageCircle, Mail, ShieldCheck, FileText, AlertCircle, Refresh
 import { CONTACT_INFO, SACRED_SERVICES } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { PolicyModal, PolicyModalType } from './PolicyModal';
+import { GoogleAdCreativesModal } from './GoogleAdCreativesModal';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
   const { lang } = useLanguage();
   const [activeModal, setActiveModal] = useState<PolicyModalType>(null);
+  const [isAdModalOpen, setIsAdModalOpen] = useState(false);
 
   useEffect(() => {
     const handleHash = () => {
@@ -16,6 +18,7 @@ export const Footer: React.FC = () => {
       else if (hash === '#terms' || hash === '#terms-of-service') setActiveModal('terms');
       else if (hash === '#disclaimer') setActiveModal('disclaimer');
       else if (hash === '#refund' || hash === '#refund-policy') setActiveModal('refund');
+      else if (hash === '#google-ads' || hash === '#ad-banners' || hash === '#ads') setIsAdModalOpen(true);
     };
 
     handleHash();
@@ -30,7 +33,8 @@ export const Footer: React.FC = () => {
 
   const handleCloseModal = () => {
     setActiveModal(null);
-    if (['#privacy', '#terms', '#disclaimer', '#refund', '#privacy-policy', '#terms-of-service', '#refund-policy'].includes(window.location.hash.toLowerCase())) {
+    setIsAdModalOpen(false);
+    if (['#privacy', '#terms', '#disclaimer', '#refund', '#privacy-policy', '#terms-of-service', '#refund-policy', '#google-ads', '#ad-banners', '#ads'].includes(window.location.hash.toLowerCase())) {
       window.history.pushState(null, '', window.location.pathname);
     }
   };
@@ -278,6 +282,9 @@ export const Footer: React.FC = () => {
 
       {/* Interactive Policy Modal */}
       <PolicyModal activeModal={activeModal} onClose={handleCloseModal} />
+
+      {/* Google Ads Display Banner Creatives Studio Modal */}
+      <GoogleAdCreativesModal isOpen={isAdModalOpen} onClose={() => setIsAdModalOpen(false)} />
     </>
   );
 };
