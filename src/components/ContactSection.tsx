@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Sparkles } from 'lucide-react';
+import { Phone, ShieldCheck, Mail, MapPin, Clock, Sparkles } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -71,43 +71,41 @@ export const ContactSection: React.FC = () => {
           </span>
         </a>
 
-        {/* WhatsApp Card */}
+        {/* Confidential Consultation Request Card */}
         <a
-          href={CONTACT_INFO.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white border border-emerald-200/80 hover:border-emerald-400 p-8 rounded-3xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] group shadow-xs hover:shadow-lg hover:shadow-emerald-500/5"
+          href="#consultation"
+          className="bg-white border border-amber-200/80 hover:border-amber-400 p-8 rounded-3xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] group shadow-xs hover:shadow-lg hover:shadow-amber-500/5"
         >
-          <div className="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
-            <MessageCircle className="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors" />
+          <div className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-all shadow-inner">
+            <ShieldCheck className="w-7 h-7 text-amber-700 group-hover:text-white transition-colors" />
           </div>
-          <span className="text-xs text-emerald-800 uppercase tracking-widest font-bold mb-1">
+          <span className="text-xs text-amber-800 uppercase tracking-widest font-bold mb-1">
             {lang === 'hi'
-              ? 'तत्काल WhatsApp चैट'
+              ? '१००% गोपनीय परामर्श फॉर्म'
               : lang === 'gu-en'
-              ? 'ઝડપી WhatsApp ચેટ (Instant Chat)'
-              : 'Instant WhatsApp Chat'}
+              ? '૧૦૦% ગુપ્ત પરામર્શ ફોર્મ'
+              : '100% Confidential Form'}
           </span>
-          <h3 className="heading-mystic text-xl font-bold text-stone-900 mb-2 group-hover:text-emerald-700">
+          <h3 className="heading-mystic text-xl font-bold text-stone-900 mb-2 group-hover:text-amber-800">
             {lang === 'hi'
-              ? 'WhatsApp पर बात करें'
+              ? 'परामर्श अनुरोध भेजें'
               : lang === 'gu-en'
-              ? 'WhatsApp પર ચેટ કરો'
-              : 'Chat on WhatsApp'}
+              ? 'પરામર્શ ફોર્મ ભરો'
+              : 'Submit Consultation Request'}
           </h3>
           <p className="text-stone-600 text-xs">
             {lang === 'hi'
-              ? 'जन्म पत्रिका, साथी का फोटो या प्रश्न पूर्ण गोपनीयता से भेजें।'
+              ? 'जन्म पत्रिका, साथी का नाम या प्रश्न पूर्ण गोपनीयता से फॉर्म में दर्ज करें।'
               : lang === 'gu-en'
-              ? 'કુંડળી વિગત, ફોટો કે સમસ્યા પૂર્ણ ગુપ્તતા સાથે મોકલો.'
-              : 'Share birth chart, partner photo, or questions securely and privately.'}
+              ? 'કુંડળી વિગત કે પ્રશ્ન પૂર્ણ ગુપ્તતા સાથે ફોર્મમાં મોકલો.'
+              : 'Submit your birth details or concerns safely and confidentially.'}
           </p>
-          <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 group-hover:underline">
+          <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 group-hover:underline">
             {lang === 'hi'
-              ? 'WhatsApp चैट खोलें →'
+              ? 'फॉर्म पर जाएं →'
               : lang === 'gu-en'
-              ? 'WhatsApp શરૂ કરો →'
-              : 'Open WhatsApp Chat →'}
+              ? 'ફોર્મ ખોલો →'
+              : 'Go to Form →'}
           </span>
         </a>
 

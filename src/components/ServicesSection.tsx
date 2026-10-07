@@ -12,7 +12,6 @@ import {
   Baby,
   ArrowRight,
   X,
-  MessageCircle,
   Phone,
   CheckCircle,
   Clock,
@@ -147,16 +146,6 @@ export const ServicesSection: React.FC = () => {
     if (lang === 'hi' && s.timeframeHi) return s.timeframeHi;
     if (lang === 'gu-en' && s.timeframeGu) return s.timeframeGu;
     return s.timeframe;
-  };
-
-  const createWhatsAppServiceLink = (serviceTitle: string) => {
-    const text =
-      lang === 'hi'
-        ? `प्रणाम बाबा जी, मुझे "${serviceTitle}" से संबंधित तत्काल ज्योतिषीय मार्गदर्शन चाहिए। कृपया उपाय बताएं।`
-        : lang === 'gu-en'
-        ? `પ્રણામ બાબાજી, મને "${serviceTitle}" વિષય પર તાત્કાલિક જ્યોતિષિય માર્ગદર્શન જોઈએ છે. કૃપા કરી સહાય કરો.`
-        : `Pranam Baba Ji, I need urgent astrological guidance regarding: *${serviceTitle}*. Please guide me on how to proceed.`;
-    return `https://wa.me/919714127309?text=${encodeURIComponent(text)}`;
   };
 
   const categoryTabs = [
@@ -387,11 +376,11 @@ export const ServicesSection: React.FC = () => {
                           ))}
                         </div>
 
-                        {/* Action Buttons: Direct Call & WhatsApp & Details */}
+                        {/* Action Buttons: Direct Call & Details */}
                         <div className="pt-3 flex flex-wrap items-center gap-3">
                           <a
                             href={`tel:${CONTACT_INFO.phoneRaw}`}
-                            className="flex-1 min-w-[200px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl shadow-amber-500/30 hover:scale-[1.02] transition-all border border-yellow-300"
+                            className="flex-1 min-w-[220px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-5 rounded-xl flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl shadow-amber-500/30 hover:scale-[1.01] transition-all border border-yellow-300"
                           >
                             <Phone className="w-4 h-4 text-white animate-bounce shrink-0" />
                             <span>
@@ -403,22 +392,12 @@ export const ServicesSection: React.FC = () => {
                             </span>
                           </a>
 
-                          <a
-                            href={createWhatsAppServiceLink(getServiceTitle(featured))}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3 px-5 rounded-xl flex items-center justify-center gap-2 text-sm shadow-lg shadow-emerald-600/30 hover:scale-[1.02] transition-all border border-emerald-400 shrink-0"
-                          >
-                            <MessageCircle className="w-4 h-4 text-white shrink-0" />
-                            <span>{lang === 'hi' ? 'व्हाट्सएप पर बात करें' : lang === 'gu-en' ? 'વૉટ્સએપ કરો' : 'WhatsApp'}</span>
-                          </a>
-
                           <button
                             onClick={() => setSelectedService(featured)}
-                            className="bg-white/10 hover:bg-white/20 text-yellow-300 font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-1.5 text-xs sm:text-sm border border-yellow-400/30 transition-all hover:border-yellow-400 shrink-0 cursor-pointer"
+                            className="bg-white/15 hover:bg-white/25 text-yellow-200 font-extrabold py-3.5 px-5 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm border border-yellow-300/40 transition-all hover:border-yellow-300 shrink-0 cursor-pointer shadow-md"
                           >
-                            <span>{lang === 'hi' ? 'पूर्ण विवरण' : lang === 'gu-en' ? 'વિગત જુઓ' : 'Details'}</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
+                            <span>{lang === 'hi' ? 'पूर्ण वैदिक विधान विवरण' : lang === 'gu-en' ? 'વિગત જુઓ' : 'Ritual Details'}</span>
+                            <ArrowRight className="w-4 h-4 text-yellow-300" />
                           </button>
                         </div>
                       </div>
@@ -545,28 +524,16 @@ export const ServicesSection: React.FC = () => {
                 </span>
               </a>
 
-              {/* Secondary Details & WhatsApp */}
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => setSelectedService(service)}
-                  className="w-full text-xs font-semibold py-2 px-3 rounded-xl bg-stone-100 hover:bg-amber-50 text-stone-700 hover:text-stone-900 border border-stone-200 transition-colors flex items-center justify-center gap-1 cursor-pointer"
-                >
-                  <span>
-                    {lang === 'hi' ? 'विवरण' : lang === 'gu-en' ? 'વિગત / Info' : 'Details'}
-                  </span>
-                  <ArrowRight className="w-3 h-3 text-amber-600" />
-                </button>
-
-                <a
-                  href={createWhatsAppServiceLink(getServiceTitle(service))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-xs font-bold py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white transition-colors flex items-center justify-center gap-1.5 shadow-xs"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+              {/* View Ritual Details Button */}
+              <button
+                onClick={() => setSelectedService(service)}
+                className="w-full text-xs sm:text-sm font-bold py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-amber-100/80 text-stone-800 hover:text-stone-950 border border-stone-200 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
+              >
+                <span>
+                  {lang === 'hi' ? 'वैदिक अनुष्ठान एवं मंत्र विवरण' : lang === 'gu-en' ? 'વિગત / Info' : 'View Ritual Details'}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-amber-600" />
+              </button>
             </div>
           </motion.div>
         ))}
@@ -664,31 +631,15 @@ export const ServicesSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all border border-amber-300"
+                className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center space-x-2 text-base shadow-md transition-all border border-amber-300"
               >
-                <Phone className="w-4 h-4 text-white animate-bounce" />
-                <span>
+                <Phone className="w-5 h-5 text-white animate-bounce" />
+                <span className="font-extrabold">
                   {lang === 'hi'
-                    ? `सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
+                    ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
                     : lang === 'gu-en'
                     ? `સીધો કૉલ બાબાજી: ${CONTACT_INFO.phoneDisplay}`
                     : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
-                </span>
-              </a>
-
-              <a
-                href={createWhatsAppServiceLink(getServiceTitle(selectedService))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-md transition-all"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>
-                  {lang === 'hi'
-                    ? 'WhatsApp पर विधि शुरू करें'
-                    : lang === 'gu-en'
-                    ? 'WhatsApp પર વિધિ શરૂ કરો'
-                    : 'Start Ritual on WhatsApp'}
                 </span>
               </a>
             </div>

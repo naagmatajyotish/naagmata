@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Heart, ShieldAlert, ArrowRight, MessageCircle, Phone, CheckCircle, Clock, Lock, Flame } from 'lucide-react';
+import { Sparkles, Heart, ShieldAlert, ArrowRight, Phone, CheckCircle, Clock, Lock, Flame } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
@@ -95,36 +95,6 @@ export const VedicCalculator: React.FC = () => {
   const [hasPhoto, setHasPhoto] = useState(true);
 
   const activeCrisis = LOVE_CRISES.find(c => c.id === selectedCrisisId) || LOVE_CRISES[0];
-
-  const getWhatsAppLoveLink = () => {
-    let text = '';
-    if (lang === 'hi') {
-      text = `प्रणाम पूज्य बाबा जी,
-मुझे अपने रिश्ते के संबंध में तत्काल वैदिक समाधान चाहिए:
-🔴 समस्या: ${activeCrisis.hindiTitle} (${activeCrisis.title})
-🔴 वर्तमान स्थिति: ${separationStatus}
-🔴 समय सीमा: ${duration}
-🔴 फोटो उपलब्ध: ${hasPhoto ? 'हाँ, साथी का फोटो है' : 'नाम व जन्म विवरण उपलब्ध'}
-कृपया कुंडली देखकर मार्गदर्शन व उपाय बताएं।`;
-    } else if (lang === 'gu-en') {
-      text = `પ્રણામ પૂજ્ય બાબાજી,
-મારા સંબંધ/પ્રેમ જીવનમાં તાત્કાલિક માર્ગદર્શન જોઈએ છે:
-🔴 સમસ્યા: ${activeCrisis.gujaratiTitle || activeCrisis.hindiTitle}
-🔴 સ્થિતિ: ${separationStatus}
-🔴 સમયગાળો: ${duration}
-🔴 ફોટો: ${hasPhoto ? 'હા, પાર્ટનરનો ફોટો છે' : 'નામ અને જન્મ તારીખ છે'}
-કૃપા કરી કુંડળી અનુસાર યોગ્ય વૈદિક ઉપાય જણાવો.`;
-    } else {
-      text = `Pranam Respected Baba Ji,
-I need immediate help for my relationship crisis:
-🔴 Problem: ${activeCrisis.title}
-🔴 Current Status: ${separationStatus}
-🔴 Duration: ${duration}
-🔴 Photo Available: ${hasPhoto ? 'Yes, I have photo of partner' : 'No, I have full name & birth details'}
-Please check our planetary situation and perform Vedic relationship harmony remedy.`;
-    }
-    return `https://wa.me/919714127309?text=${encodeURIComponent(text)}`;
-  };
 
   return (
     <section id="calculator" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
@@ -446,38 +416,18 @@ Please check our planetary situation and perform Vedic relationship harmony reme
             </div>
           </div>
 
-          {/* Action CTAs: Direct Call & WhatsApp */}
-          <div className="mt-6 pt-4 border-t border-stone-100 space-y-3">
-            <a
-              id="calculator-whatsapp-btn"
-              href={getWhatsAppLoveLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md shadow-emerald-600/20 transition-all cursor-pointer active:scale-95 border border-emerald-500/80"
-            >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <MessageCircle className="w-5 h-5 shrink-0 text-emerald-100" />
-                <span className="font-extrabold text-xs xs:text-sm truncate">
-                  {lang === 'hi'
-                    ? 'बाबा जी से WhatsApp पर समाधान जानें'
-                    : lang === 'gu-en'
-                    ? 'બાબાજી સાથે WhatsApp પર વાત કરો'
-                    : 'Chat With Baba Ji on WhatsApp'}
-                </span>
-              </div>
-              <ArrowRight className="w-4 h-4 shrink-0 text-emerald-200" />
-            </a>
-
+          {/* Action CTA: Direct Call */}
+          <div className="mt-6 pt-4 border-t border-stone-100">
             <a
               id="calculator-call-btn"
               href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-4 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md transition-all cursor-pointer active:scale-95 border border-amber-300"
+              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-5 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md transition-all cursor-pointer active:scale-95 border border-amber-300"
             >
               <div className="flex items-center gap-2.5 min-w-0">
                 <Phone className="w-5 h-5 shrink-0 animate-bounce text-amber-100" />
-                <span className="font-extrabold text-xs xs:text-sm whitespace-nowrap">
+                <span className="font-extrabold text-sm sm:text-base whitespace-nowrap">
                   {lang === 'hi'
-                    ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
+                    ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
                     : lang === 'gu-en'
                     ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
                     : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}

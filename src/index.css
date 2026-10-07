@@ -206,7 +206,7 @@
   transform: translateZ(0);
 }
 
-/* Right-to-Left Infinite Marquee Ticker */
+/* Right-to-Left Infinite Marquee Ticker - Ultra smooth 60fps GPU acceleration */
 @keyframes marquee-scroll {
   0% {
     transform: translate3d(0, 0, 0);
@@ -219,14 +219,25 @@
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 38s linear infinite;
+  animation: marquee-scroll 40s linear infinite;
   will-change: transform;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  contain: layout style;
 }
 
 .animate-marquee-left:hover {
   animation-play-state: paused;
+}
+
+/* Fast mobile rendering optimization for offscreen sections */
+.mobile-fast-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 /* Custom modern scrollbar */

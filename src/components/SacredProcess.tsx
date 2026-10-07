@@ -1,6 +1,6 @@
 import React from 'react';
 import { CONTACT_INFO } from '../data/jyotishData';
-import { Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Phone, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const SacredProcess: React.FC = () => {
@@ -157,31 +157,16 @@ export const SacredProcess: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
           <a
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 text-sm transition-all shadow-md"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>
-              {lang === 'hi'
-                ? 'तत्काल WhatsApp करें'
-                : lang === 'gu-en'
-                ? 'તાત્કાલિક WhatsApp'
-                : 'Emergency WhatsApp'}
-            </span>
-          </a>
-          <a
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 text-sm transition-all shadow-md"
+            className="bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 text-sm transition-all shadow-md active:scale-98"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 animate-bounce" />
             <span>
               {lang === 'hi'
-                ? 'सीधा फोन कॉल'
+                ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
                 : lang === 'gu-en'
-                ? 'સીધો ફોન કૉલ'
-                : 'Direct Call'}
+                ? `સીધો ફોન કૉલ: ${CONTACT_INFO.phoneDisplay}`
+                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
             </span>
           </a>
         </div>

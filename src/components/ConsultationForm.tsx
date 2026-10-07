@@ -36,8 +36,6 @@ export const ConsultationForm: React.FC = () => {
 ${formData.details || 'तत्काल वैदिक समाधान एवं मार्गदर्शन चाहिए।'}
 ---------------------------------------
 प्रणाम पूज्य बाबाजी, कृपया मेरी कुंडली का परीक्षण कर मुझे दिव्य मार्गदर्शन व शास्त्रोक्त उपाय प्रदान करें।`;
-
-    const whatsappUrl = `https://wa.me/919714127309?text=${encodeURIComponent(message)}`;
     
     // Trigger Google Tag conversion event
     try {
@@ -58,8 +56,7 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
       // Ignore if analytics blocked by adblock
     }
 
-    // Open WhatsApp in new window
-    window.open(whatsappUrl, '_blank');
+    // Set form as submitted and show confirmation with direct call helpline
     setIsSubmitted(true);
   };
 
@@ -90,22 +87,22 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
             <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="heading-mystic text-xl font-bold text-stone-900">Your Request Has Been Dispatched</h4>
+            <h4 className="heading-mystic text-xl font-bold text-stone-900">आपका परामर्श अनुरोध सफलतापूर्वक प्राप्त हो गया है</h4>
             <p className="text-stone-600 text-sm max-w-md mx-auto">
-              Your details have been received in strict confidence. Baba Ji will review your planetary configurations and guide you on WhatsApp or Phone shortly.
+              आपकी समस्त जानकारी १००% पूर्णतः गोपनीय रखी गई है। पूज्य बाबाजी शीघ्र ही आपकी ग्रह स्थिति का परीक्षण कर आपसे संपर्क करेंगे। तत्काल मार्गदर्शन हेतु आप अभी सीधा फोन कॉल भी कर सकते हैं।
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm shadow-md"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-extrabold py-3 px-6 rounded-xl text-sm shadow-md"
               >
-                <Phone className="w-4 h-4" /> Call Direct: {CONTACT_INFO.phoneDisplay}
+                <Phone className="w-4 h-4" /> सीधा फोन करें: {CONTACT_INFO.phoneDisplay}
               </a>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium py-2.5 px-6 rounded-xl text-sm transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium py-3 px-6 rounded-xl text-sm transition-colors cursor-pointer"
               >
-                Submit Another Request
+                अन्य विवरण भेजें
               </button>
             </div>
           </div>
@@ -234,7 +231,7 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                 className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-6 rounded-xl flex items-center justify-center space-x-2 text-base shadow-lg shadow-amber-500/25 transition-all cursor-pointer transform hover:-translate-y-0.5"
               >
                 <Send className="w-5 h-5 text-white" />
-                <span>{t.submitWhatsApp}</span>
+                <span>पवित्र वैदिक परामर्श अनुरोध भेजें</span>
               </button>
             </div>
 

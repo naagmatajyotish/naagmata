@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, Mail, ShieldCheck, FileText, AlertCircle, RefreshCw, MapPin } from 'lucide-react';
+import { Phone, Mail, ShieldCheck, FileText, AlertCircle, RefreshCw, MapPin } from 'lucide-react';
 import { CONTACT_INFO, SACRED_SERVICES } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { PolicyModal, PolicyModalType } from './PolicyModal';
@@ -154,12 +154,6 @@ export const Footer: React.FC = () => {
                 <Phone className="w-3.5 h-3.5 text-amber-600" />
                 <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="hover:text-amber-700">
                   {CONTACT_INFO.phoneDisplay}
-                </a>
-              </p>
-              <p className="flex items-center gap-2 text-stone-700 font-medium">
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-                <a href={CONTACT_INFO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
-                  सीधा WhatsApp परामर्श
                 </a>
               </p>
               <p className="flex items-center gap-2 text-stone-700 font-medium">

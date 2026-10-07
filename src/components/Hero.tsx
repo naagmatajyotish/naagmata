@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, ShieldCheck, Sparkles, Clock, Star, Flame, Shield } from 'lucide-react';
+import { Phone, ShieldCheck, Sparkles, Clock, Star, Flame, ArrowDown, Shield } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { useLanguage } from '../context/LanguageContext';
@@ -112,14 +112,12 @@ export const Hero: React.FC = () => {
           </a>
 
           <a
-            id="hero-whatsapp-btn"
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-black px-7 sm:px-9 py-4 sm:py-5 rounded-2xl flex items-center justify-center gap-3.5 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-emerald-600/30 cursor-pointer border-2 border-emerald-400 whitespace-nowrap active:scale-98"
+            href="#services"
+            className="w-full sm:w-auto bg-stone-900 hover:bg-stone-950 text-amber-300 font-black px-7 sm:px-9 py-4 sm:py-5 rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-stone-900/30 cursor-pointer border-2 border-amber-400/80 whitespace-nowrap active:scale-98"
           >
-            <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white shrink-0 drop-shadow-md" />
-            <span className="text-base sm:text-lg md:text-xl font-black tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">व्हाट्सएप पर बात करें</span>
+            <Sparkles className="w-6 h-6 text-yellow-300 shrink-0" />
+            <span className="text-base sm:text-lg md:text-xl font-black tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">समस्त सेवाएं एवं अनुष्ठान देखें</span>
+            <ArrowDown className="w-5 h-5 text-amber-400 shrink-0" />
           </a>
         </div>
 

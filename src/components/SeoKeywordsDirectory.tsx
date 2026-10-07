@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Globe2, Sparkles, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
+import { Search, MapPin, Globe2, Sparkles, CheckCircle2, Phone } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -599,32 +599,15 @@ export const SeoKeywordsDirectory: React.FC = () => {
           <a
             id="global-cta-call"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="h-12 sm:h-[50px] bg-white text-stone-950 hover:bg-amber-50 font-extrabold px-5 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm whitespace-nowrap border border-white cursor-pointer"
+            className="h-12 sm:h-[50px] bg-white text-stone-950 hover:bg-amber-50 font-extrabold px-6 sm:px-8 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-sm sm:text-base whitespace-nowrap border border-white cursor-pointer"
           >
-            <Phone className="w-4 h-4 text-amber-600 shrink-0 animate-bounce" />
+            <Phone className="w-5 h-5 text-amber-600 shrink-0 animate-bounce" />
             <span className="whitespace-nowrap font-extrabold">
               {lang === 'hi'
-                ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
+                ? `सीधा फोन कॉल करें: ${CONTACT_INFO.phoneDisplay}`
                 : lang === 'gu-en'
                 ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
                 : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
-            </span>
-          </a>
-
-          <a
-            id="global-cta-whatsapp"
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="h-12 sm:h-[50px] bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm border border-emerald-400 cursor-pointer whitespace-nowrap"
-          >
-            <MessageCircle className="w-4 h-4 shrink-0" />
-            <span className="whitespace-nowrap font-extrabold">
-              {lang === 'hi'
-                ? 'व्हाट्सएप पर जुड़ें'
-                : lang === 'gu-en'
-                ? 'વોટ્સએપ સંપર્ક'
-                : 'WhatsApp Connect'}
             </span>
           </a>
         </div>

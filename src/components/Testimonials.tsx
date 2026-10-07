@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, CheckCircle, Quote, Sparkles, ChevronLeft, ChevronRight, Calendar, MapPin, HeartHandshake, MessageCircle } from 'lucide-react';
+import { Star, CheckCircle, Quote, Sparkles, ChevronLeft, ChevronRight, Calendar, MapPin, HeartHandshake } from 'lucide-react';
 import { TESTIMONIALS, CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -286,16 +286,6 @@ export const Testimonials: React.FC = () => {
                   {item.location}
                 </span>
               </div>
-
-              <a
-                href={CONTACT_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Connect on WhatsApp"
-                className="text-emerald-600 hover:text-emerald-700 p-1.5 bg-emerald-50 rounded-full border border-emerald-200 hover:scale-110 transition-transform"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-              </a>
             </div>
           </div>
         ))}

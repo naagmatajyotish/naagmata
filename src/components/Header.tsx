@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
+import { Phone, Menu, X, ShieldCheck } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { UrgentBanner } from './UrgentBanner';
@@ -129,25 +129,12 @@ export const Header: React.FC = () => {
             <span className="hidden 2xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
           </button>
 
-          {/* Quick WhatsApp Chat on Desktop/Tablet */}
-          <a
-            id="header-whatsapp-btn"
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Chat directly on WhatsApp with Baba Ji"
-            className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-2.5 sm:px-3 md:px-3.5 h-8 sm:h-9 md:h-10 rounded-full border border-emerald-500 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap shrink-0"
-          >
-            <MessageCircle className="w-4 h-4 text-white shrink-0" />
-            <span className="hidden md:inline">{t.whatsapp}</span>
-          </a>
-
           {/* Call button - GUARANTEED 100% VISIBLE WITH NO CLIPPING ON ANY SCREEN */}
           <a
             id="header-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
             title="Direct Call Baba Ji - 24/7 Available Worldwide (+91 97141 27309)"
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-3 sm:px-4 md:px-4.5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30 min-w-max"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-3.5 sm:px-4.5 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30 min-w-max"
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0 animate-bounce" />
             <span className="font-sans font-black tracking-wide text-white whitespace-nowrap">
@@ -204,19 +191,6 @@ export const Header: React.FC = () => {
                 <span className="text-amber-500 text-xs">→</span>
               </a>
             ))}
-          </div>
-
-          <div className="pt-1 flex flex-col gap-2">
-            <a
-              href={CONTACT_INFO.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center space-x-2 text-sm shadow-sm active:scale-98 transition-transform"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>बाबाजी से व्हाट्सएप पर बात करें</span>
-            </a>
           </div>
         </div>
       )}

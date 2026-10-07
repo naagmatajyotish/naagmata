@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Sparkles, Phone, MessageCircle, Sun, HandMetal } from 'lucide-react';
+import { Sparkles, Phone, Sun, HandMetal } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import maaNaagdeviImage from '../assets/images/naagdevi_maa_transparent.png';
 import { useLanguage } from '../context/LanguageContext';
@@ -312,36 +312,19 @@ export const SacredDarshan3D: React.FC = () => {
         </div>
 
         {/* Action Buttons: Direct Call & WhatsApp to Connect with Baba Ji */}
-        <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl mx-auto">
+        <div className="mt-8 flex items-center justify-center w-full max-w-xl mx-auto">
           <a
             id="darshan-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full sm:flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[50px]"
+            className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[52px]"
           >
-            <Phone className="w-4 h-4 shrink-0 animate-bounce" />
-            <span className="whitespace-nowrap">
+            <Phone className="w-5 h-5 shrink-0 animate-bounce" />
+            <span className="whitespace-nowrap font-extrabold">
               {lang === 'hi'
-                ? `सीधा कॉल: ${CONTACT_INFO.phoneDisplay}`
+                ? `सिद्ध कवच व आशीर्वाद हेतु सीधा कॉल करें: ${CONTACT_INFO.phoneDisplay}`
                 : lang === 'gu-en'
                 ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
-            </span>
-          </a>
-
-          <a
-            id="darshan-whatsapp-btn"
-            href={CONTACT_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base shadow-lg border border-emerald-400 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[50px]"
-          >
-            <MessageCircle className="w-4 h-4 shrink-0" />
-            <span className="whitespace-nowrap">
-              {lang === 'hi'
-                ? 'सिद्ध नाग-मणि रक्षा कवच'
-                : lang === 'gu-en'
-                ? 'સિદ્ધ નાગ-મણિ રક્ષા કવચ'
-                : 'Naag-Mani Raksha Kavach'}
+                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
             </span>
           </a>
         </div>

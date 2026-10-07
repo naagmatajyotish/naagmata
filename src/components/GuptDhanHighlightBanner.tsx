@@ -1,14 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, MessageCircle, CheckCircle2, ShieldCheck, Sparkles, Coins } from 'lucide-react';
+import { Phone, CheckCircle2, ShieldCheck, Sparkles, Coins } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import serviceGuptDhan from '../assets/images/service_gupt_dhan_1791174398986.jpg';
 
 export const GuptDhanHighlightBanner: React.FC = () => {
-  const whatsappMessage = encodeURIComponent(
-    'प्रणाम पूज्य बाबाजी, मुझे जमीन में गड़े धन, पूर्वजों की गुप्त संपत्ति, नाग रक्षक दोष निवारण एवं अकस्मात धन प्राप्ति सिद्धि अनुष्ठान हेतु परामर्श चाहिए।'
-  );
-  const whatsappUrl = `https://wa.me/919714127309?text=${whatsappMessage}`;
 
   return (
     <section
@@ -125,27 +121,15 @@ export const GuptDhanHighlightBanner: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Direct Action Buttons: Phone & WhatsApp */}
+                {/* Direct Action Button: Phone Call */}
                 <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                   <a
                     href={`tel:${CONTACT_INFO.phoneRaw}`}
-                    className="flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-5 rounded-xl flex items-center justify-center gap-3 text-base sm:text-lg shadow-xl shadow-amber-600/35 hover:scale-[1.02] active:scale-98 transition-all border-2 border-yellow-300 ring-2 ring-yellow-400/30"
+                    className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center gap-3 text-base sm:text-lg shadow-xl shadow-amber-600/35 hover:scale-[1.01] active:scale-98 transition-all border-2 border-yellow-300 ring-2 ring-yellow-400/30"
                   >
                     <Phone className="w-5 h-5 text-white animate-bounce shrink-0" />
-                    <span className="whitespace-nowrap">
-                      सीधा फोन करें: {CONTACT_INFO.phoneDisplay}
-                    </span>
-                  </a>
-
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 px-5 rounded-xl flex items-center justify-center gap-2.5 text-base sm:text-lg shadow-xl shadow-emerald-600/35 hover:scale-[1.02] active:scale-98 transition-all border-2 border-emerald-400"
-                  >
-                    <MessageCircle className="w-5 h-5 text-white shrink-0" />
-                    <span className="whitespace-nowrap">
-                      गोपनीय व्हाट्सएप परामर्श
+                    <span className="whitespace-nowrap font-extrabold">
+                      गुप्त धन परामर्श हेतु सीधा फोन करें: {CONTACT_INFO.phoneDisplay}
                     </span>
                   </a>
                 </div>

@@ -8,9 +8,9 @@ import { GuptDhanHighlightBanner } from './components/GuptDhanHighlightBanner';
 import { ParIstriHighlightBanner } from './components/ParIstriHighlightBanner';
 import { ServicesSection } from './components/ServicesSection';
 import { FloatingActions } from './components/FloatingActions';
-import { SeoDirectoryPage } from './components/SeoDirectoryPage';
 
-// Lazy loaded trust & consultation components
+// Lazy loaded trust, directory & consultation components
+const SeoDirectoryPage = lazy(() => import('./components/SeoDirectoryPage').then(m => ({ default: m.SeoDirectoryPage })));
 const SacredProcess = lazy(() => import('./components/SacredProcess').then(m => ({ default: m.SacredProcess })));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs').then(m => ({ default: m.WhyChooseUs })));
 const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })));
@@ -142,7 +142,9 @@ export default function App() {
               </>
             ) : (
               /* DEDICATED SEPARATE SEO & KEYWORDS DIRECTORY PAGE */
-              <SeoDirectoryPage onBackToHome={() => navigateTo('home', '#services')} />
+              <Suspense fallback={<SectionFallback />}>
+                <SeoDirectoryPage onBackToHome={() => navigateTo('home', '#services')} />
+              </Suspense>
             )}
           </main>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldAlert, Compass, Sparkles, AlertTriangle, CheckCircle2, RotateCcw, MessageCircle, Phone, Activity, Zap } from 'lucide-react';
+import { ShieldAlert, Compass, Sparkles, AlertTriangle, CheckCircle2, RotateCcw, Phone, Activity, Zap } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -133,17 +133,6 @@ export const AuraEnergyScanner: React.FC = () => {
   const rawSeverity = selectedObjects.reduce((acc, curr) => acc + curr.severity, 0);
   const negativePercentage = Math.min(Math.max(rawSeverity + 18, 48), 96);
   const auraVitality = 100 - negativePercentage;
-
-  const whatsappReportMessage =
-    lang === 'hi'
-      ? `प्रणाम बाबा जी, मैंने वेबसाइट पर ऑरा व ऊर्जा स्कैन किया है।\n- नकारात्मक ऊर्जा प्रभाव: ${negativePercentage}%\n- प्राथमिक दोष: ${selectedObjects.map((s) => s.dosha).join(', ')}\nकृपया मुझे तत्काल वैदिक काट एवं समाधान बताएं।`
-      : lang === 'en'
-      ? `Pranam Baba Ji, I ran the Aura & Negative Energy Scanner on your site.\n- Negative Energy Index: ${negativePercentage}%\n- Planetary Afflictions: ${selectedObjects.map((s) => s.dosha).join(', ')}\nPlease guide me with the sacred Vedic remedy.`
-      : `પ્રણામ બાબા જી, મેં વેબસાઇટ પર ઓરા સ્કેનર કર્યું છે.\n- નકારાત્મક ઉર્જા: ${negativePercentage}%\n- દોષ: ${selectedObjects.map((s) => s.dosha).join(', ')}\nકૃપા કરીને તાત્કાલિક વૈદિક ઉપાય અને આશીર્વાદ આપો.`;
-
-  const whatsappUrl = `https://wa.me/${CONTACT_INFO.phoneRaw.replace('+', '')}?text=${encodeURIComponent(
-    whatsappReportMessage
-  )}`;
 
   return (
     <section
@@ -358,30 +347,16 @@ export const AuraEnergyScanner: React.FC = () => {
                 : 'To neutralize this astral blockage, the Maa Naagdevi Raksha Bandhan ritual and Shukra Havan are recommended to restore emotional peace within 24 to 48 hours.'}
             </div>
 
-            {/* Dual CTAs: WhatsApp & Direct Call */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-transform active:scale-95 cursor-pointer"
-              >
-                <MessageCircle className="w-4 h-4 text-white" />
-                <span>
-                  {lang === 'hi'
-                    ? 'यह रिपोर्ट बाबा जी को व्हाट्सएप भेजें'
-                    : 'Send This Diagnostic to Baba Ji'}
-                </span>
-              </a>
-
+            {/* Action CTA: Direct Call for Remedy */}
+            <div className="pt-2">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-bold text-sm shadow-md transition-transform active:scale-95 cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-extrabold text-sm sm:text-base shadow-lg transition-transform active:scale-98 cursor-pointer border border-yellow-300"
               >
-                <Phone className="w-4 h-4 text-stone-950" />
+                <Phone className="w-5 h-5 text-stone-950 animate-bounce" />
                 <span>
                   {lang === 'hi'
-                    ? 'तत्काल समाधान हेतु कॉल करें'
+                    ? `ऊर्जा दोष निवारण हेतु सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
                     : 'Call Baba Ji Directly for Remedy'}
                 </span>
               </a>
