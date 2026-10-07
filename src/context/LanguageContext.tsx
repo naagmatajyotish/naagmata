@@ -21,6 +21,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     try {
       localStorage.setItem('naagmata_selected_lang', 'hi');
       document.documentElement.lang = 'hi';
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+      document.body?.setAttribute('translate', 'no');
+      document.body?.classList.add('notranslate');
     } catch {
       // ignore
     }
@@ -30,6 +34,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     try {
       localStorage.setItem('naagmata_selected_lang', 'hi');
       document.documentElement.lang = 'hi';
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+      document.body?.setAttribute('translate', 'no');
+      document.body?.classList.add('notranslate');
     } catch {
       // ignore
     }

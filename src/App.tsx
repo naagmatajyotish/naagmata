@@ -65,7 +65,10 @@ export default function App() {
         {/* Discreet Panic Mode Overlay (Instant Devotional Disguise • Press Esc) */}
         <DiscreetOverlay />
 
-        <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400">
+        <div
+          translate="no"
+          className="notranslate min-h-screen w-full max-w-full overflow-x-hidden bg-[#fdfcf7] text-[#2a2203] selection:bg-amber-500 selection:text-white flex flex-col font-sans transition-colors duration-400"
+        >
           {/* Main Sticky Header with Top Scrolling Marquee & 24/7 Helpline */}
           <Header />
 

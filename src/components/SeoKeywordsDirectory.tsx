@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Globe2, Sparkles, CheckCircle2, Phone } from 'lucide-react';
+import { Search, MapPin, Globe2, Sparkles, CheckCircle2, Phone, Building2 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -222,17 +222,364 @@ const LOCAL_GUJARAT_KEYWORDS: KeywordGroup[] = [
     ]
   },
   {
-    category: 'Bhuj, Kutch & South Gujarat (કચ્છ અને દક્ષિણ ગુજરાત)',
+    category: 'Bhuj, Gandhidham, Anjar & Kutch (કચ્છ, ભુજ, ગાંધીધામ અને માંડવી)',
     badge: 'Border & Coastal Belt',
     icon: '📍',
     keywords: [
       'Best Astrologer in Bhuj Gandhidham Kutch',
       'Love Problem Specialist Anjar Mandvi Mundra Kutch',
-      'Famous Astrologer in Bharuch Ankleshwar',
-      'Love Marriage Specialist Navsari Valsad Vapi',
-      'Industrial Business Obstacle Astrology Vapi Ankleshwar',
-      'Kutchi Gujarati NRI Family Astrologer Bhuj',
-      'કચ્છ ભુજ ગાંધીધામ અને વાપી વલસાડ જ્યોતિષ કાર્યાલય'
+      'Kutchi Gujarati Family Astrologer Bhuj Madhapar',
+      'Husband Wife Dispute Solution Gandhidham Kutch',
+      'Intercaste Marriage Specialist Bhuj Anjar',
+      'કચ્છ ભુજ ગાંધીધામ અંજાર જ્યોતિષ કાર્યાલય'
+    ]
+  },
+  {
+    category: 'Bhavnagar, Jamnagar & Junagadh (ભાવનગર, જામનગર અને જૂનાગઢ)',
+    badge: 'Saurashtra Coast & Heritage',
+    icon: '📍',
+    keywords: [
+      'Best Astrologer in Bhavnagar Waghawadi Road',
+      'Love Problem Specialist Jamnagar Digjam Valkeshwari',
+      'Famous Jyotish in Junagadh Girnar Darshan',
+      'Pati Patni Kankas Nivaran Bhavnagar Ghogha Circle',
+      'Love Marriage Specialist Jamnagar Bedi Bandar',
+      'ભાવનગર જામનગર જૂનાગઢ પ્રેમ લગ્ન જ્યોતિષી'
+    ]
+  },
+  {
+    category: 'Morbi, Surendranagar & Porbandar (મોરબી, સુરેન્દ્રનગર અને પોરબંદર)',
+    badge: 'Ceramic & Industrial Hub',
+    icon: '📍',
+    keywords: [
+      'Best Astrologer in Morbi Ceramic Hub Trajpar',
+      'Vyapar Vriddhi Astrologer Morbi Wankaner',
+      'Love Problem Specialist Surendranagar Wadhwan',
+      'Famous Jyotish in Porbandar Dhoraji Upleta',
+      'Husband Wife Dispute Solution Morbi',
+      'મોરબી સુરેન્દ્રનગર પોરબંદર વેપાર વૃદ્ધિ જ્યોતિષ'
+    ]
+  },
+  {
+    category: 'Bharuch, Ankleshwar, Navsari, Valsad & Vapi (દક્ષિણ ગુજરાત ઔદ્યોગિક પટ્ટો)',
+    badge: 'South Gujarat Industrial Belt',
+    icon: '📍',
+    keywords: [
+      'Famous Astrologer in Bharuch Ankleshwar GIDC',
+      'Love Marriage Specialist Navsari Lunsikui',
+      'Best Astrologer in Valsad Tithal Road Dharampur',
+      'Industrial Business Obstacle Astrology Vapi Daman Silvassa',
+      'Love Problem Specialist Vapi GIDC Gunjan',
+      'દક્ષિણ ગુજરાત ભરૂચ અંકલેશ્વર વાપી વલસાડ જ્યોતિષ કાર્યાલય'
+    ]
+  },
+  {
+    category: 'खोया प्यार वापस पाने एवं मनचाहा प्रेम विवाह (Ex Love Back & Love Marriage Specialist)',
+    badge: '❤️ #1 Most Searched Query',
+    icon: '🔮',
+    keywords: [
+      'खोया प्यार वापस पाने के अचूक ज्योतिष उपाय',
+      'रूठे प्रेमी या प्रेमिका को मनाने के टोटके',
+      'ब्रेकअप के बाद प्यार को वापस कैसे पाएं',
+      'मनचाहा प्रेम विवाह और माता-पिता को मनाने के उपाय',
+      'इंटरकास्ट लव मैरिज समस्या समाधान उज्जैन',
+      'एकतरफा प्यार को पाने के शास्त्रोक्त उपाय',
+      'Khoya pyar wapas pane ke upay jyotish',
+      'Ruthe premi ko manane ka mantra totka',
+      'Breakup ke baad pyar wapas pane ke tarike',
+      'Manchaha prem vivah jyotish samadhan',
+      'Love marriage convince parents vedic astrology',
+      'Intercaste love marriage specialist astrologer india',
+      'Ex love back specialist astrologer ujjain',
+      'Get lost love back by authentic astrology',
+      'ખોવાયેલો પ્રેમ પાછો મેળવવાના જ્યોતિષ ઉપાય',
+      'પ્રેમ લગ્ન માટે માતા પિતાને મનાવવાના ઉપાય'
+    ]
+  },
+  {
+    category: 'तलाक रुकवाने, शादी टूटने से बचाने एवं गृह क्लेश मुक्ति (Divorce Cancellation & Save Marriage)',
+    badge: '⚖️ Relationship Protection',
+    icon: '🕊️',
+    keywords: [
+      'तलाक रुकवाने के चमत्कारी ज्योतिष उपाय',
+      'शादी टूटने से कैसे बचाएं अचूक टोटके',
+      'कोर्ट कचहरी तलाक केस रद्द कराने के उपाय',
+      'पति पत्नी के झगड़े और कलह दूर करने के उपाय',
+      'ससुराल में मान-सम्मान पाने के उपाय',
+      'Talak rukwane ke achuk jyotish upay',
+      'Shadi tutne se bachane ke tarike',
+      'Save marriage from divorce astrology remedies',
+      'Divorce cancellation vedic puja ujjain',
+      'Pati patni klesh nivaran anushthan',
+      'Court case divorce settlement astrology',
+      'છૂટાછેડા અટકાવવાના અને લગ્ન બચાવવાના ઉપાય',
+      'સાસરીમાં માન સન્માન મેળવવાના જ્યોતિષ ઉપાય'
+    ]
+  },
+  {
+    category: 'व्यापार वृद्धि, कर्ज मुक्ति एवं लक्ष्मी-कुबेर अनुष्ठान (Business Growth & Debt Relief)',
+    badge: '💰 Vyapar & Laxmi Sadhana',
+    icon: '📈',
+    keywords: [
+      'दुकान और व्यापार में बिक्री बढ़ाने के उपाय',
+      'व्यापार में लगातार घाटा दूर करने के टोटके',
+      'कर्ज से मुक्ति पाने के अचूक लाल किताब उपाय',
+      'अटका हुआ धन वापस पाने के ज्योतिष उपाय',
+      'लक्ष्मी कुबेर महायज्ञ व्यापार वृद्धि अनुष्ठान',
+      'Dukan me grahak badhane ke upay totke',
+      'Vyapar me munafa badhane ke tarike',
+      'Karz mukti ke achuk jyotish upay',
+      'Duba hua dhan wapas pane ke mantra',
+      'Business obstacle removal astrology remedy',
+      'Debt relief astrological consultation ujjain',
+      'Kuber Laxmi puja for financial breakthrough',
+      'વેપાર ધંધામાં પ્રગતિ અને દેવા મુક્તિના ઉપાય'
+    ]
+  },
+  {
+    category: 'काला जादू काट, नजर दोष एवं ऊपरी बाधा निवारण (Black Magic Removal & Evil Eye Cleansing)',
+    badge: '🛡️ Maha Raksha Kavach',
+    icon: '🔥',
+    keywords: [
+      'काला जादू और तंत्र मंत्र हटाने के उपाय',
+      'घर से बुरी नजर और नकारात्मक ऊर्जा दूर करने के टोटके',
+      'ऊपरी हवा और प्रेत बाधा निवारण अनुष्ठान',
+      'व्यापार और घर को नजर दोष से बचाने के उपाय',
+      'माँ नागदेवी सिद्ध रक्षा ताबीज एवं कवच',
+      'Kala jadu hatane ke upay totke',
+      'Buri nazar dosha nivaran ujjain puja',
+      'Ghar se negative energy door karne ke tarike',
+      'Remove black magic symptoms and remedies',
+      'Evil eye protection vedic rituals india',
+      'Tantrik badha nivaran maa naagdevi peeth',
+      'મેલી વિદ્યા અને નજર દોષ દૂર કરવાના ઉપાય'
+    ]
+  },
+  {
+    category: 'कालसर्प दोष, मांगलिक दोष एवं पितृ दोष शांति (Kaal Sarp & Kundali Dosha Shanti Ujjain)',
+    badge: '🕉️ Mahakal Marg Ujjain',
+    icon: '🐍',
+    keywords: [
+      'कालसर्प दोष निवारण पूजा उज्जैन महाकाल',
+      'मांगलिक दोष दूर करने के सरल उपाय',
+      'पितृ दोष के लक्षण और शांति पूजा विधान',
+      'शनि साढ़े साती एवं ढैय्या शांति अनुष्ठान',
+      'राहु केतु महादशा शांति वैदिक मंत्र',
+      'Kaal sarp dosha nivaran puja ujjain',
+      'Manglik dosha shanti vivah anushthan',
+      'Pitra dosha nivaran remedies ujjain',
+      'Shani sade sati dosha shanti havan',
+      'Rahu Ketu graha shanti puja ujjain',
+      'કાલસર્પ દોષ અને માંગલિક દોષ શાંતિ પૂજા'
+    ]
+  },
+  {
+    category: 'शीघ्र विवाह, शादी में देरी एवं मनचाहा जीवनसाथी (Early Marriage & Vivah Badha Nivaran)',
+    badge: '💍 Top Trending Query',
+    icon: '🌸',
+    keywords: [
+      'शीघ्र विवाह के अचूक वैदिक ज्योतिष उपाय',
+      'शादी में देरी और अड़चनें दूर करने के उपाय',
+      'मनचाहा जीवनसाथी पाने के सरल उपाय',
+      'कुंडली में विवाह योग बनाने के ज्योतिषीय उपाय',
+      'गुरु और शुक्र ग्रह शांति शीघ्र विवाह महायज्ञ',
+      'Shighra vivah ke achuk jyotish upay',
+      'Late marriage remedies vedic astrology',
+      'Manchaha jeevansathi pane ke totke',
+      'Vivah badha nivaran puja ujjain',
+      'Shukra Brihaspati shanti for marriage delay',
+      'ઝડપી લગ્ન માટેના અચૂક જ્યોતિષી ઉપાય',
+      'લગ્નમાં વિલંબ અને અડચણ દૂર કરવાના ઉપાય'
+    ]
+  },
+  {
+    category: 'सरकारी नौकरी, करियर प्रमोशन एवं कोर्ट केस विजय (Career Growth, Govt Job & Legal Victory)',
+    badge: '🏛️ Career & Success Hub',
+    icon: '⚡',
+    keywords: [
+      'सरकारी नौकरी पाने के अचूक ज्योतिष उपाय',
+      'नौकरी में मनचाहा प्रमोशन और ट्रांसफर के टोटके',
+      'कोर्ट कचहरी और मुकदमों में जीत के वैदिक उपाय',
+      'इंटरव्यू और प्रतियोगी परीक्षा में सफलता के उपाय',
+      'सूर्य ग्रह शांति मान-सम्मान एवं सरकारी पद प्राप्ति',
+      'Sarkari naukri pane ke jyotish upay',
+      'Job promotion astrology remedies india',
+      'Court case dispute victory vedic remedies',
+      'Surya graha shanti rajyog anushthan',
+      'સરકારી નોકરી મેળવવાના જ્યોતિષ ઉપાય',
+      'કોર્ટ કેસમાં વિજય મેળવવાના શાસ્ત્રોક્ત ઉપાય'
+    ]
+  },
+  {
+    category: 'Mumbai, Thane & Navi Mumbai (मुंबई, ठाणे व नवी मुंबई)',
+    badge: 'Maharashtra Mega Hub',
+    icon: '🏙️',
+    keywords: [
+      'Best Astrologer in Mumbai Andheri Bandra Borivali',
+      'Love Problem Specialist in Mumbai South Mumbai Dadar',
+      'Famous Jyotish in Thane Ghodbunder Road Dombivli',
+      'Love Marriage Specialist Navi Mumbai Vashi Kharghar',
+      'Husband Wife Dispute Solution Mumbai Kurla Ghatkopar',
+      'Intercaste Marriage Specialist Mumbai Malad Kandivali',
+      'Business Growth & Corporate Astrologer Mumbai BKC',
+      'Kala Jadu & Black Magic Removal Astrologer Mumbai',
+      'Best Vedic Astrologer in Chembur Powai Mulund',
+      'मुंबई प्रसिद्ध लव प्रॉब्लम एवं वैवाहिक ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Delhi NCR: New Delhi, Gurugram & Noida (दिल्ली एनसीआर)',
+    badge: 'National Capital Region',
+    icon: '🏛️',
+    keywords: [
+      'Best Astrologer in Delhi NCR Connaught Place',
+      'Love Problem Specialist South Delhi Hauz Khas Saket',
+      'Famous Jyotish in Rohini Pitampura Janakpuri West Delhi',
+      'Love Marriage Specialist Gurugram Gurgaon Cyber City DLF',
+      'Best Astrologer in Noida Sector 18 Greater Noida',
+      'Intercaste Love Marriage Solution Delhi Dwarka',
+      'Husband Wife Dispute Solution Faridabad Ghaziabad',
+      'Kundali Matching Astrologer East Delhi Laxmi Nagar',
+      'Court Case & Government Job Astrologer New Delhi',
+      'दिल्ली एनसीआर प्रसिद्ध प्रेम विवाह एवं कुंडली समाधान'
+    ]
+  },
+  {
+    category: 'Jaipur, Jodhpur & Rajasthan (जयपुर, जोधपुर व राजस्थान)',
+    badge: 'Heritage & Marwar Hub',
+    icon: '🏰',
+    keywords: [
+      'Best Astrologer in Jaipur Mansarovar Vaishali Nagar',
+      'Famous Jyotish in Jaipur Malviya Nagar Raja Park',
+      'Love Problem Specialist Jodhpur Sardarpura Ratanada',
+      'Love Marriage Specialist Udaipur Panchwati Hiran Magri',
+      'Famous Astrologer in Kota Gumanpura Talwandi',
+      'Best Astrologer in Ajmer Bikaner Bhilwara Alwar',
+      'Husband Wife Kalesh Nivaran Rajasthan',
+      'Ancestral Wealth & Gupt Dhan Astrologer Rajasthan',
+      'Manglik & Kaal Sarp Dosha Puja Specialist Jaipur',
+      'जयपुर जोधपुर राजस्थान प्रसिद्ध वैदिक ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Indore, Ujjain (Mahakal) & Madhya Pradesh (इंदौर, उज्जैन व मध्य प्रदेश)',
+    badge: 'Mahakal Sacred Peeth',
+    icon: '🕉️',
+    keywords: [
+      'Best Astrologer in Indore Vijay Nagar Palasia',
+      'Famous Jyotish in Indore Annapurna Sapna Sangeeta',
+      'Ujjain Mahakal Jyotish Karyalay Kaal Sarp Puja',
+      'Maa Naagdevi Siddha Peeth Mahakal Marg Ujjain',
+      'Love Problem Specialist Bhopal Arera Colony MP Nagar',
+      'Famous Astrologer in Gwalior Lashkar Morar',
+      'Best Astrologer in Jabalpur Civil Lines Wright Town',
+      'Dewas Ratlam Mandsaur Vedic Astrologer',
+      'Pitra Dosh & Manglik Dosh Nivaran Ujjain',
+      'उज्जैन महाकाल मार्ग प्रसिद्ध वैदिक ज्योतिषी इंदौर'
+    ]
+  },
+  {
+    category: 'Pune, Pimpri, Nashik & Nagpur (पुणे, नाशिक व नागपुर)',
+    badge: 'Western Maharashtra Hub',
+    icon: '📍',
+    keywords: [
+      'Best Astrologer in Pune Kothrud Shivaji Nagar',
+      'Love Problem Specialist Pune Wakad Hinjewadi Baner',
+      'Famous Jyotish in Pune Hadapsar Magarpatta Viman Nagar',
+      'Love Marriage Specialist Pimpri Chinchwad PCMC',
+      'Famous Astrologer in Nashik College Road Panchavati',
+      'Best Astrologer in Nagpur Sitabuldi Dharampeth Ramdaspeth',
+      'Husband Wife Dispute Astrologer Kolhapur Solapur',
+      'IT Professional Stress & Relationship Astrology Pune',
+      'पुणे नाशिक नागपुर प्रसिद्ध प्रेम विवाह ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Lucknow, Kanpur, Varanasi (Kashi) & UP (लखनऊ, कानपुर, काशी-वाराणसी व यूपी)',
+    badge: 'Uttar Pradesh Central & Kashi',
+    icon: '🪔',
+    keywords: [
+      'Best Astrologer in Lucknow Gomti Nagar Hazratganj',
+      'Famous Jyotish in Lucknow Alambagh Indira Nagar',
+      'Best Astrologer in Kanpur Swaroop Nagar Kakadeo',
+      'Love Problem Specialist Varanasi Kashi Assi Ghat Lanka',
+      'Famous Astrologer in Prayagraj Allahabad Civil Lines',
+      'Best Astrologer in Agra Sanjay Place Mathura Road',
+      'Astrologer in Meerut Bareilly Gorakhpur Aligarh',
+      'Sarkari Naukri & Vivah Badha Nivaran UP',
+      'लखनऊ कानपुर वाराणसी काशी प्रसिद्ध वैदिक ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Chandigarh, Ludhiana, Amritsar & Punjab (चंडीगढ़, लुधियाना व पंजाब)',
+    badge: 'Punjab & Haryana Hub',
+    icon: '🌾',
+    keywords: [
+      'Best Astrologer in Chandigarh Sector 17 Sector 35',
+      'Love Problem Specialist Mohali Phase 7 Panchkula',
+      'Famous Astrologer in Ludhiana Model Town Civil Lines',
+      'Best Astrologer in Amritsar Lawrence Road Ranjit Avenue',
+      'Famous Jyotish in Jalandhar Model Town Cantt',
+      'Astrologer in Panipat Karnal Ambala Sonipat',
+      'NRI Punjab Marriage & Canada PR Delay Astrology',
+      'चंडीगढ़ लुधियाना अमृतसर प्रसिद्ध ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Patna, Gaya, Muzaffarpur & Bihar (पटना, गया व बिहार)',
+    badge: 'Bihar & Purvanchal',
+    icon: '📍',
+    keywords: [
+      'Best Astrologer in Patna Boring Road Kankarbagh',
+      'Famous Jyotish in Patna Bailey Road Fraser Road',
+      'Love Problem Specialist Gaya Bodh Gaya Civil Lines',
+      'Best Astrologer in Muzaffarpur Bhagalpur Darbhanga',
+      'Pitra Dosh Gaya Shradh Special Astrologer',
+      'Shighra Vivah & Sarkari Naukri Jyotish Bihar',
+      'पटना गया मुजफ्फरपुर प्रसिद्ध वैदिक ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Bengaluru, Mysuru & Karnataka (बेंगलुरु व कर्नाटक)',
+    badge: 'Karnataka Tech Belt',
+    icon: '🌆',
+    keywords: [
+      'Best Indian Astrologer in Bengaluru Indiranagar',
+      'Love Problem Specialist Bangalore Koramangala HSR Layout',
+      'Famous Astrologer in Whitefield Electronic City Bangalore',
+      'Top Vedic Astrologer Jayanagar JP Nagar Bangalore',
+      'Famous Astrologer in Mysuru Saraswathipuram Gokulam',
+      'Husband Wife Dispute Astrologer Bangalore Hubli',
+      'IT Couple Relationship Discord Astrology Bengaluru',
+      'बेंगलोर कर्नाटक प्रसिद्ध भारतीय ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Hyderabad & Secunderabad (हैदराबाद व तेलंगाना)',
+    badge: 'Telangana & Deccan Hub',
+    icon: '📍',
+    keywords: [
+      'Best Indian Astrologer in Hyderabad Banjara Hills',
+      'Love Problem Specialist Hyderabad Jubilee Hills Madhapur',
+      'Famous Astrologer in Hitec City Gachibowli Kondapur',
+      'Top Vedic Jyotish in Secunderabad Begumpet Marredpally',
+      'Husband Wife Dispute Astrologer Kukatpally Hyderabad',
+      'Intercaste Marriage Astrology Specialist Hyderabad',
+      'हैदराबाद सिकंदराबाद प्रसिद्ध वैदिक ज्योतिषी'
+    ]
+  },
+  {
+    category: 'Kolkata, Howrah & West Bengal (कोलकाता व पश्चिम बंगाल)',
+    badge: 'Eastern India Cultural Hub',
+    icon: '📍',
+    keywords: [
+      'Best Astrologer in Kolkata Salt Lake Sector 5',
+      'Famous Jyotish in Kolkata Park Street Ballygunge',
+      'Love Problem Specialist South Kolkata Gariahat Jadavpur',
+      'Best Astrologer in North Kolkata Shyambazar Dum Dum',
+      'Famous Astrologer in Howrah Shibpur Salkia',
+      'Tantrik Badha & Nazar Dosh Astrologer Kolkata Siliguri',
+      'कोलकाता हावड़ा पश्चिम बंगाल प्रसिद्ध वैदिक ज्योतिषी'
     ]
   }
 ];
@@ -353,13 +700,53 @@ const INTERNATIONAL_NRI_KEYWORDS: KeywordGroup[] = [
   }
 ];
 
+type TabType = 'india' | 'gujarat' | 'remedies' | 'international';
+
+const GUJARAT_CITY_NAMES = [
+  'Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Gandhinagar',
+  'Anand', 'Bhuj', 'Bhavnagar', 'Morbi', 'Bharuch'
+];
+
+const INDIA_METRO_NAMES = [
+  'Mumbai', 'Delhi', 'Jaipur', 'Indore', 'Pune',
+  'Lucknow', 'Chandigarh', 'Patna', 'Bengaluru', 'Hyderabad', 'Kolkata'
+];
+
+const isGujaratGroup = (group: KeywordGroup) =>
+  GUJARAT_CITY_NAMES.some(name => group.category.includes(name));
+
+const isIndiaMetroGroup = (group: KeywordGroup) =>
+  INDIA_METRO_NAMES.some(name => group.category.includes(name));
+
+const isRemedyGroup = (group: KeywordGroup) =>
+  !isGujaratGroup(group) && !isIndiaMetroGroup(group);
+
+const INDIA_METRO_KEYWORDS = LOCAL_GUJARAT_KEYWORDS.filter(isIndiaMetroGroup);
+const GUJARAT_KEYWORDS = LOCAL_GUJARAT_KEYWORDS.filter(isGujaratGroup);
+const REMEDY_KEYWORDS = LOCAL_GUJARAT_KEYWORDS.filter(isRemedyGroup);
+
 export const SeoKeywordsDirectory: React.FC = () => {
   const { lang } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'local' | 'international'>('local');
+  const [activeTab, setActiveTab] = useState<TabType>('india');
   const [searchFilter, setSearchFilter] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const currentList = activeTab === 'local' ? LOCAL_GUJARAT_KEYWORDS : INTERNATIONAL_NRI_KEYWORDS;
+  const allGroups = [
+    ...INDIA_METRO_KEYWORDS,
+    ...GUJARAT_KEYWORDS,
+    ...REMEDY_KEYWORDS,
+    ...INTERNATIONAL_NRI_KEYWORDS
+  ];
+
+  const currentList = searchFilter.trim().length > 0
+    ? allGroups
+    : activeTab === 'india'
+    ? INDIA_METRO_KEYWORDS
+    : activeTab === 'gujarat'
+    ? GUJARAT_KEYWORDS
+    : activeTab === 'remedies'
+    ? REMEDY_KEYWORDS
+    : INTERNATIONAL_NRI_KEYWORDS;
 
   const filteredGroups = currentList
     .map((group) => {
@@ -378,8 +765,35 @@ export const SeoKeywordsDirectory: React.FC = () => {
     );
 
   const isFiltering = searchFilter.trim().length > 0;
-  // Keep website sleek and short: show 3 top categories by default, expandable to all on click
-  const visibleGroups = isExpanded || isFiltering ? filteredGroups : filteredGroups.slice(0, 3);
+  // Show 4 top categories by default, expandable to all on click
+  const visibleGroups = isExpanded || isFiltering ? filteredGroups : filteredGroups.slice(0, 4);
+
+  const tabsList = [
+    {
+      id: 'india' as TabType,
+      label: lang === 'hi' ? 'भारत के प्रमुख महानगर' : 'All India Metros',
+      icon: Building2,
+      count: INDIA_METRO_KEYWORDS.length
+    },
+    {
+      id: 'gujarat' as TabType,
+      label: lang === 'hi' ? 'गुजरात के जिले व नगर' : 'Gujarat Districts',
+      icon: MapPin,
+      count: GUJARAT_KEYWORDS.length
+    },
+    {
+      id: 'remedies' as TabType,
+      label: lang === 'hi' ? 'वैदिक समाधान व पूजा' : 'Remedies & Puja',
+      icon: Sparkles,
+      count: REMEDY_KEYWORDS.length
+    },
+    {
+      id: 'international' as TabType,
+      label: lang === 'hi' ? 'विदेश / NRI केंद्र' : 'International NRI',
+      icon: Globe2,
+      count: INTERNATIONAL_NRI_KEYWORDS.length
+    }
+  ];
 
   return (
     <section
@@ -406,65 +820,51 @@ export const SeoKeywordsDirectory: React.FC = () => {
         </h2>
         <p className="text-amber-800 font-semibold text-xs sm:text-sm mt-1">
           {lang === 'hi'
-            ? 'उत्तर भारत, गुजरात व अंतरराष्ट्रीय देशों हेतु प्रमुख प्रामाणिक कीवर्ड्स'
+            ? 'भारत के प्रमुख महानगर, गुजरात के जिले एवं अंतरराष्ट्रीय देशों हेतु शीर्ष प्रामाणिक कीवर्ड्स'
             : lang === 'gu-en'
-            ? 'સ્થાનિક ગુજરાત અને આંતરરાષ્ટ્રીય દેશો મુજબ મુખ્ય જ્યોતિષ શોધ કીવર્ડ્સ'
-            : 'Verified Astrological Search Terms for Gujarat, North India & Worldwide Diaspora'}
+            ? 'ભારતના મુખ્ય શહેરો, સ્થાનિક ગુજરાત અને આંતરરાષ્ટ્રીય દેશો મુજબ મુખ્ય જ્યોતિષ શોધ કીવર્ડ્સ'
+            : 'Verified Astrological Search Terms for All India Metros, Gujarat & Worldwide Diaspora'}
         </p>
         <div className="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-2 rounded-full"></div>
       </div>
 
       {/* Tabs & Search Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6 bg-white border border-amber-200/80 p-2.5 sm:p-3 rounded-2xl shadow-xs">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-3 mb-6 bg-white border border-amber-200/80 p-2.5 sm:p-3 rounded-2xl shadow-xs">
         {/* Tab Toggle Buttons */}
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <button
-            onClick={() => {
-              setActiveTab('local');
-              setSearchFilter('');
-              setIsExpanded(false);
-            }}
-            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
-              activeTab === 'local'
-                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
-                : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
-            }`}
-          >
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'गुजरात व प्रांतीय केंद्र'
-                : lang === 'gu-en'
-                ? 'Gujarat Local SEO'
-                : 'Gujarat & Domestic Centers'}
-            </span>
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab('international');
-              setSearchFilter('');
-              setIsExpanded(false);
-            }}
-            className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
-              activeTab === 'international'
-                ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
-                : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
-            }`}
-          >
-            <Globe2 className="w-3.5 h-3.5 shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'अंतरराष्ट्रीय (NRI Hubs)'
-                : lang === 'gu-en'
-                ? 'International Hubs'
-                : 'International Hubs'}
-            </span>
-          </button>
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 w-full lg:w-auto scrollbar-none">
+          {tabsList.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id && !isFiltering;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setSearchFilter('');
+                  setIsExpanded(false);
+                }}
+                className={`flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl font-bold text-xs transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  isActive
+                    ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
+                    : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <span>{tab.label}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
+                    isActive ? 'bg-amber-800/40 text-amber-100' : 'bg-stone-200/80 text-stone-600'
+                  }`}
+                >
+                  {tab.count}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Live Filter Search Input */}
-        <div className="relative w-full sm:w-64">
+        <div className="relative w-full lg:w-72">
           <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
@@ -472,15 +872,29 @@ export const SeoKeywordsDirectory: React.FC = () => {
             onChange={(e) => setSearchFilter(e.target.value)}
             placeholder={
               lang === 'hi'
-                ? 'शहर या कीवर्ड खोजें...'
+                ? 'कोई भी शहर या कीवर्ड खोजें (जैसे मुंबई, दिल्ली, सूरत)...'
                 : lang === 'gu-en'
-                ? 'શહેર કે કીવર્ડ શોધો...'
-                : 'Search city or keyword...'
+                ? 'કોઈપણ શહેર કે કીવર્ડ શોધો...'
+                : 'Search any city or keyword...'
             }
             className="w-full pl-8 pr-3 py-1.5 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:outline-hidden focus:border-amber-500 focus:bg-white text-stone-900 transition-colors"
           />
         </div>
       </div>
+
+      {isFiltering && (
+        <div className="mb-4 px-2 flex items-center justify-between text-xs text-stone-600">
+          <span>
+            खोज परिणाम: <strong>{filteredGroups.length}</strong> श्रेणियां मिलीं
+          </span>
+          <button
+            onClick={() => setSearchFilter('')}
+            className="text-amber-700 font-bold hover:underline cursor-pointer"
+          >
+            फ़िल्टर हटाएं
+          </button>
+        </div>
+      )}
 
       {/* Grid of Keywords (Compact, Sleek View) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
