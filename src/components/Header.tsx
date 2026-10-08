@@ -17,16 +17,17 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const updateHeight = () => {
-      if (!headerRef.current) return;
-      if (!mobileMenuOpen) {
-        setHeaderHeight(headerRef.current.offsetHeight);
+      if (!headerRef.current || mobileMenuOpen) return;
+      const h = headerRef.current.offsetHeight;
+      if (h > 0 && Math.abs(h - headerHeight) > 2) {
+        setHeaderHeight(h);
       }
     };
 
     updateHeight();
     window.addEventListener('resize', updateHeight);
     return () => window.removeEventListener('resize', updateHeight);
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, headerHeight]);
 
   const navLinks = [
     { name: t.services, href: '#services' },
@@ -53,26 +54,20 @@ export const Header: React.FC = () => {
         {/* 2. Mobile Dedicated Direct Helpline Bar - Phone number fills the full width with larger font */}
         <div className="sm:hidden bg-gradient-to-r from-stone-950 via-zinc-900 to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/30 shadow-xs w-full max-w-full gap-2">
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-            </span>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
             <span className="text-xs font-black uppercase tracking-wider text-amber-300 whitespace-nowrap">
               {t.helpline}
             </span>
           </div>
 
-          {/* Full-width expanding Call Baba Ji button with ANIMATIONS (pulsing, ringing phone & light sweep) */}
+          {/* Full-width expanding Call Baba Ji button */}
           <a
             href={`tel:${CONTACT_INFO.phoneRaw}`}
             title="Direct Call Baba Ji"
-            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 py-1.5 px-3 rounded-full font-black shadow-md active:scale-95 transition-all whitespace-nowrap animate-call-button-pulse relative overflow-hidden ring-1 ring-amber-300/80"
+            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-stone-950 py-1.5 px-3 rounded-full font-black shadow-md active:scale-95 transition-all whitespace-nowrap relative overflow-hidden ring-1 ring-amber-300/80"
           >
-            {/* Shimmering Light Sweep Animation */}
-            <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/45 to-transparent animate-sweep-light pointer-events-none" />
-
-            {/* Ringing / Shaking Phone Icon */}
-            <Phone className="w-4 h-4 xs:w-5 xs:h-5 text-stone-950 shrink-0 fill-stone-950 animate-phone-ring relative z-10" />
+            {/* Phone Icon */}
+            <Phone className="w-4 h-4 xs:w-5 xs:h-5 text-stone-950 shrink-0 fill-stone-950 relative z-10" />
 
             {/* Bold Mobile Number */}
             <span className="tracking-wider font-black text-sm xs:text-base sm:text-lg text-stone-950 relative z-10">
@@ -136,7 +131,7 @@ export const Header: React.FC = () => {
             title="Direct Call Baba Ji - 24/7 Available Worldwide (+91 97141 27309)"
             className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black px-3.5 sm:px-4.5 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-orange-600/30 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border border-amber-300 ring-1 ring-amber-400/30 min-w-max"
           >
-            <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0 animate-bounce" />
+            <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
             <span className="font-sans font-black tracking-wide text-white whitespace-nowrap">
               {CONTACT_INFO.phoneDisplay}
             </span>

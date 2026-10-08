@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
 
         {/* Top Sacred Badge - Guaranteed Single-Line Alignment */}
         <div className="inline-flex items-center justify-center gap-2 bg-white/95 border border-amber-300 px-3.5 sm:px-5 py-1.5 rounded-full backdrop-blur-sm shadow-xs max-w-[95vw]">
-          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 animate-pulse shrink-0" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 shrink-0" />
           <p className="text-amber-900 font-bold uppercase tracking-normal sm:tracking-wide text-[11px] xs:text-xs sm:text-sm whitespace-nowrap truncate">
             विश्व प्रसिद्ध वैदिक ज्योतिषी एवं समस्त समस्या समाधान विशेषज्ञ
           </p>

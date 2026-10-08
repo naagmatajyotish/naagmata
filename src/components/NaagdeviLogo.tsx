@@ -134,12 +134,12 @@ const BlackSerpentSVG: React.FC<{
     <circle cx="80" cy="24" r="2.7" fill={`url(#blackCobraEye-${idSuffix})`} />
     <circle cx="81" cy="23" r="0.9" fill="#ffffff" />
 
-    {/* Animated Forked Tongue (चंचल लाल जिह्वा) */}
-    <g className="animate-tongue">
+    {/* Sacred Red Tongue */}
+    <g className="opacity-90">
       <path
         d="M70 11 L70 -1 M70 -1 L63 -7 M70 -1 L77 -7"
         stroke="#dc2626"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -174,7 +174,7 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
     },
     hero: {
       container: 'w-56 h-56 sm:w-68 sm:h-68 md:w-80 md:h-80',
-      glowSpread: 'blur-3xl scale-130',
+      glowSpread: 'blur-3xl scale-125',
     },
   }[size] || {
     container: 'w-14 h-14',
@@ -183,43 +183,43 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
 
   return (
     <div className={`relative inline-flex items-center justify-center ${className}`}>
-      {/* 1. Divine Aura Radiance (Golden halo contour behind the goddess and snakes) */}
+      {/* 1. Divine Aura Radiance (Calm, steady sacred golden glow - zero flicker) */}
       {glow && (
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-amber-600/30 via-yellow-500/35 to-amber-300/20 ${config.glowSpread} pointer-events-none -z-30 animate-divine-pulse`}
+          className={`absolute inset-0 bg-gradient-to-t from-amber-600/25 via-yellow-500/25 to-amber-300/15 ${config.glowSpread} pointer-events-none -z-30 opacity-90`}
         />
       )}
 
-      {/* 2. Multiple Compact Black Cobras Behind Photo (काले नागों का समूह, माँ के पीछे व आस-पास) */}
+      {/* 2. Multiple Compact Black Cobras Behind Photo (Stably positioned divine serpents) */}
       {showSnakes && (
         <div className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center overflow-visible">
-          {/* Snake 1: Left Upper Black Cobra (Up-Down & Left-Right floating) */}
-          <div className="absolute -left-6 sm:-left-12 md:-left-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 animate-snake-1 pointer-events-none opacity-95">
+          {/* Snake 1: Left Upper Black Cobra */}
+          <div className="absolute -left-6 sm:-left-12 md:-left-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
             <BlackSerpentSVG idSuffix="left-upper" />
           </div>
 
-          {/* Snake 2: Right Upper Black Cobra (Up-Down & Right-Left floating) */}
-          <div className="absolute -right-6 sm:-right-12 md:-right-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 animate-snake-2 pointer-events-none opacity-95">
+          {/* Snake 2: Right Upper Black Cobra */}
+          <div className="absolute -right-6 sm:-right-12 md:-right-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
             <BlackSerpentSVG flip={true} idSuffix="right-upper" />
           </div>
 
-          {/* Snake 3: Left Lower Black Cobra (Deep flanks) */}
-          <div className="absolute -left-4 sm:-left-8 md:-left-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 animate-snake-3 pointer-events-none opacity-90">
+          {/* Snake 3: Left Lower Black Cobra */}
+          <div className="absolute -left-4 sm:-left-8 md:-left-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
             <BlackSerpentSVG idSuffix="left-lower" />
           </div>
 
-          {/* Snake 4: Right Lower Black Cobra (Deep flanks) */}
-          <div className="absolute -right-4 sm:-right-8 md:-right-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 animate-snake-4 pointer-events-none opacity-90">
+          {/* Snake 4: Right Lower Black Cobra */}
+          <div className="absolute -right-4 sm:-right-8 md:-right-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
             <BlackSerpentSVG flip={true} idSuffix="right-lower" />
           </div>
 
-          {/* Snake 5: Crown Center Canopy Black Cobra (Peeking just behind Maa's Golden Crown) */}
-          <div className="absolute -top-10 sm:-top-16 md:-top-20 left-1/2 -translate-x-1/2 w-18 h-36 sm:w-24 sm:h-48 md:w-28 md:h-54 animate-snake-crown pointer-events-none opacity-90">
+          {/* Snake 5: Crown Center Canopy Black Cobra */}
+          <div className="absolute -top-10 sm:-top-16 md:-top-20 left-1/2 -translate-x-1/2 w-18 h-36 sm:w-24 sm:h-48 md:w-28 md:h-54 pointer-events-none opacity-90">
             <BlackSerpentSVG idSuffix="center-crown" />
           </div>
 
           {/* Golden Kundalini Mystical Aura Waves connecting the serpents */}
-          <div className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 w-48 sm:w-64 md:w-80 h-20 sm:h-28 opacity-60 animate-snake-crown pointer-events-none -z-20">
+          <div className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 w-48 sm:w-64 md:w-80 h-20 sm:h-28 opacity-60 pointer-events-none -z-20">
             <svg viewBox="0 0 200 70" fill="none" className="w-full h-full">
               <path
                 d="M15 55 Q55 10 100 8 Q145 10 185 55"
@@ -240,8 +240,8 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
         </div>
       )}
 
-      {/* 3. Forefront: Pure PNG Deity Cutout (Maa Naagdevi - Supreme Deity) */}
-      <div className={`relative ${config.container} animate-divine-float z-10 flex items-center justify-center`}>
+      {/* 3. Forefront: Pure PNG Deity Cutout (Maa Naagdevi - Rock-solid steady and clear) */}
+      <div className={`relative ${config.container} z-10 flex items-center justify-center`}>
         <img
           src={maaNaagdeviImage}
           alt="Maa Naagdevi - Supreme Serpent Goddess"

@@ -18,13 +18,6 @@
 
       gtag('config', 'AW-18450282399');
 
-      // Event snippet for Outbound click conversion
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18450282399/OMiBCOXRnPccEJ_v491E',
-        'value': 1.0,
-        'currency': 'INR'
-      });
-
       // Global Conversion Tracking for Direct Phone Calls and WhatsApp Clicks
       document.addEventListener('click', function(e) {
         var target = e.target && e.target.closest ? e.target.closest('a') : null;
