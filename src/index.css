@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root, [data-theme="light-royal"], html, body {
-  color-scheme: only light !important;
-  color-scheme: light !important;
-  --bg-sanctum: #fdfcf7;
-  --bg-card: #ffffff;
-  --bg-card-subtle: #fefce8;
-  --text-primary: #2a2203;
-  --text-secondary: #544607;
-  --text-muted: #713f12;
-  --border-glow: rgba(202, 138, 4, 0.22);
-  --border-card: rgba(234, 179, 8, 0.25);
-  --accent-primary: #ca8a04;
-  --accent-secondary: #a16207;
-  --hero-grad-from: #fef08a;
-  --hero-grad-via: #fef9c3;
-  --hero-grad-to: #fdfcf7;
-  --scrollbar-track: #fdfcf7;
-  --scrollbar-thumb: #ca8a04;
+:root, [data-theme="royal-saffron"] {
+  color-scheme: dark !important;
+  --bg-sanctum: #160802;
+  --bg-header: #130702;
+  --bg-footer: #100501;
+  --bg-card: #251005;
+  --bg-card-subtle: #331608;
+  --bg-banner: #1d0a03;
+  --text-primary: #fffaf0;
+  --text-secondary: #fed7aa;
+  --text-muted: #e7d5c7;
+  --border-glow: rgba(249, 115, 22, 0.5);
+  --border-card: rgba(234, 88, 12, 0.4);
+  --accent-primary: #ea580c;
+  --accent-secondary: #f97316;
+  --accent-gold: #fbbf24;
+  --hero-grad-from: #260e03;
+  --hero-grad-via: #1a0902;
+  --hero-grad-to: #130601;
+  --banner-grad-from: #1c0a03;
+  --banner-grad-via: #2a1005;
+  --banner-grad-to: #1c0a03;
+  --scrollbar-track: #130601;
+  --scrollbar-thumb: #ea580c;
 }
 
-/* Guard against PC/Mobile OS Dark Mode, Chrome auto-inversion, and High-Contrast forced inversion */
+[data-theme="cosmic-dark"] {
+  color-scheme: dark !important;
+  --bg-sanctum: #090807;
+  --bg-header: #0c0a08;
+  --bg-footer: #0a0907;
+  --bg-card: #151310;
+  --bg-card-subtle: #1e1a16;
+  --bg-banner: #12100d;
+  --text-primary: #fffdf5;
+  --text-secondary: #fef08a;
+  --text-muted: #d6d3d1;
+  --border-glow: rgba(250, 204, 21, 0.45);
+  --border-card: rgba(234, 179, 8, 0.35);
+  --accent-primary: #eab308;
+  --accent-secondary: #f59e0b;
+  --accent-gold: #facc15;
+  --hero-grad-from: #181512;
+  --hero-grad-via: #0e0d0b;
+  --hero-grad-to: #090807;
+  --banner-grad-from: #12100d;
+  --banner-grad-via: #1a1612;
+  --banner-grad-to: #12100d;
+  --scrollbar-track: #090807;
+  --scrollbar-thumb: #eab308;
+}
+
+[data-theme="temple-maroon"] {
+  color-scheme: dark !important;
+  --bg-sanctum: #150508;
+  --bg-header: #120406;
+  --bg-footer: #0e0305;
+  --bg-card: #24080e;
+  --bg-card-subtle: #330c14;
+  --bg-banner: #1c060b;
+  --text-primary: #fffaf0;
+  --text-secondary: #fecdd3;
+  --text-muted: #e2d1d4;
+  --border-glow: rgba(244, 63, 94, 0.45);
+  --border-card: rgba(225, 29, 72, 0.35);
+  --accent-primary: #e11d48;
+  --accent-secondary: #f59e0b;
+  --accent-gold: #fbbf24;
+  --hero-grad-from: #26070e;
+  --hero-grad-via: #1a0509;
+  --hero-grad-to: #120406;
+  --banner-grad-from: #1c060b;
+  --banner-grad-via: #2a0911;
+  --banner-grad-to: #1c060b;
+  --scrollbar-track: #120406;
+  --scrollbar-thumb: #e11d48;
+}
+
+/* Guard against PC/Mobile OS forced inversion */
 *, *::before, *::after {
   forced-color-adjust: none !important;
   -webkit-forced-color-adjust: none !important;
@@ -28,14 +86,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root, html, body, #root, * {
-    color-scheme: only light !important;
+    color-scheme: dark !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }
 
   :root, html, body, #root {
-    background-color: #fdfcf7 !important;
-    color: #2a2203 !important;
+    background-color: var(--bg-sanctum, #160802) !important;
+    color: var(--text-primary, #fffaf0) !important;
   }
 
   /* Prevent browser from inverting images, badges, logos, and graphics */
@@ -45,9 +103,9 @@
     filter: none !important;
   }
 
-  /* Keep input fields and buttons clean light-styled */
+  /* Keep input fields and buttons cleanly styled */
   input, select, textarea, button, option {
-    color-scheme: only light !important;
+    color-scheme: dark !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }
@@ -60,23 +118,21 @@
     overflow-x: hidden;
     position: relative;
     -webkit-text-size-adjust: 100%;
-    color-scheme: only light !important;
-    color-scheme: light !important;
+    color-scheme: dark !important;
     forced-color-adjust: none !important;
   }
 
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-sanctum, #fdfcf7) !important;
-    color: var(--text-primary, #2a2203) !important;
+    background-color: var(--bg-sanctum, #160802) !important;
+    color: var(--text-primary, #fffaf0) !important;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
     margin: 0;
     padding: 0;
-    color-scheme: only light !important;
-    color-scheme: light !important;
+    color-scheme: dark !important;
     forced-color-adjust: none !important;
   }
 
@@ -85,16 +141,14 @@
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: #fdfcf7 !important;
-    color: #2a2203 !important;
-    color-scheme: only light !important;
-    color-scheme: light !important;
+    background-color: var(--bg-sanctum, #160802) !important;
+    color: var(--text-primary, #fffaf0) !important;
+    color-scheme: dark !important;
   }
 
-  /* Ensure form controls do not auto-invert in dark mode */
+  /* Ensure form controls stay dark-themed */
   input, select, textarea, button, option {
-    color-scheme: only light !important;
-    color-scheme: light !important;
+    color-scheme: dark !important;
     forced-color-adjust: none !important;
     -webkit-forced-color-adjust: none !important;
   }

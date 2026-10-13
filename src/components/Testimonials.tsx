@@ -94,8 +94,8 @@ export const Testimonials: React.FC = () => {
     <section id="testimonials" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-hidden">
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs text-amber-300 font-bold uppercase tracking-widest mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>
             {lang === 'hi'
               ? 'सच्चे भक्तों के अनुभव व माँ का आशीर्वाद'
@@ -104,7 +104,7 @@ export const Testimonials: React.FC = () => {
               : 'Real Devotee Experiences & Blessings'}
           </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-snug">
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-snug">
           {lang === 'hi'
             ? 'बिछड़े प्रेमियों व परिवारों के पुनर्मिलन की सत्य गाथाएं'
             : lang === 'gu-en'
@@ -112,7 +112,7 @@ export const Testimonials: React.FC = () => {
             : 'True Stories of Reunited Lovers & Restored Families'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p className="text-stone-300 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
           {lang === 'hi'
             ? '१४,८००+ भारतीय एवं वैश्विक एनआरआई परिवारों ने पूज्य बाबा जी के वैदिक मार्गदर्शन से दांपत्य सुख व मानसिक शांति प्राप्त की है।'
             : lang === 'gu-en'
@@ -121,7 +121,7 @@ export const Testimonials: React.FC = () => {
         </p>
 
         {/* Category Filters - Structured Responsive Alignment */}
-        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-100/90 rounded-2xl sm:rounded-full border border-stone-200/90 shadow-inner">
+        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-900/90 rounded-2xl sm:rounded-full border border-amber-500/30 shadow-inner">
           <div className="flex flex-wrap items-center justify-center gap-2">
             {categoryOptions.map((cat) => {
               const isSelected = activeCategory === cat.id;
@@ -132,8 +132,8 @@ export const Testimonials: React.FC = () => {
                   onClick={() => handleCategoryChange(cat.id as CategoryFilter)}
                   className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer text-center inline-flex items-center justify-center select-none shrink-0 ${
                     isSelected
-                      ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-black shadow-md shadow-amber-500/30 border border-amber-300 ring-2 ring-amber-400/20'
-                      : 'bg-white text-stone-700 hover:text-amber-950 hover:bg-amber-50/70 border border-stone-200 shadow-2xs hover:border-amber-300'
+                      ? 'bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 text-white font-black shadow-md shadow-orange-600/30 border border-yellow-300 ring-2 ring-yellow-400/20'
+                      : 'bg-stone-800 text-stone-200 hover:text-yellow-300 hover:bg-stone-750 border border-stone-700 shadow-2xs hover:border-amber-400'
                   }`}
                 >
                   <span className="whitespace-nowrap">{cat.label}</span>
@@ -148,9 +148,9 @@ export const Testimonials: React.FC = () => {
       <div 
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className="max-w-4xl mx-auto bg-gradient-to-br from-white via-[#fffdf9] to-[#fefbf2] border-2 border-amber-200/90 rounded-3xl p-6 sm:p-10 relative shadow-xl shadow-amber-500/10 mb-12 transition-all"
+        className="max-w-4xl mx-auto bg-gradient-to-br from-[#181512] via-[#12100e] to-[#0d0c0a] border-2 border-amber-500/40 rounded-3xl p-6 sm:p-10 relative shadow-2xl shadow-black/80 mb-12 transition-all text-stone-200"
       >
-        <Quote className="w-20 h-20 text-amber-200/40 absolute top-6 right-6 pointer-events-none" />
+        <Quote className="w-12 h-12 sm:w-20 sm:h-20 text-amber-500/20 absolute top-4 right-4 sm:top-6 sm:right-6 pointer-events-none" />
 
         {/* Top Badges & Ratings */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
@@ -160,7 +160,7 @@ export const Testimonials: React.FC = () => {
                 <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span className="text-xs font-black text-stone-900 bg-amber-100/80 px-2 py-0.5 rounded-full border border-amber-300">
+            <span className="text-xs font-black text-yellow-200 bg-stone-900 px-2 py-0.5 rounded-full border border-amber-500/40">
               {lang === 'hi'
                 ? '५.० प्रमाणित वैदिक समीक्षा'
                 : lang === 'gu-en'
@@ -170,20 +170,20 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold px-2.5 py-1 bg-stone-100 border border-stone-200 text-stone-700 rounded-full flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-amber-600" />
+            <span className="text-xs font-semibold px-2.5 py-1 bg-stone-800 border border-stone-700 text-stone-300 rounded-full flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-amber-400" />
               <span>{activeItem.date}</span>
             </span>
-            <span className="text-xs font-bold px-3 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-full flex items-center gap-1.5 shadow-2xs">
-              <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="text-xs font-bold px-3 py-1 bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 rounded-full flex items-center gap-1.5 shadow-2xs">
+              <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
               <span>{activeItem.solutionTime}</span>
             </span>
           </div>
         </div>
 
         {/* Problem Title Badge */}
-        <div className="mb-4 inline-flex items-center gap-1.5 bg-rose-50 border border-rose-200 px-3 py-1 rounded-xl text-xs font-bold text-rose-900">
-          <HeartHandshake className="w-3.5 h-3.5 text-rose-600" />
+        <div className="mb-4 inline-flex items-center gap-1.5 bg-rose-950/40 border border-rose-500/30 px-3 py-1 rounded-xl text-xs font-bold text-rose-300">
+          <HeartHandshake className="w-3.5 h-3.5 text-rose-400" />
           <span>
             {lang === 'hi'
               ? `विषय: ${activeItem.problem}`
@@ -195,26 +195,26 @@ export const Testimonials: React.FC = () => {
 
         {/* Testimonial Quote Text with Fade Transition */}
         <div className="min-h-[110px] sm:min-h-[90px] flex items-center">
-          <p className="text-stone-800 text-base sm:text-lg md:text-xl leading-relaxed italic font-normal relative z-10 transition-opacity duration-300">
+          <p className="text-stone-200 text-base sm:text-lg md:text-xl leading-relaxed italic font-normal relative z-10 transition-opacity duration-300">
             "{activeItem.review}"
           </p>
         </div>
 
         {/* Client Details Footer */}
-        <div className="flex items-center justify-between pt-6 mt-6 border-t border-amber-100 flex-wrap gap-4 relative z-10">
+        <div className="flex items-center justify-between pt-6 mt-6 border-t border-stone-800 flex-wrap gap-4 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-600 to-orange-500 text-white font-extrabold flex items-center justify-center text-sm shadow-md border-2 border-white">
+            <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 text-stone-950 font-black flex items-center justify-center text-sm shadow-md border-2 border-yellow-200">
               {activeItem.clientName.split(' ')[0][0]}
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <h4 className="heading-mystic text-base sm:text-lg font-bold text-stone-900">
+                <h4 className="heading-mystic text-base sm:text-lg font-bold text-white">
                   {activeItem.clientName}
                 </h4>
                 {activeItem.flag && <span className="text-base">{activeItem.flag}</span>}
               </div>
-              <span className="text-xs text-stone-500 font-medium flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-amber-600" />
+              <span className="text-xs text-stone-400 font-medium flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-amber-400" />
                 <span>{activeItem.location}</span>
               </span>
             </div>
@@ -225,18 +225,18 @@ export const Testimonials: React.FC = () => {
             <button
               type="button"
               onClick={prevSlide}
-              className="p-2.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all cursor-pointer active:scale-95 shadow-2xs"
+              className="p-2.5 rounded-full bg-stone-800 hover:bg-stone-700 text-yellow-300 border border-amber-500/40 transition-all cursor-pointer active:scale-95 shadow-md"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <span className="text-xs font-extrabold text-stone-500 px-1">
+            <span className="text-xs font-extrabold text-stone-400 px-1">
               {currentIndex + 1} / {filteredTestimonials.length}
             </span>
             <button
               type="button"
               onClick={nextSlide}
-              className="p-2.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all cursor-pointer active:scale-95 shadow-2xs"
+              className="p-2.5 rounded-full bg-stone-800 hover:bg-stone-700 text-yellow-300 border border-amber-500/40 transition-all cursor-pointer active:scale-95 shadow-md"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />
@@ -250,7 +250,7 @@ export const Testimonials: React.FC = () => {
         {filteredTestimonials.slice(0, 3).map((item) => (
           <div
             key={item.id}
-            className="bg-white p-6 rounded-3xl border border-amber-200/80 flex flex-col justify-between shadow-xs hover:border-amber-400 hover:shadow-md transition-all duration-300"
+            className="bg-stone-900/90 p-6 rounded-3xl border border-amber-500/30 flex flex-col justify-between shadow-xl shadow-black/50 hover:border-amber-400 transition-all duration-300 text-stone-200"
           >
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -260,29 +260,29 @@ export const Testimonials: React.FC = () => {
                   ))}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] text-emerald-700 font-extrabold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
-                    <CheckCircle className="w-2.5 h-2.5 text-emerald-600" />
+                  <span className="text-[10px] text-emerald-300 font-extrabold bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40 flex items-center gap-1">
+                    <CheckCircle className="w-2.5 h-2.5 text-emerald-400" />
                     <span>{item.solutionTime}</span>
                   </span>
                 </div>
               </div>
 
-              <div className="text-[11px] font-bold text-amber-800 mb-2 truncate">
+              <div className="text-[11px] font-bold text-amber-300 mb-2 truncate">
                 {item.problem}
               </div>
 
-              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4 italic line-clamp-4">
+              <p className="text-stone-300 text-xs sm:text-sm leading-relaxed mb-4 italic line-clamp-4">
                 "{item.review}"
               </p>
             </div>
 
-            <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
+            <div className="pt-3 border-t border-stone-800 flex items-center justify-between">
               <div>
-                <span className="font-bold text-stone-900 text-sm flex items-center gap-1">
+                <span className="font-bold text-white text-sm flex items-center gap-1">
                   <span>{item.clientName}</span>
                   {item.flag && <span>{item.flag}</span>}
                 </span>
-                <span className="text-[11px] text-stone-500">
+                <span className="text-[11px] text-stone-400">
                   {item.location}
                 </span>
               </div>

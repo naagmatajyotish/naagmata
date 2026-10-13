@@ -351,13 +351,11 @@ export const AuraEnergyScanner: React.FC = () => {
             <div className="pt-2">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-extrabold text-sm sm:text-base shadow-lg transition-transform active:scale-98 cursor-pointer border border-yellow-300"
+                className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-black shadow-lg transition-transform active:scale-98 cursor-pointer border-2 border-yellow-300 min-h-[58px]"
               >
-                <Phone className="w-5 h-5 text-stone-950 animate-bounce" />
-                <span>
-                  {lang === 'hi'
-                    ? `ऊर्जा दोष निवारण हेतु सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
-                    : 'Call Baba Ji Directly for Remedy'}
+                <Phone className="w-6 h-6 text-stone-950 animate-bounce shrink-0" />
+                <span className="font-black tracking-wider text-xl sm:text-2xl whitespace-nowrap">
+                  {CONTACT_INFO.phoneDisplay}
                 </span>
               </a>
             </div>

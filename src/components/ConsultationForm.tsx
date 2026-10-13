@@ -61,46 +61,47 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
   };
 
   return (
-    <section id="consultation" className="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden">
-      <div className="bg-white rounded-3xl border border-amber-200/90 p-6 sm:p-10 relative overflow-hidden shadow-xl shadow-amber-500/5 transition-colors duration-400 w-full">
+    <section id="consultation" className="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden text-white">
+      <div className="bg-stone-900/95 rounded-3xl border border-amber-500/30 p-6 sm:p-10 relative overflow-hidden shadow-2xl shadow-black/80 transition-colors duration-400 w-full">
         <div 
           className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 rounded-full blur-2xl pointer-events-none opacity-20"
           style={{ backgroundColor: 'var(--accent-primary, #d97706)' }}
         ></div>
 
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-semibold mb-3">
-            <Lock className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 bg-stone-800 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs text-amber-300 font-semibold mb-3">
+            <Lock className="w-3.5 h-3.5 text-amber-400" />
             <span>{t.badge}</span>
           </div>
 
-          <h3 className="heading-mystic text-2xl sm:text-4xl font-extrabold text-stone-900 mb-2">
+          <h3 className="heading-mystic text-2xl sm:text-4xl font-extrabold text-white mb-2">
             {t.title}
           </h3>
-          <p className="text-stone-600 text-sm max-w-lg mx-auto">
+          <p className="text-stone-300 text-sm max-w-lg mx-auto">
             {t.subtitle}
           </p>
         </div>
 
         {isSubmitted ? (
-          <div className="text-center py-8 space-y-4 bg-amber-50/60 border border-amber-200 rounded-2xl p-6">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+          <div className="text-center py-8 space-y-4 bg-stone-950/90 border border-amber-500/40 rounded-2xl p-6">
+            <div className="w-16 h-16 bg-emerald-950 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/40">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="heading-mystic text-xl font-bold text-stone-900">आपका परामर्श अनुरोध सफलतापूर्वक प्राप्त हो गया है</h4>
-            <p className="text-stone-600 text-sm max-w-md mx-auto">
-              आपकी समस्त जानकारी १००% पूर्णतः गोपनीय रखी गई है। पूज्य बाबाजी शीघ्र ही आपकी ग्रह स्थिति का परीक्षण कर आपसे संपर्क करेंगे। तत्काल मार्गदर्शन हेतु आप अभी सीधा फोन कॉल भी कर सकते हैं।
+            <h4 className="heading-mystic text-xl font-bold text-white">आपका परामर्श अनुरोध सफलतापूर्वक प्राप्त हो गया है</h4>
+            <p className="text-stone-300 text-sm max-w-md mx-auto">
+              आपकी समस्त जानकारी १००% पूर्णतः गोपनीय रखी गई है। पूज्य बाबाजी शीघ्र ही आपकी ग्रह स्थिति का परीक्षण कर आपसे संपर्क करेंगे। तत्काल मार्गदर्शन हेल्पलाइन: {CONTACT_INFO.phoneDisplay}
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-extrabold py-3 px-6 rounded-xl text-sm shadow-md"
+                className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-black py-3.5 px-6 rounded-xl text-base sm:text-lg shadow-md border border-yellow-300"
               >
-                <Phone className="w-4 h-4" /> सीधा फोन करें: {CONTACT_INFO.phoneDisplay}
+                <Phone className="w-5 h-5 animate-bounce shrink-0" />
+                <span>{CONTACT_INFO.phoneDisplay}</span>
               </a>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium py-3 px-6 rounded-xl text-sm transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-stone-800 hover:bg-stone-700 text-stone-200 font-medium py-3 px-6 rounded-xl text-sm transition-colors cursor-pointer border border-stone-700"
               >
                 अन्य विवरण भेजें
               </button>
@@ -110,8 +111,8 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  {t.nameLabel} <span className="text-amber-600">*</span>
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
+                  {t.nameLabel} <span className="text-amber-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -119,13 +120,13 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                   placeholder="e.g. Rahul Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                  className="w-full bg-stone-950/80 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 placeholder-stone-500 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  {t.phoneLabel} <span className="text-amber-600">*</span>
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
+                  {t.phoneLabel} <span className="text-amber-400">*</span>
                 </label>
                 <input
                   type="tel"
@@ -133,43 +134,43 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                   placeholder="+91 98765 43210"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                  className="w-full bg-stone-950/80 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 placeholder-stone-500 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  {t.problemTypeLabel} <span className="text-amber-600">*</span>
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
+                  {t.problemTypeLabel} <span className="text-amber-400">*</span>
                 </label>
                 <select
                   value={formData.problemType}
                   onChange={(e) => setFormData({ ...formData, problemType: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                  className="w-full bg-stone-950/80 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                 >
                   {t.problemOptions && t.problemOptions.length > 0 ? (
                     t.problemOptions.map((opt, i) => (
-                      <option key={i} value={opt.value}>
+                      <option key={i} value={opt.value} className="bg-stone-900 text-stone-100">
                         {opt.label}
                       </option>
                     ))
                   ) : (
                     <>
-                      <option value="Lost Love Problem & Relationship Solutions">Lost Love Problem & Relationship Solutions</option>
-                      <option value="Intercaste Love Marriage & Family Consent">Intercaste Love Marriage & Family Consent</option>
-                      <option value="Husband-Wife Dispute & Marital Peace">Husband-Wife Dispute & Marital Peace</option>
-                      <option value="Relationship Compatibility & Kundali Matching">Relationship Compatibility & Kundali Matching</option>
-                      <option value="Negative Energy Cleansing & Protection Puja">Negative Energy Cleansing & Protection Puja</option>
-                      <option value="Career, Business & Financial Astrology">Career, Business & Financial Astrology</option>
-                      <option value="Planetary Dosha Shanti (Manglik, Kaal Sarp)">Planetary Dosha Shanti (Manglik, Kaal Sarp)</option>
+                      <option value="Lost Love Problem & Relationship Solutions" className="bg-stone-900 text-stone-100">Lost Love Problem & Relationship Solutions</option>
+                      <option value="Intercaste Love Marriage & Family Consent" className="bg-stone-900 text-stone-100">Intercaste Love Marriage & Family Consent</option>
+                      <option value="Husband-Wife Dispute & Marital Peace" className="bg-stone-900 text-stone-100">Husband-Wife Dispute & Marital Peace</option>
+                      <option value="Relationship Compatibility & Kundali Matching" className="bg-stone-900 text-stone-100">Relationship Compatibility & Kundali Matching</option>
+                      <option value="Negative Energy Cleansing & Protection Puja" className="bg-stone-900 text-stone-100">Negative Energy Cleansing & Protection Puja</option>
+                      <option value="Career, Business & Financial Astrology" className="bg-stone-900 text-stone-100">Career, Business & Financial Astrology</option>
+                      <option value="Planetary Dosha Shanti (Manglik, Kaal Sarp)" className="bg-stone-900 text-stone-100">Planetary Dosha Shanti (Manglik, Kaal Sarp)</option>
                     </>
                   )}
                 </select>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
                   {lang === 'hi' ? 'साथी / जीवनसाथी का नाम (वैकल्पिक)' : lang === 'gu-en' ? 'સાથીદાર / જીવનસાથીનું નામ (ઓપ્શનલ)' : 'Partner / Spouse Name (Optional)'}
                 </label>
                 <input
@@ -177,14 +178,14 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                   placeholder="e.g. Priya"
                   value={formData.partnerName}
                   onChange={(e) => setFormData({ ...formData, partnerName: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                  className="w-full bg-stone-950/80 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 placeholder-stone-500 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
                   {lang === 'hi' ? 'जन्म तिथि' : lang === 'gu-en' ? 'જન્મ તારીખ' : 'Date of Birth'}
                 </label>
                 <div className="relative flex items-center">
@@ -192,14 +193,14 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                     type="date"
                     value={formData.dob}
                     onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
-                    className="w-full h-12 bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 text-stone-900 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                    className="w-full h-12 bg-stone-950/80 border border-stone-800 rounded-xl pl-10 pr-4 text-stone-100 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                   />
-                  <Calendar className="w-4 h-4 text-amber-700 absolute left-3.5 pointer-events-none" />
+                  <Calendar className="w-4 h-4 text-amber-400 absolute left-3.5 pointer-events-none" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
                   {t.cityLabel}
                 </label>
                 <input
@@ -207,13 +208,13 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                   placeholder={t.cityPlaceholder || "e.g. Ahmedabad, Delhi, London, New York"}
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full h-12 bg-stone-50 border border-stone-200 rounded-xl px-4 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none"
+                  className="w-full h-12 bg-stone-950/80 border border-stone-800 rounded-xl px-4 text-stone-100 placeholder-stone-500 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-1.5">
                 {t.detailsLabel}
               </label>
               <textarea
@@ -221,27 +222,27 @@ ${formData.details || 'तत्काल वैदिक समाधान ए
                 placeholder={t.detailsPlaceholder || "Explain what is happening..."}
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 text-sm focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all outline-none resize-none"
+                className="w-full bg-stone-950/80 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 placeholder-stone-500 text-sm focus:bg-stone-900 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all outline-none resize-none"
               ></textarea>
             </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-6 rounded-xl flex items-center justify-center space-x-2 text-base shadow-lg shadow-amber-500/25 transition-all cursor-pointer transform hover:-translate-y-0.5"
+                className="w-full min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black py-4 px-6 rounded-2xl flex items-center justify-center space-x-2 text-base sm:text-lg shadow-lg shadow-amber-500/30 transition-all cursor-pointer transform hover:-translate-y-0.5 border-2 border-yellow-200 ring-2 ring-yellow-400/20 active:scale-98"
               >
-                <Send className="w-5 h-5 text-white" />
+                <Send className="w-5 h-5 text-stone-950" />
                 <span>पवित्र वैदिक परामर्श अनुरोध भेजें</span>
               </button>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 pt-2 text-xs text-stone-500 font-medium text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 pt-2 text-xs text-stone-400 font-medium text-center">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> Strictly Confidential & Encrypted
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Strictly Confidential & Encrypted
               </span>
               <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Initial Kundali Guidance
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Initial Kundali Guidance
               </span>
             </div>
 

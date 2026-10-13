@@ -130,7 +130,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       testimonials: 'અનુભવો',
       faq: 'પ્રશ્નોત્તરી',
       contact: 'સંપર્ક',
-      callNow: 'Direct Call',
+      callNow: '+91 97141 27309',
       whatsapp: 'WhatsApp',
       helpline: '24/7 HELPLINE:'
     },
@@ -144,7 +144,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       santanTag: '✨ સંતાન સદ્બુદ્ધિ, આજ્ઞાકારિતા અને ખોટી સંગત/મોબાઇલ વ્યસન મુક્તિ વૈદિક અનુષ્ઠાન',
       guptDhanTag: '💰 વિશેષ સાધના: ગુપ્ત ધન અને ગડેલું ધન પ્રાપ્તિ સિદ્ધિ • નાગ રક્ષક દોષ નિવારણ અને અકસ્માત ધનલાભ',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
-      helplineTag: '📞 24/7 Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
+      helplineTag: '📞 24/7 Helpline: +91 97141 27309'
     },
     hero: {
       badge: 'World Renowned Vedic Astrologer & Love Problem Specialist',
@@ -156,9 +156,9 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge2: '100% Strictly Confidential',
       badge3: 'સાત્વિક હવન & પૂજા',
       badge4: '35+ Yrs Experience',
-      callCta: 'Direct Call Baba Ji: +91 97141 27309',
+      callCta: '+91 97141 27309',
       whatsappCta: 'Chat With Baba Ji on WhatsApp',
-      preferenceNotice: 'Direct Phone Call Preferred for Immediate Solution • તાત્કાલિક માર્ગદર્શન',
+      preferenceNotice: '24/7 Helpline: +91 97141 27309 • તાત્કાલિક માર્ગદર્શન',
       subActivity: 'Shri Maa Naagdevi Siddha Peeth: Over 14,800+ Devotees Guided Across Gujarat, USA, UK & Worldwide'
     },
     form: {
@@ -189,7 +189,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       ],
       detailsLabel: 'સમસ્યાની ટૂંકી વિગત (Brief Issue Details)',
       detailsPlaceholder: 'તમારા પ્રશ્ન કે પરિસ્થિતિ વિશે ટૂંકમાં જણાવો...',
-      submitCall: 'સીધો કૉલ કરો (Direct Call Baba Ji)',
+      submitCall: '+91 97141 27309',
       submitWhatsApp: 'WhatsApp પર વિગત મોકલો',
       guaranteeText: 'તમારી માહિતી 100% સુરક્ષિત અને ગુપ્ત રહેશે • No Information Shared'
     },
@@ -233,7 +233,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge: 'Direct Connect',
       title: 'બાબાજી સાથે સીધો સંપર્ક કરો',
       subtitle: 'કોઈપણ સંકોચ વિના અત્યારે જ ફોન કૉલ અથવા વૉટ્સએપ દ્વારા માર્ગદર્શન મેળવો',
-      directCall: 'સીધો ફોન કૉલ (Direct Call)',
+      directCall: '+91 97141 27309',
       chatWhatsapp: 'WhatsApp ચેટ (Chat on WhatsApp)',
       ashramLocation: 'સિદ્ધ પીઠ આશ્રમ સ્થળ:',
       hours: 'ઉપલબ્ધ સમય: ૨૪ કલાક / ૭ દિવસ લાઈવ સપોર્ટ'
@@ -252,7 +252,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       testimonials: 'भक्तों के अनुभव',
       faq: 'प्रश्नोत्तरी',
       contact: 'संपर्क',
-      callNow: 'सीधा फोन करें',
+      callNow: '+91 97141 27309',
       whatsapp: 'व्हाट्सएप',
       helpline: '24/7 हेल्पलाइन:'
     },
@@ -266,7 +266,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       santanTag: '✨ संतान सद्बुद्धि, आज्ञाकारिता एवं गलत संगति/मोबाइल लत निवारण वैदिक अनुष्ठान',
       guptDhanTag: '💰 विशेष साधना: गुप्त धन व गड़ा धन सिद्धि • नाग रक्षक दोष निवारण एवं अकस्मात धन वर्षा अनुष्ठान',
       trustTag: '🔒 35+ वर्षों की प्रामाणिक परंपरा — 100% गोपनीय एवं शास्त्रसम्मत परामर्श',
-      helplineTag: '📞 24/7 हेल्पलाइन: +91 97141 27309 (सीधा फोन कॉल करें बाबाजी)'
+      helplineTag: '📞 24/7 हेल्पलाइन: +91 97141 27309'
     },
     hero: {
       badge: 'विश्व प्रसिद्ध वैदिक ज्योतिषी एवं प्रेम समस्या विशेषज्ञ',
@@ -278,9 +278,9 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge2: '100% पूर्णतः गोपनीय',
       badge3: 'सात्विक हवन अनुष्ठान',
       badge4: '35+ वर्षों का अनुभव',
-      callCta: 'सीधा फोन करें बाबाजी को: +91 97141 27309',
+      callCta: '+91 97141 27309',
       whatsappCta: 'व्हाट्सएप पर बात करें',
-      preferenceNotice: 'तत्काल एवं सटीक समाधान हेतु सीधा फोन कॉल करें • 24/7 निःशुल्क प्रारंभिक परामर्श',
+      preferenceNotice: '24/7 हेल्पलाइन: +91 97141 27309 • 24/7 निःशुल्क प्रारंभिक परामर्श',
       subActivity: 'श्री माँ नागदेवी सिद्ध पीठ: उत्तर भारत, गुजरात एवं विदेश (USA, UK) के 14,800+ भक्तों का अटूट विश्वास'
     },
     form: {
@@ -311,7 +311,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       ],
       detailsLabel: 'अपनी समस्या का संक्षिप्त विवरण',
       detailsPlaceholder: 'अपनी स्थिति अथवा प्रश्न के बारे में संक्षेप में लिखें...',
-      submitCall: 'सीधा कॉल करें (Direct Call)',
+      submitCall: '+91 97141 27309',
       submitWhatsApp: 'व्हाट्सएप पर विवरण भेजें',
       guaranteeText: 'आपकी पहचान 100% गुप्त और सुरक्षित रहेगी • कोई जानकारी साझा नहीं की जाती'
     },
@@ -355,7 +355,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge: 'सीधा संपर्क',
       title: 'बाबाजी से सीधा संपर्क करें',
       subtitle: 'बिना किसी संकोच के अभी फोन कॉल या व्हाट्सएप द्वारा मार्गदर्शन प्राप्त करें',
-      directCall: 'सीधा फोन कॉल करें',
+      directCall: '+91 97141 27309',
       chatWhatsapp: 'व्हाट्सएप पर बात करें',
       ashramLocation: 'सिद्ध पीठ आश्रम स्थान:',
       hours: 'उपलब्ध समय: 24 घंटे / 7 दिन लाइव सपोर्ट'
@@ -374,7 +374,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       testimonials: 'Testimonials',
       faq: 'FAQ',
       contact: 'Contact',
-      callNow: 'Direct Call',
+      callNow: '+91 97141 27309',
       whatsapp: 'WhatsApp',
       helpline: '24/7 HELPLINE:'
     },
@@ -388,7 +388,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       santanTag: '✨ Child Guidance, Obedience, Screen Addiction & Bad Company Relief Ritual',
       guptDhanTag: '💰 Sacred Sadhana: Gupt Dhan & Hidden Wealth Siddhi • Naag Rakshak Dosha Shanti & Kuber Blessing',
       trustTag: '🔒 35+ Years of Proven Vedic Lineage — Strictly Confidential Astrological Consultations',
-      helplineTag: '📞 24/7 Global Helpline: +91 97141 27309 (Call / WhatsApp Baba Ji)'
+      helplineTag: '📞 24/7 Global Helpline: +91 97141 27309'
     },
     hero: {
       badge: 'World Renowned Vedic Astrologer & Love Problem Specialist',
@@ -400,9 +400,9 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge2: 'Strictly Confidential',
       badge3: 'Sattvic Havans',
       badge4: '35+ Yrs Experience',
-      callCta: 'Direct Call Baba Ji: +91 97141 27309',
+      callCta: '+91 97141 27309',
       whatsappCta: 'Chat With Baba Ji on WhatsApp',
-      preferenceNotice: 'Direct Phone Call Preferred for Immediate Solution • 24/7 Complimentary Initial Guidance',
+      preferenceNotice: '24/7 Helpline: +91 97141 27309 • 24/7 Complimentary Initial Guidance',
       subActivity: 'Shri Maa Naagdevi Siddha Peeth: Over 14,800+ Devotees Guided Across USA, UK, Canada & Worldwide'
     },
     form: {
@@ -433,7 +433,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       ],
       detailsLabel: 'Brief Details of Your Situation',
       detailsPlaceholder: 'Briefly explain your concern or questions for Baba Ji...',
-      submitCall: 'Direct Call Baba Ji',
+      submitCall: '+91 97141 27309',
       submitWhatsApp: 'Send Details via WhatsApp',
       guaranteeText: '100% Confidential & Secure • No Personal Information is Ever Shared'
     },
@@ -477,7 +477,7 @@ export const TRANSLATIONS: Record<'gu-en' | 'hi' | 'en', SectionTranslations> = 
       badge: 'Direct Connect',
       title: 'Connect Directly With Baba Ji',
       subtitle: 'Feel free to reach out anytime via direct phone call or WhatsApp for guidance',
-      directCall: 'Direct Phone Call',
+      directCall: '+91 97141 27309',
       chatWhatsapp: 'Chat on WhatsApp',
       ashramLocation: 'Siddha Peeth Ashram Sanctum:',
       hours: 'Available Hours: 24 Hours / 7 Days Live Support'

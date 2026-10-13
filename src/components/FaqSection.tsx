@@ -155,10 +155,10 @@ export const FaqSection: React.FC = () => {
   const faqs = getFaqs();
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden">
+    <section id="faq" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto w-full overflow-hidden text-white">
       <div className="text-center mb-14">
-        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
-          <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
+        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs text-amber-300 font-bold uppercase tracking-widest mb-3">
+          <HelpCircle className="w-3.5 h-3.5 text-amber-400" />
           <span>
             {lang === 'hi'
               ? 'जिज्ञासा व शंका समाधान'
@@ -167,7 +167,7 @@ export const FaqSection: React.FC = () => {
               : 'Clear Doubts & Guidance'}
           </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           {lang === 'hi'
             ? 'अक्सर पूछे जाने वाले महत्वपूर्ण प्रश्न'
             : lang === 'gu-en'
@@ -175,7 +175,7 @@ export const FaqSection: React.FC = () => {
             : 'Frequently Asked Questions'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 text-sm sm:text-base">
+        <p className="text-stone-300 mt-4 text-sm sm:text-base">
           {lang === 'hi'
             ? 'वैदिक ज्योतिष, प्रेम व पारिवारिक समस्या समाधान और परामर्श प्रक्रिया के संबंध में संपूर्ण जानकारी।'
             : lang === 'gu-en'
@@ -190,23 +190,23 @@ export const FaqSection: React.FC = () => {
           return (
             <div
               key={faq.id}
-              className="bg-white border border-amber-200/80 rounded-2xl overflow-hidden shadow-xs hover:border-amber-400 transition-all duration-200"
+              className="bg-stone-900/90 border border-amber-500/30 rounded-2xl overflow-hidden shadow-xl shadow-black/50 hover:border-amber-400 transition-all duration-200"
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-stone-50/50 transition-colors cursor-pointer"
+                className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-stone-850 transition-colors cursor-pointer"
                 aria-expanded={isOpen}
               >
-                <span className="heading-mystic text-sm sm:text-base font-bold text-stone-900 pr-2 flex items-center gap-2">
-                  <span className="text-amber-600 font-extrabold">Q.</span> {faq.question}
+                <span className="heading-mystic text-sm sm:text-base font-bold text-white pr-2 flex items-center gap-2">
+                  <span className="text-amber-400 font-extrabold">Q.</span> {faq.question}
                 </span>
-                <span className="p-1.5 rounded-full bg-amber-50 text-amber-700 shrink-0 border border-amber-200">
+                <span className="p-1.5 rounded-full bg-stone-800 text-amber-400 shrink-0 border border-amber-500/40">
                   {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </span>
               </button>
 
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-2 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100 bg-stone-50/60">
+                <div className="px-5 sm:px-6 pb-6 pt-2 text-xs sm:text-sm text-stone-300 leading-relaxed border-t border-stone-800 bg-stone-950/70">
                   <p>{faq.answer}</p>
                 </div>
               )}
@@ -215,7 +215,7 @@ export const FaqSection: React.FC = () => {
         })}
       </div>
 
-      <div className="text-center mt-8 text-xs text-stone-500 font-medium">
+      <div className="text-center mt-8 text-xs text-stone-400 font-medium">
         {lang === 'hi'
           ? 'क्या आपके मन में कोई अन्य विशेष प्रश्न है? बाबा जी से WhatsApp या फोन पर सीधे निःसंकोच बात करें।'
           : lang === 'gu-en'

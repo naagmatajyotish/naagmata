@@ -194,22 +194,22 @@ export const NaagdeviLogo: React.FC<NaagdeviLogoProps> = ({
       {showSnakes && (
         <div className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center overflow-visible">
           {/* Snake 1: Left Upper Black Cobra */}
-          <div className="absolute -left-6 sm:-left-12 md:-left-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
+          <div className="absolute -left-2 xs:-left-5 sm:-left-12 md:-left-16 -top-2 sm:-top-6 w-16 h-32 xs:w-20 xs:h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
             <BlackSerpentSVG idSuffix="left-upper" />
           </div>
 
           {/* Snake 2: Right Upper Black Cobra */}
-          <div className="absolute -right-6 sm:-right-12 md:-right-16 -top-2 sm:-top-6 w-20 h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
+          <div className="absolute -right-2 xs:-right-5 sm:-right-12 md:-right-16 -top-2 sm:-top-6 w-16 h-32 xs:w-20 xs:h-40 sm:w-28 sm:h-52 md:w-32 md:h-60 pointer-events-none opacity-95">
             <BlackSerpentSVG flip={true} idSuffix="right-upper" />
           </div>
 
           {/* Snake 3: Left Lower Black Cobra */}
-          <div className="absolute -left-4 sm:-left-8 md:-left-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
+          <div className="absolute -left-2 xs:-left-4 sm:-left-8 md:-left-10 top-16 sm:top-24 md:top-32 w-14 h-28 xs:w-16 xs:h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
             <BlackSerpentSVG idSuffix="left-lower" />
           </div>
 
           {/* Snake 4: Right Lower Black Cobra */}
-          <div className="absolute -right-4 sm:-right-8 md:-right-10 top-16 sm:top-24 md:top-32 w-16 h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
+          <div className="absolute -right-2 xs:-right-4 sm:-right-8 md:-right-10 top-16 sm:top-24 md:top-32 w-14 h-28 xs:w-16 xs:h-34 sm:w-22 sm:h-44 md:w-26 md:h-50 pointer-events-none opacity-90">
             <BlackSerpentSVG flip={true} idSuffix="right-lower" />
           </div>
 

@@ -202,20 +202,20 @@ export const ServicesSection: React.FC = () => {
 
       {/* Section Header */}
       <div className="text-center mb-10 sm:mb-12 px-3">
-        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold text-amber-800 uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/50 px-3.5 py-1 rounded-full text-xs font-bold text-yellow-300 uppercase tracking-widest mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
           <span>{t.badge}</span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
+        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           {t.title}
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2">
+        <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto mt-4 rounded-full"></div>
+        <p className="text-stone-300 mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2">
           {t.subtitle}
         </p>
 
         {/* Category Filters - Structured Responsive Alignment */}
-        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-100/90 rounded-2xl sm:rounded-full border border-stone-200/90 shadow-inner">
+        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-900/90 rounded-2xl sm:rounded-full border border-stone-800 shadow-inner">
           <div className="flex flex-wrap items-center justify-center gap-2">
             {categoryTabs.map(tab => (
               <button
@@ -223,8 +223,8 @@ export const ServicesSection: React.FC = () => {
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
                 className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer text-center inline-flex items-center justify-center select-none shrink-0 ${
                   activeTab === tab.id
-                    ? 'bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 text-white font-black shadow-md shadow-amber-500/30 border border-amber-300 ring-2 ring-amber-400/20'
-                    : 'bg-white text-stone-700 hover:text-amber-950 hover:bg-amber-50/70 border border-stone-200 shadow-2xs hover:border-amber-300'
+                    ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-stone-950 font-black shadow-lg shadow-amber-500/30 border-2 border-yellow-200 ring-2 ring-yellow-400/20'
+                    : 'bg-stone-800/90 text-stone-300 hover:text-yellow-300 hover:bg-stone-750 border border-stone-700 shadow-2xs'
                 }`}
               >
                 <span className="whitespace-nowrap">{tab.label}</span>
@@ -326,7 +326,7 @@ export const ServicesSection: React.FC = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                           
                           {/* Floating top badge */}
-                          <div className="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-black px-3.5 py-1 rounded-full shadow-lg border border-yellow-300 flex items-center gap-1.5">
+                          <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-[11px] sm:text-xs font-black px-2.5 sm:px-3.5 py-1 rounded-full shadow-lg border border-yellow-300 flex items-center gap-1.5 max-w-[85%] truncate">
                             {isSantan ? (
                               <Baby className="w-3.5 h-3.5 text-yellow-200 shrink-0" />
                             ) : isVyasan ? (
@@ -334,7 +334,7 @@ export const ServicesSection: React.FC = () => {
                             ) : (
                               <Sparkles className="w-3.5 h-3.5 text-yellow-200 animate-spin" style={{ animationDuration: '4s' }} />
                             )}
-                            <span>
+                            <span className="truncate">
                               {isSantan
                                 ? (lang === 'hi' ? 'विशेष संतान सद्बुद्धि एवं संस्कार' : lang === 'gu-en' ? 'વિશેષ સંતાન સદ્બુદ્ધિ અને સંસ્કાર' : 'Vedic Child Guidance & Obedience')
                                 : isVyasan
@@ -344,8 +344,8 @@ export const ServicesSection: React.FC = () => {
                           </div>
 
                           {/* Bottom caption over image */}
-                          <div className="absolute bottom-3 left-3 right-3 text-center bg-black/60 backdrop-blur-xs rounded-xl py-1.5 px-2 border border-white/10">
-                            <p className="text-yellow-200 text-xs font-bold tracking-wide">
+                          <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 text-center bg-black/75 backdrop-blur-xs rounded-xl py-1 sm:py-1.5 px-2 border border-white/10">
+                            <p className="text-yellow-200 text-xs font-bold tracking-wide leading-tight line-clamp-1 sm:line-clamp-none">
                               {isSantan
                                 ? (lang === 'hi' ? 'जिद्दी स्वभाव व बुरी संगति निवारण • आज्ञाकारी संतान व उज्ज्वल भविष्य' : lang === 'gu-en' ? 'હઠીલો સ્વભાવ અને ખરાબ સંગત મુક્તિ • સંસ્કારી સંતાન' : 'Relief from Obstinacy & Bad Habits • Bright Future')
                                 : isVyasan
@@ -376,28 +376,24 @@ export const ServicesSection: React.FC = () => {
                           ))}
                         </div>
 
-                        {/* Action Buttons: Direct Call & Details */}
-                        <div className="pt-3 flex flex-wrap items-center gap-3">
+                        {/* Action Buttons: Direct Call & Details - Clean mobile stacking */}
+                        <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                           <a
                             href={`tel:${CONTACT_INFO.phoneRaw}`}
-                            className="flex-1 min-w-[220px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-5 rounded-xl flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl shadow-amber-500/30 hover:scale-[1.01] transition-all border border-yellow-300"
+                            className="flex-1 min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-4 sm:px-5 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 shadow-xl shadow-amber-500/30 hover:scale-[1.01] active:scale-98 transition-all border-2 border-yellow-300 ring-2 ring-yellow-400/20"
                           >
-                            <Phone className="w-4 h-4 text-white animate-bounce shrink-0" />
-                            <span>
-                              {lang === 'hi'
-                                ? `सीधा फोन करें: ${CONTACT_INFO.phoneDisplay}`
-                                : lang === 'gu-en'
-                                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+                            <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-bounce shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]" />
+                            <span className="font-black text-lg xs:text-xl sm:text-2xl tracking-wide text-yellow-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] whitespace-nowrap leading-none text-center">
+                              {CONTACT_INFO.phoneDisplay}
                             </span>
                           </a>
 
                           <button
                             onClick={() => setSelectedService(featured)}
-                            className="bg-white/15 hover:bg-white/25 text-yellow-200 font-extrabold py-3.5 px-5 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm border border-yellow-300/40 transition-all hover:border-yellow-300 shrink-0 cursor-pointer shadow-md"
+                            className="min-h-[54px] sm:min-h-[58px] bg-white/15 hover:bg-white/25 text-yellow-200 font-extrabold py-3.5 px-4 sm:px-5 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base border border-yellow-300/40 transition-all hover:border-yellow-300 shrink-0 cursor-pointer shadow-md active:scale-98"
                           >
                             <span>{lang === 'hi' ? 'पूर्ण वैदिक विधान विवरण' : lang === 'gu-en' ? 'વિગત જુઓ' : 'Ritual Details'}</span>
-                            <ArrowRight className="w-4 h-4 text-yellow-300" />
+                            <ArrowRight className="w-4 h-4 text-yellow-300 shrink-0" />
                           </button>
                         </div>
                       </div>
@@ -425,19 +421,19 @@ export const ServicesSection: React.FC = () => {
             }}
             className={`p-5 sm:p-6 rounded-3xl transition-all duration-300 hover:scale-[1.01] group flex flex-col justify-between relative ${
               service.isHighlighted
-                ? 'bg-gradient-to-b from-amber-50/95 via-white to-orange-50/70 border-2 border-amber-500 shadow-xl shadow-amber-500/20 ring-4 ring-amber-400/25'
-                : 'bg-white border border-amber-200/80 hover:border-amber-400 shadow-xs hover:shadow-2xl hover:shadow-amber-500/15'
+                ? 'bg-gradient-to-b from-[#181512] via-[#12100e] to-[#0d0c0a] border-2 border-amber-500 shadow-2xl shadow-amber-500/20 ring-4 ring-amber-400/20 text-stone-100'
+                : 'bg-stone-900/90 border border-amber-500/30 hover:border-amber-400 shadow-xl shadow-black/50 text-stone-100'
             }`}
           >
-            {/* Special Highlighted Floating Ribbon */}
+            {/* Special Highlighted Floating Ribbon - Max width protection on mobile */}
             {service.isHighlighted && (
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-stone-950 font-black text-[11px] px-4 py-1 rounded-full shadow-lg border border-yellow-200 uppercase tracking-wider flex items-center gap-1.5 z-20 whitespace-nowrap">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-stone-950 font-black text-[10px] xs:text-[11px] px-3 sm:px-4 py-0.5 sm:py-1 rounded-full shadow-lg border-2 border-yellow-200 uppercase tracking-wide flex items-center justify-center gap-1.5 z-20 max-w-[92%] truncate">
                 {service.id === 'vyasan-mukti-rahu-shanti' ? (
                   <Shield className="w-3.5 h-3.5 text-stone-950 shrink-0" />
                 ) : (
                   <Sparkles className="w-3.5 h-3.5 text-stone-950 animate-pulse shrink-0" />
                 )}
-                <span>
+                <span className="truncate">
                   {service.id === 'vyasan-mukti-rahu-shanti'
                     ? lang === 'hi'
                       ? '🛡️ गृह-क्लेश व नशा मुक्ति वैदिक संकल्प'
@@ -456,7 +452,7 @@ export const ServicesSection: React.FC = () => {
             <div>
               {/* Service Related Photo */}
               {service.imageUrl && (
-                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-amber-100 shadow-inner group-hover:shadow-md transition-all">
+                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-5 bg-stone-950 shadow-inner group-hover:shadow-md transition-all border border-amber-500/20">
                   <img
                     src={service.imageUrl}
                     alt={service.title}
@@ -468,18 +464,18 @@ export const ServicesSection: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out brightness-[0.93] group-hover:brightness-100"
                   />
                   {/* Mystic warm gradient over bottom of image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent"></div>
 
                   {/* Top Badge */}
                   {getServiceBadge(service) && (
-                    <div className="absolute top-3 right-3 bg-amber-500/95 backdrop-blur-xs text-stone-950 text-[11px] font-black px-3 py-1 rounded-full shadow-md border border-yellow-200">
+                    <div className="absolute top-3 right-3 bg-amber-500 text-stone-950 text-[11px] font-black px-3 py-1 rounded-full shadow-md border border-yellow-200">
                       {getServiceBadge(service)}
                     </div>
                   )}
 
                   {/* Floating Icon badge on bottom left of image */}
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-md border border-white/20">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-stone-950 shadow-md border border-yellow-200">
                       {getServiceIcon(service.iconName)}
                     </div>
                     <span className="text-white text-xs font-extrabold uppercase tracking-wider drop-shadow-md">
@@ -489,63 +485,59 @@ export const ServicesSection: React.FC = () => {
                 </div>
               )}
 
-              <h3 className="heading-mystic text-xl font-bold mb-2.5 text-stone-900 group-hover:text-amber-800 transition-colors">
+              <h3 className="heading-mystic text-xl font-bold mb-2.5 text-white group-hover:text-yellow-300 transition-colors">
                 {getServiceTitle(service)}
               </h3>
 
-              <p className="text-stone-600 text-sm leading-relaxed mb-4">
+              <p className="text-stone-300 text-sm leading-relaxed mb-4">
                 {getServiceShortDesc(service)}
               </p>
             </div>
 
-            <div className="pt-3 border-t border-stone-100 space-y-2.5">
-              <div className="flex items-center justify-between text-xs text-stone-600 font-medium">
+            <div className="pt-3 border-t border-stone-800 space-y-2.5">
+              <div className="flex items-center justify-between text-xs text-stone-400 font-medium">
                 <div className="flex items-center">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 shrink-0 text-amber-600" />
+                  <Clock className="w-3.5 h-3.5 mr-1.5 shrink-0 text-amber-400" />
                   <span>{getServiceTimeframe(service)}</span>
                 </div>
-                <span className="text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                <span className="text-[11px] text-emerald-300 font-bold bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40">
                   24/7 Live
                 </span>
               </div>
 
-              {/* Direct Call Button (First Preference) */}
+              {/* Direct Call Button (First Preference) - Symmetrical & Large Text Fitted in Box */}
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md shadow-amber-500/20 hover:scale-[1.02] transition-all cursor-pointer border border-amber-300"
+                className="w-full min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black py-3 sm:py-3.5 px-3 sm:px-4 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-amber-500/30 hover:scale-[1.01] active:scale-98 transition-all cursor-pointer border-2 border-yellow-200 ring-2 ring-yellow-400/20"
               >
-                <Phone className="w-3.5 h-3.5 text-white animate-bounce shrink-0" />
-                <span>
-                  {lang === 'hi'
-                    ? `सीधा कॉल करें: ${CONTACT_INFO.phoneDisplay}`
-                    : lang === 'gu-en'
-                    ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                    : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-stone-950 animate-bounce shrink-0" />
+                <span className="font-black tracking-wide text-lg xs:text-xl sm:text-2xl text-stone-950 whitespace-nowrap leading-none text-center">
+                  {CONTACT_INFO.phoneDisplay}
                 </span>
               </a>
 
               {/* View Ritual Details Button */}
               <button
                 onClick={() => setSelectedService(service)}
-                className="w-full text-xs sm:text-sm font-bold py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-amber-100/80 text-stone-800 hover:text-stone-950 border border-stone-200 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
+                className="w-full min-h-[46px] text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-3 rounded-2xl bg-stone-800/90 hover:bg-stone-750 text-stone-200 hover:text-white border border-stone-700 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-98"
               >
                 <span>
                   {lang === 'hi' ? 'वैदिक अनुष्ठान एवं मंत्र विवरण' : lang === 'gu-en' ? 'વિગત / Info' : 'View Ritual Details'}
                 </span>
-                <ArrowRight className="w-3.5 h-3.5 text-amber-600" />
+                <ArrowRight className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               </button>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Service Detail Modal */}
+      {/* Service Detail Modal - Styled for Mystic Cosmic Dark with Mobile Comfort */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white border border-amber-200 rounded-3xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-[#14120f] border-2 border-amber-500/40 rounded-3xl max-w-2xl w-full p-4 sm:p-6 md:p-8 max-h-[90vh] overflow-y-auto relative shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-white">
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 z-20 text-stone-600 hover:text-stone-950 p-1.5 rounded-full bg-white/90 hover:bg-stone-100 transition-colors shadow-md border border-stone-200"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 text-yellow-200 hover:text-white p-2 rounded-full bg-stone-900/90 hover:bg-stone-800 transition-colors shadow-md border border-amber-500/40"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -553,7 +545,7 @@ export const ServicesSection: React.FC = () => {
 
             {/* Modal Service Image */}
             {selectedService.imageUrl && (
-              <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-5 -mt-2 shadow-md">
+              <div className="relative w-full h-44 sm:h-56 rounded-2xl overflow-hidden mb-5 -mt-1 sm:-mt-2 shadow-md border border-amber-500/20">
                 <img
                   src={selectedService.imageUrl}
                   alt={getServiceTitle(selectedService)}
@@ -564,12 +556,12 @@ export const ServicesSection: React.FC = () => {
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent"></div>
-                <div className="absolute bottom-3 left-4 right-4">
-                  <span className="text-[11px] text-yellow-300 font-bold tracking-wider uppercase block drop-shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-4">
+                  <span className="text-[10px] sm:text-[11px] text-yellow-300 font-bold tracking-wider uppercase block drop-shadow-sm">
                     {getServiceBadge(selectedService) || 'Divine Astrological Remedy'}
                   </span>
-                  <h3 className="heading-mystic text-xl sm:text-2xl font-extrabold text-white drop-shadow-md">
+                  <h3 className="heading-mystic text-lg sm:text-2xl font-extrabold text-white drop-shadow-md leading-tight">
                     {getServiceTitle(selectedService)}
                   </h3>
                 </div>
@@ -578,34 +570,34 @@ export const ServicesSection: React.FC = () => {
 
             {!selectedService.imageUrl && (
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shadow-inner">
+                <div className="w-12 h-12 rounded-2xl bg-stone-800 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-inner">
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs text-amber-800 font-bold tracking-wider uppercase">
+                  <span className="text-xs text-amber-400 font-bold tracking-wider uppercase">
                     {getServiceBadge(selectedService) || 'Divine Astrological Remedy'}
                   </span>
-                  <h3 className="heading-mystic text-2xl font-extrabold text-stone-900">
+                  <h3 className="heading-mystic text-xl sm:text-2xl font-extrabold text-white">
                     {getServiceTitle(selectedService)}
                   </h3>
                 </div>
               </div>
             )}
 
-            <p className="text-stone-700 text-sm md:text-base leading-relaxed mb-6 font-normal">
+            <p className="text-stone-300 text-xs sm:text-sm md:text-base leading-relaxed mb-5 font-normal">
               {getServiceFullDesc(selectedService)}
             </p>
 
             {/* Sacred Benefits */}
-            <div className="mb-6 bg-amber-50/60 p-5 rounded-2xl border border-amber-200/80">
-              <h4 className="text-amber-900 font-bold text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-600" />
+            <div className="mb-5 bg-stone-900/90 p-4 sm:p-5 rounded-2xl border border-amber-500/30">
+              <h4 className="text-yellow-300 font-bold text-xs sm:text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-emerald-400" />
                 Key Vedic Spiritual Outcomes
               </h4>
               <ul className="space-y-2">
                 {getServiceBenefits(selectedService).map((benefit, i) => (
-                  <li key={i} className="flex items-start text-xs md:text-sm text-stone-700">
-                    <span className="text-amber-600 mr-2 font-bold">•</span>
+                  <li key={i} className="flex items-start text-xs sm:text-sm text-stone-200">
+                    <span className="text-amber-400 mr-2 font-bold">•</span>
                     <span>{benefit}</span>
                   </li>
                 ))}
@@ -614,32 +606,28 @@ export const ServicesSection: React.FC = () => {
 
             {/* Mantra preview snippet */}
             {selectedService.mantraPreview && (
-              <div className="mb-6 bg-orange-50/80 p-5 rounded-2xl border border-orange-200">
-                <h5 className="text-orange-900 font-bold text-xs uppercase tracking-wider mb-1">
+              <div className="mb-5 bg-stone-900/90 p-4 sm:p-5 rounded-2xl border border-amber-500/30">
+                <h5 className="text-yellow-300 font-bold text-xs uppercase tracking-wider mb-1">
                   Sacred Siddha Beej Mantra Invocation
                 </h5>
-                <p className="font-serif text-amber-900 text-sm italic font-medium">
+                <p className="font-serif text-yellow-200 text-xs sm:text-sm italic font-medium">
                   "{selectedService.mantraPreview}"
                 </p>
-                <span className="text-[11px] text-stone-500 mt-1 block">
+                <span className="text-[10px] sm:text-[11px] text-stone-400 mt-1 block">
                   *Chanted with exact Vedic swara by Baba Ji under your personal birth star (Nakshatra).
                 </span>
               </div>
             )}
 
             {/* Action Buttons inside modal - Direct Call as First Choice */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="pt-2">
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center space-x-2 text-base shadow-md transition-all border border-amber-300"
+                className="w-full min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 shadow-md transition-all border-2 border-yellow-300 ring-2 ring-yellow-400/20 active:scale-98"
               >
-                <Phone className="w-5 h-5 text-white animate-bounce" />
-                <span className="font-extrabold">
-                  {lang === 'hi'
-                    ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
-                    : lang === 'gu-en'
-                    ? `સીધો કૉલ બાબાજી: ${CONTACT_INFO.phoneDisplay}`
-                    : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-bounce shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]" />
+                <span className="font-black tracking-wide text-lg xs:text-xl sm:text-2xl text-yellow-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)] whitespace-nowrap leading-none text-center">
+                  {CONTACT_INFO.phoneDisplay}
                 </span>
               </a>
             </div>

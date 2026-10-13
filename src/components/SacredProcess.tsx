@@ -70,10 +70,10 @@ export const SacredProcess: React.FC = () => {
   ];
 
   return (
-    <section id="rituals" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden">
-      <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs text-amber-800 font-bold uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+    <section id="rituals" className="py-14 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden text-white">
+      <div className="text-center mb-12 sm:mb-16">
+        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs text-amber-300 font-bold uppercase tracking-widest mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>
             {lang === 'hi'
               ? 'पारदर्शी व शास्त्रसम्मत वैदिक पद्धति'
@@ -82,15 +82,15 @@ export const SacredProcess: React.FC = () => {
               : 'Transparent & Pure Spiritual Methodology'}
           </span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900">
+        <h2 className="heading-mystic text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           {lang === 'hi'
             ? 'बाबा जी संकट का समाधान कैसे करते हैं?'
             : lang === 'gu-en'
             ? 'બાબાજી તમારી સમસ્યાનું સમાધાન કેવી રીતે કરે છે?'
             : 'How Baba Ji Resolves Your Crisis'}
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+        <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto mt-4 rounded-full"></div>
+        <p className="text-stone-300 mt-4 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed">
           {lang === 'hi'
             ? 'चार चरणों की सिद्ध वैदिक प्रक्रिया: जन्मपत्रिका विश्लेषण, वैदिक महाहवन, एवं सिद्ध रक्षा कवच।'
             : lang === 'gu-en'
@@ -99,32 +99,32 @@ export const SacredProcess: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {steps.map((item, index) => (
           <div
             key={item.step}
-            className="bg-white p-7 rounded-3xl border border-amber-200/80 relative group hover:border-amber-400 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-lg hover:shadow-amber-500/5"
+            className="bg-stone-900/90 p-5 sm:p-7 rounded-3xl border border-amber-500/30 relative group hover:border-amber-400 transition-all duration-300 flex flex-col justify-between shadow-xl shadow-black/50 text-white"
           >
             <div className="flex items-center justify-between mb-4">
-              <span className="heading-mystic text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-500 to-orange-600">
+              <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-yellow-300">
                 {item.step}
               </span>
-              <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-300 flex items-center justify-center text-xs text-emerald-700 font-bold">
+              <div className="w-8 h-8 rounded-full bg-emerald-950/80 border border-emerald-500/40 flex items-center justify-center text-xs text-emerald-300 font-bold">
                 ✓
               </div>
             </div>
 
             <div>
-              <h3 className="heading-mystic text-lg font-bold text-stone-900 mb-2.5 group-hover:text-amber-800 transition-colors">
+              <h3 className="heading-mystic text-base sm:text-lg font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+              <p className="text-stone-300 text-xs sm:text-sm leading-relaxed">
                 {item.description}
               </p>
             </div>
 
-            <div className="mt-6 pt-3 border-t border-stone-100">
-              <span className="text-[11px] text-amber-700 uppercase tracking-widest font-bold">
+            <div className="mt-5 pt-3 border-t border-stone-800">
+              <span className="text-[11px] text-amber-400 uppercase tracking-widest font-bold">
                 {lang === 'hi'
                   ? `चरण ${index + 1} / 4`
                   : lang === 'gu-en'
@@ -137,16 +137,16 @@ export const SacredProcess: React.FC = () => {
       </div>
 
       {/* Reassurance CTA */}
-      <div className="mt-12 bg-gradient-to-r from-amber-50 via-orange-50/50 to-amber-50 border border-amber-300 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-xs">
+      <div className="mt-10 sm:mt-12 bg-gradient-to-r from-stone-950 via-zinc-900 to-stone-950 border border-amber-500/40 rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left shadow-xl shadow-black/60">
         <div className="space-y-1">
-          <h4 className="heading-mystic text-xl sm:text-2xl font-extrabold text-stone-900">
+          <h4 className="heading-mystic text-lg sm:text-2xl font-extrabold text-white">
             {lang === 'hi'
               ? 'क्या आपकी समस्या अति गंभीर है?'
               : lang === 'gu-en'
               ? 'શું તમારી સમસ્યા અતિ ગંભીર છે? (Immediate Help)'
               : 'Have an Emergency That Cannot Wait?'}
           </h4>
-          <p className="text-stone-600 text-sm max-w-xl">
+          <p className="text-stone-300 text-xs sm:text-sm max-w-xl">
             {lang === 'hi'
               ? 'तलाक के नोटिस, ब्रेकअप या गंभीर पारिवारिक तनाव के लिए बाबा जी विशेष मध्यरात्रि शांति संकल्प करते हैं।'
               : lang === 'gu-en'
@@ -155,18 +155,14 @@ export const SacredProcess: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
           <a
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 text-sm transition-all shadow-md active:scale-98"
+            className="w-full sm:w-auto min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 px-5 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-lg shadow-amber-600/30 active:scale-98 border-2 border-yellow-300 ring-2 ring-yellow-400/20"
           >
-            <Phone className="w-4 h-4 animate-bounce" />
-            <span>
-              {lang === 'hi'
-                ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
-                : lang === 'gu-en'
-                ? `સીધો ફોન કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce text-white shrink-0 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]" />
+            <span className="font-black tracking-wide text-lg xs:text-xl sm:text-2xl text-yellow-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] whitespace-nowrap leading-none text-center">
+              {CONTACT_INFO.phoneDisplay}
             </span>
           </a>
         </div>

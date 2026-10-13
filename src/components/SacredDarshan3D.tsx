@@ -316,15 +316,11 @@ export const SacredDarshan3D: React.FC = () => {
           <a
             id="darshan-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg shadow-xl border border-amber-300 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[52px]"
+            className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-6 rounded-2xl flex items-center justify-center gap-3 shadow-xl border-2 border-yellow-300 active:scale-95 transition-all cursor-pointer whitespace-nowrap min-h-[64px]"
           >
-            <Phone className="w-5 h-5 shrink-0 animate-bounce" />
-            <span className="whitespace-nowrap font-extrabold">
-              {lang === 'hi'
-                ? `सिद्ध कवच व आशीर्वाद हेतु सीधा कॉल करें: ${CONTACT_INFO.phoneDisplay}`
-                : lang === 'gu-en'
-                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                : `Direct Call Baba Ji: ${CONTACT_INFO.phoneDisplay}`}
+            <Phone className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 animate-bounce text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" />
+            <span className="whitespace-nowrap font-black tracking-wider text-xl sm:text-2xl md:text-3xl text-yellow-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+              {CONTACT_INFO.phoneDisplay}
             </span>
           </a>
         </div>

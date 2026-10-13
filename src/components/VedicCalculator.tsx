@@ -421,19 +421,12 @@ export const VedicCalculator: React.FC = () => {
             <a
               id="calculator-call-btn"
               href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold py-4 px-5 rounded-2xl flex items-center justify-between gap-3 text-sm shadow-md transition-all cursor-pointer active:scale-95 border border-amber-300"
+              className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-5 rounded-2xl flex items-center justify-center gap-3 text-sm shadow-md transition-all cursor-pointer active:scale-95 border-2 border-yellow-300 min-h-[58px]"
             >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <Phone className="w-5 h-5 shrink-0 animate-bounce text-amber-100" />
-                <span className="font-extrabold text-sm sm:text-base whitespace-nowrap">
-                  {lang === 'hi'
-                    ? `सीधा फोन कॉल करें बाबाजी को: ${CONTACT_INFO.phoneDisplay}`
-                    : lang === 'gu-en'
-                    ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                    : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
-                </span>
-              </div>
-              <ArrowRight className="w-4 h-4 shrink-0 text-amber-200" />
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 animate-bounce text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]" />
+              <span className="font-black text-lg sm:text-xl md:text-2xl whitespace-nowrap tracking-wider text-yellow-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+                {CONTACT_INFO.phoneDisplay}
+              </span>
             </a>
           </div>
         </div>

@@ -402,7 +402,7 @@ export const GlobalPresence: React.FC = () => {
       </div>
 
       {/* Active Country Detailed Card */}
-      <div className="bg-white border border-amber-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
+      <div className="bg-stone-900/95 border border-amber-500/30 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-black/50 relative overflow-hidden text-white">
         {/* Top Accent Ribbon */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500"></div>
 
@@ -412,37 +412,37 @@ export const GlobalPresence: React.FC = () => {
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span className="text-2xl">{selectedCountry.flag}</span>
-                <h3 className="heading-mystic text-xl sm:text-2xl font-bold text-stone-900">
+                <h3 className="heading-mystic text-xl sm:text-2xl font-bold text-white">
                   {selectedCountry.name} Astrology & Relationship Services
                 </h3>
               </div>
-              <span className="inline-block text-xs font-bold text-amber-800 bg-amber-50 border border-amber-300/80 px-2.5 py-0.5 rounded-full">
+              <span className="inline-block text-xs font-bold text-amber-300 bg-stone-800 border border-amber-500/40 px-2.5 py-0.5 rounded-full">
                 {selectedCountry.badge}
               </span>
             </div>
 
             {/* Time zone & Availability */}
-            <div className="flex items-center gap-3 bg-stone-50 border border-stone-200/80 p-3.5 rounded-xl text-xs sm:text-sm">
-              <Clock className="w-5 h-5 text-amber-600 shrink-0" />
+            <div className="flex items-center gap-3 bg-stone-950/70 border border-stone-800 p-3.5 rounded-xl text-xs sm:text-sm">
+              <Clock className="w-5 h-5 text-amber-400 shrink-0" />
               <div>
-                <span className="font-bold text-stone-900 block">Local Time Zone Compatibility:</span>
-                <span className="text-stone-600 font-medium">{selectedCountry.timezones}</span>
+                <span className="font-bold text-white block">Local Time Zone Compatibility:</span>
+                <span className="text-stone-300 font-medium">{selectedCountry.timezones}</span>
               </div>
             </div>
 
             {/* Major Cities Covered */}
             <div>
-              <h4 className="text-xs font-black uppercase tracking-wider text-amber-900 mb-2.5 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+              <h4 className="text-xs font-black uppercase tracking-wider text-amber-400 mb-2.5 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-amber-400" />
                 <span>Major Cities & Areas Consulted Daily:</span>
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {selectedCountry.topCities.map((city, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 text-xs text-stone-700 bg-amber-50/50 border border-amber-100 px-3 py-1.5 rounded-lg"
+                    className="flex items-center gap-2 text-xs text-stone-300 bg-stone-950/50 border border-stone-800 px-3 py-1.5 rounded-lg"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     <span>{city}</span>
                   </div>
                 ))}
@@ -451,14 +451,14 @@ export const GlobalPresence: React.FC = () => {
 
             {/* Key Advantages for Abroad Clients */}
             <div>
-              <h4 className="text-xs font-black uppercase tracking-wider text-amber-900 mb-2.5 flex items-center gap-1.5">
-                <Shield className="w-3.5 h-3.5 text-amber-600" />
+              <h4 className="text-xs font-black uppercase tracking-wider text-amber-400 mb-2.5 flex items-center gap-1.5">
+                <Shield className="w-3.5 h-3.5 text-amber-400" />
                 <span>Spiritual Dedication for Overseas Devotees:</span>
               </h4>
               <ul className="space-y-2">
                 {selectedCountry.highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs text-stone-700">
-                    <span className="text-amber-600 font-bold mt-0.5">•</span>
+                  <li key={idx} className="flex items-start gap-2 text-xs text-stone-300">
+                    <span className="text-amber-400 font-bold mt-0.5">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -467,17 +467,17 @@ export const GlobalPresence: React.FC = () => {
           </div>
 
           {/* Right Column: Direct Connect & Popular Search Terms */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-[#fbf9f4] border border-amber-200/60 p-5 sm:p-6 rounded-2xl">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-stone-950/80 border border-amber-500/30 p-5 sm:p-6 rounded-2xl">
             {/* Quick Action Box */}
             <div className="text-center space-y-3">
-              <span className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-1"></span>
+              <span className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-widest text-emerald-300 bg-emerald-950/80 border border-emerald-500/40 px-2.5 py-0.5 rounded-full">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-1"></span>
                 International Lines Open Now
               </span>
-              <h4 className="heading-mystic text-lg font-bold text-stone-900">
+              <h4 className="heading-mystic text-lg font-bold text-white">
                 Direct Consultation with Baba Ji
               </h4>
-              <p className="text-xs text-stone-600">
+              <p className="text-xs text-stone-300">
                 Speak directly on Phone or WhatsApp. No middlemen, completely confidential.
               </p>
 
@@ -515,15 +515,15 @@ export const GlobalPresence: React.FC = () => {
             </div>
 
             {/* Popular Overseas Search Keywords (High SEO Relevance) */}
-            <div className="pt-4 border-t border-amber-200/80">
-              <span className="text-[11px] font-black uppercase tracking-wider text-amber-900 block mb-2">
+            <div className="pt-4 border-t border-stone-800">
+              <span className="text-[11px] font-black uppercase tracking-wider text-amber-400 block mb-2">
                 Top Requested Services in {selectedCountry.name}:
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {selectedCountry.popularSearches.map((keyword, idx) => (
                   <span
                     key={idx}
-                    className="text-[10px] sm:text-[11px] font-semibold bg-white border border-amber-200/80 text-stone-700 px-2.5 py-1 rounded-md hover:border-amber-400 hover:text-amber-900 transition-colors"
+                    className="text-[10px] sm:text-[11px] font-semibold bg-stone-900 border border-stone-800 text-stone-300 px-2.5 py-1 rounded-md hover:border-amber-400 hover:text-yellow-300 transition-colors"
                   >
                     {keyword}
                   </span>
@@ -534,16 +534,16 @@ export const GlobalPresence: React.FC = () => {
         </div>
 
         {/* Bottom Distance Vedic Healing Banner */}
-        <div className="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-600">
+        <div className="mt-8 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
           <div className="flex items-center gap-2 text-center sm:text-left">
-            <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
+            <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
             <span>
-              <strong>Distance Vedic Kripa:</strong> Authentic Siddha Pooja, Vedic spiritual protection & energized Yantras transmitted safely to your location worldwide.
+              <strong className="text-stone-200">Distance Vedic Kripa:</strong> Authentic Siddha Pooja, Vedic spiritual protection & energized Yantras transmitted safely to your location worldwide.
             </span>
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center gap-1 font-bold text-amber-700 hover:text-amber-800 shrink-0 group"
+            className="inline-flex items-center gap-1 font-bold text-amber-400 hover:text-yellow-300 shrink-0 group"
           >
             <span>Contact Baba Ji</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

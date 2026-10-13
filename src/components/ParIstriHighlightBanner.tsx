@@ -9,7 +9,7 @@ export const ParIstriHighlightBanner: React.FC = () => {
   const { lang } = useLanguage();
 
   return (
-    <section id="par-istri-highlight" className="relative w-full py-8 sm:py-12 bg-gradient-to-b from-[#fdfcf7] via-[#fff8eb] to-[#fdfcf7] border-y-2 border-amber-300/60 overflow-hidden">
+    <section id="par-istri-highlight" className="relative w-full py-8 sm:py-12 bg-gradient-to-b from-[var(--banner-grad-from,#1c0a03)] via-[var(--banner-grad-via,#2a0911)] to-[var(--banner-grad-to,#1c0a03)] border-y-2 border-amber-500/40 overflow-hidden">
       {/* Subtle divine background ornamentation */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-amber-400/10 to-orange-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-red-500/10 to-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -24,8 +24,8 @@ export const ParIstriHighlightBanner: React.FC = () => {
         >
           <div className="bg-gradient-to-br from-stone-950 via-amber-950/95 to-stone-900 text-white rounded-[22px] p-6 sm:p-8 lg:p-10 border border-yellow-400/40 relative overflow-hidden">
             {/* Top Badge Strip */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-6 border-b border-amber-500/20">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-yellow-400/50 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black text-yellow-300 tracking-wide uppercase">
+            <div className="flex flex-wrap items-center justify-between gap-2.5 pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-amber-500/20">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-yellow-400/50 px-3.5 sm:px-4 py-1.5 rounded-2xl sm:rounded-full text-xs sm:text-sm font-black text-yellow-300 tracking-wide uppercase">
                 <Lock className="w-4 h-4 text-yellow-300 shrink-0" />
                 <span>
                   {lang === 'gu-en'
@@ -36,7 +36,7 @@ export const ParIstriHighlightBanner: React.FC = () => {
                 </span>
               </div>
 
-              <div className="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1 rounded-full text-xs font-semibold text-amber-200 border border-white/15">
+              <div className="inline-flex items-center gap-1.5 bg-white/10 px-3 sm:px-3.5 py-1 rounded-full text-xs font-semibold text-amber-200 border border-white/15">
                 <ShieldCheck className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
                 <span>
                   {lang === 'gu-en'
@@ -48,7 +48,7 @@ export const ParIstriHighlightBanner: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               {/* Left Column: Image with Sacred Vermilion / Golden Border */}
               <div className="lg:col-span-5 relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-400/80 aspect-4/3 group">
@@ -64,9 +64,9 @@ export const ParIstriHighlightBanner: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
                   {/* Top Floating Badge */}
-                  <div className="absolute top-3 left-3 bg-gradient-to-r from-red-600 to-amber-600 text-white text-xs font-black px-3.5 py-1 rounded-full shadow-lg border border-yellow-300 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-yellow-200 shrink-0" />
-                    <span>
+                  <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-gradient-to-r from-red-600 to-amber-600 text-white text-[11px] sm:text-xs font-black px-2.5 sm:px-3.5 py-1 rounded-full shadow-lg border border-yellow-300 flex items-center gap-1.5 max-w-[85%] truncate">
+                    <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-200 shrink-0" />
+                    <span className="truncate">
                       {lang === 'gu-en'
                         ? 'કામાખ્યા-શુક્ર શાંતિ અનુષ્ઠાન'
                         : lang === 'en'
@@ -76,8 +76,8 @@ export const ParIstriHighlightBanner: React.FC = () => {
                   </div>
 
                   {/* Bottom Caption Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 text-center bg-black/75 backdrop-blur-xs rounded-xl py-2 px-3 border border-yellow-400/30">
-                    <p className="text-yellow-200 text-xs sm:text-sm font-bold tracking-wide">
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 text-center bg-black/85 backdrop-blur-xs rounded-xl py-1 sm:py-2 px-2 sm:px-3 border border-yellow-400/30">
+                    <p className="text-yellow-200 text-xs sm:text-sm font-bold tracking-wide leading-tight line-clamp-1 sm:line-clamp-none">
                       {lang === 'gu-en'
                         ? 'પર-સ્ત્રીનો પ્રભાવ કાયમી દૂર • ઘરમાં પુનઃ પ્રેમ અને સુખ-શાંતિ'
                         : lang === 'en'
@@ -158,15 +158,15 @@ export const ParIstriHighlightBanner: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Direct Action Button: Phone Call */}
-                <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                {/* Direct Action Button: Phone Call - Properly aligned and sized for perfect fit */}
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
                     href={`tel:${CONTACT_INFO.phoneRaw}`}
-                    className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center gap-3 text-base sm:text-lg shadow-xl shadow-amber-600/35 hover:scale-[1.01] active:scale-98 transition-all border-2 border-yellow-300 ring-2 ring-yellow-400/30"
+                    className="w-full min-h-[58px] sm:min-h-[64px] bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-black py-3.5 sm:py-4 px-3 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-4 shadow-xl shadow-amber-600/35 hover:scale-[1.01] active:scale-98 transition-all border-2 border-yellow-300 ring-4 ring-yellow-400/30"
                   >
-                    <Phone className="w-5 h-5 text-white animate-bounce shrink-0" />
-                    <span className="whitespace-nowrap font-extrabold">
-                      गोपनीय परामर्श हेतु सीधा फोन करें: {CONTACT_INFO.phoneDisplay}
+                    <Phone className="w-5 h-5 sm:w-7 sm:h-7 text-white animate-bounce shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" />
+                    <span className="font-black text-xl xs:text-2xl sm:text-3xl tracking-wide text-yellow-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] whitespace-nowrap leading-none text-center">
+                      {CONTACT_INFO.phoneDisplay}
                     </span>
                   </a>
                 </div>

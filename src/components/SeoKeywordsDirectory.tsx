@@ -901,18 +901,18 @@ export const SeoKeywordsDirectory: React.FC = () => {
         {visibleGroups.map((group, idx) => (
           <div
             key={idx}
-            className="bg-white border border-amber-200/90 rounded-xl p-3.5 sm:p-4 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+            className="bg-stone-900/90 border border-amber-500/30 rounded-xl p-3.5 sm:p-4 shadow-xl shadow-black/40 hover:border-amber-400 transition-all flex flex-col justify-between text-white"
           >
             <div>
               {/* Header */}
               <div className="flex items-start justify-between gap-2 mb-2.5">
                 <div className="flex items-center gap-1.5 min-w-0">
                   <span className="text-base shrink-0">{group.icon}</span>
-                  <h3 className="heading-mystic text-xs sm:text-sm font-bold text-stone-900 line-clamp-1">
+                  <h3 className="heading-mystic text-xs sm:text-sm font-bold text-white line-clamp-1">
                     {group.category}
                   </h3>
                 </div>
-                <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200 px-1.5 py-0.5 rounded-full shrink-0">
+                <span className="text-[9px] font-bold uppercase tracking-wider bg-stone-800 text-amber-300 border border-amber-500/40 px-1.5 py-0.5 rounded-full shrink-0">
                   {group.badge}
                 </span>
               </div>
@@ -924,7 +924,7 @@ export const SeoKeywordsDirectory: React.FC = () => {
                     key={kwIdx}
                     href={`tel:${CONTACT_INFO.phoneRaw}`}
                     title={`Consult Baba Ji for ${kw}`}
-                    className="text-[10px] font-medium text-stone-700 bg-stone-50 hover:bg-amber-100 hover:text-amber-950 border border-stone-200/70 hover:border-amber-300 px-2 py-0.5 rounded-md transition-colors inline-block leading-tight"
+                    className="text-[10px] font-medium text-stone-300 bg-stone-950/80 hover:bg-stone-800 hover:text-yellow-300 border border-stone-800 hover:border-amber-400 px-2 py-0.5 rounded-md transition-colors inline-block leading-tight"
                   >
                     {kw}
                   </a>
@@ -932,7 +932,7 @@ export const SeoKeywordsDirectory: React.FC = () => {
                 {!isExpanded && !isFiltering && group.keywords.length > 6 && (
                   <button
                     onClick={() => setIsExpanded(true)}
-                    className="text-[9.5px] font-semibold text-amber-800 bg-amber-50/90 border border-amber-200 px-1.5 py-0.5 rounded-md hover:bg-amber-100 transition-colors inline-block cursor-pointer"
+                    className="text-[9.5px] font-semibold text-yellow-300 bg-stone-800/90 border border-amber-500/40 px-1.5 py-0.5 rounded-md hover:bg-stone-700 transition-colors inline-block cursor-pointer"
                   >
                     +{group.keywords.length - 6} और
                   </button>
@@ -941,14 +941,14 @@ export const SeoKeywordsDirectory: React.FC = () => {
             </div>
 
             {/* Quick Action Footer */}
-            <div className="mt-3 pt-2.5 border-t border-amber-100 flex items-center justify-between text-[11px]">
-              <span className="text-stone-500 flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+            <div className="mt-3 pt-2.5 border-t border-stone-800 flex items-center justify-between text-[11px]">
+              <span className="text-stone-400 flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
                 <span>24/7 Helpline</span>
               </span>
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="font-bold text-amber-700 hover:text-amber-900 inline-flex items-center gap-1"
+                className="font-bold text-amber-400 hover:text-yellow-300 inline-flex items-center gap-1"
               >
                 <Phone className="w-3 h-3" />
                 <span>{CONTACT_INFO.phoneDisplay}</span>
@@ -1013,15 +1013,11 @@ export const SeoKeywordsDirectory: React.FC = () => {
           <a
             id="global-cta-call"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="h-12 sm:h-[50px] bg-white text-stone-950 hover:bg-amber-50 font-extrabold px-6 sm:px-8 rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-95 transition-all text-sm sm:text-base whitespace-nowrap border border-white cursor-pointer"
+            className="min-h-[54px] bg-white text-stone-950 hover:bg-amber-50 font-black px-6 sm:px-8 rounded-2xl flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95 transition-all whitespace-nowrap border-2 border-yellow-300 cursor-pointer"
           >
-            <Phone className="w-5 h-5 text-amber-600 shrink-0 animate-bounce" />
-            <span className="whitespace-nowrap font-extrabold">
-              {lang === 'hi'
-                ? `सीधा फोन कॉल करें: ${CONTACT_INFO.phoneDisplay}`
-                : lang === 'gu-en'
-                ? `સીધો કૉલ: ${CONTACT_INFO.phoneDisplay}`
-                : `Direct Call: ${CONTACT_INFO.phoneDisplay}`}
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 shrink-0 animate-bounce" />
+            <span className="whitespace-nowrap font-black tracking-wider text-lg sm:text-xl md:text-2xl text-stone-950">
+              {CONTACT_INFO.phoneDisplay}
             </span>
           </a>
         </div>
