@@ -61,7 +61,7 @@ export default function App() {
 
           <div
             translate="no"
-            className="notranslate min-h-screen w-full max-w-full overflow-x-hidden bg-[var(--bg-sanctum,#090807)] text-[var(--text-primary,#fffdf5)] selection:bg-amber-400 selection:text-stone-950 flex flex-col font-sans transition-colors duration-500"
+            className="notranslate min-h-screen w-full max-w-full overflow-x-hidden bg-[var(--bg-sanctum,#fdfcf7)] text-[var(--text-primary,#1c1917)] selection:bg-amber-400 selection:text-stone-950 flex flex-col font-sans transition-colors duration-500"
           >
           {/* Main Sticky Header with Top Scrolling Marquee & 24/7 Helpline */}
           <Header />

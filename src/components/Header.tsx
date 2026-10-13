@@ -59,13 +59,17 @@ export const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-header,#130702)]/95 backdrop-blur-md border-b border-amber-500/30 transition-colors duration-300 shadow-xl shadow-black/50 w-full max-w-full text-white"
+        className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-colors duration-300 w-full max-w-full ${
+          theme === 'sacred-parchment'
+            ? 'bg-white/95 border-b border-amber-200/90 text-stone-900 shadow-sm'
+            : 'bg-[var(--bg-header,#130702)]/95 border-b border-amber-500/30 text-white shadow-xl shadow-black/50'
+        }`}
       >
         {/* 1. Top Scrolling Marquee Banner - Always Fixed at Top */}
         <UrgentBanner />
 
         {/* 2. Mobile Dedicated Direct Helpline Bar - Phone number fills the full width with larger font */}
-        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-[var(--bg-sanctum,#160802)] to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/40 shadow-xs w-full max-w-full gap-2">
+        <div className="sm:hidden bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white px-2.5 py-1.5 flex items-center justify-between border-b border-amber-500/40 shadow-xs w-full max-w-full gap-2">
           <div className="flex items-center gap-1.5 shrink-0">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
             <span className="text-[11px] font-black uppercase tracking-wider text-amber-300 whitespace-nowrap">
@@ -97,12 +101,16 @@ export const Header: React.FC = () => {
               <NaagdeviLogo size="sm" />
             </div>
             <div className="flex flex-col justify-center min-w-0">
-              <span className="heading-mystic text-sm xs:text-base sm:text-xl md:text-2xl font-black tracking-wide text-yellow-100 group-hover:text-yellow-300 transition-colors uppercase leading-tight truncate">
+              <span className={`heading-mystic text-sm xs:text-base sm:text-xl md:text-2xl font-black tracking-wide uppercase leading-tight truncate transition-colors ${
+                theme === 'sacred-parchment' ? 'text-stone-950 group-hover:text-amber-800' : 'text-yellow-100 group-hover:text-yellow-300'
+              }`}>
                 Naagmata Jyotish
               </span>
               {/* Pure Hindi Subtitle */}
-              <div className="flex items-center gap-1 text-[9px] xs:text-[10px] sm:text-xs font-bold text-amber-300 leading-tight mt-0.5 min-w-0">
-                <span className="text-amber-300 font-bold font-['Noto_Sans_Devanagari',sans-serif] truncate max-w-[190px] xs:max-w-[260px] sm:max-w-none">
+              <div className="flex items-center gap-1 text-[9px] xs:text-[10px] sm:text-xs font-bold leading-tight mt-0.5 min-w-0">
+                <span className={`font-bold font-['Noto_Sans_Devanagari',sans-serif] truncate max-w-[190px] xs:max-w-[260px] sm:max-w-none ${
+                  theme === 'sacred-parchment' ? 'text-amber-800' : 'text-amber-300'
+                }`}>
                   श्री माँ नागदेवी सिद्ध पीठ • उज्जैन
                 </span>
               </div>
@@ -110,12 +118,16 @@ export const Header: React.FC = () => {
           </a>
 
           {/* Desktop Navigation - Responsive with priority items */}
-          <nav className="hidden xl:flex items-center justify-center gap-2.5 2xl:gap-4 text-xs 2xl:text-sm font-bold text-stone-200 shrink min-w-0 px-1">
+          <nav className={`hidden xl:flex items-center justify-center gap-2.5 2xl:gap-4 text-xs 2xl:text-sm font-bold shrink min-w-0 px-1 ${
+            theme === 'sacred-parchment' ? 'text-stone-800' : 'text-stone-200'
+          }`}>
             {navLinks.map((link, idx) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`hover:text-yellow-300 transition-colors py-1 relative whitespace-nowrap hover:after:w-full after:w-0 after:h-0.5 after:bg-amber-400 after:absolute after:bottom-0 after:left-0 after:transition-all ${
+                className={`py-1 relative whitespace-nowrap hover:after:w-full after:w-0 after:h-0.5 after:bg-amber-500 after:absolute after:bottom-0 after:left-0 after:transition-all ${
+                  theme === 'sacred-parchment' ? 'hover:text-amber-700' : 'hover:text-yellow-300'
+                } ${
                   idx >= 4 ? 'hidden 2xl:inline-block' : 'inline-block'
                 }`}
               >
@@ -130,12 +142,16 @@ export const Header: React.FC = () => {
             <button
               onClick={toggleTheme}
               type="button"
-              title={`थीम: ${theme === 'royal-saffron' ? 'राजसी भगवा' : theme === 'cosmic-dark' ? 'कृष्ण व स्वर्ण' : 'सिंदूर व महरून'} (थीम बदलने के लिए क्लिक करें)`}
-              className="px-2.5 sm:px-3 py-1.5 h-8 sm:h-9 md:h-10 rounded-full bg-stone-900/90 hover:bg-stone-800 text-yellow-300 border border-amber-500/50 text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 flex items-center gap-1.5 shadow-md"
+              title={`थीम: ${theme === 'sacred-parchment' ? 'स्वर्ण व क्रीम' : theme === 'cosmic-dark' ? 'कृष्ण व स्वर्ण' : 'भगवा व स्वर्ण'} (थीम बदलने के लिए क्लिक करें)`}
+              className={`px-2.5 sm:px-3 py-1.5 h-8 sm:h-9 md:h-10 rounded-full text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 flex items-center gap-1.5 shadow-xs ${
+                theme === 'sacred-parchment'
+                  ? 'bg-amber-50/90 hover:bg-amber-100 text-amber-900 border border-amber-300'
+                  : 'bg-stone-900/90 hover:bg-stone-800 text-yellow-300 border border-amber-500/50'
+              }`}
             >
-              <Palette className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <Palette className="w-3.5 h-3.5 text-amber-500 shrink-0" />
               <span className="text-[11px] font-black tracking-wide whitespace-nowrap">
-                {theme === 'royal-saffron' ? 'भगवा व स्वर्ण' : theme === 'cosmic-dark' ? 'कृष्ण व स्वर्ण' : 'सिंदूर व महरून'}
+                {theme === 'sacred-parchment' ? 'स्वर्ण व क्रीम' : theme === 'cosmic-dark' ? 'कृष्ण व स्वर्ण' : 'भगवा व स्वर्ण'}
               </span>
             </button>
 
@@ -144,9 +160,13 @@ export const Header: React.FC = () => {
               onClick={enableDiscreetMode}
               type="button"
               title="100% Private Discreet Mode (Instant Disguise • Press Esc)"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 p-2 2xl:px-3 h-8 sm:h-9 md:h-10 rounded-full bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-amber-500/40 text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 shadow-2xs"
+              className={`hidden sm:inline-flex items-center justify-center gap-1.5 p-2 2xl:px-3 h-8 sm:h-9 md:h-10 rounded-full text-xs font-bold transition-all active:scale-95 cursor-pointer shrink-0 shadow-2xs ${
+                theme === 'sacred-parchment'
+                  ? 'bg-white hover:bg-amber-50 text-stone-800 border border-amber-300'
+                  : 'bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-amber-500/40'
+              }`}
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
               <span className="hidden 2xl:inline">{lang === 'hi' ? 'सीक्रेट मोड' : lang === 'en' ? 'Private Mode' : 'સિક્રેટ મોડ'}</span>
             </button>
 
@@ -155,13 +175,13 @@ export const Header: React.FC = () => {
               id="header-call-btn"
               href={`tel:${CONTACT_INFO.phoneRaw}`}
               title="Direct Call Baba Ji - 24/7 Available Worldwide (+91 97141 27309)"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black px-3.5 sm:px-4.5 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-amber-500/25 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border-2 border-yellow-200 ring-2 ring-yellow-400/20 min-w-max"
+              className="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-white font-black px-3.5 sm:px-4.5 md:px-5 h-9 md:h-10 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-orange-500/25 text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap shrink-0 border-2 border-yellow-200 ring-2 ring-yellow-400/20 min-w-max"
             >
-              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-950 shrink-0 fill-stone-950" />
-              <span className="font-sans font-black tracking-wide text-stone-950 whitespace-nowrap">
+              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0 fill-white" />
+              <span className="font-sans font-black tracking-wide text-white whitespace-nowrap">
                 {CONTACT_INFO.phoneDisplay}
               </span>
-              <span className="hidden 2xl:inline-flex text-[9px] uppercase font-black bg-stone-950/20 text-stone-950 px-1.5 py-0.5 rounded-full border border-stone-950/30 ml-0.5">
+              <span className="hidden 2xl:inline-flex text-[9px] uppercase font-black bg-white/20 text-white px-1.5 py-0.5 rounded-full border border-white/30 ml-0.5">
                 24/7
               </span>
             </a>

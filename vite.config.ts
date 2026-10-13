@@ -17,26 +17,14 @@ export default defineConfig(() => {
       include: [
         'react',
         'react-dom',
-        'react/jsx-runtime',
-        'react-dom/client',
         'lucide-react',
-        'motion/react',
       ],
     },
     build: {
       target: 'es2020',
       cssCodeSplit: true,
       minify: 'esbuild' as const,
-      chunkSizeWarningLimit: 800,
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'vendor-react': ['react', 'react-dom'],
-            'vendor-icons': ['lucide-react'],
-            'vendor-motion': ['motion/react'],
-          },
-        },
-      },
+      chunkSizeWarningLimit: 1000,
     },
     server: {
       port: 3000,

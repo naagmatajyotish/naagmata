@@ -2,9 +2,12 @@ import React from 'react';
 import { Shield, Award, Users, HeartHandshake, Lock, PhoneCall, Sparkles } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 export const WhyChooseUs: React.FC = () => {
   const { lang } = useLanguage();
+  const { theme } = useTheme();
+  const isParchment = theme === 'sacred-parchment';
 
   const points = [
     {
@@ -100,10 +103,16 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-us" className="py-20 px-4 sm:px-6 max-w-7xl mx-auto bg-[#0c0a08] border-y border-amber-500/30 transition-colors duration-400 w-full overflow-hidden text-white">
+    <section id="why-us" className={`py-20 px-4 sm:px-6 max-w-7xl mx-auto border-y transition-colors duration-400 w-full overflow-hidden ${
+      isParchment
+        ? 'bg-gradient-to-b from-[#fdfcf7] via-[#fbf7ee] to-[#fdfcf7] border-amber-200/90 text-stone-900'
+        : 'bg-[#0c0a08] border-amber-500/30 text-white'
+    }`}>
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/50 px-3.5 py-1 rounded-full text-xs text-yellow-300 font-bold uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+        <div className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 border ${
+          isParchment ? 'bg-amber-100/80 border-amber-300 text-amber-900' : 'bg-stone-900/90 border-amber-500/50 text-yellow-300'
+        }`}>
+          <Sparkles className={`w-3.5 h-3.5 ${isParchment ? 'text-amber-600' : 'text-yellow-400'}`} />
           <span>
             {lang === 'hi'
               ? 'श्री माँ नागदेवी की पावन कृपा व विश्वसनीयता'
@@ -112,7 +121,9 @@ export const WhyChooseUs: React.FC = () => {
               : 'Divine Sanctity & Trust Under Maa Naagdevi'}
           </span>
         </div>
-        <h2 className="heading-mystic text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white max-w-4xl mx-auto leading-snug sm:leading-tight text-balance">
+        <h2 className={`heading-mystic text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold max-w-4xl mx-auto leading-snug sm:leading-tight text-balance ${
+          isParchment ? 'text-stone-950' : 'text-white'
+        }`}>
           {lang === 'hi' ? (
             <>
               नागमाता ज्योतिष पर <span className="whitespace-nowrap">क्यों भरोसा करते हैं भक्त?</span>
@@ -128,7 +139,9 @@ export const WhyChooseUs: React.FC = () => {
           )}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-300 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className={`mt-4 max-w-2xl mx-auto text-sm sm:text-base font-medium ${
+          isParchment ? 'text-stone-700' : 'text-stone-300'
+        }`}>
           {lang === 'hi'
             ? 'दशकों की वैदिक तपस्या, उच्च नैतिक मूल्य व हजारों सुखी परिवारों की शुभकामनाओं का आधार।'
             : lang === 'gu-en'
@@ -143,16 +156,28 @@ export const WhyChooseUs: React.FC = () => {
           return (
             <div
               key={index}
-              className="bg-stone-900/90 p-7 rounded-3xl border border-amber-500/30 hover:border-amber-400 transition-all duration-300 shadow-xl shadow-black/50 flex items-start space-x-4 group text-white"
+              className={`p-7 rounded-3xl border transition-all duration-300 flex items-start space-x-4 group ${
+                isParchment
+                  ? 'bg-white border-amber-200/90 text-stone-900 shadow-md hover:border-amber-400'
+                  : 'bg-stone-900/90 border-amber-500/30 text-white shadow-xl shadow-black/50 hover:border-amber-400'
+              }`}
             >
-              <div className="w-12 h-12 rounded-2xl bg-stone-800 border border-amber-500/40 flex items-center justify-center shrink-0 group-hover:bg-gradient-to-br group-hover:from-amber-500 group-hover:to-yellow-400 group-hover:text-stone-950 transition-all shadow-inner text-amber-400">
+              <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center shrink-0 transition-all shadow-inner ${
+                isParchment
+                  ? 'bg-amber-50 border-amber-200 text-amber-700 group-hover:bg-gradient-to-br group-hover:from-amber-500 group-hover:to-yellow-400 group-hover:text-stone-950'
+                  : 'bg-stone-800 border-amber-500/40 text-amber-400 group-hover:bg-gradient-to-br group-hover:from-amber-500 group-hover:to-yellow-400 group-hover:text-stone-950'
+              }`}>
                 <Icon className="w-6 h-6 transition-colors" />
               </div>
               <div className="space-y-1.5">
-                <h3 className="heading-mystic text-lg font-bold text-white group-hover:text-yellow-300 transition-colors">
+                <h3 className={`heading-mystic text-lg font-bold transition-colors ${
+                  isParchment ? 'text-stone-950 group-hover:text-amber-800' : 'text-white group-hover:text-yellow-300'
+                }`}>
                   {point.title}
                 </h3>
-                <p className="text-stone-300 text-xs sm:text-sm leading-relaxed">
+                <p className={`text-xs sm:text-sm leading-relaxed ${
+                  isParchment ? 'text-stone-600' : 'text-stone-300'
+                }`}>
                   {point.description}
                 </p>
               </div>
@@ -163,11 +188,17 @@ export const WhyChooseUs: React.FC = () => {
 
       {/* Numerical Stats Counters - Balanced & Aligned for all screens */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
-        <div className="bg-stone-900/90 border border-amber-500/30 p-4 sm:p-6 rounded-3xl shadow-xl shadow-black/50 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] text-white">
-          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 block mb-1 whitespace-nowrap">
+        <div className={`border p-4 sm:p-6 rounded-3xl flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] ${
+          isParchment
+            ? 'bg-white border-amber-200 text-stone-900 shadow-sm'
+            : 'bg-stone-900/90 border-amber-500/30 text-white shadow-xl shadow-black/50'
+        }`}>
+          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-500 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.experienceYears}
           </span>
-          <span className="text-[11px] sm:text-xs text-stone-300 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center">
+          <span className={`text-[11px] sm:text-xs uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center ${
+            isParchment ? 'text-stone-600' : 'text-stone-300'
+          }`}>
             {lang === 'hi'
               ? 'वर्षों की अखंड साधना'
               : lang === 'gu-en'
@@ -175,11 +206,17 @@ export const WhyChooseUs: React.FC = () => {
               : 'Years Sacred Tapasya'}
           </span>
         </div>
-        <div className="bg-stone-900/90 border border-amber-500/30 p-4 sm:p-6 rounded-3xl shadow-xl shadow-black/50 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] text-white">
-          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 block mb-1 whitespace-nowrap">
+        <div className={`border p-4 sm:p-6 rounded-3xl flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] ${
+          isParchment
+            ? 'bg-white border-amber-200 text-stone-900 shadow-sm'
+            : 'bg-stone-900/90 border-amber-500/30 text-white shadow-xl shadow-black/50'
+        }`}>
+          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-500 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.clientsCount}
           </span>
-          <span className="text-[11px] sm:text-xs text-stone-300 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center">
+          <span className={`text-[11px] sm:text-xs uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center ${
+            isParchment ? 'text-stone-600' : 'text-stone-300'
+          }`}>
             {lang === 'hi'
               ? 'सफल वैदिक समाधान'
               : lang === 'gu-en'
@@ -187,11 +224,17 @@ export const WhyChooseUs: React.FC = () => {
               : 'Cases Solved Successfully'}
           </span>
         </div>
-        <div className="bg-stone-900/90 border border-amber-500/30 p-4 sm:p-6 rounded-3xl shadow-xl shadow-black/50 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] text-white">
-          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 block mb-1 whitespace-nowrap">
+        <div className={`border p-4 sm:p-6 rounded-3xl flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] ${
+          isParchment
+            ? 'bg-white border-amber-200 text-stone-900 shadow-sm'
+            : 'bg-stone-900/90 border-amber-500/30 text-white shadow-xl shadow-black/50'
+        }`}>
+          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-500 block mb-1 whitespace-nowrap">
             18+
           </span>
-          <span className="text-[11px] sm:text-xs text-stone-300 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center">
+          <span className={`text-[11px] sm:text-xs uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center ${
+            isParchment ? 'text-stone-600' : 'text-stone-300'
+          }`}>
             {lang === 'hi'
               ? 'वैश्विक देश'
               : lang === 'gu-en'
@@ -199,11 +242,17 @@ export const WhyChooseUs: React.FC = () => {
               : 'Countries Served'}
           </span>
         </div>
-        <div className="bg-stone-900/90 border border-amber-500/30 p-4 sm:p-6 rounded-3xl shadow-xl shadow-black/50 flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] text-white">
-          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 block mb-1 whitespace-nowrap">
+        <div className={`border p-4 sm:p-6 rounded-3xl flex flex-col items-center justify-center min-h-[120px] sm:min-h-[130px] ${
+          isParchment
+            ? 'bg-white border-amber-200 text-stone-900 shadow-sm'
+            : 'bg-stone-900/90 border-amber-500/30 text-white shadow-xl shadow-black/50'
+        }`}>
+          <span className="heading-mystic text-2xl xs:text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-500 block mb-1 whitespace-nowrap">
             {CONTACT_INFO.successRate}
           </span>
-          <span className="text-[11px] sm:text-xs text-stone-300 uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center">
+          <span className={`text-[11px] sm:text-xs uppercase tracking-wider font-bold leading-tight flex items-center justify-center min-h-[30px] sm:min-h-[32px] text-center ${
+            isParchment ? 'text-stone-600' : 'text-stone-300'
+          }`}>
             {lang === 'hi'
               ? 'वैदिक शुद्धि व संतुष्टि'
               : lang === 'gu-en'

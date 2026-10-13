@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import {
   Heart,
   Wand2,
@@ -24,6 +23,7 @@ import {
 import { SACRED_SERVICES, CONTACT_INFO } from '../data/jyotishData';
 import { ServiceItem } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { TRANSLATIONS } from '../data/translations';
 
 export type ServiceCategory =
@@ -41,6 +41,8 @@ export type ServiceCategory =
 
 export const ServicesSection: React.FC = () => {
   const { lang } = useLanguage();
+  const { theme } = useTheme();
+  const isParchment = theme === 'sacred-parchment';
   const t = TRANSLATIONS[lang].services;
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [activeTab, setActiveTab] = useState<ServiceCategory>('all');
@@ -202,20 +204,30 @@ export const ServicesSection: React.FC = () => {
 
       {/* Section Header */}
       <div className="text-center mb-10 sm:mb-12 px-3">
-        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/50 px-3.5 py-1 rounded-full text-xs font-bold text-yellow-300 uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+        <div className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 border ${
+          isParchment
+            ? 'bg-amber-100/80 border-amber-300 text-amber-900'
+            : 'bg-stone-900/90 border-amber-500/50 text-yellow-300'
+        }`}>
+          <Sparkles className={`w-3.5 h-3.5 ${isParchment ? 'text-amber-600' : 'text-yellow-400'}`} />
           <span>{t.badge}</span>
         </div>
-        <h2 className="heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        <h2 className={`heading-mystic text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight ${
+          isParchment ? 'text-stone-950' : 'text-white'
+        }`}>
           {t.title}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-300 mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2">
+        <p className={`mt-4 max-w-xl mx-auto text-sm sm:text-base leading-relaxed px-2 font-medium ${
+          isParchment ? 'text-stone-700' : 'text-stone-300'
+        }`}>
           {t.subtitle}
         </p>
 
         {/* Category Filters - Structured Responsive Alignment */}
-        <div className="mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 bg-stone-900/90 rounded-2xl sm:rounded-full border border-stone-800 shadow-inner">
+        <div className={`mt-8 max-w-4xl mx-auto p-2 sm:p-2.5 rounded-2xl sm:rounded-full border shadow-inner ${
+          isParchment ? 'bg-amber-50/70 border-amber-200' : 'bg-stone-900/90 border-stone-800'
+        }`}>
           <div className="flex flex-wrap items-center justify-center gap-2">
             {categoryTabs.map(tab => (
               <button
@@ -224,6 +236,8 @@ export const ServicesSection: React.FC = () => {
                 className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer text-center inline-flex items-center justify-center select-none shrink-0 ${
                   activeTab === tab.id
                     ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-stone-950 font-black shadow-lg shadow-amber-500/30 border-2 border-yellow-200 ring-2 ring-yellow-400/20'
+                    : isParchment
+                    ? 'bg-white text-stone-800 hover:text-amber-800 hover:bg-amber-50 border border-amber-200 shadow-2xs'
                     : 'bg-stone-800/90 text-stone-300 hover:text-yellow-300 hover:bg-stone-750 border border-stone-700 shadow-2xs'
                 }`}
               >
@@ -251,13 +265,9 @@ export const ServicesSection: React.FC = () => {
               const isSantan = featured.id === 'santan-sadbuddhi-obedient-remedy';
 
               return (
-                <motion.div
+                <div
                   key={featured.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: sIdx * 0.15 }}
-                  className={`relative rounded-3xl p-1 shadow-2xl ${
+                  className={`relative rounded-3xl p-1 shadow-2xl transition-all duration-500 ${
                     isSantan
                       ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-emerald-600 shadow-amber-500/25'
                       : isVyasan
@@ -399,7 +409,7 @@ export const ServicesSection: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -408,20 +418,16 @@ export const ServicesSection: React.FC = () => {
 
       {/* Services Grid with Scroll-triggered Animation & Photos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {filteredServices.map((service, index) => (
-          <motion.div
+        {filteredServices.map((service) => (
+          <div
             key={service.id}
-            initial={{ opacity: 0, y: 40, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 0.5,
-              delay: (index % 3) * 0.12,
-              ease: [0.25, 1, 0.5, 1]
-            }}
             className={`p-5 sm:p-6 rounded-3xl transition-all duration-300 hover:scale-[1.01] group flex flex-col justify-between relative ${
               service.isHighlighted
-                ? 'bg-gradient-to-b from-[#181512] via-[#12100e] to-[#0d0c0a] border-2 border-amber-500 shadow-2xl shadow-amber-500/20 ring-4 ring-amber-400/20 text-stone-100'
+                ? isParchment
+                  ? 'bg-white border-2 border-amber-500 shadow-xl shadow-amber-500/15 ring-2 ring-amber-400/20 text-stone-900'
+                  : 'bg-gradient-to-b from-[#181512] via-[#12100e] to-[#0d0c0a] border-2 border-amber-500 shadow-2xl shadow-amber-500/20 ring-4 ring-amber-400/20 text-stone-100'
+                : isParchment
+                ? 'bg-white border border-amber-200/90 hover:border-amber-400 shadow-md text-stone-900'
                 : 'bg-stone-900/90 border border-amber-500/30 hover:border-amber-400 shadow-xl shadow-black/50 text-stone-100'
             }`}
           >
@@ -485,22 +491,30 @@ export const ServicesSection: React.FC = () => {
                 </div>
               )}
 
-              <h3 className="heading-mystic text-xl font-bold mb-2.5 text-white group-hover:text-yellow-300 transition-colors">
+              <h3 className={`heading-mystic text-xl font-bold mb-2.5 transition-colors ${
+                isParchment ? 'text-stone-950 group-hover:text-amber-800' : 'text-white group-hover:text-yellow-300'
+              }`}>
                 {getServiceTitle(service)}
               </h3>
 
-              <p className="text-stone-300 text-sm leading-relaxed mb-4">
+              <p className={`text-sm leading-relaxed mb-4 ${
+                isParchment ? 'text-stone-600' : 'text-stone-300'
+              }`}>
                 {getServiceShortDesc(service)}
               </p>
             </div>
 
-            <div className="pt-3 border-t border-stone-800 space-y-2.5">
-              <div className="flex items-center justify-between text-xs text-stone-400 font-medium">
+            <div className={`pt-3 border-t space-y-2.5 ${isParchment ? 'border-amber-100' : 'border-stone-800'}`}>
+              <div className={`flex items-center justify-between text-xs font-medium ${isParchment ? 'text-stone-500' : 'text-stone-400'}`}>
                 <div className="flex items-center">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 shrink-0 text-amber-400" />
+                  <Clock className={`w-3.5 h-3.5 mr-1.5 shrink-0 ${isParchment ? 'text-amber-600' : 'text-amber-400'}`} />
                   <span>{getServiceTimeframe(service)}</span>
                 </div>
-                <span className="text-[11px] text-emerald-300 font-bold bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40">
+                <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full border ${
+                  isParchment
+                    ? 'text-emerald-800 bg-emerald-50 border-emerald-300'
+                    : 'text-emerald-300 bg-emerald-950/80 border-emerald-500/40'
+                }`}>
                   24/7 Live
                 </span>
               </div>
@@ -508,10 +522,10 @@ export const ServicesSection: React.FC = () => {
               {/* Direct Call Button (First Preference) - Symmetrical & Large Text Fitted in Box */}
               <a
                 href={`tel:${CONTACT_INFO.phoneRaw}`}
-                className="w-full min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black py-3 sm:py-3.5 px-3 sm:px-4 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-amber-500/30 hover:scale-[1.01] active:scale-98 transition-all cursor-pointer border-2 border-yellow-200 ring-2 ring-yellow-400/20"
+                className="w-full min-h-[54px] sm:min-h-[58px] bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-white font-black py-3 sm:py-3.5 px-3 sm:px-4 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-orange-500/30 hover:scale-[1.01] active:scale-98 transition-all cursor-pointer border-2 border-yellow-200 ring-2 ring-yellow-400/20"
               >
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-stone-950 animate-bounce shrink-0" />
-                <span className="font-black tracking-wide text-lg xs:text-xl sm:text-2xl text-stone-950 whitespace-nowrap leading-none text-center">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-bounce shrink-0" />
+                <span className="font-black tracking-wide text-lg xs:text-xl sm:text-2xl text-white whitespace-nowrap leading-none text-center">
                   {CONTACT_INFO.phoneDisplay}
                 </span>
               </a>
@@ -519,15 +533,19 @@ export const ServicesSection: React.FC = () => {
               {/* View Ritual Details Button */}
               <button
                 onClick={() => setSelectedService(service)}
-                className="w-full min-h-[46px] text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-3 rounded-2xl bg-stone-800/90 hover:bg-stone-750 text-stone-200 hover:text-white border border-stone-700 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-98"
+                className={`w-full min-h-[46px] text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-3 rounded-2xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-98 ${
+                  isParchment
+                    ? 'bg-amber-50/80 hover:bg-amber-100 text-amber-950 border border-amber-300'
+                    : 'bg-stone-800/90 hover:bg-stone-750 text-stone-200 hover:text-white border border-stone-700'
+                }`}
               >
                 <span>
                   {lang === 'hi' ? 'वैदिक अनुष्ठान एवं मंत्र विवरण' : lang === 'gu-en' ? 'વિગત / Info' : 'View Ritual Details'}
                 </span>
-                <ArrowRight className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${isParchment ? 'text-amber-700' : 'text-amber-400'}`} />
               </button>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 

@@ -2,9 +2,12 @@ import React from 'react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import { Phone, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 export const SacredProcess: React.FC = () => {
   const { lang } = useLanguage();
+  const { theme } = useTheme();
+  const isParchment = theme === 'sacred-parchment';
 
   const steps = [
     {
@@ -70,10 +73,16 @@ export const SacredProcess: React.FC = () => {
   ];
 
   return (
-    <section id="rituals" className="py-14 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden text-white">
+    <section id="rituals" className={`py-14 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto relative w-full overflow-hidden transition-colors duration-300 ${
+      isParchment ? 'text-stone-900' : 'text-white'
+    }`}>
       <div className="text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-1.5 bg-stone-900/90 border border-amber-500/40 px-3.5 py-1 rounded-full text-xs text-amber-300 font-bold uppercase tracking-widest mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+        <div className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3 border ${
+          isParchment
+            ? 'bg-amber-100/80 border-amber-300 text-amber-900'
+            : 'bg-stone-900/90 border-amber-500/40 text-amber-300'
+        }`}>
+          <Sparkles className={`w-3.5 h-3.5 ${isParchment ? 'text-amber-600' : 'text-amber-400'}`} />
           <span>
             {lang === 'hi'
               ? 'पारदर्शी व शास्त्रसम्मत वैदिक पद्धति'
@@ -82,7 +91,9 @@ export const SacredProcess: React.FC = () => {
               : 'Transparent & Pure Spiritual Methodology'}
           </span>
         </div>
-        <h2 className="heading-mystic text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+        <h2 className={`heading-mystic text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold ${
+          isParchment ? 'text-stone-950' : 'text-white'
+        }`}>
           {lang === 'hi'
             ? 'बाबा जी संकट का समाधान कैसे करते हैं?'
             : lang === 'gu-en'
@@ -90,7 +101,9 @@ export const SacredProcess: React.FC = () => {
             : 'How Baba Ji Resolves Your Crisis'}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto mt-4 rounded-full"></div>
-        <p className="text-stone-300 mt-4 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed">
+        <p className={`mt-4 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed ${
+          isParchment ? 'text-stone-700' : 'text-stone-300'
+        }`}>
           {lang === 'hi'
             ? 'चार चरणों की सिद्ध वैदिक प्रक्रिया: जन्मपत्रिका विश्लेषण, वैदिक महाहवन, एवं सिद्ध रक्षा कवच।'
             : lang === 'gu-en'
@@ -103,28 +116,42 @@ export const SacredProcess: React.FC = () => {
         {steps.map((item, index) => (
           <div
             key={item.step}
-            className="bg-stone-900/90 p-5 sm:p-7 rounded-3xl border border-amber-500/30 relative group hover:border-amber-400 transition-all duration-300 flex flex-col justify-between shadow-xl shadow-black/50 text-white"
+            className={`p-5 sm:p-7 rounded-3xl relative group transition-all duration-300 flex flex-col justify-between shadow-md ${
+              isParchment
+                ? 'bg-white border border-amber-200/90 hover:border-amber-400 text-stone-900 shadow-amber-500/5'
+                : 'bg-stone-900/90 border border-amber-500/30 hover:border-amber-400 shadow-xl shadow-black/50 text-white'
+            }`}
           >
             <div className="flex items-center justify-between mb-4">
-              <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-400 to-yellow-300">
+              <span className="heading-mystic text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-amber-500 to-yellow-500">
                 {item.step}
               </span>
-              <div className="w-8 h-8 rounded-full bg-emerald-950/80 border border-emerald-500/40 flex items-center justify-center text-xs text-emerald-300 font-bold">
+              <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-bold ${
+                isParchment
+                  ? 'bg-emerald-50 border-emerald-300 text-emerald-700'
+                  : 'bg-emerald-950/80 border-emerald-500/40 text-emerald-300'
+              }`}>
                 ✓
               </div>
             </div>
 
             <div>
-              <h3 className="heading-mystic text-base sm:text-lg font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+              <h3 className={`heading-mystic text-base sm:text-lg font-bold mb-2 transition-colors ${
+                isParchment ? 'text-stone-900 group-hover:text-amber-800' : 'text-white group-hover:text-yellow-300'
+              }`}>
                 {item.title}
               </h3>
-              <p className="text-stone-300 text-xs sm:text-sm leading-relaxed">
+              <p className={`text-xs sm:text-sm leading-relaxed ${
+                isParchment ? 'text-stone-600' : 'text-stone-300'
+              }`}>
                 {item.description}
               </p>
             </div>
 
-            <div className="mt-5 pt-3 border-t border-stone-800">
-              <span className="text-[11px] text-amber-400 uppercase tracking-widest font-bold">
+            <div className={`mt-5 pt-3 border-t ${isParchment ? 'border-amber-100' : 'border-stone-800'}`}>
+              <span className={`text-[11px] uppercase tracking-widest font-bold ${
+                isParchment ? 'text-amber-700' : 'text-amber-400'
+              }`}>
                 {lang === 'hi'
                   ? `चरण ${index + 1} / 4`
                   : lang === 'gu-en'

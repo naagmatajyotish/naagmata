@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type ColorTheme = 'royal-saffron' | 'cosmic-dark' | 'temple-maroon';
+export type ColorTheme = 'sacred-parchment' | 'cosmic-dark' | 'royal-saffron';
 
 interface ThemeOption {
   id: ColorTheme;
@@ -12,11 +12,11 @@ interface ThemeOption {
 
 export const THEME_OPTIONS: ThemeOption[] = [
   {
-    id: 'royal-saffron',
-    label: 'Royal Saffron & Temple Gold (राजसी भगवा व स्वर्ण)',
-    shortLabel: 'Royal Saffron',
-    badge: '🚩 भगवा व स्वर्ण',
-    bgHex: '#160802',
+    id: 'sacred-parchment',
+    label: 'Sacred Golden Cream / Divine Parchment (पवित्र स्वर्ण व क्रीम)',
+    shortLabel: 'Golden Cream',
+    badge: '📜 स्वर्ण व क्रीम',
+    bgHex: '#fdfcf7',
   },
   {
     id: 'cosmic-dark',
@@ -26,11 +26,11 @@ export const THEME_OPTIONS: ThemeOption[] = [
     bgHex: '#090807',
   },
   {
-    id: 'temple-maroon',
-    label: 'Sacred Vermillion & Deep Maroon (दिव्य सिंदूर व महरून)',
-    shortLabel: 'Temple Maroon',
-    badge: '🕉️ सिंदूर व महरून',
-    bgHex: '#150508',
+    id: 'royal-saffron',
+    label: 'Royal Saffron & Temple Gold (राजसी भगवा व स्वर्ण)',
+    shortLabel: 'Royal Saffron',
+    badge: '🚩 भगवा व स्वर्ण',
+    bgHex: '#160802',
   },
 ];
 
@@ -45,17 +45,23 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default to Royal Saffron & Temple Gold per user request
+  // Default to Sacred Golden Cream / Divine Parchment (#fdfcf7) as shown in user's 2.png screenshot
   const [theme, setTheme] = useState<ColorTheme>(() => {
     try {
+      const version = localStorage.getItem('naagmata_theme_v2');
+      if (!version) {
+        localStorage.setItem('naagmata_theme_v2', 'parchment_default');
+        localStorage.setItem('naagmata_theme', 'sacred-parchment');
+        return 'sacred-parchment';
+      }
       const saved = localStorage.getItem('naagmata_theme') as ColorTheme;
-      if (saved === 'royal-saffron' || saved === 'cosmic-dark' || saved === 'temple-maroon') {
+      if (saved && (saved === 'sacred-parchment' || saved === 'cosmic-dark' || saved === 'royal-saffron')) {
         return saved;
       }
     } catch {
       // ignore
     }
-    return 'royal-saffron';
+    return 'sacred-parchment';
   });
 
   useEffect(() => {
@@ -68,22 +74,23 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const currentOpt = THEME_OPTIONS.find(t => t.id === theme) || THEME_OPTIONS[0];
     const root = document.documentElement;
     root.setAttribute('data-theme', theme);
-    root.style.setProperty('color-scheme', 'dark');
+    root.style.setProperty('color-scheme', theme === 'sacred-parchment' ? 'light' : 'dark');
     root.style.setProperty('background-color', currentOpt.bgHex, 'important');
     if (document.body) {
       document.body.style.setProperty('background-color', currentOpt.bgHex, 'important');
+      document.body.style.setProperty('color', theme === 'sacred-parchment' ? '#1c1917' : '#fffdf5', 'important');
     }
 
     // Toggle corresponding classes
-    root.classList.remove('theme-cosmic-dark', 'theme-royal-saffron', 'theme-temple-maroon');
+    root.classList.remove('theme-sacred-parchment', 'theme-cosmic-dark', 'theme-royal-saffron');
     root.classList.add(`theme-${theme}`);
   }, [theme]);
 
   const toggleTheme = () => {
     setTheme(prev => {
-      if (prev === 'royal-saffron') return 'cosmic-dark';
-      if (prev === 'cosmic-dark') return 'temple-maroon';
-      return 'royal-saffron';
+      if (prev === 'sacred-parchment') return 'cosmic-dark';
+      if (prev === 'cosmic-dark') return 'royal-saffron';
+      return 'sacred-parchment';
     });
   };
 

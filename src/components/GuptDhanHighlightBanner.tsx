@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Phone, CheckCircle2, ShieldCheck, Sparkles, Coins } from 'lucide-react';
 import { CONTACT_INFO } from '../data/jyotishData';
 import serviceGuptDhan from '../assets/images/service_gupt_dhan_1791174398986.jpg';
@@ -9,20 +8,14 @@ export const GuptDhanHighlightBanner: React.FC = () => {
   return (
     <section
       id="gupt-dhan-highlight"
-      className="relative w-full py-8 sm:py-12 bg-gradient-to-b from-[var(--banner-grad-from,#1c0a03)] via-[var(--banner-grad-via,#2a1005)] to-[var(--banner-grad-to,#1c0a03)] border-y-2 border-amber-500/40 overflow-hidden"
+      className="relative w-full py-8 sm:py-12 bg-gradient-to-b from-[var(--banner-grad-from,#fdfcf7)] via-[var(--banner-grad-via,#fffbf0)] to-[var(--banner-grad-to,#fdfcf7)] border-y-2 border-amber-400/50 overflow-hidden"
     >
       {/* Subtle divine background ornamentation */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-yellow-400/15 to-amber-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-amber-500/15 to-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl p-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 shadow-2xl shadow-amber-950/25"
-        >
+        <div className="relative rounded-3xl p-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 shadow-2xl shadow-amber-950/25 transition-all duration-500">
           <div className="bg-gradient-to-br from-stone-950 via-amber-950/95 to-stone-900 text-white rounded-[22px] p-6 sm:p-8 lg:p-10 border border-yellow-400/50 relative overflow-hidden">
             {/* Top Badge Strip */}
             <div className="flex flex-wrap items-center justify-between gap-2.5 pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-amber-500/25">
@@ -144,7 +137,7 @@ export const GuptDhanHighlightBanner: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

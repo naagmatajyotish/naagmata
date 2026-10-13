@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
-:root, [data-theme="royal-saffron"] {
-  color-scheme: dark !important;
-  --bg-sanctum: #160802;
-  --bg-header: #130702;
-  --bg-footer: #100501;
-  --bg-card: #251005;
-  --bg-card-subtle: #331608;
-  --bg-banner: #1d0a03;
-  --text-primary: #fffaf0;
-  --text-secondary: #fed7aa;
-  --text-muted: #e7d5c7;
-  --border-glow: rgba(249, 115, 22, 0.5);
-  --border-card: rgba(234, 88, 12, 0.4);
+:root, [data-theme="sacred-parchment"] {
+  color-scheme: light !important;
+  --bg-sanctum: #fdfcf7;
+  --bg-header: #ffffff;
+  --bg-footer: #15100b;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fbf7ee;
+  --bg-banner: #fffdf5;
+  --text-primary: #1c1917;
+  --text-secondary: #78350f;
+  --text-muted: #57534e;
+  --border-glow: rgba(234, 179, 8, 0.4);
+  --border-card: rgba(245, 158, 11, 0.3);
   --accent-primary: #ea580c;
-  --accent-secondary: #f97316;
-  --accent-gold: #fbbf24;
-  --hero-grad-from: #260e03;
-  --hero-grad-via: #1a0902;
-  --hero-grad-to: #130601;
-  --banner-grad-from: #1c0a03;
-  --banner-grad-via: #2a1005;
-  --banner-grad-to: #1c0a03;
-  --scrollbar-track: #130601;
-  --scrollbar-thumb: #ea580c;
+  --accent-secondary: #d97706;
+  --accent-gold: #ca8a04;
+  --hero-grad-from: #fdfcf7;
+  --hero-grad-via: #faf7f0;
+  --hero-grad-to: #fdfcf7;
+  --banner-grad-from: #fdfcf7;
+  --banner-grad-via: #fffbf0;
+  --banner-grad-to: #fdfcf7;
+  --scrollbar-track: #fdfcf7;
+  --scrollbar-thumb: #d97706;
 }
 
 [data-theme="cosmic-dark"] {
@@ -52,63 +52,36 @@
   --scrollbar-thumb: #eab308;
 }
 
-[data-theme="temple-maroon"] {
+[data-theme="royal-saffron"] {
   color-scheme: dark !important;
-  --bg-sanctum: #150508;
-  --bg-header: #120406;
-  --bg-footer: #0e0305;
-  --bg-card: #24080e;
-  --bg-card-subtle: #330c14;
-  --bg-banner: #1c060b;
+  --bg-sanctum: #160802;
+  --bg-header: #130702;
+  --bg-footer: #100501;
+  --bg-card: #251005;
+  --bg-card-subtle: #331608;
+  --bg-banner: #1d0a03;
   --text-primary: #fffaf0;
-  --text-secondary: #fecdd3;
-  --text-muted: #e2d1d4;
-  --border-glow: rgba(244, 63, 94, 0.45);
-  --border-card: rgba(225, 29, 72, 0.35);
-  --accent-primary: #e11d48;
-  --accent-secondary: #f59e0b;
+  --text-secondary: #fed7aa;
+  --text-muted: #e7d5c7;
+  --border-glow: rgba(249, 115, 22, 0.5);
+  --border-card: rgba(234, 88, 12, 0.4);
+  --accent-primary: #ea580c;
+  --accent-secondary: #f97316;
   --accent-gold: #fbbf24;
-  --hero-grad-from: #26070e;
-  --hero-grad-via: #1a0509;
-  --hero-grad-to: #120406;
-  --banner-grad-from: #1c060b;
-  --banner-grad-via: #2a0911;
-  --banner-grad-to: #1c060b;
-  --scrollbar-track: #120406;
-  --scrollbar-thumb: #e11d48;
+  --hero-grad-from: #260e03;
+  --hero-grad-via: #1a0902;
+  --hero-grad-to: #130601;
+  --banner-grad-from: #1c0a03;
+  --banner-grad-via: #2a1005;
+  --banner-grad-to: #1c0a03;
+  --scrollbar-track: #130601;
+  --scrollbar-thumb: #ea580c;
 }
 
 /* Guard against PC/Mobile OS forced inversion */
 *, *::before, *::after {
   forced-color-adjust: none !important;
   -webkit-forced-color-adjust: none !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root, html, body, #root, * {
-    color-scheme: dark !important;
-    forced-color-adjust: none !important;
-    -webkit-forced-color-adjust: none !important;
-  }
-
-  :root, html, body, #root {
-    background-color: var(--bg-sanctum, #160802) !important;
-    color: var(--text-primary, #fffaf0) !important;
-  }
-
-  /* Prevent browser from inverting images, badges, logos, and graphics */
-  img, svg, picture, video, canvas {
-    forced-color-adjust: none !important;
-    -webkit-forced-color-adjust: none !important;
-    filter: none !important;
-  }
-
-  /* Keep input fields and buttons cleanly styled */
-  input, select, textarea, button, option {
-    color-scheme: dark !important;
-    forced-color-adjust: none !important;
-    -webkit-forced-color-adjust: none !important;
-  }
 }
 
 @layer base {
@@ -118,22 +91,18 @@
     overflow-x: hidden;
     position: relative;
     -webkit-text-size-adjust: 100%;
-    color-scheme: dark !important;
-    forced-color-adjust: none !important;
   }
 
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-sanctum, #160802) !important;
-    color: var(--text-primary, #fffaf0) !important;
+    background-color: var(--bg-sanctum, #fdfcf7) !important;
+    color: var(--text-primary, #1c1917) !important;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
     margin: 0;
     padding: 0;
-    color-scheme: dark !important;
-    forced-color-adjust: none !important;
   }
 
   #root {
@@ -141,16 +110,8 @@
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--bg-sanctum, #160802) !important;
-    color: var(--text-primary, #fffaf0) !important;
-    color-scheme: dark !important;
-  }
-
-  /* Ensure form controls stay dark-themed */
-  input, select, textarea, button, option {
-    color-scheme: dark !important;
-    forced-color-adjust: none !important;
-    -webkit-forced-color-adjust: none !important;
+    background-color: var(--bg-sanctum, #fdfcf7) !important;
+    color: var(--text-primary, #1c1917) !important;
   }
 }
 

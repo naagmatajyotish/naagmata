@@ -3,18 +3,29 @@ import { Phone, ShieldCheck, Sparkles, Clock, Star, Flame, ArrowDown, Shield } f
 import { CONTACT_INFO } from '../data/jyotishData';
 import { NaagdeviLogo } from './NaagdeviLogo';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { TRANSLATIONS } from '../data/translations';
 
 export const Hero: React.FC = () => {
   const { lang } = useLanguage();
+  const { theme } = useTheme();
   const t = TRANSLATIONS[lang].hero;
+  const isParchment = theme === 'sacred-parchment';
 
   return (
     <section 
-      className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 text-center py-14 md:py-24 overflow-hidden bg-gradient-to-b from-[var(--hero-grad-from,#260e03)] via-[var(--hero-grad-via,#1a0902)] to-[var(--hero-grad-to,#130601)] w-full max-w-full text-white"
+      className={`relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 text-center py-14 md:py-24 overflow-hidden w-full max-w-full transition-colors duration-300 ${
+        isParchment
+          ? 'bg-gradient-to-b from-[#fdfcf7] via-[#faf7f0] to-[#fdfcf7] text-stone-900'
+          : 'bg-gradient-to-b from-[var(--hero-grad-from,#260e03)] via-[var(--hero-grad-via,#1a0902)] to-[var(--hero-grad-to,#130601)] text-white'
+      }`}
     >
       {/* Background starlight & sacred geometry pattern */}
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[radial-gradient(#eab308_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div className={`absolute inset-0 pointer-events-none [background-size:24px_24px] ${
+        isParchment
+          ? 'opacity-30 bg-[radial-gradient(#d97706_1.2px,transparent_1.2px)]'
+          : 'opacity-25 bg-[radial-gradient(#eab308_1px,transparent_1px)]'
+      }`}></div>
       
       {/* Ambient warm glow bubbles */}
       <div 
@@ -44,52 +55,86 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Top Sacred Badge - Guaranteed Mobile Responsive Alignment */}
-        <div className="inline-flex items-center justify-center gap-2 bg-stone-900/90 border border-amber-500/50 px-3.5 sm:px-5 py-1.5 rounded-2xl sm:rounded-full backdrop-blur-sm shadow-md max-w-[95vw]">
-          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400 shrink-0" />
-          <p className="text-yellow-200 font-bold uppercase tracking-normal sm:tracking-wide text-[10px] xs:text-xs sm:text-sm text-center">
+        <div className={`inline-flex items-center justify-center gap-2 px-3.5 sm:px-5 py-1.5 rounded-2xl sm:rounded-full backdrop-blur-sm max-w-[95vw] shadow-sm ${
+          isParchment
+            ? 'bg-white/95 border border-amber-300'
+            : 'bg-stone-900/90 border border-amber-500/50'
+        }`}>
+          <Sparkles className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isParchment ? 'text-amber-600' : 'text-yellow-400'}`} />
+          <p className={`font-extrabold uppercase tracking-normal sm:tracking-wide text-[10px] xs:text-xs sm:text-sm text-center ${
+            isParchment ? 'text-stone-900' : 'text-yellow-200'
+          }`}>
             विश्व प्रसिद्ध वैदिक ज्योतिषी एवं समस्त समस्या समाधान विशेषज्ञ
           </p>
         </div>
 
         {/* Main Headline */}
-        <h1 className="heading-mystic text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white">
+        <h1 className={`heading-mystic text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold ${
+          isParchment ? 'text-stone-950' : 'text-white'
+        }`}>
           <span className="block mb-2 sm:mb-3 leading-[1.35] sm:leading-[1.3] pt-1">
             प्रेम संबंध, विवाह बाधा, गुप्त धन एवं पारिवारिक कलह का समाधान
           </span>
-          <span className="inline-block py-1 px-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 leading-[1.35] sm:leading-[1.3]">
+          <span className={`inline-block py-1 px-1 text-transparent bg-clip-text leading-[1.35] sm:leading-[1.3] ${
+            isParchment
+              ? 'bg-gradient-to-r from-amber-700 via-orange-600 to-amber-800'
+              : 'bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400'
+          }`}>
             प्रामाणिक वैदिक ज्योतिष एवं माँ नागदेवी सिद्ध अनुष्ठान द्वारा
           </span>
         </h1>
 
         {/* Sacred Chanting Verse */}
-        <div className="bg-stone-900/90 border border-amber-500/40 py-2 px-3 sm:px-4 rounded-2xl sm:rounded-full max-w-xl mx-auto">
-          <p className="text-yellow-300 text-[11px] xs:text-xs sm:text-sm font-serif tracking-wider font-bold text-center leading-relaxed">
+        <div className={`py-2 px-3 sm:px-4 rounded-2xl sm:rounded-full max-w-xl mx-auto shadow-xs border ${
+          isParchment
+            ? 'bg-amber-100/70 border-amber-300 text-amber-950'
+            : 'bg-stone-900/90 border-amber-500/40 text-yellow-300'
+        }`}>
+          <p className="text-[11px] xs:text-xs sm:text-sm font-serif tracking-wider font-bold text-center leading-relaxed">
             ॥ ॐ नवकुल नागदेव्यै च विद्महे विषदन्तायै धीमहि तन्नो सर्पः प्रचोदयात् ॥
           </p>
         </div>
 
         {/* Subtitle - Bold and Properly Aligned */}
-        <p className="text-stone-300 text-xs sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-bold text-center px-2">
+        <p className={`text-xs sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-bold text-center px-2 ${
+          isParchment ? 'text-stone-700' : 'text-stone-300'
+        }`}>
           क्या आप प्रेम में बढ़ती दूरी, माता-पिता की असहमति, विवाह में रुकावट, ब्रेकअप, गुप्त धन बाधा या पति-पत्नी के तनाव से व्यथित हैं? पूज्य बाबाजी माँ नागदेवी की दिव्य कृपा और वैदिक ज्योतिष द्वारा देते हैं 100% गोपनीय और सात्विक समाधान।
         </p>
 
         {/* Key Trust Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 max-w-2xl mx-auto pt-2 text-[11px] sm:text-xs">
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-stone-900/90 border border-amber-500/30 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl text-stone-200 shadow-xs hover:border-amber-400 transition-colors text-center">
-            <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
-            <span className="font-semibold">वैदिक मार्गदर्शन</span>
+          <div className={`flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl shadow-xs transition-colors text-center border ${
+            isParchment
+              ? 'bg-white/95 border-amber-200 text-stone-800 hover:border-amber-400'
+              : 'bg-stone-900/90 border-amber-500/30 text-stone-200 hover:border-amber-400'
+          }`}>
+            <Clock className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isParchment ? 'text-amber-600' : 'text-amber-400'}`} />
+            <span className="font-bold">वैदिक मार्गदर्शन</span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-stone-900/90 border border-amber-500/30 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl text-stone-200 shadow-xs hover:border-amber-400 transition-colors text-center">
-            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
-            <span className="font-semibold">100% पूर्णतः गोपनीय</span>
+          <div className={`flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl shadow-xs transition-colors text-center border ${
+            isParchment
+              ? 'bg-white/95 border-amber-200 text-stone-800 hover:border-amber-400'
+              : 'bg-stone-900/90 border-amber-500/30 text-stone-200 hover:border-amber-400'
+          }`}>
+            <ShieldCheck className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isParchment ? 'text-emerald-600' : 'text-emerald-400'}`} />
+            <span className="font-bold">100% पूर्णतः गोपनीय</span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-stone-900/90 border border-amber-500/30 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl text-stone-200 shadow-xs hover:border-amber-400 transition-colors text-center">
-            <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400 shrink-0" />
-            <span className="font-semibold">सात्विक हवन अनुष्ठान</span>
+          <div className={`flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl shadow-xs transition-colors text-center border ${
+            isParchment
+              ? 'bg-white/95 border-amber-200 text-stone-800 hover:border-amber-400'
+              : 'bg-stone-900/90 border-amber-500/30 text-stone-200 hover:border-amber-400'
+          }`}>
+            <Flame className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isParchment ? 'text-orange-600' : 'text-orange-400'}`} />
+            <span className="font-bold">सात्विक हवन अनुष्ठान</span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-stone-900/90 border border-amber-500/30 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl text-stone-200 shadow-xs hover:border-amber-400 transition-colors text-center">
-            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400 shrink-0" />
-            <span className="font-semibold">35+ वर्षों का अनुभव</span>
+          <div className={`flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 sm:py-3 px-2 sm:px-3 rounded-2xl shadow-xs transition-colors text-center border ${
+            isParchment
+              ? 'bg-white/95 border-amber-200 text-stone-800 hover:border-amber-400'
+              : 'bg-stone-900/90 border-amber-500/30 text-stone-200 hover:border-amber-400'
+          }`}>
+            <Star className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isParchment ? 'text-amber-500 fill-amber-500' : 'text-yellow-400 fill-yellow-400'}`} />
+            <span className="font-bold">35+ वर्षों का अनुभव</span>
           </div>
         </div>
 
@@ -98,23 +143,27 @@ export const Hero: React.FC = () => {
           <a
             id="hero-call-btn"
             href={`tel:${CONTACT_INFO.phoneRaw}`}
-            className="w-full min-h-[64px] sm:min-h-[76px] bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-stone-950 font-black px-3.5 sm:px-6 py-3.5 sm:py-4.5 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3.5 transition-all transform hover:-translate-y-1 shadow-2xl shadow-amber-500/30 cursor-pointer border-2 border-yellow-200 ring-4 ring-yellow-400/30 active:scale-98"
+            className="w-full min-h-[64px] sm:min-h-[76px] bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-white font-black px-3.5 sm:px-6 py-3.5 sm:py-4.5 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3.5 transition-all transform hover:-translate-y-1 shadow-2xl shadow-orange-500/30 cursor-pointer border-2 border-yellow-200 ring-4 ring-yellow-400/30 active:scale-98"
           >
-            <Phone className="w-6 h-6 sm:w-8 sm:h-8 shrink-0 animate-bounce text-stone-950 drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]" />
-            <span className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-black tracking-wide whitespace-nowrap text-stone-950 text-center leading-none">
+            <Phone className="w-6 h-6 sm:w-8 sm:h-8 shrink-0 animate-bounce text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]" />
+            <span className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-black tracking-wide whitespace-nowrap text-white text-center leading-none">
               {CONTACT_INFO.phoneDisplay}
             </span>
           </a>
 
           <a
             href="#services"
-            className="w-full min-h-[64px] sm:min-h-[76px] bg-stone-900 hover:bg-stone-850 text-yellow-300 font-black px-3.5 sm:px-6 py-3.5 sm:py-4.5 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-black/60 cursor-pointer border-2 border-amber-500/60 active:scale-98"
+            className={`w-full min-h-[64px] sm:min-h-[76px] font-black px-3.5 sm:px-6 py-3.5 sm:py-4.5 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 transition-all transform hover:-translate-y-0.5 cursor-pointer border-2 active:scale-98 shadow-md ${
+              isParchment
+                ? 'bg-white hover:bg-amber-50 text-stone-900 border-amber-300'
+                : 'bg-stone-900 hover:bg-stone-850 text-yellow-300 border-amber-500/60 shadow-xl shadow-black/60'
+            }`}
           >
-            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 shrink-0" />
+            <Sparkles className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 ${isParchment ? 'text-amber-600' : 'text-yellow-300'}`} />
             <span className="text-base sm:text-xl md:text-2xl font-black tracking-wide text-center leading-tight">
               समस्त सेवाएं एवं अनुष्ठान देखें
             </span>
-            <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0 hidden xs:inline-block" />
+            <ArrowDown className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 hidden xs:inline-block ${isParchment ? 'text-amber-700' : 'text-yellow-400'}`} />
           </a>
         </div>
 
